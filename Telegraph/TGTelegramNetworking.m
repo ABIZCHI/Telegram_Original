@@ -160,7 +160,7 @@ static void TGTelegramLoggingFunction(NSString *format, va_list args)
         NSString *bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
         
         int32_t apiId = 0;
-        SETUP_API_ID(apiId)
+        SETUP_API_ID(apiId);
         
         apiEnvironment.apiId = apiId;
         

@@ -1134,8 +1134,8 @@
 		D00C71B3193F482E0005349C /* ModernBubbleIncomingFullHighlightedPad.png in Resources */ = {isa = PBXBuildFile; fileRef = D00C71AB193F482E0005349C /* ModernBubbleIncomingFullHighlightedPad.png */; };
 		D00C71B4193F482E0005349C /* ModernBubbleIncomingPartialPad.png in Resources */ = {isa = PBXBuildFile; fileRef = D00C71AC193F482E0005349C /* ModernBubbleIncomingPartialPad.png */; };
 		D00C71B5193F482E0005349C /* ModernBubbleIncomingFullPad.png in Resources */ = {isa = PBXBuildFile; fileRef = D00C71AD193F482E0005349C /* ModernBubbleIncomingFullPad.png */; };
-		D00C79211BBCA4CA00F979C8 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D00C791D1BBCA4CA00F979C8 /* HockeySDK.framework */; settings = {ASSET_TAGS = (); }; };
-		D00C79231BBCA4CA00F979C8 /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D00C79201BBCA4CA00F979C8 /* HockeySDKResources.bundle */; settings = {ASSET_TAGS = (); }; };
+		D00C79211BBCA4CA00F979C8 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D00C791D1BBCA4CA00F979C8 /* HockeySDK.framework */; };
+		D00C79231BBCA4CA00F979C8 /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D00C79201BBCA4CA00F979C8 /* HockeySDKResources.bundle */; };
 		D010E4D71AB5C627000A1742 /* TGMentionPanelCell.h in Headers */ = {isa = PBXBuildFile; fileRef = D010E4D51AB5C627000A1742 /* TGMentionPanelCell.h */; };
 		D010E4D81AB5C627000A1742 /* TGMentionPanelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D010E4D61AB5C627000A1742 /* TGMentionPanelCell.m */; };
 		D01526CF18FB2E4900656312 /* TGImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D01526CE18FB2E4900656312 /* TGImageView.m */; };
@@ -3372,6 +3372,41 @@
 			proxyType = 1;
 			remoteGlobalIDString = D0445DD71A7C2CA500267924;
 			remoteInfo = SSignalKit;
+		};
+		E11DB8261C28062300ECA28F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0E26F571A83F27D009ECB56 /* MtProtoKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D00354651C173BF0006610DA;
+			remoteInfo = MtProtoKitStabilityTests;
+		};
+		E11DB82E1C28062300ECA28F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0A3F2F4195CA9EB009E0ACD /* pop.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0755AE4F1BEA15950094AB41;
+			remoteInfo = "pop-tvos-framework";
+		};
+		E11DB8301C28062300ECA28F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0A3F2F4195CA9EB009E0ACD /* pop.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ECF01ED318C92B7F009E0AD1;
+			remoteInfo = "pop-tests-ios";
+		};
+		E11DB8321C28062300ECA28F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0A3F2F4195CA9EB009E0ACD /* pop.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EC7E319918C93D6500B38170;
+			remoteInfo = "pop-tests-osx";
+		};
+		E11DB8341C28062300ECA28F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0A3F2F4195CA9EB009E0ACD /* pop.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0755AE8C1BEA19580094AB41;
+			remoteInfo = "pop-tests-tvos";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -15341,8 +15376,12 @@
 			isa = PBXGroup;
 			children = (
 				D0A3F2FC195CA9EC009E0ACD /* libpop.a */,
-				D0A3F2FE195CA9EC009E0ACD /* pop.framework */,
 				D00C79131BBCA2FE00F979C8 /* pop.framework */,
+				D0A3F2FE195CA9EC009E0ACD /* pop.framework */,
+				E11DB82F1C28062300ECA28F /* pop.framework */,
+				E11DB8311C28062300ECA28F /* pop-tests.xctest */,
+				E11DB8331C28062300ECA28F /* pop-tests.xctest */,
+				E11DB8351C28062300ECA28F /* pop-tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -16204,6 +16243,7 @@
 				D079ABB41AF3AB1B00076F59 /* MtProtoKitMac.framework */,
 				D0A5A1EA1B7B9AC70066B169 /* MtProtoKitDynamic.framework */,
 				D0A5A1EC1B7B9AC70066B169 /* MtProtoKitDynamicTests.xctest */,
+				E11DB8271C28062300ECA28F /* MtProtoKitStabilityTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -17645,6 +17685,41 @@
 			fileType = wrapper.framework;
 			path = MtProtoKit.framework;
 			remoteRef = D0CB06751ADC7C65005E298F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E11DB8271C28062300ECA28F /* MtProtoKitStabilityTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MtProtoKitStabilityTests.xctest;
+			remoteRef = E11DB8261C28062300ECA28F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E11DB82F1C28062300ECA28F /* pop.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = pop.framework;
+			remoteRef = E11DB82E1C28062300ECA28F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E11DB8311C28062300ECA28F /* pop-tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "pop-tests.xctest";
+			remoteRef = E11DB8301C28062300ECA28F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E11DB8331C28062300ECA28F /* pop-tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "pop-tests.xctest";
+			remoteRef = E11DB8321C28062300ECA28F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E11DB8351C28062300ECA28F /* pop-tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "pop-tests.xctest";
+			remoteRef = E11DB8341C28062300ECA28F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
