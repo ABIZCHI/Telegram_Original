@@ -1635,7 +1635,7 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     return dictionary;
 }
 
-- (void)registerTimeout:(AFHTTPRequestOperation *)operation duration:(NSTimeInterval)duration
+- (void)registerTimeout:(MT_AFHTTPRequestOperation *)operation duration:(NSTimeInterval)duration
 {
     [ActionStageInstance() dispatchOnStageQueue:^
     {
@@ -1648,7 +1648,7 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     }];
 }
 
-- (void)removeTimeout:(AFHTTPRequestOperation *)operation
+- (void)removeTimeout:(MT_AFHTTPRequestOperation *)operation
 {
     [ActionStageInstance() dispatchOnStageQueue:^
     {
@@ -1671,12 +1671,12 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
 
 - (void)timeoutTimerEvent:(NSTimer *)timer
 {
-    AFHTTPRequestOperation *operation = timer.userInfo;
+    MT_AFHTTPRequestOperation *operation = timer.userInfo;
     TGLog(@"===== Request timeout: %@", operation.request.URL);
     
     [ActionStageInstance() dispatchOnStageQueue:^
     {
-        if ([operation isKindOfClass:[AFHTTPRequestOperation class]])
+        if ([operation isKindOfClass:[MT_AFHTTPRequestOperation class]])
         {
             [operation cancel];
         }
@@ -1765,7 +1765,7 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
         [urlRequest setValue:authValue forHTTPHeaderField:@"Authorization"];
     }
     
-    AFHTTPRequestOperation *httpOperation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
+    MT_AFHTTPRequestOperation *httpOperation = [[MT_AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
     
     NSMutableIndexSet *acceptableCodes = [[NSMutableIndexSet alloc] initWithIndexSet:httpOperation.acceptableStatusCodes];
     for (NSNumber *nCode in request.acceptCodes)
@@ -1777,11 +1777,11 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     [httpOperation setSuccessCallbackQueue:[ActionStageInstance() globalStageDispatchQueue]];
     [httpOperation setFailureCallbackQueue:[ActionStageInstance() globalStageDispatchQueue]];
     
-    [httpOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, __unused id responseObject)
+    [httpOperation setCompletionBlockWithSuccess:^(MT_AFHTTPRequestOperation *operation, __unused id responseObject)
     {
         NSData *receivedData = [operation responseData];
         [self rawHttpRequestCompleted:request response:receivedData error:nil];
-    } failure:^(__unused AFHTTPRequestOperation *operation, NSError *error)
+    } failure:^(__unused MT_AFHTTPRequestOperation *operation, NSError *error)
     {
         [self rawHttpRequestCompleted:request response:nil error:error];
     }];
@@ -1901,17 +1901,17 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
 {
     NSMutableURLRequest *urlRequest = nil;
     urlRequest = [self requestWithMethod:@"GET" path:url parameters:nil];
-    AFHTTPRequestOperation *httpOperation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
+    MT_AFHTTPRequestOperation *httpOperation = [[MT_AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
     [httpOperation setSuccessCallbackQueue:[ActionStageInstance() globalStageDispatchQueue]];
     [httpOperation setFailureCallbackQueue:[ActionStageInstance() globalStageDispatchQueue]];
     
     [httpOperation setOutputStream:[NSOutputStream outputStreamToFileAtPath:[NSTemporaryDirectory() stringByAppendingPathComponent:@"test.bin"] append:false]];
 
     TGLog(@"Request started");
-    [httpOperation setCompletionBlockWithSuccess:^(__unused AFHTTPRequestOperation *operation, __unused id responseObject)
+    [httpOperation setCompletionBlockWithSuccess:^(__unused MT_AFHTTPRequestOperation *operation, __unused id responseObject)
     {
         TGLog(@"Request completed");
-    } failure:^(__unused AFHTTPRequestOperation *operation, NSError *error)
+    } failure:^(__unused MT_AFHTTPRequestOperation *operation, NSError *error)
     {
         TGLog(@"Request failed: %@", error);
     }];

@@ -21,7 +21,7 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import "thirdparty/AFNetworking/AFHTTPRequestOperation.h"
+#import "thirdparty/AFNetworking/MT_AFHTTPRequestOperation.h"
 
 /**
  `AFJSONRequestOperation` is a subclass of `AFHTTPRequestOperation` for downloading and working with JSON response data.
@@ -35,7 +35,7 @@
 
  @warning JSON parsing will use the built-in `NSJSONSerialization` class.
  */
-@interface AFJSONRequestOperation : AFHTTPRequestOperation
+@interface AFJSONRequestOperation : MT_AFHTTPRequestOperation
 
 ///----------------------------
 /// @name Getting Response Data

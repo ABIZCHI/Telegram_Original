@@ -27,15 +27,15 @@ extern BOOL GDIsErrorPermanentlyFatal(NSError *error);
 
 - (NSOperation *)enqueueOperationWithURLRequest:(NSMutableURLRequest *)urlRequest
                          requiresAuthentication:(BOOL)requiresAuthentication
-                                        success:(void (^)(AFHTTPRequestOperation *, id))success
-                                        failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure;
+                                        success:(void (^)(MT_AFHTTPRequestOperation *, id))success
+                                        failure:(void (^)(MT_AFHTTPRequestOperation *, NSError *))failure;
 
 - (NSOperation *)enqueueOperationWithURLRequest:(NSMutableURLRequest *)urlRequest
                          requiresAuthentication:(BOOL)requiresAuthentication
                                shouldRetryBlock:(BOOL (^)(NSError *error))shouldRetryBlock
-                                        success:(void (^)(AFHTTPRequestOperation *, id))success
-                                        failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure
-                        configureOperationBlock:(void (^)(AFHTTPRequestOperation *))configureOperationBlock;
+                                        success:(void (^)(MT_AFHTTPRequestOperation *, id))success
+                                        failure:(void (^)(MT_AFHTTPRequestOperation *, NSError *))failure
+                        configureOperationBlock:(void (^)(MT_AFHTTPRequestOperation *))configureOperationBlock;
 
 
 - (NSError *)httpErrorWithErrorDomain:(NSString *)domain fromAFNetworkingError:(NSError *)error;

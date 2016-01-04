@@ -99,10 +99,10 @@
     
     return [self enqueueOperationWithURLRequest:request
                          requiresAuthentication:requiresAccessToken
-                                        success:^(__unused AFHTTPRequestOperation *requestOperation, id responseObject) {
+                                        success:^(__unused MT_AFHTTPRequestOperation *requestOperation, id responseObject) {
                                             if (success) success(responseObject);
                                         }
-                                        failure:^(__unused AFHTTPRequestOperation *requestOperation, NSError *error) {
+                                        failure:^(__unused MT_AFHTTPRequestOperation *requestOperation, NSError *error) {
                                             if (etag && [error code] == 304 && [[error domain] isEqualToString:GDHTTPStatusErrorDomain]) {
                                                 // not-modified
                                                 if (success) success(nil);
@@ -115,16 +115,16 @@
 - (NSOperation *)enqueueOperationWithURLRequest:(NSMutableURLRequest *)urlRequest
                          requiresAuthentication:(BOOL)requiresAuthentication
                                shouldRetryBlock:(BOOL (^)(NSError *))shouldRetryBlock
-                                        success:(void (^)(AFHTTPRequestOperation *, id))success
-                                        failure:(void (^)(AFHTTPRequestOperation *operation, NSError *))failure
-                        configureOperationBlock:(void (^)(AFHTTPRequestOperation *))configureOperationBlock
+                                        success:(void (^)(MT_AFHTTPRequestOperation *, id))success
+                                        failure:(void (^)(MT_AFHTTPRequestOperation *operation, NSError *))failure
+                        configureOperationBlock:(void (^)(MT_AFHTTPRequestOperation *))configureOperationBlock
 {
     return [super enqueueOperationWithURLRequest:urlRequest
                           requiresAuthentication:requiresAuthentication
                                 shouldRetryBlock:shouldRetryBlock
                                          success:success
                                          failure:failure
-                         configureOperationBlock:^(AFHTTPRequestOperation *requestOperation) {
+                         configureOperationBlock:^(MT_AFHTTPRequestOperation *requestOperation) {
                              [requestOperation setCacheResponseBlock:^NSCachedURLResponse *(__unused NSURLConnection *connection, __unused NSCachedURLResponse *cachedResponse) {
                                  return nil;
                              }];
@@ -418,14 +418,14 @@ static NSString *const GDGoogleDriveMoveOperation = @"MOVE";
     
     [urlRequest setHTTPBody:jsonData];
     
-    [self enqueueOperationWithURLRequest:urlRequest requiresAuthentication:YES success:^(__unused AFHTTPRequestOperation *requestOperation, id response) {
+    [self enqueueOperationWithURLRequest:urlRequest requiresAuthentication:YES success:^(__unused MT_AFHTTPRequestOperation *requestOperation, id response) {
         GDGoogleDriveMetadata *metadata = nil;
         if (response) {
             NSParameterAssert([response isKindOfClass:[NSDictionary class]]);
             metadata = [[GDGoogleDriveMetadata alloc] initWithDictionary:response];
         }
         if (success) success(metadata);
-    } failure:^(__unused AFHTTPRequestOperation *requestOperation, NSError *error) {
+    } failure:^(__unused MT_AFHTTPRequestOperation *requestOperation, NSError *error) {
         if (failure) failure(error);
     }];
 }
@@ -471,13 +471,13 @@ static NSString *const GDGoogleDriveMoveOperation = @"MOVE";
                            [self enqueueOperationWithURLRequest:urlRequest
                                          requiresAuthentication:YES
                                                shouldRetryBlock:NULL
-                                                        success:^(__unused AFHTTPRequestOperation *requestOperation, __unused id responseObject) {
+                                                        success:^(__unused MT_AFHTTPRequestOperation *requestOperation, __unused id responseObject) {
                                                             success(localPath, metadata);
                                                         }
-                                                        failure:^(__unused AFHTTPRequestOperation *requestOperation, NSError *error) {
+                                                        failure:^(__unused MT_AFHTTPRequestOperation *requestOperation, NSError *error) {
                                                             failure(error);
                                                         }
-                                        configureOperationBlock:^(AFHTTPRequestOperation *requestOperation) {
+                                        configureOperationBlock:^(MT_AFHTTPRequestOperation *requestOperation) {
                                             [parentOperation addChildOperation:requestOperation];
                                             requestOperation.outputStream = outputStream;
                                             [requestOperation setDownloadProgressBlock:progress];

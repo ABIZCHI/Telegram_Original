@@ -63,7 +63,7 @@
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
-	<string>$(TELEGRAPH_BUNDLE_ID)</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -108,7 +108,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>50721</string>
+	<string>50731</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>LSRequiresIPhoneOS</key>

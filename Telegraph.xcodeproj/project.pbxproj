@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D19EF841B60720174F4A71F /* libPods-Telegraph.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8832050D5480294D70DA093B /* libPods-Telegraph.a */; };
 		6808EA5E1BADBAC200D8E50E /* PGCurvesTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 6808EA581BADBAC200D8E50E /* PGCurvesTool.h */; };
 		6808EA5F1BADBAC200D8E50E /* PGCurvesTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6808EA591BADBAC200D8E50E /* PGCurvesTool.m */; };
 		6808EA601BADBAC200D8E50E /* PGFadeTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 6808EA5A1BADBAC200D8E50E /* PGFadeTool.h */; };
@@ -3447,6 +3448,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		380622366DC01CB91083CFF1 /* Pods-Telegraph.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telegraph.release.xcconfig"; path = "Pods/Target Support Files/Pods-Telegraph/Pods-Telegraph.release.xcconfig"; sourceTree = "<group>"; };
 		6808EA581BADBAC200D8E50E /* PGCurvesTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PGCurvesTool.h; path = thirdparty/PGPhotoEditor/PGCurvesTool.h; sourceTree = SOURCE_ROOT; };
 		6808EA591BADBAC200D8E50E /* PGCurvesTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PGCurvesTool.m; path = thirdparty/PGPhotoEditor/PGCurvesTool.m; sourceTree = SOURCE_ROOT; };
 		6808EA5A1BADBAC200D8E50E /* PGFadeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PGFadeTool.h; path = thirdparty/PGPhotoEditor/PGFadeTool.h; sourceTree = SOURCE_ROOT; };
@@ -4225,6 +4227,7 @@
 		68F6377B1BAF42AE004FC5DB /* TGChannelIntroController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGChannelIntroController.h; sourceTree = "<group>"; };
 		68F6377C1BAF42AE004FC5DB /* TGChannelIntroController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGChannelIntroController.m; sourceTree = "<group>"; };
 		68F6378D1BAF4876004FC5DB /* ChannelIntro@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ChannelIntro@2x.png"; path = "Resources/ChannelIntro@2x.png"; sourceTree = "<group>"; };
+		8832050D5480294D70DA093B /* libPods-Telegraph.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Telegraph.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9302CA2A171B581200C8559D /* VideoSliderBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "VideoSliderBackground@2x.png"; path = "Resources/VideoSliderBackground@2x.png"; sourceTree = "<group>"; };
 		9302CA2C171B581200C8559D /* VideoSliderForeground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "VideoSliderForeground@2x.png"; path = "Resources/VideoSliderForeground@2x.png"; sourceTree = "<group>"; };
 		9302CA2E171B581200C8559D /* VideoSliderHandle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "VideoSliderHandle@2x.png"; path = "Resources/VideoSliderHandle@2x.png"; sourceTree = "<group>"; };
@@ -5041,6 +5044,7 @@
 		93F6940516932F8700691086 /* TGBlockListRequestActor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TGBlockListRequestActor.mm; sourceTree = "<group>"; };
 		93FF24E416FE2431008F6AA8 /* TGLoginWelcomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLoginWelcomeController.h; sourceTree = "<group>"; };
 		93FF24E516FE2431008F6AA8 /* TGLoginWelcomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGLoginWelcomeController.m; sourceTree = "<group>"; };
+		BB15293659D7EA2BF9D48066 /* Pods-Telegraph.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Telegraph.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Telegraph/Pods-Telegraph.debug.xcconfig"; sourceTree = "<group>"; };
 		D00040A315BCD2EA00AF9EBF /* TGMessage+Telegraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGMessage+Telegraph.h"; sourceTree = "<group>"; };
 		D00040A415BCD2EA00AF9EBF /* TGMessage+Telegraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGMessage+Telegraph.m"; sourceTree = "<group>"; };
 		D00040AA15BCD53900AF9EBF /* TGImageInfo+Telegraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGImageInfo+Telegraph.h"; sourceTree = "<group>"; };
@@ -8126,6 +8130,7 @@
 				D08805B1156E8F3600311537 /* UIKit.framework in Frameworks */,
 				D08805B3156E8F3600311537 /* Foundation.framework in Frameworks */,
 				D08805B5156E8F3600311537 /* CoreGraphics.framework in Frameworks */,
+				1D19EF841B60720174F4A71F /* libPods-Telegraph.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -9555,6 +9560,15 @@
 				6811AE1D1A34B0AC009309A3 /* TGModernMediaListEditableItem.h */,
 			);
 			name = List;
+			sourceTree = "<group>";
+		};
+		895DCD2595F523954B06D77A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BB15293659D7EA2BF9D48066 /* Pods-Telegraph.debug.xcconfig */,
+				380622366DC01CB91083CFF1 /* Pods-Telegraph.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		930384151811754100CAC996 /* Collection Menu */ = {
@@ -13174,6 +13188,7 @@
 				68744C361BB1AA0600FE6542 /* Watch */,
 				D08805AF156E8F3600311537 /* Frameworks */,
 				D08805AD156E8F3600311537 /* Products */,
+				895DCD2595F523954B06D77A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -13237,6 +13252,7 @@
 				D08805B0156E8F3600311537 /* UIKit.framework */,
 				D08805B2156E8F3600311537 /* Foundation.framework */,
 				D08805B4156E8F3600311537 /* CoreGraphics.framework */,
+				8832050D5480294D70DA093B /* libPods-Telegraph.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -17467,6 +17483,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D08805C4156E8F3600311537 /* Build configuration list for PBXNativeTarget "Telegraph" */;
 			buildPhases = (
+				EAA87BFC515BD6F875BA3F91 /* Check Pods Manifest.lock */,
 				D08805A8156E8F3600311537 /* Sources */,
 				D08805A9156E8F3600311537 /* Frameworks */,
 				D08805AA156E8F3600311537 /* Resources */,
@@ -17474,6 +17491,8 @@
 				687751281A16D79400AC673F /* Headers */,
 				D061F3021A9290F80031BCBE /* Embed App Extensions */,
 				6879BEE41B43683E007C9800 /* Embed Watch Content */,
+				FADD753480159E2C31348A83 /* Embed Pods Frameworks */,
+				275ECB33959AC9A470FBB9F6 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -18376,6 +18395,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		275ECB33959AC9A470FBB9F6 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Telegraph/Pods-Telegraph-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		932E96A716946F6A00D6EC55 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -18388,6 +18422,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "#/usr/bin/perl -pe 's/(BUILD_NUMBER = )(\\d+)/$1.($2+1)/eg' -i buildnumber.xcconfig\nsh ${PROJECT_DIR}/tools/bump_build_number.sh \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\nsh ${PROJECT_DIR}/tools/sync_watch_version.sh \"${PROJECT_DIR}/${INFOPLIST_FILE}\" \"${PROJECT_DIR}/Watch/App/Info.plist\"\n";
+		};
+		EAA87BFC515BD6F875BA3F91 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FADD753480159E2C31348A83 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Telegraph/Pods-Telegraph-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -20652,7 +20716,6 @@
 /* Begin XCBuildConfiguration section */
 		68744C301BB1A9F800FE6542 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93EFBF0E173DC6DA00F7B89E /* Config.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -20673,7 +20736,7 @@
 				LIBRARY_SEARCH_PATHS = thirdparty/SSignalKit;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "";
+				PRODUCT_BUNDLE_IDENTIFIER = org.telegram.TelegramEnterprise.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
@@ -20685,7 +20748,6 @@
 		};
 		68744C311BB1A9F800FE6542 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93EFBF0E173DC6DA00F7B89E /* Config.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -20708,7 +20770,7 @@
 				LIBRARY_SEARCH_PATHS = thirdparty/SSignalKit;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "";
+				PRODUCT_BUNDLE_IDENTIFIER = org.telegram.TelegramEnterprise.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "d2dcafba-2f65-4b5b-803e-fa45d7726083";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "d2dcafba-2f65-4b5b-803e-fa45d7726083";
@@ -20721,7 +20783,6 @@
 		};
 		68744C341BB1A9F800FE6542 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93EFBF0E173DC6DA00F7B89E /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = WatchAppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -20740,7 +20801,7 @@
 				IBSC_MODULE = watchkitapp_Extension;
 				INFOPLIST_FILE = Watch/App/Info.plist;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "";
+				PRODUCT_BUNDLE_IDENTIFIER = org.telegram.TelegramEnterprise.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
@@ -20752,7 +20813,6 @@
 		};
 		68744C351BB1A9F800FE6542 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93EFBF0E173DC6DA00F7B89E /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = WatchAppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -20772,7 +20832,7 @@
 				IBSC_MODULE = watchkitapp_Extension;
 				INFOPLIST_FILE = Watch/App/Info.plist;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "";
+				PRODUCT_BUNDLE_IDENTIFIER = org.telegram.TelegramEnterprise.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "cec1b79c-0570-4cb8-8974-3454294e1eb9";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "cec1b79c-0570-4cb8-8974-3454294e1eb9";
@@ -20785,7 +20845,6 @@
 		};
 		D02601E41A55CA2400716290 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93EFBF0E173DC6DA00F7B89E /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -20822,6 +20881,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = org.telegram.TelegramEnterprise.Share;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -20831,7 +20891,6 @@
 		};
 		D02601E51A55CA2400716290 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93EFBF0E173DC6DA00F7B89E /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -20864,6 +20923,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = org.telegram.TelegramEnterprise.Share;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "7405c401-c1ea-4de1-965f-c4695051d431";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7405c401-c1ea-4de1-965f-c4695051d431";
@@ -20959,7 +21019,7 @@
 		};
 		D08805C5156E8F3600311537 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93EFBF0E173DC6DA00F7B89E /* Config.xcconfig */;
+			baseConfigurationReference = BB15293659D7EA2BF9D48066 /* Pods-Telegraph.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
@@ -20992,6 +21052,7 @@
 				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
 				GCC_WARN_UNUSED_PARAMETER = YES;
 				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
 					../MtProtoKit,
 					Telegraph/thirdparty/ogg,
 					thirdparty/libphonenumber.framework/Headers,
@@ -21023,6 +21084,7 @@
 					"-DSQLITE_ENABLE_FTS3",
 				);
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = org.telegram.TelegramEnterprise;
 				PRODUCT_NAME = Telegram;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -21037,7 +21099,7 @@
 		};
 		D08805C6156E8F3600311537 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93EFBF0E173DC6DA00F7B89E /* Config.xcconfig */;
+			baseConfigurationReference = 380622366DC01CB91083CFF1 /* Pods-Telegraph.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
@@ -21071,6 +21133,7 @@
 				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
 				GCC_WARN_UNUSED_PARAMETER = YES;
 				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
 					../MtProtoKit,
 					Telegraph/thirdparty/ogg,
 					thirdparty/libphonenumber.framework/Headers,
@@ -21101,6 +21164,7 @@
 					"-DSQLITE_ENABLE_FTS3",
 				);
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = org.telegram.TelegramEnterprise;
 				PRODUCT_NAME = Telegram;
 				PROVISIONING_PROFILE = "ce29274a-b180-40d3-a08a-e3a99e02624a";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "ce29274a-b180-40d3-a08a-e3a99e02624a";

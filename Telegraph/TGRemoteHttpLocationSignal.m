@@ -1,6 +1,6 @@
 #import "TGRemoteHttpLocationSignal.h"
 
-#import <thirdparty/AFNetworking/AFHTTPRequestOperation.h>
+#import <thirdparty/AFNetworking/MT_AFHTTPRequestOperation.h>
 
 @implementation TGRemoteHttpLocationSignal
 
@@ -9,27 +9,27 @@
     return [[SSignal alloc] initWithGenerator:^id<SDisposable>(SSubscriber *subscriber)
     {
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:httpLocation]];
-        AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+        MT_AFHTTPRequestOperation *operation = [[MT_AFHTTPRequestOperation alloc] initWithRequest:request];
         
         [operation setSuccessCallbackQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
         [operation setFailureCallbackQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
         
-        [operation setCompletionBlockWithSuccess:^(__unused AFHTTPRequestOperation *operation, __unused id responseObject)
+        [operation setCompletionBlockWithSuccess:^(__unused MT_AFHTTPRequestOperation *operation, __unused id responseObject)
         {
             [subscriber putNext:[operation responseData]];
             [subscriber putCompletion];
-        } failure:^(__unused AFHTTPRequestOperation *operation, __unused NSError *error)
+        } failure:^(__unused MT_AFHTTPRequestOperation *operation, __unused NSError *error)
         {
             [subscriber putError:nil];
         }];
         
         [operation start];
         
-        __weak AFHTTPRequestOperation *weakOperation = operation;
+        __weak MT_AFHTTPRequestOperation *weakOperation = operation;
         
         return [[SBlockDisposable alloc] initWithBlock:^
         {
-            __strong AFHTTPRequestOperation *strongOperation = weakOperation;
+            __strong MT_AFHTTPRequestOperation *strongOperation = weakOperation;
             [strongOperation cancel];
         }];
     }];

@@ -115,7 +115,7 @@ BOOL GDIsErrorPermanentlyFatal(NSError *error)
     return self.credential.userID;
 }
 
-- (void)enqueueHTTPRequestOperation:(AFHTTPRequestOperation *)operation
+- (void)enqueueHTTPRequestOperation:(MT_AFHTTPRequestOperation *)operation
 {
     if (!operation) return;
     
@@ -141,8 +141,8 @@ BOOL GDIsErrorPermanentlyFatal(NSError *error)
 
 - (NSOperation *)enqueueOperationWithURLRequest:(NSMutableURLRequest *)urlRequest
                          requiresAuthentication:(BOOL)requiresAuthentication
-                                        success:(void (^)(AFHTTPRequestOperation *, id))success
-                                        failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure
+                                        success:(void (^)(MT_AFHTTPRequestOperation *, id))success
+                                        failure:(void (^)(MT_AFHTTPRequestOperation *, NSError *))failure
 {
     return [self enqueueOperationWithURLRequest:urlRequest requiresAuthentication:requiresAuthentication
                                shouldRetryBlock:NULL
@@ -153,15 +153,15 @@ BOOL GDIsErrorPermanentlyFatal(NSError *error)
 - (NSOperation *)enqueueOperationWithURLRequest:(NSMutableURLRequest *)urlRequest
                          requiresAuthentication:(BOOL)requiresAuthentication
                                shouldRetryBlock:(BOOL (^)(NSError *error))shouldRetryBlock
-                                        success:(void (^)(AFHTTPRequestOperation *, id))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure
-                        configureOperationBlock:(void (^)(AFHTTPRequestOperation *))configureOperationBlock
+                                        success:(void (^)(MT_AFHTTPRequestOperation *, id))success failure:(void (^)(MT_AFHTTPRequestOperation *, NSError *))failure
+                        configureOperationBlock:(void (^)(MT_AFHTTPRequestOperation *))configureOperationBlock
 {
     GDHTTPOperation *parentOperation = [[GDHTTPOperation alloc] initWithClient:self urlRequest:urlRequest success:success failure:failure];
     parentOperation.shouldRetryAfterError = shouldRetryBlock;
     parentOperation.requiresAuthentication = requiresAuthentication;
     
     if (self.requestsIgnoreCacheByDefault) {
-        parentOperation.configureOperationBlock = ^(AFHTTPRequestOperation *requestOperation) {
+        parentOperation.configureOperationBlock = ^(MT_AFHTTPRequestOperation *requestOperation) {
             [requestOperation setCacheResponseBlock:^NSCachedURLResponse *(__unused NSURLConnection *connection, __unused NSCachedURLResponse *cachedResponse) {
                 return nil;
             }];

@@ -28,7 +28,7 @@ NSString * const GDHTTPStatusErrorDomain = @"GDHTTPStatusErrorDomain";
 @implementation GDHTTPOperation
 
 - (id)initWithClient:(GDHTTPClient *)client urlRequest:(NSMutableURLRequest *)urlRequest
-             success:(void (^)(AFHTTPRequestOperation *, id))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *))failure
+             success:(void (^)(MT_AFHTTPRequestOperation *, id))success failure:(void (^)(MT_AFHTTPRequestOperation *operation, NSError *))failure
 {
     if ((self = [super init])) {
         _client = client;
@@ -37,13 +37,13 @@ NSString * const GDHTTPStatusErrorDomain = @"GDHTTPStatusErrorDomain";
         __block typeof(self) strongSelf = self;
         dispatch_block_t cleanup = ^{[strongSelf finish]; strongSelf->_success = nil; strongSelf->_failure = nil; strongSelf->_shouldRetryAfterError = nil; strongSelf->_configureOperationBlock = nil; strongSelf = nil;};
         
-        _success = ^(AFHTTPRequestOperation *operation, id responseObject){
+        _success = ^(MT_AFHTTPRequestOperation *operation, id responseObject){
             dispatch_async(strongSelf.successCallbackQueue, ^{
                 if (success) success(operation, responseObject);
                 cleanup();
             });
         };
-        _failure = ^(AFHTTPRequestOperation *operation, NSError *error){
+        _failure = ^(MT_AFHTTPRequestOperation *operation, NSError *error){
             dispatch_async(strongSelf.failureCallbackQueue, ^{
                 if (failure) failure(operation, error);
                 cleanup();
@@ -100,10 +100,10 @@ NSString * const GDHTTPStatusErrorDomain = @"GDHTTPStatusErrorDomain";
         }
     }
     
-    AFHTTPRequestOperation *operation = nil;
+    MT_AFHTTPRequestOperation *operation = nil;
     operation = [client HTTPRequestOperationWithRequest:self.urlRequest
                                                 success:self.success
-                                              failure:^(AFHTTPRequestOperation *operation, NSError *error)
+                                              failure:^(MT_AFHTTPRequestOperation *operation, NSError *error)
     {
         id errorDetails = nil;
         if ([operation isKindOfClass:[AFJSONRequestOperation class]]) {
