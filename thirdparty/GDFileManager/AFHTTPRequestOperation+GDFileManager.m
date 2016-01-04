@@ -38,17 +38,17 @@ static NSString * cat_AFStringFromIndexSet(NSIndexSet *indexSet) {
     return string;
 }
 
-@interface AFURLConnectionOperation () <NSURLConnectionDataDelegate>
+@interface MT_AFURLConnectionOperation () <NSURLConnectionDataDelegate>
 
 @end
 
-@interface AFHTTPRequestOperation (Private)
+@interface MT_AFHTTPRequestOperation (Private)
 
 @property (readwrite, nonatomic, retain) NSError *HTTPError;
 
 @end
 
-@implementation AFHTTPRequestOperation (GDFileManager)
+@implementation MT_AFHTTPRequestOperation (GDFileManager)
 
 -  (NSError *)error {
     if (self.response && !self.HTTPError)

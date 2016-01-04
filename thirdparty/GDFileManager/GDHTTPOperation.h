@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@class GDHTTPClient, AFHTTPRequestOperation;
+@class GDHTTPClient, MT_AFHTTPRequestOperation;
 
 #import "GDParentOperation.h"
+#import "thirdparty/AFNetworking/MT_AFHTTPRequestOperation.h"
 
 extern NSString * const GDHTTPStatusErrorDomain;
 
@@ -21,15 +22,15 @@ extern NSString * const GDHTTPStatusErrorDomain;
 @property (nonatomic) BOOL requiresAuthentication;
 @property (nonatomic) BOOL retryOnStandardErrors;
 
-@property (nonatomic, strong, readonly) void (^success)(AFHTTPRequestOperation *requestOperation, id responseObject);
-@property (nonatomic, strong, readonly) void (^failure)(AFHTTPRequestOperation *requestOperation, NSError *error);
+@property (nonatomic, strong, readonly) void (^success)(MT_AFHTTPRequestOperation *requestOperation, id responseObject);
+@property (nonatomic, strong, readonly) void (^failure)(MT_AFHTTPRequestOperation *requestOperation, NSError *error);
 
 @property (nonatomic, strong) BOOL (^shouldRetryAfterError)(NSError *error);
-@property (nonatomic, strong) void (^configureOperationBlock)(AFHTTPRequestOperation *requestOperation);
+@property (nonatomic, strong) void (^configureOperationBlock)(MT_AFHTTPRequestOperation *requestOperation);
 
 - (id)initWithClient:(GDHTTPClient *)client urlRequest:(NSMutableURLRequest *)urlRequest
-             success:(void (^)(AFHTTPRequestOperation *requestOperation, id responseObject))success
-             failure:(void (^)(AFHTTPRequestOperation *requestOperation, NSError *error))failure;
+             success:(void (^)(MT_AFHTTPRequestOperation *requestOperation, id responseObject))success
+             failure:(void (^)(MT_AFHTTPRequestOperation *requestOperation, NSError *error))failure;
 
 
 @end

@@ -21,6 +21,8 @@
 
 #import "TGHolderSet.h"
 
+#import <AFNetworking.h>
+
 extern CFAbsoluteTime applicationStartupTimestamp;
 extern CFAbsoluteTime mainLaunchTimestamp;
 

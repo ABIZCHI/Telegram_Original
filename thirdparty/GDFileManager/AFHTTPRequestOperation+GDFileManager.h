@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Graham Dennis. All rights reserved.
 //
 
-#import "thirdparty/AFNetworking/AFHTTPRequestOperation.h"
+#import "thirdparty/AFNetworking/MT_AFHTTPRequestOperation.h"
 
-@interface AFHTTPRequestOperation (GDFileManager)
+@interface MT_AFHTTPRequestOperation (GDFileManager)
 
 @end

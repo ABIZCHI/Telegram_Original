@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import <thirdparty/AFNetworking/AFHTTPRequestOperation.h>
+#import <thirdparty/AFNetworking/MT_AFHTTPRequestOperation.h>
 
 typedef void (^TGRawHttpRequestCompletionBlock)(NSData *response);
 
@@ -18,7 +18,7 @@ typedef void (^TGRawHttpRequestCompletionBlock)(NSData *response);
 @property (nonatomic, strong) NSString *url;
 @property (nonatomic, strong) NSArray *acceptCodes;
 @property (nonatomic, strong) NSString *httpAuth;
-@property (nonatomic, strong) AFHTTPRequestOperation *operation;
+@property (nonatomic, strong) MT_AFHTTPRequestOperation *operation;
 @property (nonatomic, copy) TGRawHttpRequestCompletionBlock completionBlock;
 @property (nonatomic, copy) void (^progressBlock)(float progress);
 @property (nonatomic, assign) NSInteger expectedFileSize;
