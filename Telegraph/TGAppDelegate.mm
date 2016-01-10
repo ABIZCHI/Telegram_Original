@@ -273,6 +273,8 @@ static unsigned int overrideIndexAbove(__unused id self, __unused SEL _cmd)
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [super application:application didFinishLaunchingWithOptions:launchOptions];
+    
     TGLogSetEnabled([self enableLogging]);
     
     TGLog(@"didFinishLaunchingWithOptions state: %@, %d", [UIApplication sharedApplication], [UIApplication sharedApplication].applicationState);
@@ -992,6 +994,8 @@ static unsigned int overrideIndexAbove(__unused id self, __unused SEL _cmd)
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
+    [super applicationDidEnterBackground:application];
+    
 #if defined(DEBUG) || defined(INTERNAL_RELEASE)
     TGLogSynchronize();
 #endif
@@ -1123,6 +1127,7 @@ static unsigned int overrideIndexAbove(__unused id self, __unused SEL _cmd)
 - (void)applicationDidBecomeActive:(UIApplication *)__unused application
 {
     //[ActionStageInstance() requestActor:@"/tg/locationServicesState/(dispatch)" options:[[NSDictionary alloc] initWithObjectsAndKeys:[[NSNumber alloc] initWithBool:true], @"dispatch", nil] watcher:TGTelegraphInstance];
+    [super applicationDidBecomeActive:application];
     
     if (_didBecomeInactive)
     {
@@ -1144,6 +1149,8 @@ static unsigned int overrideIndexAbove(__unused id self, __unused SEL _cmd)
 
 - (void)applicationWillTerminate:(UIApplication *)__unused application
 {
+    [super applicationWillTerminate:application];
+    
     TGLogSynchronize();
 }
 
@@ -1971,6 +1978,8 @@ static unsigned int overrideIndexAbove(__unused id self, __unused SEL _cmd)
 
 - (void)application:(UIApplication*)__unused application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
 {
+    [super application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+    
     _tokenAlreadyRequested = true;
     
     NSString *token = [[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
@@ -1983,6 +1992,8 @@ static unsigned int overrideIndexAbove(__unused id self, __unused SEL _cmd)
 
 - (void)application:(UIApplication*)__unused application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
 {
+    [super application:application didFailToRegisterForRemoteNotificationsWithError:error];
+    
     _tokenAlreadyRequested = true;
     
 	TGLog(@"Failed register for remote notifications: %@", error);
@@ -2007,6 +2018,8 @@ static unsigned int overrideIndexAbove(__unused id self, __unused SEL _cmd)
 
 - (void)application:(UIApplication *)__unused application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
+    [super application:application didReceiveRemoteNotification:userInfo];
+    
 #ifdef DEBUG
     TGLog(@"remoteNotification: %@", userInfo);
 #endif
@@ -2021,6 +2034,8 @@ static unsigned int overrideIndexAbove(__unused id self, __unused SEL _cmd)
 
 - (void)application:(UIApplication *)__unused application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
+    [super application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
+    
     [self processPossibleConfigUpdateNotification:userInfo];
     
     if ([application applicationState] != UIApplicationStateActive)
@@ -2206,9 +2221,16 @@ static unsigned int overrideIndexAbove(__unused id self, __unused SEL _cmd)
 
 - (BOOL)application:(UIApplication *)__unused application openURL:(NSURL *)url sourceApplication:(NSString *)__unused sourceApplication annotation:(id)__unused annotation
 {
+    [super application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
+    
     [self handleOpenDocument:url animated:false];
     
     return true;
+}
+
+- (void)application:(UIApplication *)application
+performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    [super application:application performFetchWithCompletionHandler:completionHandler];
 }
 
 - (void)resetControllerStack
