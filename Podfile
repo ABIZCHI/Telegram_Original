@@ -35,3 +35,29 @@ target 'watchkitapp Extension' do
 
 end
 
+post_install do |installer|
+	def remove_xcode_6_module_import_for_objcPlusPlus
+		# GG
+        workDir = Dir.pwd
+        file_names = ["#{workDir}/Pods/Google/Headers/GGLCore/Public/GGLConfiguration.h", "#{workDir}/Pods/Google/Headers/GGLCore/Public/GGLContext.h", "#{workDir}/Pods/GGLInstanceID/Headers/Public/GGLInstanceID.h"]
+        
+        file_names.each do |file_name|
+            File.open("config.tmp", "w") do |io|
+                io << File.read(file_name).gsub("@import Foundation;", "#import <Foundation/Foundation.h>")
+            end
+            FileUtils.mv("config.tmp", file_name)
+        end
+
+        #SSKeyChain
+        file_names = ["#{workDir}/Pods/SSKeychain/SSKeychain/SSKeychainQuery.h","#{workDir}/Pods/SSKeychain/SSKeychain/SSKeychain.h"]
+        file_names.each do |file_name|
+            File.open("config.tmp", "w") do |io|
+                io << File.read(file_name).gsub("@import Foundation;", "#import <Foundation/Foundation.h>").gsub("@import Security;", "#import <Security/Security.h>")
+            end
+            FileUtils.mv("config.tmp", file_name)
+        end
+    end
+
+    puts "Adapting GCM library for Objective-c++ ..."
+    remove_xcode_6_module_import_for_objcPlusPlus
+end

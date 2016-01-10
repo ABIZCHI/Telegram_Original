@@ -10,7 +10,7 @@
 
 #import "GDCredentialManager_Private.h"
 
-#import "SSKeychain.h"
+#import <SSKeychain/SSKeychain.h>
 
 static NSString * const GDKeychainCredentialManagerKeychainKey = @"GDKeychainCredentialManagerKeychainKey";
 
