@@ -48,6 +48,7 @@
 #import "TGImageDownloadActor.h"
 
 #import "TGLegacyMediaPickerTipView.h"
+#import "TGEditablePhotoItem.h"
 
 @interface TGModernMediaPickerController () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
 {
@@ -100,10 +101,10 @@
     
     TGMediaEditingContext *_editingContext;
     
-    id<TGMediaEditAdjustments> (^_fetchAdjustments)(TGMediaPickerAsset *);
-    NSString *(^_fetchCaption)(TGMediaPickerAsset *);
-    UIImage *(^_fetchThumbnailImage)(TGMediaPickerAsset *);
-    UIImage *(^_fetchScreenImage)(TGMediaPickerAsset *);
+    id<TGMediaEditAdjustments> (^_fetchAdjustments)(id<TGEditablePhotoItem>);
+    NSString *(^_fetchCaption)(id<TGEditablePhotoItem>);
+    UIImage *(^_fetchThumbnailImage)(id<TGEditablePhotoItem>);
+    UIImage *(^_fetchScreenImage)(id<TGEditablePhotoItem>);
     
     TGVideoConverter *_videoConverter;
     

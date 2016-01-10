@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D19EF841B60720174F4A71F /* libPods-Telegraph.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8832050D5480294D70DA093B /* libPods-Telegraph.a */; };
 		6808EA5E1BADBAC200D8E50E /* PGCurvesTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 6808EA581BADBAC200D8E50E /* PGCurvesTool.h */; };
 		6808EA5F1BADBAC200D8E50E /* PGCurvesTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6808EA591BADBAC200D8E50E /* PGCurvesTool.m */; };
 		6808EA601BADBAC200D8E50E /* PGFadeTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 6808EA5A1BADBAC200D8E50E /* PGFadeTool.h */; };
@@ -8130,7 +8129,6 @@
 				D08805B1156E8F3600311537 /* UIKit.framework in Frameworks */,
 				D08805B3156E8F3600311537 /* Foundation.framework in Frameworks */,
 				D08805B5156E8F3600311537 /* CoreGraphics.framework in Frameworks */,
-				1D19EF841B60720174F4A71F /* libPods-Telegraph.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

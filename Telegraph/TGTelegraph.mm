@@ -1828,8 +1828,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     getAppPrefs.api_id = [_apiId intValue];
     getAppPrefs.api_hash = _apiHash;
     
-    return [[TGTelegramNetworking instance] performRpc:getAppPrefs completionBlock:^(TLhelp_AppPrefs *result, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:getAppPrefs completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLhelp_AppPrefs *result = (TLhelp_AppPrefs *)response;
         if (error == nil)
         {
             [actor preferencesRequestSuccess:result];
@@ -1991,11 +1992,12 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     
     getFile.location = location;
     
-    return [[TGTelegramNetworking instance] performRpc:getFile completionBlock:^(TLupload_File *response, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:getFile completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLupload_File *file = (TLupload_File *)response;
         if (error == nil)
         {
-            [actor fileDownloadSuccess:volumeId fileId:fileId secret:secret data:response.bytes];
+            [actor fileDownloadSuccess:volumeId fileId:fileId secret:secret data:file.bytes];
         }
         else
         {
@@ -2015,8 +2017,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     getFile.offset = offset;
     getFile.limit = length;
     
-    return [[TGTelegramNetworking instance] performRpc:getFile completionBlock:^(TLupload_File *result, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:getFile completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLupload_File *result = (TLupload_File *)response;
         if (error == nil)
         {
             [actor filePartDownloadSuccess:location offset:offset length:length data:result.bytes];
@@ -2429,8 +2432,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     TLRPCusers_getFullUser$users_getFullUser *getFullUser = [[TLRPCusers_getFullUser$users_getFullUser alloc] init];
     getFullUser.n_id = [self createInputUserForUid:uid];
     
-    return [[TGTelegramNetworking instance] performRpc:getFullUser completionBlock:^(TLUserFull *result, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:getFullUser completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLUserFull *result = (TLUserFull *)response;
         if (error == nil)
         {
             [actor extendedUserDataRequestSuccess:result];
@@ -2508,8 +2512,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     getDialogs.offset_peer = offset.peerId == 0 ? [[TLInputPeer$inputPeerEmpty alloc] init] : [self createInputPeerForConversation:offset.peerId accessHash:offset.accessHash];
     getDialogs.limit = limit;
     
-    return [[TGTelegramNetworking instance] performRpc:getDialogs completionBlock:^(TLmessages_Dialogs *dialogs, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:getDialogs completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLmessages_Dialogs *dialogs = (TLmessages_Dialogs *)response;
         if (error == nil)
         {
             [requestBuilder dialogListRequestSuccess:dialogs];
@@ -2547,8 +2552,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     
     importContacts.contacts = contactsArray;
     
-    return [[TGTelegramNetworking instance] performRpc:importContacts completionBlock:^(TLcontacts_ImportedContacts *importedContacts, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:importContacts completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLcontacts_ImportedContacts *importedContacts = (TLcontacts_ImportedContacts *)response;
         if (error == nil)
         {
             NSMutableString *debugImportedString = [[NSMutableString alloc] init];
@@ -2586,8 +2592,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     TLRPCcontacts_getContacts$contacts_getContacts *getContacts = [[TLRPCcontacts_getContacts$contacts_getContacts alloc] init];
     getContacts.n_hash = hash;
     
-    return [[TGTelegramNetworking instance] performRpc:getContacts completionBlock:^(TLcontacts_Contacts *contacts, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:getContacts completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLcontacts_Contacts *contacts = (TLcontacts_Contacts *)response;
         if (error == nil)
         {
             [actor contactListRequestSuccess:contacts];
@@ -2621,8 +2628,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     TLRPCcontacts_getSuggested$contacts_getSuggested *getSuggested = [[TLRPCcontacts_getSuggested$contacts_getSuggested alloc] init];
     getSuggested.limit = limit;
     
-    return [[TGTelegramNetworking instance] performRpc:getSuggested completionBlock:^(TLcontacts_Suggested *result, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:getSuggested completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLcontacts_Suggested *result = (TLcontacts_Suggested *)response;
         if (error == nil)
         {
             [actor suggestedContactsRequestSuccess:result];
@@ -2645,8 +2653,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     getLocated.limit = 100;
     getLocated.hidden = !discloseLocation;
     
-    return [[TGTelegramNetworking instance] performRpc:getLocated completionBlock:^(TLcontacts_Located *result, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:getLocated completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLcontacts_Located *result = (TLcontacts_Located *)response;
         if (error == nil)
         {
             [actor locateSuccess:result];
@@ -2664,8 +2673,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     search.q = query;
     search.limit = limit;
     
-    return [[TGTelegramNetworking instance] performRpc:search completionBlock:^(TLcontacts_Found *result, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:search completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLcontacts_Found *result = (TLcontacts_Found *)response;
         if (error == nil)
         {
             [actor searchSuccess:result];
@@ -2683,8 +2693,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     search.q = query;
     search.limit = limit;
     
-    return [[TGTelegramNetworking instance] performRpc:search completionBlock:^(TLcontacts_Found *result, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:search completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLcontacts_Found *result = (TLcontacts_Found *)response;
         if (error == nil)
         {
             completion(result);
@@ -2701,8 +2712,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     TLRPCcontacts_sendRequest$contacts_sendRequest *sendRequest = [[TLRPCcontacts_sendRequest$contacts_sendRequest alloc] init];
     sendRequest.n_id = [self createInputUserForUid:uid];
     
-    return [[TGTelegramNetworking instance] performRpc:sendRequest completionBlock:^(TLcontacts_SentLink *result, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:sendRequest completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLcontacts_SentLink *result = (TLcontacts_SentLink *)response;
         if (error == nil)
         {
             [actor sendRequestSuccess:result];
@@ -2719,8 +2731,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     TLRPCcontacts_acceptRequest$contacts_acceptRequest *acceptRequest = [[TLRPCcontacts_acceptRequest$contacts_acceptRequest alloc] init];
     acceptRequest.n_id = [self createInputUserForUid:uid];
     
-    return [[TGTelegramNetworking instance] performRpc:acceptRequest completionBlock:^(TLcontacts_Link *result, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:acceptRequest completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLcontacts_Link *result = (TLcontacts_Link *)response;
         if (error == nil)
         {
             [actor acceptRequestSuccess:result];
@@ -2737,8 +2750,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     TLRPCcontacts_declineRequest$contacts_declineRequest *declineRequest = [[TLRPCcontacts_declineRequest$contacts_declineRequest alloc] init];
     declineRequest.n_id = [self createInputUserForUid:uid];
     
-    return [[TGTelegramNetworking instance] performRpc:declineRequest completionBlock:^(TLcontacts_Link *result, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:declineRequest completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLcontacts_Link *result = (TLcontacts_Link *)response;
         if (error == nil)
         {
             [actor declineRequestSuccess:result];
@@ -2858,8 +2872,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     getHistory.add_offset = offset;
     getHistory.limit = limit;
     
-    return [[TGTelegramNetworking instance] performRpc:getHistory completionBlock:^(TLmessages_Messages *messages, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:getHistory completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLmessages_Messages *messages = (TLmessages_Messages *)response;
         if (error == nil)
         {
             [actor conversationHistoryRequestSuccess:messages];
@@ -2883,8 +2898,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     search.limit = limit;
     search.filter = [[TLMessagesFilter$inputMessagesFilterPhotoVideo alloc] init];
     
-    return [[TGTelegramNetworking instance] performRpc:search completionBlock:^(TLmessages_Messages *messages, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:search completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLmessages_Messages *messages = (TLmessages_Messages *)response;
         if (error == nil)
         {
             [actor mediaHistoryRequestSuccess:messages];
@@ -3075,8 +3091,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
         }
         sendBroadcast.random_id = randomIds;
         
-        return [[TGTelegramNetworking instance] performRpc:sendBroadcast completionBlock:^(TLUpdates *updates, __unused int64_t responseTime, MTRpcError *error)
+        return [[TGTelegramNetworking instance] performRpc:sendBroadcast completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
         {
+            TLUpdates *updates = (TLUpdates *)response;
             if (error == nil)
             {
                 [actor sendBroadcastSuccess:updates];
@@ -3103,8 +3120,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     }
     sendBroadcast.random_id = randomIds;
     
-    return [[TGTelegramNetworking instance] performRpc:sendBroadcast completionBlock:^(TLUpdates *updates, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:sendBroadcast completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLUpdates *updates = (TLUpdates *)response;
         if (error == nil)
         {
             [actor sendBroadcastSuccess:updates];
@@ -3132,8 +3150,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
         }
     }
     
-    return [[TGTelegramNetworking instance] performRpc:forwardMessages completionBlock:^(TLUpdates *updates, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:forwardMessages completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLUpdates *updates = (TLUpdates *)response;
         if (error == nil)
         {
             [actor conversationSendMessageRequestSuccess:updates];
@@ -3152,8 +3171,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     readHistory.max_id = maxMid;
     readHistory.offset = offset;
     
-    return [[TGTelegramNetworking instance] performRpc:readHistory completionBlock:^(TLmessages_AffectedMessages *result, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:readHistory completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLmessages_AffectedMessages *result = (TLmessages_AffectedMessages *)response;
         if (error == nil)
         {
             [actor readMessagesSuccess:result];
@@ -3212,8 +3232,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
         editTitle.channel = inputChannel;
         editTitle.title = title;
         
-        return [[TGTelegramNetworking instance] performRpc:editTitle completionBlock:^(TLUpdates *updates, __unused int64_t responseTime, MTRpcError *error)
+        return [[TGTelegramNetworking instance] performRpc:editTitle completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
         {
+            TLUpdates *updates = (TLUpdates *)response;
             if (error == nil)
             {
                 [requestActor conversationTitleChangeSuccess:updates];
@@ -3228,8 +3249,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
         editChatTitle.chat_id = TGGroupIdFromPeerId(conversationId);
         editChatTitle.title = title;
         
-        return [[TGTelegramNetworking instance] performRpc:editChatTitle completionBlock:^(TLUpdates *updates, __unused int64_t responseTime, MTRpcError *error)
+        return [[TGTelegramNetworking instance] performRpc:editChatTitle completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
         {
+            TLUpdates *updates = (TLUpdates *)response;
             if (error == nil)
             {
                 [requestActor conversationTitleChangeSuccess:updates];
@@ -3252,8 +3274,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
         editPhoto.channel = inputChannel;
         editPhoto.photo = photo;
         
-        return [[TGTelegramNetworking instance] performRpc:editPhoto completionBlock:^(TLUpdates *updates, __unused int64_t responseTime, MTRpcError *error)
+        return [[TGTelegramNetworking instance] performRpc:editPhoto completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
         {
+            TLUpdates *updates = (TLUpdates *)response;
             if (error == nil)
             {
                 [actor conversationUpdateAvatarSuccess:updates];
@@ -3268,8 +3291,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
         editChatPhoto.chat_id = TGGroupIdFromPeerId(conversationId);
         editChatPhoto.photo = photo;
         
-        return [[TGTelegramNetworking instance] performRpc:editChatPhoto completionBlock:^(TLUpdates *updates, __unused int64_t responseTime, MTRpcError *error)
+        return [[TGTelegramNetworking instance] performRpc:editChatPhoto completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
         {
+            TLUpdates *updates = (TLUpdates *)response;
             if (error == nil)
             {
                 [actor conversationUpdateAvatarSuccess:updates];
@@ -3295,8 +3319,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     }
     createChat.users = inputUsers;
     
-    return [[TGTelegramNetworking instance] performRpc:createChat completionBlock:^(TLUpdates *updates, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:createChat completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLUpdates *updates = (TLUpdates *)response;
         if (error == nil)
         {
             [actor createChatSuccess:updates];
@@ -3316,8 +3341,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     addChatUser.user_id = [self createInputUserForUid:uid];
     addChatUser.fwd_limit = 100;
     
-    return [[TGTelegramNetworking instance] performRpc:addChatUser completionBlock:^(TLUpdates *updates, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:addChatUser completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLUpdates *updates = (TLUpdates *)response;
         if (error == nil)
         {
             [actor addMemberSuccess:updates];
@@ -3346,8 +3372,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     
     deleteChatUser.user_id = [self createInputUserForUid:uid];
     
-    return [[TGTelegramNetworking instance] performRpc:deleteChatUser completionBlock:^(TLUpdates *updates, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:deleteChatUser completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLUpdates *updates = (TLUpdates *)response;
         if (error == nil)
         {
             [actor deleteMemberSuccess:updates];
@@ -3364,8 +3391,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     TLRPCmessages_deleteMessages$messages_deleteMessages *deleteMessages = [[TLRPCmessages_deleteMessages$messages_deleteMessages alloc] init];
     deleteMessages.n_id = messageIds;
     
-    return [[TGTelegramNetworking instance] performRpc:deleteMessages completionBlock:^(TLmessages_AffectedMessages *result, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:deleteMessages completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLmessages_AffectedMessages *result = (TLmessages_AffectedMessages *)response;
         if (error == nil)
         {
             [actor deleteMessagesSuccess:result];
@@ -3382,8 +3410,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     TLRPCmessages_deleteHistory$messages_deleteHistory *deleteHistory = [[TLRPCmessages_deleteHistory$messages_deleteHistory alloc] init];
     deleteHistory.peer = [self createInputPeerForConversation:conversationId accessHash:accessHash];
     
-    return [[TGTelegramNetworking instance] performRpc:deleteHistory completionBlock:^(TLmessages_AffectedHistory *result, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:deleteHistory completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLmessages_AffectedHistory *result = (TLmessages_AffectedHistory *)response;
         if (error == nil)
         {
             [actor deleteHistorySuccess:result];
@@ -3404,8 +3433,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     getWall.limit = limit;
     getWall.max_id = (int32_t)maxItemId;
     
-    return [[TGTelegramNetworking instance] performRpc:getWall completionBlock:^(TLphotos_Photos *photos, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:getWall completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLphotos_Photos *photos = (TLphotos_Photos *)response;
         if (error == nil)
         {
             [actor timelineHistoryRequestSuccess:photos];
@@ -3438,8 +3468,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     uploadProfilePhoto.caption = @"";
     uploadProfilePhoto.crop = [[TLInputPhotoCrop$inputPhotoCropAuto alloc] init];
     
-    return [[TGTelegramNetworking instance] performRpc:uploadProfilePhoto completionBlock:^(TLphotos_Photo *result, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:uploadProfilePhoto completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLphotos_Photo *result = (TLphotos_Photo *)response;
         if (error == nil)
         {
             [actor timelineUploadPhotoSuccess:result];
@@ -3487,8 +3518,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     updateProfilePhoto.n_id = inputPhoto;
     updateProfilePhoto.crop = [[TLInputPhotoCrop$inputPhotoCropAuto alloc] init];
     
-    return [[TGTelegramNetworking instance] performRpc:updateProfilePhoto completionBlock:^(TLUserProfilePhoto *result, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:updateProfilePhoto completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLUserProfilePhoto *result = (TLUserProfilePhoto *)response;
         if (error == nil)
         {
             [actor assignProfilePhotoRequestSuccess:result];
@@ -3550,8 +3582,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
         getPeerNotifySettings.peer = inputPeer;
     }
     
-    return [[TGTelegramNetworking instance] performRpc:getPeerNotifySettings completionBlock:^(TLPeerNotifySettings *result, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:getPeerNotifySettings completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLPeerNotifySettings *result = (TLPeerNotifySettings *)response;
         if (error == nil)
         {
             [actor peerNotifySettingsRequestSuccess:result];
@@ -3568,8 +3601,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     TLRPCmessages_getFullChat$messages_getFullChat *getFullChat = [[TLRPCmessages_getFullChat$messages_getFullChat alloc] init];
     getFullChat.chat_id = TGGroupIdFromPeerId(conversationId);
     
-    return [[TGTelegramNetworking instance] performRpc:getFullChat completionBlock:^(TLmessages_ChatFull *chatFull, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:getFullChat completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLmessages_ChatFull *chatFull = (TLmessages_ChatFull *)response;
         if (error == nil)
         {
             [actor chatFullRequestSuccess:chatFull];
@@ -3590,8 +3624,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     getPhotos.limit = 80;
     getPhotos.max_id = 0;
     
-    return [[TGTelegramNetworking instance] performRpc:getPhotos completionBlock:^(TLphotos_Photos *result, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:getPhotos completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLphotos_Photos *result = (TLphotos_Photos *)response;
         if (error == nil)
         {
             [actor photoListRequestSuccess:result];
@@ -3643,8 +3678,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     
     updatePeerNotifySettings.settings = peerNotifySettings;
     
-    return [[TGTelegramNetworking instance] performRpc:updatePeerNotifySettings completionBlock:^(TLPeerNotifySettings *result, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:updatePeerNotifySettings completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLPeerNotifySettings *result = (TLPeerNotifySettings *)response;
         if (error == nil)
         {
             [actor changePeerNotificationSettingsSuccess:result];
@@ -3679,8 +3715,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     getBlocked.offset = 0;
     getBlocked.limit = 10000;
     
-    return [[TGTelegramNetworking instance] performRpc:getBlocked completionBlock:^(TLcontacts_Blocked *result, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:getBlocked completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLcontacts_Blocked *result = (TLcontacts_Blocked *)response;
         if (error == nil)
         {
             [actor blockListRequestSuccess:result];
@@ -3728,8 +3765,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     updateProfile.first_name = firstName;
     updateProfile.last_name = lastName;
     
-    return [[TGTelegramNetworking instance] performRpc:updateProfile completionBlock:^(TLUser *result, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:updateProfile completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLUser *result = (TLUser *)response;
         if (error == nil)
         {
             [actor changeNameSuccess:result];
@@ -3882,8 +3920,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
         sendEncrypted.random_id = randomId;
         sendEncrypted.data = data;
         
-        return [[TGTelegramNetworking instance] performRpc:sendEncrypted completionBlock:^(TLmessages_SentEncryptedMessage *result, __unused int64_t responseTime, MTRpcError *error)
+        return [[TGTelegramNetworking instance] performRpc:sendEncrypted completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
         {
+            TLmessages_SentEncryptedMessage *result = (TLmessages_SentEncryptedMessage *)response;
             if (error == nil)
             {
                 [actor sendEncryptedMessageSuccess:result.date encryptedFile:nil];
@@ -3908,8 +3947,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
         
         sendEncrypted.file = encryptedFile;
         
-        return [[TGTelegramNetworking instance] performRpc:sendEncrypted completionBlock:^(TLmessages_SentEncryptedMessage *result, __unused int64_t responseTime, MTRpcError *error)
+        return [[TGTelegramNetworking instance] performRpc:sendEncrypted completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
         {
+            TLmessages_SentEncryptedMessage *result = (TLmessages_SentEncryptedMessage *)response;
             if (error == nil)
             {
                 [actor sendEncryptedMessageSuccess:result.date encryptedFile:[result isKindOfClass:[TLmessages_SentEncryptedMessage$messages_sentEncryptedFile class]] ? [(TLmessages_SentEncryptedMessage$messages_sentEncryptedFile *)result file] : nil];
@@ -3934,8 +3974,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     sendEncryptedService.random_id = randomId;
     sendEncryptedService.data = data;
     
-    return [[TGTelegramNetworking instance] performRpc:sendEncryptedService completionBlock:^(TLmessages_SentEncryptedMessage *result, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:sendEncryptedService completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLmessages_SentEncryptedMessage *result = (TLmessages_SentEncryptedMessage *)response;
         if (error == nil)
         {
             [actor sendEncryptedServiceMessageSuccess:result.date];
@@ -4010,8 +4051,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
     TLRPCmessages_getMessages$messages_getMessages *getMessages = [[TLRPCmessages_getMessages$messages_getMessages alloc] init];
     getMessages.n_id = mids;
     
-    return [[TGTelegramNetworking instance] performRpc:getMessages completionBlock:^(TLmessages_Messages *result, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:getMessages completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLmessages_Messages *result = (TLmessages_Messages *)response;
         if (error == nil)
             [actor messagesRequestSuccess:result];
         else
@@ -4022,8 +4064,9 @@ typedef std::map<int, std::pair<TGUser *, int > >::iterator UserDataToDispatchIt
 - (id)doRequestPrefferredSuportPeer:(void (^)(TLhelp_Support *supportDesc))completion fail:(void (^)())fail
 {
     TLRPChelp_getSupport$help_getSupport *getSupport = [[TLRPChelp_getSupport$help_getSupport alloc] init];
-    return [[TGTelegramNetworking instance] performRpc:getSupport completionBlock:^(TLhelp_Support *result, __unused int64_t responseTime, MTRpcError *error)
+    return [[TGTelegramNetworking instance] performRpc:getSupport completionBlock:^(id<TLObject> response, __unused int64_t responseTime, MTRpcError *error)
     {
+        TLhelp_Support *result = (TLhelp_Support *)response;
         if (error == nil)
         {
             if (completion != nil)
