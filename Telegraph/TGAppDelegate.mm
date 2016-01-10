@@ -381,7 +381,7 @@ static unsigned int overrideIndexAbove(__unused id self, __unused SEL _cmd)
         {
             restrictPasscodeWindow = true;
         }
-        return [_window.rootViewController shouldAutorotate] && !restrictPasscodeWindow;
+        return [self.window.rootViewController shouldAutorotate] && !restrictPasscodeWindow;
     }];
     
     freedomInit();
@@ -427,7 +427,7 @@ static unsigned int overrideIndexAbove(__unused id self, __unused SEL _cmd)
         //[[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake([TGViewController useExperimentalRTL] ? -18.0f : 0.0f, 0.0f) forBarMetrics:UIBarMetricsDefault];
     }
     
-    _window = [[TGApplicationMainWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window = [[TGApplicationMainWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     [(TGApplication *)application forceSetStatusBarStyle:UIStatusBarStyleBlackTranslucent animated:false];
     
@@ -994,7 +994,7 @@ static unsigned int overrideIndexAbove(__unused id self, __unused SEL _cmd)
         
         if (_passcodeWindow != nil && [self isManuallyLocked])
         {
-            [_window endEditing:true];
+            [self.window endEditing:true];
             
             TGPasscodeEntryController *controller = (TGPasscodeEntryController *)(((TGNavigationController *)_passcodeWindow.rootViewController).topViewController);
             [controller refreshTouchId];
@@ -1183,7 +1183,7 @@ static unsigned int overrideIndexAbove(__unused id self, __unused SEL _cmd)
     _contentWindow.rootViewController = nil;
     if (_contentWindow.isKeyWindow)
         [_contentWindow resignKeyWindow];
-    [_window makeKeyWindow];
+    [self.window makeKeyWindow];
     _contentWindow = nil;
     
     UIViewController *topViewController = TGAppDelegateInstance.rootController.viewControllers.lastObject;
@@ -1193,8 +1193,8 @@ static unsigned int overrideIndexAbove(__unused id self, __unused SEL _cmd)
     
     dispatch_async(dispatch_get_main_queue(), ^
     {
-        if (!_window.isKeyWindow)
-            [_window makeKeyWindow];
+        if (!self.window.isKeyWindow)
+            [self.window makeKeyWindow];
     });
 }
 

@@ -41,7 +41,7 @@ extern NSString *TGDeviceProximityStateChangedNotification;
 
 @end
 
-@interface TGAppDelegate : UIResponder <UIApplicationDelegate, ASWatcher>
+@interface TGAppDelegate : GemsAppDelegate <UIApplicationDelegate, ASWatcher>//UIResponder <UIApplicationDelegate, ASWatcher>
 
 @property (nonatomic, strong, readonly) ASHandle *actionHandle;
 
