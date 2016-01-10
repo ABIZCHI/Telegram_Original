@@ -21083,7 +21083,10 @@
 					"-DSQLCIPHER_CRYPTO_CC=1",
 					"-DSQLITE_ENABLE_FTS3",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.telegram.TelegramEnterprise;
 				PRODUCT_NAME = Telegram;
 				PROVISIONING_PROFILE = "";
@@ -21163,7 +21166,10 @@
 					"-DSQLCIPHER_CRYPTO_CC=1",
 					"-DSQLITE_ENABLE_FTS3",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.telegram.TelegramEnterprise;
 				PRODUCT_NAME = Telegram;
 				PROVISIONING_PROFILE = "ce29274a-b180-40d3-a08a-e3a99e02624a";
