@@ -2058,7 +2058,6 @@
 		D0983C0E19CB93FA00CE5BB0 /* TGTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = D0983C0D19CB93FA00CE5BB0 /* TGTimer.m */; };
 		D0983D3119CB9A4300CE5BB0 /* Freedom.mm in Sources */ = {isa = PBXBuildFile; fileRef = D0983C1319CB9A4200CE5BB0 /* Freedom.mm */; };
 		D0983D3219CB9A4300CE5BB0 /* FreedomUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D0983C1519CB9A4200CE5BB0 /* FreedomUIKit.m */; };
-		D0983D3319CB9A4300CE5BB0 /* RMPhoneFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = D0983C1719CB9A4200CE5BB0 /* RMPhoneFormat.m */; };
 		D0983D3419CB9A4300CE5BB0 /* TelegraphKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D0983C1A19CB9A4200CE5BB0 /* TelegraphKit.m */; };
 		D0983D3519CB9A4300CE5BB0 /* TGAcceptEncryptionFutureAction.m in Sources */ = {isa = PBXBuildFile; fileRef = D0983C1C19CB9A4200CE5BB0 /* TGAcceptEncryptionFutureAction.m */; };
 		D0983D3619CB9A4300CE5BB0 /* TGActionMediaAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = D0983C1E19CB9A4200CE5BB0 /* TGActionMediaAttachment.m */; };
@@ -3213,6 +3212,7 @@
 		D0FD89A3156FD4FC00CC3714 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0FD89A2156FD4FB00CC3714 /* Security.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D0FFBDDF1BAB0E7300F532C9 /* TGChannelMembersController.h in Headers */ = {isa = PBXBuildFile; fileRef = D0FFBDDD1BAB0E7300F532C9 /* TGChannelMembersController.h */; };
 		D0FFBDE01BAB0E7300F532C9 /* TGChannelMembersController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FFBDDE1BAB0E7300F532C9 /* TGChannelMembersController.m */; };
+		E15E87C81C428F090074FA83 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E15E87C71C428F090074FA83 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -6275,8 +6275,6 @@
 		D0983C1319CB9A4200CE5BB0 /* Freedom.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Freedom.mm; sourceTree = "<group>"; };
 		D0983C1419CB9A4200CE5BB0 /* FreedomUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreedomUIKit.h; sourceTree = "<group>"; };
 		D0983C1519CB9A4200CE5BB0 /* FreedomUIKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreedomUIKit.m; sourceTree = "<group>"; };
-		D0983C1619CB9A4200CE5BB0 /* RMPhoneFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMPhoneFormat.h; sourceTree = "<group>"; };
-		D0983C1719CB9A4200CE5BB0 /* RMPhoneFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMPhoneFormat.m; sourceTree = "<group>"; };
 		D0983C1819CB9A4200CE5BB0 /* TelegraphKit-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TelegraphKit-Prefix.pch"; sourceTree = "<group>"; };
 		D0983C1919CB9A4200CE5BB0 /* TelegraphKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TelegraphKit.h; sourceTree = "<group>"; };
 		D0983C1A19CB9A4200CE5BB0 /* TelegraphKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TelegraphKit.m; sourceTree = "<group>"; };
@@ -8063,6 +8061,7 @@
 		D0FD89A2156FD4FB00CC3714 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D0FFBDDD1BAB0E7300F532C9 /* TGChannelMembersController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGChannelMembersController.h; sourceTree = "<group>"; };
 		D0FFBDDE1BAB0E7300F532C9 /* TGChannelMembersController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGChannelMembersController.m; sourceTree = "<group>"; };
+		E15E87C71C428F090074FA83 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -13170,6 +13169,7 @@
 				93C0B3C21602533B0034D542 /* Default-568h@2x.png */,
 				931668EA164BD14B0082AE8E /* Default@2x.png */,
 				D09A218715C9CF5100023542 /* Icon@2x.png */,
+				E15E87C61C428EFD0074FA83 /* GemsCore */,
 				D07041FB15891CEF008AA657 /* External */,
 				D08805B6156E8F3600311537 /* Telegraph */,
 				D02601D81A55CA2300716290 /* Share */,
@@ -14176,8 +14176,6 @@
 				D0983C1319CB9A4200CE5BB0 /* Freedom.mm */,
 				D0983C1419CB9A4200CE5BB0 /* FreedomUIKit.h */,
 				D0983C1519CB9A4200CE5BB0 /* FreedomUIKit.m */,
-				D0983C1619CB9A4200CE5BB0 /* RMPhoneFormat.h */,
-				D0983C1719CB9A4200CE5BB0 /* RMPhoneFormat.m */,
 				D0983C1819CB9A4200CE5BB0 /* TelegraphKit-Prefix.pch */,
 				D0983C1919CB9A4200CE5BB0 /* TelegraphKit.h */,
 				D0983C1A19CB9A4200CE5BB0 /* TelegraphKit.m */,
@@ -16799,6 +16797,14 @@
 			name = Tabs;
 			sourceTree = "<group>";
 		};
+		E15E87C61C428EFD0074FA83 /* GemsCore */ = {
+			isa = PBXGroup;
+			children = (
+				E15E87C71C428F090074FA83 /* GoogleService-Info.plist */,
+			);
+			name = GemsCore;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -18001,6 +18007,7 @@
 				9321E9F116A9B5C100F9D09C /* notification.caf in Resources */,
 				93C23075183C31D60071CB58 /* ModernMessageImageBorder@2x.png in Resources */,
 				688B73BC1A3CF62B00ACE286 /* PhotoEditorBlurOff.png in Resources */,
+				E15E87C81C428F090074FA83 /* GoogleService-Info.plist in Resources */,
 				D0AAD1FB1964B6F30022B101 /* BroadcastLargeAvatarIcon@2x.png in Resources */,
 				9321E9F216A9B5C100F9D09C /* sent.caf in Resources */,
 				D0590D8E19A78C9D0082FFC8 /* ModernMessageBroadcastIcon.png in Resources */,
@@ -19098,7 +19105,6 @@
 				930384231811775200CAC996 /* TGDisclosureActionCollectionItemView.m in Sources */,
 				68B63CF81BB2599600205AC3 /* TGBridgeMessage+TGMessage.m in Sources */,
 				D0C925AF194A024000E629CA /* timing.c in Sources */,
-				D0983D3319CB9A4300CE5BB0 /* RMPhoneFormat.m in Sources */,
 				D0C80DCF1A9B743700D5DF8A /* TGWebSearchResultsGalleryImageItemView.m in Sources */,
 				D08FEE461ACD92730069FA9F /* TGWebPageMediaAttachment.m in Sources */,
 				D0DCF57F1AEDC43C00D5B7A1 /* TGGroupInfoContactListCreateLinkCell.m in Sources */,

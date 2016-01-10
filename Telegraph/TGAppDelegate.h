@@ -45,7 +45,7 @@ extern NSString *TGDeviceProximityStateChangedNotification;
 
 @property (nonatomic, strong, readonly) ASHandle *actionHandle;
 
-@property (nonatomic, strong) UIWindow *window;
+//@property (nonatomic, strong) UIWindow *window;
 @property (nonatomic, strong) UIWindow *contentWindow;
 
 @property (nonatomic) bool isManuallyLocked;
