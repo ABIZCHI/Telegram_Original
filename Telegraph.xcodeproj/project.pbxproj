@@ -1373,10 +1373,6 @@
 		D0249BEA1ABF5B470076ECBF /* GDURLMetadataInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = D0249B8D1ABF5B470076ECBF /* GDURLMetadataInternal.h */; };
 		D0249BEB1ABF5B470076ECBF /* GDURLUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = D0249B8E1ABF5B470076ECBF /* GDURLUtilities.h */; };
 		D0249BEC1ABF5B470076ECBF /* GDURLUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D0249B8F1ABF5B470076ECBF /* GDURLUtilities.m */; };
-		D0249BED1ABF5B470076ECBF /* SSKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = D0249B901ABF5B470076ECBF /* SSKeychain.h */; };
-		D0249BEE1ABF5B470076ECBF /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = D0249B911ABF5B470076ECBF /* SSKeychain.m */; };
-		D0249BEF1ABF5B470076ECBF /* SSKeychainQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = D0249B921ABF5B470076ECBF /* SSKeychainQuery.h */; };
-		D0249BF01ABF5B470076ECBF /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = D0249B931ABF5B470076ECBF /* SSKeychainQuery.m */; };
 		D0249BFB1ABF5B6F0076ECBF /* TGGoogleDriveAuthController.h in Headers */ = {isa = PBXBuildFile; fileRef = D0249BF11ABF5B6F0076ECBF /* TGGoogleDriveAuthController.h */; };
 		D0249BFC1ABF5B6F0076ECBF /* TGGoogleDriveAuthController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0249BF21ABF5B6F0076ECBF /* TGGoogleDriveAuthController.m */; };
 		D0249BFD1ABF5B6F0076ECBF /* TGGoogleDriveController.h in Headers */ = {isa = PBXBuildFile; fileRef = D0249BF31ABF5B6F0076ECBF /* TGGoogleDriveController.h */; };
@@ -5370,10 +5366,6 @@
 		D0249B8D1ABF5B470076ECBF /* GDURLMetadataInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDURLMetadataInternal.h; sourceTree = "<group>"; };
 		D0249B8E1ABF5B470076ECBF /* GDURLUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDURLUtilities.h; sourceTree = "<group>"; };
 		D0249B8F1ABF5B470076ECBF /* GDURLUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDURLUtilities.m; sourceTree = "<group>"; };
-		D0249B901ABF5B470076ECBF /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
-		D0249B911ABF5B470076ECBF /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
-		D0249B921ABF5B470076ECBF /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
-		D0249B931ABF5B470076ECBF /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
 		D0249BF11ABF5B6F0076ECBF /* TGGoogleDriveAuthController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGGoogleDriveAuthController.h; sourceTree = "<group>"; };
 		D0249BF21ABF5B6F0076ECBF /* TGGoogleDriveAuthController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGGoogleDriveAuthController.m; sourceTree = "<group>"; };
 		D0249BF31ABF5B6F0076ECBF /* TGGoogleDriveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGGoogleDriveController.h; sourceTree = "<group>"; };
@@ -11582,10 +11574,6 @@
 				D0249B8D1ABF5B470076ECBF /* GDURLMetadataInternal.h */,
 				D0249B8E1ABF5B470076ECBF /* GDURLUtilities.h */,
 				D0249B8F1ABF5B470076ECBF /* GDURLUtilities.m */,
-				D0249B901ABF5B470076ECBF /* SSKeychain.h */,
-				D0249B911ABF5B470076ECBF /* SSKeychain.m */,
-				D0249B921ABF5B470076ECBF /* SSKeychainQuery.h */,
-				D0249B931ABF5B470076ECBF /* SSKeychainQuery.m */,
 			);
 			name = GDFileManager;
 			path = thirdparty/GDFileManager;
@@ -16910,7 +16898,6 @@
 				D0A1022B1A7D6F7700CD85A5 /* TGSharedMediaCheckButton.h in Headers */,
 				6877518A1A19166D00AC673F /* TGMediaPickerPhotoItemView.h in Headers */,
 				D03B1D7A1B6BA87400524EE9 /* TGSharedMediaLinkItem.h in Headers */,
-				D0249BED1ABF5B470076ECBF /* SSKeychain.h in Headers */,
 				D0FC071E1B1D060C008CC3BB /* TGUserInfoTextCollectionItemView.h in Headers */,
 				D06819CC1AD7F9D000D66743 /* TGExternalGalleryItemView.h in Headers */,
 				6811AE2A1A35E3A0009309A3 /* TGPhotoCropControl.h in Headers */,
@@ -17016,7 +17003,6 @@
 				68CFB9A31A7D146C00C15F34 /* PGPhotoEnhanceColorConversionFilter.h in Headers */,
 				D06819C41AD7F99300D66743 /* TGExternalGalleryModel.h in Headers */,
 				687751751A17C17300AC673F /* TGMediaPickerAssetsLibrary.h in Headers */,
-				D0249BEF1ABF5B470076ECBF /* SSKeychainQuery.h in Headers */,
 				D0C09C741A6E974D008369D7 /* TGSharedMediaFilter.h in Headers */,
 				D089E0531AC57463009A744B /* TLRPCaccount_getAuthorizations.h in Headers */,
 				D0FC072F1B1D71A8008CC3BB /* TGBotReplyMarkupRow.h in Headers */,
@@ -19315,7 +19301,6 @@
 				93C52F691861F0AD008229A7 /* TGLoadingPlaceholderMessageModel.m in Sources */,
 				D038A4F31AE43F0D00B9AB7C /* TLReceivedNotifyMessage.mm in Sources */,
 				D0DCF5611AED32D800D5B7A1 /* TGLocationVenueIconDataSource.m in Sources */,
-				D0249BEE1ABF5B470076ECBF /* SSKeychain.m in Sources */,
 				D01B0EAC1A432D44007ACE93 /* TGStickerAssociatedPanelCollectionLayout.m in Sources */,
 				D0C925D1194A024000E629CA /* RMGeometry.m in Sources */,
 				D098415719CB9BE200CE5BB0 /* TLRPCphone_confirmCall.mm in Sources */,
@@ -19722,7 +19707,6 @@
 				93F6940616932F8700691086 /* TGBlockListRequestActor.mm in Sources */,
 				6811AE2B1A35E3A0009309A3 /* TGPhotoCropControl.m in Sources */,
 				D098416D19CB9BE200CE5BB0 /* TLRPCupdates_subscribe.mm in Sources */,
-				D0249BF01ABF5B470076ECBF /* SSKeychainQuery.m in Sources */,
 				9389A8D21697A18700B68E92 /* TGStoreAssetActor.m in Sources */,
 				D0983D8119CB9A4300CE5BB0 /* TGLinearProgressView.m in Sources */,
 				D09FD7431BA9C02F00FF0A4F /* TGSetupChannelAfterCreationController.m in Sources */,
