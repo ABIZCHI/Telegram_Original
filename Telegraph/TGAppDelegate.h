@@ -19,6 +19,8 @@
 
 #import "TGHolderSet.h"
 
+#import <GemsAppDelegate.h>
+
 extern CFAbsoluteTime applicationStartupTimestamp;
 extern CFAbsoluteTime mainLaunchTimestamp;
 

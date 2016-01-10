@@ -5,7 +5,9 @@
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "4F84751366314673FAED5BDE91D377A6883A3535" : 0,
+    "466BA67379DF075CD20F418E26FF671408FB37A5" : 0,
     "7EC1C8EA9643E5D9E5CFB7785E6B7386F88D4D5C" : 0,
+    "9BBEA26C98EE89740C8684ECD10D342D0D0C5F4A" : 0,
     "4BAB8F3E22C4829A7272C753E8D316047BC55F8C" : 0,
     "E860E73EA92362394DE531098D73ED96B22811B3" : 0,
     "9BF0BD89A8A5B00CFBE8915EE64B25DABC828A4B" : 0,
@@ -15,7 +17,9 @@
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "CAF5D57A-0423-4851-B9F5-40CCAF6910C7",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "4F84751366314673FAED5BDE91D377A6883A3535" : "Telegram\/submodules\/elements\/",
+    "466BA67379DF075CD20F418E26FF671408FB37A5" : "gems-app-ios\/",
     "7EC1C8EA9643E5D9E5CFB7785E6B7386F88D4D5C" : "MtProtoKit\/",
+    "9BBEA26C98EE89740C8684ECD10D342D0D0C5F4A" : "BRCore\/",
     "4BAB8F3E22C4829A7272C753E8D316047BC55F8C" : "Telegram\/Share\/submodules\/lmdb\/",
     "E860E73EA92362394DE531098D73ED96B22811B3" : "Telegram\/thirdparty\/SSignalKit\/",
     "9BF0BD89A8A5B00CFBE8915EE64B25DABC828A4B" : "Telegram\/",
@@ -26,6 +30,11 @@
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Telegraph.xcworkspace",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/GetGems\/gems-app-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "466BA67379DF075CD20F418E26FF671408FB37A5"
+    },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/LMDB\/lmdb.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
@@ -45,6 +54,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/peter-iakovlev\/MtProtoKit.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7EC1C8EA9643E5D9E5CFB7785E6B7386F88D4D5C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/GetGems\/BRCore.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9BBEA26C98EE89740C8684ECD10D342D0D0C5F4A"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/peter-iakovlev\/Telegram.git",
