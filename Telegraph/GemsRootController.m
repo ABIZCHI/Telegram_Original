@@ -27,7 +27,6 @@
     {
         _gemsWalletController = [[GemsWalletViewController alloc] initWithNibName:@"GemsWalletViewController" bundle:nil];
         
-        
         self.mainTabsController = [[GemsMainTabsController alloc] init];
         [self.mainTabsController setViewControllers:[NSArray arrayWithObjects:self.contactsController, self.dialogListController, _gemsWalletController, self.accountSettingsController, nil]];
         [self.mainTabsController setSelectedIndex:1];
