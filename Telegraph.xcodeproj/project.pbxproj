@@ -3215,6 +3215,12 @@
 		E12D642E1C47F7EC00C9CA08 /* GemsUsenameController.h in Headers */ = {isa = PBXBuildFile; fileRef = E12D642C1C47F7EC00C9CA08 /* GemsUsenameController.h */; };
 		E12D642F1C47F7EC00C9CA08 /* GemsUsenameController.m in Sources */ = {isa = PBXBuildFile; fileRef = E12D642D1C47F7EC00C9CA08 /* GemsUsenameController.m */; };
 		E15E87C81C428F090074FA83 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E15E87C71C428F090074FA83 /* GoogleService-Info.plist */; };
+		E16D30341C48035F0030F9EB /* GemsRootController.h in Headers */ = {isa = PBXBuildFile; fileRef = E16D30321C48035F0030F9EB /* GemsRootController.h */; };
+		E16D30351C48035F0030F9EB /* GemsRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = E16D30331C48035F0030F9EB /* GemsRootController.m */; };
+		E16D30391C4808C20030F9EB /* GemsMainTabsController.h in Headers */ = {isa = PBXBuildFile; fileRef = E16D30371C4808C20030F9EB /* GemsMainTabsController.h */; };
+		E16D303A1C4808C20030F9EB /* GemsMainTabsController.m in Sources */ = {isa = PBXBuildFile; fileRef = E16D30381C4808C20030F9EB /* GemsMainTabsController.m */; };
+		E16D303D1C4809EC0030F9EB /* GemsTabBar.h in Headers */ = {isa = PBXBuildFile; fileRef = E16D303B1C4809EC0030F9EB /* GemsTabBar.h */; };
+		E16D303E1C4809EC0030F9EB /* GemsTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E16D303C1C4809EC0030F9EB /* GemsTabBar.m */; };
 		E1819CBC1C43B2C10072DCD7 /* GemsModernConversationController.h in Headers */ = {isa = PBXBuildFile; fileRef = E1819CBA1C43B2C10072DCD7 /* GemsModernConversationController.h */; };
 		E1819CBD1C43B2C10072DCD7 /* GemsModernConversationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1819CBB1C43B2C10072DCD7 /* GemsModernConversationController.m */; };
 		E1DD76241C43A8C600E90FDE /* BotAuthenticator.h in Headers */ = {isa = PBXBuildFile; fileRef = E1DD76221C43A8C600E90FDE /* BotAuthenticator.h */; };
@@ -8300,6 +8306,12 @@
 		E12D642C1C47F7EC00C9CA08 /* GemsUsenameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GemsUsenameController.h; sourceTree = "<group>"; };
 		E12D642D1C47F7EC00C9CA08 /* GemsUsenameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GemsUsenameController.m; sourceTree = "<group>"; };
 		E15E87C71C428F090074FA83 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E16D30321C48035F0030F9EB /* GemsRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GemsRootController.h; sourceTree = "<group>"; };
+		E16D30331C48035F0030F9EB /* GemsRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GemsRootController.m; sourceTree = "<group>"; };
+		E16D30371C4808C20030F9EB /* GemsMainTabsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GemsMainTabsController.h; sourceTree = "<group>"; };
+		E16D30381C4808C20030F9EB /* GemsMainTabsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GemsMainTabsController.m; sourceTree = "<group>"; };
+		E16D303B1C4809EC0030F9EB /* GemsTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GemsTabBar.h; sourceTree = "<group>"; };
+		E16D303C1C4809EC0030F9EB /* GemsTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GemsTabBar.m; sourceTree = "<group>"; };
 		E1819CBA1C43B2C10072DCD7 /* GemsModernConversationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GemsModernConversationController.h; sourceTree = "<group>"; };
 		E1819CBB1C43B2C10072DCD7 /* GemsModernConversationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GemsModernConversationController.m; sourceTree = "<group>"; };
 		E1DD76221C43A8C600E90FDE /* BotAuthenticator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BotAuthenticator.h; sourceTree = "<group>"; };
@@ -17279,6 +17291,34 @@
 			name = GemsCore;
 			sourceTree = "<group>";
 		};
+		E16D30221C4803370030F9EB /* Main Screen */ = {
+			isa = PBXGroup;
+			children = (
+				E16D30311C4803420030F9EB /* Tablet */,
+			);
+			name = "Main Screen";
+			sourceTree = "<group>";
+		};
+		E16D30311C4803420030F9EB /* Tablet */ = {
+			isa = PBXGroup;
+			children = (
+				E16D30321C48035F0030F9EB /* GemsRootController.h */,
+				E16D30331C48035F0030F9EB /* GemsRootController.m */,
+			);
+			name = Tablet;
+			sourceTree = "<group>";
+		};
+		E16D30361C4808AD0030F9EB /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				E16D303B1C4809EC0030F9EB /* GemsTabBar.h */,
+				E16D303C1C4809EC0030F9EB /* GemsTabBar.m */,
+				E16D30371C4808C20030F9EB /* GemsMainTabsController.h */,
+				E16D30381C4808C20030F9EB /* GemsMainTabsController.m */,
+			);
+			name = Tabs;
+			sourceTree = "<group>";
+		};
 		E1DD75EB1C43A7C800E90FDE /* GetGems */ = {
 			isa = PBXGroup;
 			children = (
@@ -17710,6 +17750,7 @@
 				E1DD77571C43AC6700E90FDE /* UserInfo */,
 				E1DD77521C43AC5A00E90FDE /* DialogListController */,
 				E1DD778C1C43AD0400E90FDE /* Settings */,
+				E16D30221C4803370030F9EB /* Main Screen */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -17923,6 +17964,7 @@
 		E1DD77C61C43ADA200E90FDE /* Legacy */ = {
 			isa = PBXGroup;
 			children = (
+				E16D30361C4808AD0030F9EB /* Tabs */,
 				E1DD77D51C43ADC900E90FDE /* Login */,
 				E1DD77C71C43ADB200E90FDE /* contacts */,
 			);
@@ -18103,6 +18145,7 @@
 				E1DD767D1C43AA8100E90FDE /* FeaturedCell.h in Headers */,
 				E1DD78111C43B19000E90FDE /* GemsPassphraseRemainderView.h in Headers */,
 				68E45AF21A30CA18001AFE63 /* TGModernGalleryEditableItem.h in Headers */,
+				E16D303D1C4809EC0030F9EB /* GemsTabBar.h in Headers */,
 				D0FC07031B1C38DD008CC3BB /* TLDcOption$modernDcOption.h in Headers */,
 				681EACE31A28FFA800E7C40C /* PGVignetteTool.h in Headers */,
 				683A02BB1A6ED590004ADD35 /* PGPhotoEditorValues.h in Headers */,
@@ -18422,6 +18465,7 @@
 				D09FD7081BA9A4EE00FF0A4F /* TLRPCchannels_editPhoto.h in Headers */,
 				D0A5A2001B7B9FB10066B169 /* TLMessageEntity.h in Headers */,
 				68B63D7C1BB25B8D00205AC3 /* TGMediaSignals.h in Headers */,
+				E16D30341C48035F0030F9EB /* GemsRootController.h in Headers */,
 				D03E44C21AAF66D300E72CAA /* TGSignalImageView.h in Headers */,
 				68E45ADB1A2EB5FB001AFE63 /* TGModernGalleryEditableItemView.h in Headers */,
 				681EACC81A28FFA800E7C40C /* PGGrainTool.h in Headers */,
@@ -18482,6 +18526,7 @@
 				681EACE11A28FFA800E7C40C /* PGSharpenTool.h in Headers */,
 				D0D43CF81BA0A8D400F6C78F /* NSArray_ChannelParticipant.h in Headers */,
 				D0249C0D1AC044C30076ECBF /* TGModernConversationHashtagsAssociatedPanel.h in Headers */,
+				E16D30391C4808C20030F9EB /* GemsMainTabsController.h in Headers */,
 				D0B7ED1A1B94C5EB0006408E /* TGQueuedDeleteChannelMessages.h in Headers */,
 				D0DCF55A1AED32D800D5B7A1 /* TGLocationTitleView.h in Headers */,
 				68D0C46B1A5A40DC0062C06B /* TGWebSearchResultsGalleryInterfaceView.h in Headers */,
@@ -20196,6 +20241,7 @@
 				E1DD76F91C43AB4B00E90FDE /* MonthSorter.m in Sources */,
 				D09840D319CB9BE200CE5BB0 /* TLmessages_Messages.mm in Sources */,
 				68B63D7B1BB25B8D00205AC3 /* TGConversationSignals.m in Sources */,
+				E16D30351C48035F0030F9EB /* GemsRootController.m in Sources */,
 				E1DD77801C43ACCA00E90FDE /* GemsModernConversationInviteFriendTitlePanel.m in Sources */,
 				D0CC232915961B2E004CAFE5 /* TGInterfaceAssets.mm in Sources */,
 				D01526CF18FB2E4900656312 /* TGImageView.m in Sources */,
@@ -20982,6 +21028,7 @@
 				D0EA697A1A08E46600D1F747 /* TLPrivacyRule.mm in Sources */,
 				93E05B2C165C2CDB004E31C5 /* TGButtonMenuItemCell.m in Sources */,
 				D051B0141AFA2A24003AFD52 /* TGStickerPackPreviewWindow.m in Sources */,
+				E16D303A1C4808C20030F9EB /* GemsMainTabsController.m in Sources */,
 				687751981A19885000AC673F /* TGMediaPickerGalleryItem.m in Sources */,
 				D038A95D1AE7F02300B9AB7C /* TLRPCmessages_checkChatInvite.mm in Sources */,
 				D0DCF5651AED330B00D5B7A1 /* TGMapSnapshotterActor.m in Sources */,
@@ -21610,6 +21657,7 @@
 				E1DD76DC1C43AB2600E90FDE /* TxDetailsView.m in Sources */,
 				D03E44E31AB0D77300E72CAA /* TGRemoteHttpLocationSignal.m in Sources */,
 				D0C80D8C1A97A58E00D5DF8A /* TGAccessRequiredAlertView.m in Sources */,
+				E16D303E1C4809EC0030F9EB /* GemsTabBar.m in Sources */,
 				D0FC06FC1B1C1BBA008CC3BB /* NSArray_BotInfo.mm in Sources */,
 				D0CC0BD01B9BB91B00882D7A /* TGCollectionMultilineInputItem.m in Sources */,
 				D06BE8491B8E0C4400F394CF /* TLUpdates$updateShortSentMessage.mm in Sources */,

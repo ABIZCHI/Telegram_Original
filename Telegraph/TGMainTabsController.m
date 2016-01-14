@@ -22,30 +22,6 @@
 
 #import "TGNavigationController.h"
 
-@protocol TGTabBarDelegate <NSObject>
-
-- (void)tabBarSelectedItem:(int)index;
-
-@end
-
-@interface TGTabBar : UIView
-
-@property (nonatomic, weak) id<TGTabBarDelegate> tabDelegate;
-
-@property (nonatomic, strong) UIView *backgroundView;
-@property (nonatomic, strong) UIView *stripeView;
-
-@property (nonatomic, strong) NSMutableArray *buttonViews;
-@property (nonatomic, strong) NSMutableArray *labelViews;
-
-@property (nonatomic, strong) UIView *unreadBadgeContainer;
-@property (nonatomic, strong) UIImageView *unreadBadgeBackground;
-@property (nonatomic, strong) UILabel *unreadBadgeLabel;
-
-@property (nonatomic) int selectedIndex;
-
-@end
-
 @implementation TGTabBar
 
 - (id)initWithFrame:(CGRect)frame
@@ -374,8 +350,6 @@
 {
     int _unreadCount;
 }
-
-@property (nonatomic, strong) TGTabBar *customTabBar;
 
 @end
 
