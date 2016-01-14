@@ -2,8 +2,7 @@
 
 #import <SSignalKit/SSignalKit.h>
 
-#import "GemsWalletViewController.h"
-#import "GemsDialogListController.h"
+#import "TGNavigationController.h"
 
 @class TGDialogListController;
 @class TGContactsController;
@@ -12,11 +11,12 @@
 
 @interface TGRootController : TGViewController
 
-@property (nonatomic, strong, readonly) TGMainTabsController *mainTabsController;
-@property (nonatomic, strong, readonly) GemsDialogListController *dialogListController;
-@property (nonatomic, strong, readonly) TGContactsController *contactsController;
+@property (nonatomic, strong) TGMainTabsController *mainTabsController;
+@property (nonatomic, strong) TGDialogListController *dialogListController;
+@property (nonatomic, strong) TGContactsController *contactsController;
 @property (nonatomic, strong) TGAccountSettingsController *accountSettingsController;
-GEMS_ADDED_PROPERTY @property(nonatomic, strong) GemsWalletViewController *gemsWalletController;
+GEMS_PROPERTY_EXTERN @property (nonatomic, strong) TGNavigationController *masterNavigationController;
+GEMS_PROPERTY_EXTERN @property (nonatomic, strong) TGNavigationController *detailNavigationController;
 
 - (SSignal *)sizeClass;
 - (bool)isSplitView;

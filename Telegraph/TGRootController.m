@@ -18,11 +18,7 @@
 {
     TGTabletMainView *_mainView;
     
-    TGNavigationController *_masterNavigationController;
-    TGNavigationController *_detailNavigationController;
-    
     UIUserInterfaceSizeClass _currentSizeClass;
-    
     SVariable *_sizeClassVariable;
 }
 

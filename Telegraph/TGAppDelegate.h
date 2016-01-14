@@ -21,6 +21,8 @@
 
 #import "TGHolderSet.h"
 
+#import "GemsRootController.h"
+
 // GemsCore
 #import <GemsAppDelegate.h>
 
@@ -89,7 +91,7 @@ extern NSString *TGDeviceProximityStateChangedNotification;
 
 @property (nonatomic, strong) TGNavigationController *loginNavigationController;
 
-@property (nonatomic, strong) TGRootController *rootController;
+@property (nonatomic, strong) GemsRootController *rootController;
 
 @property (nonatomic, readonly) TGKeyCommandController *keyCommandController;
 

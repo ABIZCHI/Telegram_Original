@@ -513,7 +513,7 @@ static unsigned int overrideIndexAbove(__unused id self, __unused SEL _cmd)
     
     [TGHacks hackSetAnimationDuration];
     
-    _rootController = [[TGRootController alloc] init];
+    _rootController = [[GemsRootController alloc] init];
     self.window.rootViewController = _rootController;
     
     self.window.backgroundColor = [UIColor blackColor];

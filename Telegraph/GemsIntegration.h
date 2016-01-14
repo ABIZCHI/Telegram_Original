@@ -55,4 +55,9 @@
  */
 #define GEMS_SUBCLASS
 
+/**
+ *  Will symobolize a Telegram class being externalized
+ */
+#define GEMS_CLASS_EXTERN
+
 #endif /* GemsIntegration_h */
