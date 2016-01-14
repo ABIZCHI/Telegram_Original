@@ -20,12 +20,12 @@ PODS:
   - AFNetworking/UIKit (2.3.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - Bolts (1.5.1):
-    - Bolts/AppLinks (= 1.5.1)
-    - Bolts/Tasks (= 1.5.1)
-  - Bolts/AppLinks (1.5.1):
+  - Bolts (1.6.0):
+    - Bolts/AppLinks (= 1.6.0)
+    - Bolts/Tasks (= 1.6.0)
+  - Bolts/AppLinks (1.6.0):
     - Bolts/Tasks
-  - Bolts/Tasks (1.5.1)
+  - Bolts/Tasks (1.6.0)
   - Branch (0.10.9)
   - BreadWalletCore (0.0.1):
     - MagicalRecord (= 2.3.0)
@@ -133,7 +133,7 @@ PODS:
     - GoogleUtilities (~> 1.0)
   - GoogleInterchangeUtilities (1.1.0):
     - GoogleSymbolUtilities (~> 1.0)
-  - GoogleIPhoneUtilities (1.1.0):
+  - GoogleIPhoneUtilities (1.1.1):
     - GoogleSymbolUtilities (~> 1.0)
     - GoogleUtilities (~> 1.0)
   - GoogleNetworkingUtilities (1.0.0):
@@ -298,7 +298,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 05b9f6e3aa5ac45bc383b4bb108ef338080a26c7
-  Bolts: a12663244b1d3351c738882e71902fc74db54f64
+  Bolts: f52a250053bb517ca874523c3913776359ab3def
   Branch: 024a0c5848303eb82b8aa139822e07e0724f7fdc
   BreadWalletCore: c53e2609e83a5c81291b5bb9f7fe07df077bda75
   CocoaLumberjack: 019d1361244274a6138c788c6cb80baabc13fb8f
@@ -322,7 +322,7 @@ SPEC CHECKSUMS:
   Google: 97618e118111b998cce1d8dd1bd98b82301d72db
   GoogleCloudMessaging: faa057e30845e7300da31de3777060420b2f6579
   GoogleInterchangeUtilities: d7f7174176fbcf9710f696f1acebad4dbd98ac03
-  GoogleIPhoneUtilities: 4bded60bf1f7eaf9f92b7c055b9eb5d44d6df350
+  GoogleIPhoneUtilities: 3252d20d075b902e37a08036dcc9f74828cf5595
   GoogleNetworkingUtilities: 292992ab31b7b4ba32809a0e8b40e324cdfb2c0c
   GoogleSymbolUtilities: 82ad9f93d3615244b3f4ce440f5ab2515e8b4f56
   GoogleUtilities: 8ed9134debe11719097881711464752900668f10

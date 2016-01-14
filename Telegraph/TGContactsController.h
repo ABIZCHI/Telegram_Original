@@ -11,7 +11,7 @@
 #import "ActionStage.h"
 
 #import "TGViewController.h"
-
+#import "TGTokenFieldView.h"
 #import "TGUser.h"
 
 typedef enum {
@@ -34,7 +34,13 @@ typedef enum {
     TGContactsModeIgnorePrivateBots = (2 << 16)
 } TGContactsMode;
 
-@interface TGContactsController : TGViewController <TGViewControllerNavigationBarAppearance, ASWatcher>
+@interface TGContactsController : TGViewController <GEMS_PROTOCOL_EXTERN UITableViewDelegate, GEMS_PROTOCOL_EXTERN UITableViewDataSource, TGViewControllerNavigationBarAppearance, ASWatcher>
+
+GEMS_PROPERTY_EXTERN @property (nonatomic, strong) NSArray *localSearchResults;
+GEMS_PROPERTY_EXTERN @property (nonatomic, strong) NSArray *globalSearchResults;
+GEMS_PROPERTY_EXTERN @property (nonatomic, strong) TGTokenFieldView *tokenFieldView;
+GEMS_ADDED_PROPERTY  @property(nonatomic, strong) NSString *referralURL;
+GEMS_PROPERTY_EXTERN @property (nonatomic, strong) UIView *inviteContainer;
 
 @property (nonatomic) bool loginStyle;
 
@@ -86,5 +92,10 @@ typedef enum {
 - (void)didSelectRowInFirstSection:(NSInteger)row;
 - (bool)shouldDisplaySectionIndices;
 - (void)commitDeleteItemInFirstSection:(NSInteger)row;
+
+GEMS_METHOD_EXTERN - (void)pushInviteContactsWithShouldSimulateSelectAll:(BOOL)shouldSimulateSelectAllPush;
+GEMS_METHOD_EXTERN - (void)selectAllButtonPressed;
+GEMS_METHOD_EXTERN - (void)updateSelectionInterface;
+GEMS_METHOD_EXTERN - (void)updateTokenField;
 
 @end

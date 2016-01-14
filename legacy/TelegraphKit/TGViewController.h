@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <SSignalKit/SSignalKit.h>
 
+#import <GemsViewController.h>
+
 typedef enum {
     TGViewControllerStyleDefault = 0,
     TGViewControllerStyleBlack = 1
@@ -45,7 +47,7 @@ typedef enum {
 
 @end
 
-@interface TGViewController : UIViewController <TGViewControllerNavigationBarAppearance>
+@interface TGViewController : GEMS_SUBCLASS GemsViewController <TGViewControllerNavigationBarAppearance>
 
 + (UIFont *)titleFontForStyle:(TGViewControllerStyle)style landscape:(bool)landscape;
 + (UIFont *)titleTitleFontForStyle:(TGViewControllerStyle)style landscape:(bool)landscape;

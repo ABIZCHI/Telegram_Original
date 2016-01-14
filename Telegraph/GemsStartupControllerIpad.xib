@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GemsStartupController">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="Cfk-20-tBl"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="underground-bg" translatesAutoresizingMaskIntoConstraints="NO" id="axz-Gv-Q5x">
+                    <rect key="frame" x="-50" y="0.0" width="868" height="1024"/>
+                </imageView>
+                <view alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xkc-kn-ANT">
+                    <rect key="frame" x="-50" y="0.0" width="818" height="1024"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="xkc-kn-ANT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="-50" id="12b-99-IHF"/>
+                <constraint firstAttribute="bottom" secondItem="xkc-kn-ANT" secondAttribute="bottom" id="2dr-1b-KRi"/>
+                <constraint firstItem="axz-Gv-Q5x" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="FvE-JW-26F"/>
+                <constraint firstItem="axz-Gv-Q5x" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="-50" id="Jgp-sl-Rd9"/>
+                <constraint firstAttribute="trailing" secondItem="axz-Gv-Q5x" secondAttribute="trailing" constant="-50" id="ZI4-Ts-Ubd"/>
+                <constraint firstAttribute="trailing" secondItem="xkc-kn-ANT" secondAttribute="trailing" id="Zl1-wT-TCk"/>
+                <constraint firstAttribute="bottom" secondItem="axz-Gv-Q5x" secondAttribute="bottom" id="fmf-r5-t0N"/>
+                <constraint firstItem="xkc-kn-ANT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uHS-dS-yhY"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+            <point key="canvasLocation" x="119" y="365"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="underground-bg" width="1084" height="568"/>
+    </resources>
+</document>

@@ -68,7 +68,6 @@
     UIEdgeInsets _normalEdgeInsets;
     UIEdgeInsets _wideEdgeInsets;
     
-    TGSearchBar *_searchBar;
     UIView *_toolbarView;
     UIImageView *_toolbarLogoView;
     TGModernButton *_doneButton;
@@ -89,7 +88,6 @@
     
     NSArray *_gifSearchResults;
     NSArray *_rawGifSearchResults;
-    NSArray *_selectedGifItems;
     bool _gifMoreResultsAvailable;
     bool _searchingGif;
 
@@ -1824,6 +1822,9 @@
                         }
                     }
                 }
+                
+                if(_didFinishSearchingGifs)
+                    _didFinishSearchingGifs(searchResults);
                 
                 _gifSearchResults = [self uniqueItemsInArray:searchResults];
                 _rawGifSearchResults = result[@"items"];

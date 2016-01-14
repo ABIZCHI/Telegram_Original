@@ -11,9 +11,8 @@
 @class TGUser;
 
 @interface TGPrivateModernConversationCompanion : TGGenericModernConversationCompanion
-{
-    int32_t _uid;
-}
+
+GEMS_PROPERTY_EXTERN @property (nonatomic) int32_t uid;
 
 @property (nonatomic, strong) NSString *botStartPayload;
 

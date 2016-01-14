@@ -47,9 +47,7 @@
 
 @interface TGLoginPhoneController () <UITextFieldDelegate, MFMailComposeViewControllerDelegate>
 {
-    UIView *_grayBackground;
     UIView *_separatorView;
-    UILabel *_titleLabel;
     UILabel *_noticeLabel;
     UIImageView *_inputBackgroundView;
     
@@ -62,21 +60,11 @@
 @property (nonatomic, strong) NSString *presetPhoneCountry;
 @property (nonatomic, strong) NSString *presetPhoneNumber;
 
-@property (nonatomic, strong) TGProgressWindow *progressWindow;
-
 @property (nonatomic, strong) UIButton *countryButton;
-
-@property (nonatomic, strong) UITextField *countryCodeField;
-@property (nonatomic, strong) TGBackspaceTextField *phoneField;
 
 @property (nonatomic) CGRect basePhoneFieldFrame;
 @property (nonatomic) CGRect baseInputBackgroundViewFrame;
 @property (nonatomic) CGRect baseCountryCodeFieldFrame;
-
-@property (nonatomic) bool inProgress;
-@property (nonatomic) int currentActionIndex;
-
-@property (nonatomic, strong) NSString *phoneNumber;
 
 @property (nonatomic, strong) UIAlertView *currentAlert;
 

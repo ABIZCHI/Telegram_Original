@@ -122,52 +122,57 @@
         [ActionStageInstance() requestActor:@"/tg/service/synchronizationstate" options:nil flags:0 watcher:self];
         
         _uid = uid;
-        
-        _profileDataItem = [[TGAccountInfoCollectionItem alloc] init];
-        _profileDataItem.interfaceHandle = _actionHandle;
-        _setProfilePhotoItem = [[TGButtonCollectionItem alloc] initWithTitle:TGLocalized(@"Settings.SetProfilePhoto") action:@selector(setProfilePhotoPressed)];
-        _setProfilePhotoItem.deselectAutomatically = true;
-        
-        TGCollectionMenuSection *headerSection = [[TGCollectionMenuSection alloc] initWithItems:@[
-            _profileDataItem,
-            _setProfilePhotoItem
-        ]];
-        [self.menuSections addSection:headerSection];
-        
-        _wallpapersItem = [[TGWallpapersCollectionItem alloc] initWithAction:@selector(wallpapersPressed) title:TGLocalized(@"Settings.ChatBackground")];
-        _wallpapersItem.interfaceHandle = _actionHandle;
-        
-        TGCollectionMenuSection *settingsSection = [[TGCollectionMenuSection alloc] initWithItems:@[
-            (_notificationsItem = [[TGDisclosureActionCollectionItem alloc] initWithTitle:TGLocalized(@"Settings.NotificationsAndSounds") action:@selector(notificationsAndSoundsPressed)]),
-            (_privacySettingsItem = [[TGDisclosureActionCollectionItem alloc] initWithTitle:TGLocalized(@"Settings.PrivacySettings") action:@selector(privacySettingsPressed)]),
-            (_chatSettingsItem = [[TGDisclosureActionCollectionItem alloc] initWithTitle:TGLocalized(@"Settings.ChatSettings") action:@selector(chatSettingsPressed)]),
-            _wallpapersItem
-        ]];
-        [self.menuSections addSection:settingsSection];
-        
-        _phoneNumberItem = [[TGVariantCollectionItem alloc] initWithTitle:TGLocalized(@"Settings.PhoneNumber") action:@selector(phoneNumberPressed)];
-        _usernameItem = [[TGVariantCollectionItem alloc] initWithTitle:TGLocalized(@"Settings.Username") action:@selector(usernamePressed)];
-        TGCollectionMenuSection *usernameSection = [[TGCollectionMenuSection alloc] initWithItems:@[_phoneNumberItem, _usernameItem]];
-        [self.menuSections addSection:usernameSection];
-        
-        _autosavePhotosItem = [[TGSwitchCollectionItem alloc] initWithTitle:TGLocalized(@"Settings.SaveIncomingPhotos") isOn:TGAppDelegateInstance.autosavePhotos];
-        _autosavePhotosItem.interfaceHandle = _actionHandle;
-        
-        _supportItem = [[TGDisclosureActionCollectionItem alloc] initWithTitle:TGLocalized(@"Settings.Support") action:@selector(supportPressed)];
-        _supportItem.deselectAutomatically = true;
-        
-        _faqItem = [[TGDisclosureActionCollectionItem alloc] initWithTitle:TGLocalized(@"Settings.FAQ") action:@selector(faqPressed)];
-        _faqItem.deselectAutomatically = true;
-        
-        TGCollectionMenuSection *downloadSection = [[TGCollectionMenuSection alloc] initWithItems:@[
-            _supportItem,
-            _faqItem,
-            _autosavePhotosItem,
-            [[TGCommentCollectionItem alloc] initWithText:TGLocalized(@"Settings.SaveIncomingPhotosHelp")]
-        ]];
-        [self.menuSections addSection:downloadSection];
     }
     return self;
+}
+
+GEMS_TG_REFACTORING
+GEMS_ADDED_METHOD
+- (void)setSections
+{
+    _profileDataItem = [[TGAccountInfoCollectionItem alloc] init];
+    _profileDataItem.interfaceHandle = _actionHandle;
+    _setProfilePhotoItem = [[TGButtonCollectionItem alloc] initWithTitle:TGLocalized(@"Settings.SetProfilePhoto") action:@selector(setProfilePhotoPressed)];
+    _setProfilePhotoItem.deselectAutomatically = true;
+    
+    TGCollectionMenuSection *headerSection = [[TGCollectionMenuSection alloc] initWithItems:@[
+                                                                                              _profileDataItem,
+                                                                                              _setProfilePhotoItem
+                                                                                              ]];
+    [self.menuSections addSection:headerSection];
+    
+    _wallpapersItem = [[TGWallpapersCollectionItem alloc] initWithAction:@selector(wallpapersPressed) title:TGLocalized(@"Settings.ChatBackground")];
+    _wallpapersItem.interfaceHandle = _actionHandle;
+    
+    TGCollectionMenuSection *settingsSection = [[TGCollectionMenuSection alloc] initWithItems:@[
+                                                                                                (_notificationsItem = [[TGDisclosureActionCollectionItem alloc] initWithTitle:TGLocalized(@"Settings.NotificationsAndSounds") action:@selector(notificationsAndSoundsPressed)]),
+                                                                                                (_privacySettingsItem = [[TGDisclosureActionCollectionItem alloc] initWithTitle:TGLocalized(@"Settings.PrivacySettings") action:@selector(privacySettingsPressed)]),
+                                                                                                (_chatSettingsItem = [[TGDisclosureActionCollectionItem alloc] initWithTitle:TGLocalized(@"Settings.ChatSettings") action:@selector(chatSettingsPressed)]),
+                                                                                                _wallpapersItem
+                                                                                                ]];
+    [self.menuSections addSection:settingsSection];
+    
+    _phoneNumberItem = [[TGVariantCollectionItem alloc] initWithTitle:TGLocalized(@"Settings.PhoneNumber") action:@selector(phoneNumberPressed)];
+    _usernameItem = [[TGVariantCollectionItem alloc] initWithTitle:TGLocalized(@"Settings.Username") action:@selector(usernamePressed)];
+    TGCollectionMenuSection *usernameSection = [[TGCollectionMenuSection alloc] initWithItems:@[_phoneNumberItem, _usernameItem]];
+    [self.menuSections addSection:usernameSection];
+    
+    _autosavePhotosItem = [[TGSwitchCollectionItem alloc] initWithTitle:TGLocalized(@"Settings.SaveIncomingPhotos") isOn:TGAppDelegateInstance.autosavePhotos];
+    _autosavePhotosItem.interfaceHandle = _actionHandle;
+    
+    _supportItem = [[TGDisclosureActionCollectionItem alloc] initWithTitle:TGLocalized(@"Settings.Support") action:@selector(supportPressed)];
+    _supportItem.deselectAutomatically = true;
+    
+    _faqItem = [[TGDisclosureActionCollectionItem alloc] initWithTitle:TGLocalized(@"Settings.FAQ") action:@selector(faqPressed)];
+    _faqItem.deselectAutomatically = true;
+    
+    TGCollectionMenuSection *downloadSection = [[TGCollectionMenuSection alloc] initWithItems:@[
+                                                                                                _supportItem,
+                                                                                                _faqItem,
+                                                                                                _autosavePhotosItem,
+                                                                                                [[TGCommentCollectionItem alloc] initWithText:TGLocalized(@"Settings.SaveIncomingPhotosHelp")]
+                                                                                                ]];
+    [self.menuSections addSection:downloadSection];
 }
 
 - (void)dealloc

@@ -160,15 +160,16 @@
     return true;
 }
 
+GEMS_TG_METHOD_CHANGED
 - (void)_controllerAvatarPressed
 {
     TGModernConversationController *controller = self.controller;
     if (controller.currentSizeClass == UIUserInterfaceSizeClassCompact) {
-        [[TGInterfaceManager instance] navigateToProfileOfUser:_uid encryptedConversationId:_encryptedConversationId];
+        [[TGInterfaceManager instance] navigateToProfileOfUser:self.uid encryptedConversationId:_encryptedConversationId];
     } else {
         if (controller != nil)
         {
-            TGSecretChatUserInfoController *secretChatInfoController = [[TGSecretChatUserInfoController alloc] initWithUid:_uid encryptedConversationId:_encryptedConversationId];
+            TGSecretChatUserInfoController *secretChatInfoController = [[TGSecretChatUserInfoController alloc] initWithUid:self.uid encryptedConversationId:_encryptedConversationId];
             
             TGNavigationController *navigationController = [TGNavigationController navigationControllerWithControllers:@[secretChatInfoController] navigationBarClass:[TGWhiteNavigationBar class]];
             navigationController.presentationStyle = TGNavigationControllerPresentationStyleRootInPopover;
@@ -250,6 +251,7 @@
         [_pickerSheet show];
 }
 
+GEMS_TG_METHOD_CHANGED
 - (void)_commitSetSelfDestructTimer:(int)value
 {
     if (value != _selfDestructTimer)
@@ -259,7 +261,7 @@
         
         if (_selfDestructTimer > 0 && _selfDestructTimer <= 60 && [self layer] < 17)
         {
-            TGUser *user = [TGDatabaseInstance() loadUser:_uid];
+            TGUser *user = [TGDatabaseInstance() loadUser:self.uid];
             TGDispatchOnMainThread(^
             {
                 NSString *text = [[NSString alloc] initWithFormat:TGLocalized(@"Compatibility.SecretMediaVersionTooLow"), user.displayFirstName, user.displayFirstName];
@@ -278,7 +280,7 @@
 }
 
 #pragma mark -
-
+GEMS_TG_METHOD_CHANGED
 - (void)_updateEncryptionState:(int)encryptionState
 {
     if (_encryptionState != encryptionState)
@@ -296,7 +298,7 @@
             if (encryptionState == 1) // awaiting
             {
                 NSString *formatText = TGLocalized(@"Conversation.EncryptionWaiting");
-                NSString *baseText = [[NSString alloc] initWithFormat:formatText, [TGDatabaseInstance() loadUser:_uid].displayFirstName];
+                NSString *baseText = [[NSString alloc] initWithFormat:formatText, [TGDatabaseInstance() loadUser:self.uid].displayFirstName];
                 [statusPanel setText:baseText];
             }
             else

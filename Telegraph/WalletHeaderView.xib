@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB" customClass="WalletHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="155"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QiP-ps-ldE">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="155"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yxr-UA-4OI">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="156"/>
+                            <subviews>
+                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0.00%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23k-qH-Alv">
+                                    <rect key="frame" x="3" y="135" width="42" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                    <color key="textColor" red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7xl-x7-Ttj">
+                                    <rect key="frame" x="0.0" y="154" width="320" height="2"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="2" id="Klk-VH-ocw"/>
+                                    </constraints>
+                                    <color key="progressTintColor" red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </progressView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vXy-Zf-VBZ" customClass="BalancesView">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="136"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="136" id="Vcr-FF-FlH"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" red="0.90588235289999997" green="0.4823529412" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="vXy-Zf-VBZ" firstAttribute="leading" secondItem="yxr-UA-4OI" secondAttribute="leading" id="423-Rs-RhE"/>
+                                <constraint firstAttribute="bottom" secondItem="7xl-x7-Ttj" secondAttribute="bottom" id="5aF-gX-t3B"/>
+                                <constraint firstAttribute="height" constant="156" id="6Wh-vo-L7A"/>
+                                <constraint firstItem="vXy-Zf-VBZ" firstAttribute="top" secondItem="yxr-UA-4OI" secondAttribute="top" id="E8T-gk-M8e"/>
+                                <constraint firstAttribute="trailing" secondItem="vXy-Zf-VBZ" secondAttribute="trailing" id="Ehx-Lk-8TY"/>
+                                <constraint firstItem="23k-qH-Alv" firstAttribute="leading" secondItem="yxr-UA-4OI" secondAttribute="leading" constant="3" id="JHw-kw-XN0"/>
+                                <constraint firstAttribute="bottom" secondItem="vXy-Zf-VBZ" secondAttribute="bottom" constant="20" id="Q9N-Ct-Ssq"/>
+                                <constraint firstAttribute="trailing" secondItem="7xl-x7-Ttj" secondAttribute="trailing" id="QjX-X6-KHN"/>
+                                <constraint firstItem="7xl-x7-Ttj" firstAttribute="top" secondItem="23k-qH-Alv" secondAttribute="bottom" constant="2" id="Qn2-ew-NSU"/>
+                                <constraint firstItem="7xl-x7-Ttj" firstAttribute="leading" secondItem="yxr-UA-4OI" secondAttribute="leading" id="gzx-wb-MQm"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="yxr-UA-4OI" secondAttribute="trailing" id="DM8-iH-hJ2"/>
+                        <constraint firstAttribute="bottom" secondItem="yxr-UA-4OI" secondAttribute="bottom" constant="-1" id="Pem-mt-gju"/>
+                        <constraint firstItem="yxr-UA-4OI" firstAttribute="top" secondItem="QiP-ps-ldE" secondAttribute="top" id="klZ-vJ-ud4"/>
+                        <constraint firstItem="yxr-UA-4OI" firstAttribute="leading" secondItem="QiP-ps-ldE" secondAttribute="leading" id="q80-sM-nHK"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="QiP-ps-ldE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="BJV-Tc-4l1"/>
+                <constraint firstItem="QiP-ps-ldE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="UlC-Xn-F2O"/>
+                <constraint firstAttribute="bottom" secondItem="QiP-ps-ldE" secondAttribute="bottom" id="WmS-xx-3mD"/>
+                <constraint firstAttribute="trailing" secondItem="QiP-ps-ldE" secondAttribute="trailing" id="Y7R-QQ-adY"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="balancesView" destination="vXy-Zf-VBZ" id="v6x-F3-dXU"/>
+                <outlet property="lblProgress" destination="23k-qH-Alv" id="cIi-Xu-Kw2"/>
+                <outlet property="outerContainer" destination="QiP-ps-ldE" id="cIV-vG-IXM"/>
+                <outlet property="outerContainerTopConstraint" destination="BJV-Tc-4l1" id="lCh-TW-3ST"/>
+                <outlet property="progressBar" destination="7xl-x7-Ttj" id="kbT-ca-4Ng"/>
+                <outlet property="topContainerView" destination="yxr-UA-4OI" id="DkM-GG-oQo"/>
+            </connections>
+            <point key="canvasLocation" x="35" y="336.5"/>
+        </view>
+    </objects>
+</document>

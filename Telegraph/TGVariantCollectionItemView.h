@@ -13,4 +13,7 @@
 - (void)setTitle:(NSString *)title;
 - (void)setVariant:(NSString *)variant;
 
+GEMS_ADDED_METHOD
+- (void)setIcon:(UIImage*)icon;
+
 @end

@@ -7,12 +7,23 @@
  */
 
 #import "TGViewController.h"
-
+#import "TGProgressWindow.h"
 #import "ActionStage.h"
+#import "TGBackspaceTextField.h"
 
 @interface TGLoginPhoneController : TGViewController <ASWatcher>
 
 @property (nonatomic, strong) ASHandle *actionHandle;
+GEMS_PROPERTY_EXTERN @property (nonatomic, strong) TGProgressWindow *progressWindow;
+GEMS_PROPERTY_EXTERN @property (nonatomic) int currentActionIndex;
+GEMS_PROPERTY_EXTERN @property (nonatomic) bool inProgress;
+GEMS_PROPERTY_EXTERN @property (nonatomic, strong) UITextField *countryCodeField;
+GEMS_PROPERTY_EXTERN @property (nonatomic, strong) TGBackspaceTextField *phoneField;
+GEMS_PROPERTY_EXTERN @property (nonatomic, strong) UIView *grayBackground;
+GEMS_PROPERTY_EXTERN @property (nonatomic, strong) UILabel *titleLabel;
+GEMS_PROPERTY_EXTERN @property (nonatomic, strong) NSString *phoneNumber;
+
+GEMS_METHOD_EXTERN - (void)_commitNextButtonPressed;
 
 - (void)setPhoneNumber:(NSString *)phoneNumber;
 

@@ -13,8 +13,14 @@
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *variant;
 @property (nonatomic) SEL action;
+GEMS_ADDED_PROPERTY @property (nonatomic, strong) UIImage *icon;
 
 - (instancetype)initWithTitle:(NSString *)title action:(SEL)action;
 - (instancetype)initWithTitle:(NSString *)title variant:(NSString *)variant action:(SEL)action;
+
+GEMS_ADDED_METHOD
+- (instancetype)initWithTitle:(NSString *)title icon:(UIImage*)icon action:(SEL)action;
+GEMS_ADDED_METHOD
+- (instancetype)initWithTitle:(NSString *)title icon:(UIImage*)icon variant:(NSString *)variant action:(SEL)action;
 
 @end

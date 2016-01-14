@@ -19,6 +19,7 @@
 
 #import "TGHolderSet.h"
 
+// GemsCore
 #import <GemsAppDelegate.h>
 
 extern CFAbsoluteTime applicationStartupTimestamp;
@@ -41,7 +42,7 @@ extern NSString *TGDeviceProximityStateChangedNotification;
 
 @end
 
-@interface TGAppDelegate : GemsAppDelegate <UIApplicationDelegate, ASWatcher>//UIResponder <UIApplicationDelegate, ASWatcher>
+@interface TGAppDelegate : GEMS_SUBCLASS GemsAppDelegate <UIApplicationDelegate, ASWatcher>//UIResponder <UIApplicationDelegate, ASWatcher>
 
 @property (nonatomic, strong, readonly) ASHandle *actionHandle;
 
@@ -138,5 +139,14 @@ extern NSString *TGDeviceProximityStateChangedNotification;
 - (void)setEnableLogging:(bool)enableLogging;
 
 - (void)setupShortcutItems;
+
+GEMS_ADDED_METHOD
+- (void)pushViewController:(UIViewController *)controller animated:(BOOL)animated;
+GEMS_ADDED_METHOD
+- (void)presentViewController:(UIViewController*)v animated:(BOOL)animated;
+GEMS_ADDED_METHOD
+- (void)dismissViewControllerAnimated:(BOOL)aniamted;
+GEMS_ADDED_METHOD
+- (void)popViewController:(BOOL)aniamted;
 
 @end

@@ -20,11 +20,9 @@
 
 #import "TGViewController.h"
 
-#import "HPGrowingTextView.h"
 #import "HPTextViewInternal.h"
 
 #import "TGModernButton.h"
-#import "TGModernConversationInputMicButton.h"
 
 #import "TGModernConversationAssociatedInputPanel.h"
 #import "TGStickerAssociatedInputPanel.h"
@@ -56,7 +54,7 @@ static CGRect viewFrame(UIView *view)
     return result;
 }
 
-@interface TGModernConversationInputTextPanel () <HPGrowingTextViewDelegate, TGModernConversationInputMicButtonDelegate>
+@interface TGModernConversationInputTextPanel ()
 {
     id<SDisposable> _stickerPacksDisposable;
     

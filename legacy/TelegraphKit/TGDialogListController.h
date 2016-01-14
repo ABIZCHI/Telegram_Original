@@ -28,6 +28,9 @@ extern NSString *authorNameYou;
 
 @property (nonatomic) bool isDisplayingSearch;
 
+GEMS_PROPERTY_EXTERN @property (nonatomic, strong) UITableView *tableView;
+GEMS_PROPERTY_EXTERN @property (nonatomic, strong) UILabel *titleLabel;
+
 + (void)setLastAppearedConversationId:(int64_t)conversationId;
 
 + (void)setDebugDoNotJump:(bool)debugDoNotJump;

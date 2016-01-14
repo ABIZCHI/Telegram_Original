@@ -30,6 +30,9 @@ typedef enum {
 
 @property (nonatomic, weak) id<TGModernConversationTitleViewDelegate> delegate;
 
+GEMS_PROPERTY_EXTERN @property (nonatomic, strong) UILabel *titleLabel;
+GEMS_PROPERTY_EXTERN @property (nonatomic, strong) UILabel *statusLabel;
+
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *status;
 @property (nonatomic) bool statusHasAccentColor;

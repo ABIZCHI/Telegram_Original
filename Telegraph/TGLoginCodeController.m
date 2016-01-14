@@ -72,19 +72,10 @@
 @property (nonatomic, strong) UILabel *requestingCallLabel;
 @property (nonatomic, strong) UILabel *callSentLabel;
 
-@property (nonatomic, strong) TGModernButton *didNotReceiveCodeButton;
-
-@property (nonatomic) bool inProgress;
-@property (nonatomic) int currentActionIndex;
-
 @property (nonatomic, strong) NSTimer *countdownTimer;
 @property (nonatomic) NSTimeInterval countdownStart;
 
 @property (nonatomic, strong) UIAlertView *currentAlert;
-
-@property (nonatomic, strong) TGProgressWindow *progressWindow;
-
-@property (nonatomic) bool messageSentToTelegram;
 
 @end
 

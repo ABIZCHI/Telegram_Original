@@ -16,12 +16,14 @@
     UILabel *_titleLabel;
     UILabel *_variantLabel;
     UIImageView *_disclosureIndicator;
+    GEMS_ADDED_PROPERTY UIImageView *_icon;
 }
 
 @end
 
 @implementation TGVariantCollectionItemView
 
+GEMS_TG_METHOD_CHANGED
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -41,6 +43,9 @@
         
         _disclosureIndicator = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ModernListsDisclosureIndicator.png"]];
         [self addSubview:_disclosureIndicator];
+        
+        _icon = [[UIImageView alloc] init];
+        [self addSubview:_icon];
     }
     return self;
 }
@@ -51,12 +56,25 @@
     [self setNeedsLayout];
 }
 
+GEMS_ADDED_METHOD
+- (void)setIcon:(UIImage*)iconImg
+{
+    if(iconImg) {
+        [_icon setImage:iconImg];
+        [self setNeedsLayout];
+    }
+    else {
+        _icon = nil;
+    }
+}
+
 - (void)setVariant:(NSString *)variant
 {
     _variantLabel.text = variant;
     [self setNeedsLayout];
 }
 
+GEMS_TG_METHOD_CHANGED
 - (void)layoutSubviews
 {
     [super layoutSubviews];
@@ -66,9 +84,9 @@
     CGSize titleSize = [_titleLabel sizeThatFits:CGSizeMake(bounds.size.width, CGFLOAT_MAX)];
     CGSize variantSize = [_variantLabel sizeThatFits:CGSizeMake(bounds.size.width, CGFLOAT_MAX)];
     
-    _disclosureIndicator.frame = CGRectMake(bounds.size.width - _disclosureIndicator.frame.size.width - 15, CGFloor((bounds.size.height - _disclosureIndicator.frame.size.height) / 2), _disclosureIndicator.frame.size.width, _disclosureIndicator.frame.size.height);
+    _disclosureIndicator.frame = CGRectMake(bounds.size.width - _disclosureIndicator.frame.size.width - 15, floorf((bounds.size.height - _disclosureIndicator.frame.size.height) / 2), _disclosureIndicator.frame.size.width, _disclosureIndicator.frame.size.height);
     
-    CGFloat startingX = 15.0f;
+    CGFloat startingX = _icon? 40.0f:15.0f;
     CGFloat indicatorSpacing = 10.0f;
     CGFloat labelSpacing = 8.0f;
     CGFloat availableWidth = _disclosureIndicator.frame.origin.x - startingX - indicatorSpacing;
@@ -95,6 +113,9 @@
         CGFloat titleWidth = MIN(titleSize.width, availableWidth - variantWidth - labelSpacing);
         _titleLabel.frame = CGRectMake(startingX, titleY, titleWidth, titleSize.height);
     }
+    
+    if(_icon)
+        _icon.frame = CGRectMake(10, floorf((bounds.size.height - 15) / 2), 15, 15);
 }
 
 @end

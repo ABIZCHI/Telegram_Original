@@ -10,4 +10,11 @@
 
 #import <MTProtoKit/MTLogging.h>
     #import "TGCommon.h"
+
+#import "GemsIntegration.h"
+#import "GemsLocalization.h"
+#import "TGGems.h"
+#import <GemsCommons.h>
+#import <GemsRunControlPanel.h>
+
 #endif

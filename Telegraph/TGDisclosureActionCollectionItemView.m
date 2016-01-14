@@ -5,7 +5,8 @@
 @interface TGDisclosureActionCollectionItemView ()
 {
     UILabel *_titleLabel;
-    UIImageView *_disclosureIndicator;
+    UIImageView *_disclosureIndicator, GEMS_ADDED_PROPERTY *_icon;
+    
 }
 
 @end
@@ -37,14 +38,30 @@
     [self setNeedsLayout];
 }
 
+- (void)setIcon:(UIImage*)iconImg {
+    if(iconImg) {
+        [_icon setImage:iconImg];
+        [self setNeedsLayout];
+    }
+    else {
+        _icon = nil;
+    }
+}
+
+GEMS_TG_METHOD_CHANGED
 - (void)layoutSubviews
 {
     [super layoutSubviews];
     
     CGRect bounds = self.bounds;
     
-    _titleLabel.frame = CGRectMake(15, CGFloor((bounds.size.height - 26) / 2), bounds.size.width - 15 - 40, 26);
-    _disclosureIndicator.frame = CGRectMake(bounds.size.width- _disclosureIndicator.frame.size.width - 15, CGFloor((bounds.size.height - _disclosureIndicator.frame.size.height) / 2), _disclosureIndicator.frame.size.width, _disclosureIndicator.frame.size.height);
+    CGFloat lblPadding = _icon? 40.0f:15.0f;
+    
+    _titleLabel.frame = CGRectMake(lblPadding, floorf((bounds.size.height - 26) / 2), bounds.size.width - 40 - 40, 26);
+    _disclosureIndicator.frame = CGRectMake(bounds.size.width- _disclosureIndicator.frame.size.width - 15, floorf((bounds.size.height - _disclosureIndicator.frame.size.height) / 2), _disclosureIndicator.frame.size.width, _disclosureIndicator.frame.size.height);
+    
+    if(_icon)
+        _icon.frame = CGRectMake(10, floorf((bounds.size.height - 15) / 2), 15, 15);
 }
 
 @end

@@ -129,7 +129,7 @@
             }
         };
         
-        _fetchEditorValues = ^id<TGMediaEditAdjustments> (id<TGEditablePhotoItem> item)
+        _fetchEditorValues = ^id<TGMediaEditAdjustments> (TGMediaPickerAsset * item)
         {
             __strong TGAttachmentSheetRecentItemView *strongSelf = weakSelf;
             if (strongSelf != nil)
@@ -137,7 +137,7 @@
             return nil;
         };
         
-        _fetchThumbnailImage = ^UIImage *(id<TGEditablePhotoItem> item)
+        _fetchThumbnailImage = ^UIImage *(TGMediaPickerAsset * item)
         {
             __strong TGAttachmentSheetRecentItemView *strongSelf = weakSelf;
             if (strongSelf != nil)
@@ -145,7 +145,7 @@
             return nil;
         };
         
-        _fetchCaption = ^NSString *(id<TGEditablePhotoItem> item)
+        _fetchCaption = ^NSString *(TGMediaPickerAsset * item)
         {
             __strong TGAttachmentSheetRecentItemView *strongSelf = weakSelf;
             if (strongSelf != nil)
@@ -153,7 +153,7 @@
             return nil;
         };
         
-        _fetchScreenImage = ^UIImage *(id<TGEditablePhotoItem> item)
+        _fetchScreenImage = ^UIImage *(TGMediaPickerAsset * item)
         {
             __strong TGAttachmentSheetRecentItemView *strongSelf = weakSelf;
             if (strongSelf != nil)

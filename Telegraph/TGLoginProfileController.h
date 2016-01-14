@@ -13,6 +13,8 @@
 @interface TGLoginProfileController : TGViewController <ASWatcher>
 
 @property (nonatomic, strong) ASHandle *actionHandle;
+GEMS_PROPERTY_EXTERN @property (nonatomic, strong) UIView *grayBackground;
+GEMS_PROPERTY_EXTERN @property (nonatomic, strong) UILabel *titleLabel;
 
 - (id)initWithShowKeyboard:(bool)showKeyboard phoneNumber:(NSString *)phoneNumber phoneCodeHash:(NSString *)phoneCodeHash phoneCode:(NSString *)phoneCode;
 

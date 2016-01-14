@@ -1,4 +1,5 @@
 #import "TGDialogListCompanion.h"
+#import "TGDatabase.h"
 
 @implementation TGDialogListCompanion
 
@@ -102,6 +103,53 @@
 - (bool)isConversationOpened:(int64_t)__unused conversationId
 {
     return false;
+}
+
+#pragma mark - custom hide conversations
+- (void)checkForNotWantedConversations:(NSArray *)items
+{
+    self.removedConversationIndxsForGemsUsage = [[NSMutableIndexSet alloc] init];
+    // remove bot conversations
+    for(NSUInteger i=0 ; i < items.count ; i++)
+    {
+        TGConversation *conv = [items objectAtIndex:i];
+        
+        /**
+         *  Patch for migration to v1.2.0
+         *  In 1.2.0 we switched the logic for hidding GetGems bots, to path the migration
+         *  we add the previous Auth bot manulally
+         */
+        {
+            TGUser *user = [TGDatabaseInstance() loadUser:conv.conversationId];
+            if([user.userName isEqualToString:@"getgemsprodbot03"])
+            {
+                if(![[TGDialogListCompanion hiddenConversations] containsObject:@(conv.conversationId)])
+                    [TGDialogListCompanion hideConversationWithId:conv.conversationId];
+                [self.removedConversationIndxsForGemsUsage addIndex:i];
+            }
+        }
+        
+        if([[TGDialogListCompanion hiddenConversations] containsObject:@(conv.conversationId)])
+            [self.removedConversationIndxsForGemsUsage addIndex:i];
+    }
+    
+    
+}
+
++ (void)hideConversationWithId:(int64_t)cid
+{
+    if([[TGDialogListCompanion hiddenConversations] containsObject:@(cid)]) return;
+    
+    NSMutableArray *arr = [NSMutableArray arrayWithArray:[self hiddenConversations]];
+    [arr addObject:@(cid)];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:arr forKey:@"HiddenConversationsKey"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (NSArray*)hiddenConversations
+{
+    return [[NSUserDefaults standardUserDefaults] arrayForKey:@"HiddenConversationsKey"];
 }
 
 @end

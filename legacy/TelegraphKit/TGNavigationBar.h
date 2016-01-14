@@ -7,6 +7,7 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "TGBackdropView.h"
 
 @class TGNavigationController;
 @class TGMusicPlayerView;
@@ -16,6 +17,10 @@
 @property (nonatomic, weak) TGNavigationController *navigationController;
 
 @property (nonatomic, strong) UIView *progressView;
+
+GEMS_PROPERTY_EXTERN
+@property (nonatomic, strong) TGBackdropView *barBackgroundView;
+@property (nonatomic, strong) UIView *stripeView;
 
 - (id)initWithFrame:(CGRect)frame barStyle:(UIBarStyle)barStyle;
 

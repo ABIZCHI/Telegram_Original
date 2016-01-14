@@ -14,19 +14,8 @@
 
 #import "TGAlertView.h"
 
-typedef enum {
-    TGUsernameControllerUsernameStateNone,
-    TGUsernameControllerUsernameStateValid,
-    TGUsernameControllerUsernameStateTooShort,
-    TGUsernameControllerUsernameStateInvalidCharacters,
-    TGUsernameControllerUsernameStateStartsWithNumber,
-    TGUsernameControllerUsernameStateTaken,
-    TGUsernameControllerUsernameStateChecking
-} TGUsernameControllerUsernameState;
-
-@interface TGUsernameController () <ASWatcher>
+@interface TGUsernameController ()
 {
-    TGUsernameCollectionItem *_usernameItem;
     TGCommentCollectionItem *_invalidUsernameItem;
     TGCommentCollectionItem *_hintItem;
     

@@ -208,10 +208,6 @@ typedef enum {
     
     UIImageView *_backgroundView;
     
-    TGModernConversationInputTextPanel *_inputTextPanel;
-    TGModernConversationInputPanel *_currentInputPanel;
-    TGModernConversationInputPanel *_customInputPanel;
-    
     UIView *_titlePanelWrappingView;
     TGModernConversationTitlePanel *_primaryTitlePanel;
     TGModernConversationTitlePanel *_secondaryTitlePanel;
@@ -4148,9 +4144,10 @@ typedef enum {
     }
 }
 
-- (TGModernConversationInputPanel *)customInputPanel {
-    return _customInputPanel;
-}
+GEMS_TG_METHOD_COMMENTEDOUT
+//- (TGModernConversationInputPanel *)customInputPanel {
+//    return _customInputPanel;
+//}
 
 - (void)setPrimaryTitlePanel:(TGModernConversationTitlePanel *)titlePanel
 {
@@ -4543,6 +4540,9 @@ typedef enum {
 
 - (void)titleViewTapped:(TGModernConversationTitleView *)__unused titleView
 {
+    if(_isSendCurrencyScreensOpen)
+        return;
+    
     if (_editingMode)
         return;
     
