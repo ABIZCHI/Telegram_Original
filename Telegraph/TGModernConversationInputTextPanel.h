@@ -7,6 +7,8 @@
  */
 
 #import "TGModernConversationInputPanel.h"
+#import "HPGrowingTextView.h"
+#import "TGModernConversationInputMicButton.h"
 
 @class HPGrowingTextView;
 @class TGModernConversationInputTextPanel;
@@ -58,9 +60,12 @@
 
 - (void)inputPanelToggleBroadcastMode:(TGModernConversationInputTextPanel *)inputTextPanel;
 
+GEMS_ADDED_METHOD
+- (void)inputPanelTextRandomGifPressed:(TGModernConversationInputTextPanel *)inputTextPanel;
+
 @end
 
-@interface TGModernConversationInputTextPanel : TGModernConversationInputPanel
+@interface TGModernConversationInputTextPanel : TGModernConversationInputPanel GEMS_PROTOCOL_EXTERN <HPGrowingTextViewDelegate, TGModernConversationInputMicButtonDelegate>
 
 @property (nonatomic, strong) UIImageView *fieldBackground;
 @property (nonatomic, strong) UIButton *sendButton;

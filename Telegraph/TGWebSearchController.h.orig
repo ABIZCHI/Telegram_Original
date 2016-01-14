@@ -1,0 +1,46 @@
+#import "TGViewController.h"
+#import "TGSearchBar.h"
+
+@class TGImageInfo;
+@class TGSuggestionContext;
+
+@interface TGWebSearchController : TGViewController
+
+@property (nonatomic, copy) void (^avatarCompletionBlock)(UIImage *);
+@property (nonatomic, copy) void (^completionBlock)(TGWebSearchController *sender);
+@property (nonatomic, copy) void (^dismiss)(void);
+<<<<<<< c0301bf3303bde90e5bda0bb6f63e7b3295c3553
+
+@property (nonatomic, weak) TGNavigationController *parentNavigationController;
+
+@property (nonatomic, readonly) bool avatarSelection;
+@property (nonatomic, assign) bool captionsEnabled;
+@property (nonatomic, strong) TGSuggestionContext *suggestionContext;
+=======
+@property (nonatomic, copy) void (^completion)(TGWebSearchController *sender);
+@property (nonatomic, copy) void (^avatarCreated)(UIImage *);
+GEMS_PROPERTY_EXTERN @property (nonatomic, copy) void (^didFinishSearchingGifs)(NSArray *searchResults);
+
+@property (nonatomic, readonly) bool avatarSelection;
+@property (nonatomic, assign) bool disallowCaptions;
+GEMS_PROPERTY_EXTERN @property (nonatomic, strong) NSArray *selectedGifItems;
+GEMS_PROPERTY_EXTERN @property (nonatomic, strong) TGSearchBar *searchBar;
+>>>>>>> compiling
+
+- (instancetype)initForAvatarSelection:(bool)avatarSelection embedded:(bool)embedded;
+
+- (NSArray *)selectedItemSignals:(id (^)(id, NSString *))imageDescriptionGenerator;
+
++ (void)clearRecents;
++ (void)addRecentSelectedItems:(NSArray *)items;
+<<<<<<< c0301bf3303bde90e5bda0bb6f63e7b3295c3553
+
+- (void)presentEmbeddedInController:(UIViewController *)controller animated:(bool)animated;
+- (void)dismissEmbeddedAnimated:(bool)animated;
+
+=======
+GEMS_METHOD_EXTERN + (NSArray *)recentSelectedItems;
+GEMS_METHOD_EXTERN - (void)doneButtonPressed;
+GEMS_METHOD_EXTERN - (void)searchBarSearchButtonClicked:(UISearchBar *)__unused searchBar;
+>>>>>>> compiling
+@end

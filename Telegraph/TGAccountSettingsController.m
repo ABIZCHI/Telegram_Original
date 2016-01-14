@@ -111,6 +111,14 @@
         [ActionStageInstance() requestActor:@"/tg/service/synchronizationstate" options:nil flags:0 watcher:self];
         
         _uid = uid;
+    }
+    return self;
+}
+
+GEMS_TG_REFACTORING
+GEMS_ADDED_METHOD
+- (void)setSections
+{
         
         _profileDataItem = [[TGAccountInfoCollectionItem alloc] init];
         _profileDataItem.interfaceHandle = _actionHandle;
@@ -189,8 +197,6 @@
             //_versionItem
         ]];
         [self.menuSections addSection:infoSection];
-    }
-    return self;
 }
 
 - (void)dealloc

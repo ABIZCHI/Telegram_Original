@@ -46,9 +46,7 @@
 {
     bool _dismissing;
     
-    UIView *_grayBackground;
     UIView *_separatorView;
-    UILabel *_titleLabel;
     UILabel *_noticeLabel;
     UIView *_firstNameSeparator;
     UIView *_lastNameSeparator;

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GemsStoreController">
+            <connections>
+                <outlet property="tblView" destination="B3n-5R-hva" id="JHm-2b-dEf"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ioK-i8-BBj">
+                    <rect key="frame" x="0.0" y="65" width="320" height="450"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="B3n-5R-hva">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="450"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="dbb-bn-ftY"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="B3n-5R-hva" secondAttribute="trailing" id="834-ZP-3Aq"/>
+                        <constraint firstItem="B3n-5R-hva" firstAttribute="top" secondItem="ioK-i8-BBj" secondAttribute="top" id="Ly2-9S-5ff"/>
+                        <constraint firstAttribute="bottom" secondItem="B3n-5R-hva" secondAttribute="bottom" id="jqC-2t-Zc7"/>
+                        <constraint firstItem="B3n-5R-hva" firstAttribute="leading" secondItem="ioK-i8-BBj" secondAttribute="leading" id="vmf-zx-dJ5"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ioK-i8-BBj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="65" id="0oL-as-tK7"/>
+                <constraint firstAttribute="trailing" secondItem="ioK-i8-BBj" secondAttribute="trailing" id="1Es-02-bId"/>
+                <constraint firstAttribute="bottom" secondItem="ioK-i8-BBj" secondAttribute="bottom" constant="53" id="Vpd-RD-t1r"/>
+                <constraint firstItem="ioK-i8-BBj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hoq-i6-hne"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="334" y="311"/>
+        </view>
+    </objects>
+</document>

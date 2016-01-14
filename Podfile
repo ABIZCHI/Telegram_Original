@@ -56,6 +56,24 @@ post_install do |installer|
             end
             FileUtils.mv("config.tmp", file_name)
         end
+
+        #IFTTT
+        file_names = [
+        "#{workDir}/Pods/JazzHands/JazzHands/IFTTTJazzHands.h",
+        "#{workDir}/Pods/JazzHands/JazzHands/IFTTTAnimation.h",
+        "#{workDir}/Pods/JazzHands/JazzHands/IFTTTAnimationFrame.h",
+        "#{workDir}/Pods/JazzHands/JazzHands/IFTTTEasingFunction.h",
+        "#{workDir}/Pods/JazzHands/JazzHands/IFTTTAnimatedScrollViewController.h"
+        ]
+        file_names.each do |file_name|
+            File.open("config.tmp", "w") do |io|
+                io << File.read(file_name)
+                .gsub("@import Foundation;", "#import <Foundation/Foundation.h>")
+                .gsub("@import UIKit;", "#import <UIKit/UIKit.h>")
+                .gsub("@import QuartzCore;", "#import <QuartzCore/QuartzCore.h>")
+            end
+            FileUtils.mv("config.tmp", file_name)
+        end
     end
 
     puts "Adapting GCM library for Objective-c++ ..."

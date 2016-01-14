@@ -16,10 +16,7 @@ const NSTimeInterval typingIntervalFirst = 0.16;
 const NSTimeInterval typingIntervalSecond = 0.14;
 
 @interface TGModernConversationTitleView ()
-{
-    UILabel *_titleLabel;
-    UILabel *_statusLabel;
-    
+{    
     UILabel *_titleModalProgressLabel;
     UIActivityIndicatorView *_titleModalProgressIndicator;
     NSString *_modalProgressStatus;

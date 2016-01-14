@@ -102,7 +102,6 @@ static int64_t lastAppearedConversationId = 0;
 @property (nonatomic, strong) TGSearchDisplayMixin *searchMixin;
 @property (nonatomic) bool searchControllerWasLoaded;
 
-@property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic) bool editingMode;
 @property (nonatomic) CGFloat draggingStartOffset;
 
@@ -115,7 +114,6 @@ static int64_t lastAppearedConversationId = 0;
 
 @property (nonatomic, strong) TGDialogListTitleContainer *titleContainer;
 @property (nonatomic, strong) UILabel *titleStatusLabel;
-@property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) TGLockIconView *titleLockIconView;
 
 @property (nonatomic, strong) UIActivityIndicatorView *titleStatusIndicator;

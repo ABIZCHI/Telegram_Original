@@ -22,4 +22,6 @@
 - (instancetype)initWithUid:(int32_t)uid withoutCompose:(bool)withoutCompose;
 - (instancetype)initWithUid:(int32_t)uid withoutActions:(bool)withoutActions sharedMediaPeerId:(int64_t)sharedMediaPeerId sharedMediaOptions:(NSDictionary *)sharedMediaOptions;
 
+GEMS_METHOD_EXTERN - (void)_updatePhonesAndActions;
+
 @end

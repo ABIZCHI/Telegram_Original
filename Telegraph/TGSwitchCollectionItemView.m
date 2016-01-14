@@ -14,6 +14,7 @@
 {
     UILabel *_titleLabel;
     UISwitch *_switchView;
+    UIImageView *_icon;
 }
 
 @end
@@ -35,6 +36,9 @@
         _switchView = [[UISwitch alloc] init];
         [_switchView addTarget:self action:@selector(switchValueChanged) forControlEvents:UIControlEventValueChanged];
         [self addSubview:_switchView];
+        
+        _icon = [[UIImageView alloc] init];
+        [self addSubview:_icon];
     }
     return self;
 }
@@ -47,6 +51,18 @@
 - (void)setIsOn:(bool)isOn animated:(bool)animated
 {
     [_switchView setOn:isOn animated:animated];
+}
+
+GEMS_ADDED_METHOD
+- (void)setIcon:(UIImage*)iconImg
+{
+    if(iconImg) {
+        [_icon setImage:iconImg];
+        [self setNeedsLayout];
+    }
+    else {
+        _icon = nil;
+    }
 }
 
 - (void)switchValueChanged
@@ -63,9 +79,12 @@
     CGRect bounds = self.bounds;
     
     CGSize switchSize = _switchView.bounds.size;
-    _switchView.frame = CGRectMake(bounds.size.width - switchSize.width - 15.0f, 6.0f, switchSize.width, switchSize.height);
+    _switchView.frame = CGRectMake(bounds.size.width - switchSize.width - (_icon? 40.0f:15.0f), 6.0f, switchSize.width, switchSize.height);
     
-    _titleLabel.frame = CGRectMake(15.0f, CGFloor((bounds.size.height - 26.0f) / 2.0f), bounds.size.width - 15.0f - 4.0f - switchSize.width - 6.0f, 26.0f);
+    _titleLabel.frame = CGRectMake(_icon? 40.0f:15.0f, CGFloor((bounds.size.height - 26.0f) / 2.0f), bounds.size.width - 15.0f - 4.0f - switchSize.width - 6.0f, 26.0f);
+    
+    if(_icon)
+        _icon.frame = CGRectMake(10, floorf((bounds.size.height - 15) / 2), 15, 15);
 }
 
 @end

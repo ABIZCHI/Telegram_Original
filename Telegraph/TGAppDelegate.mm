@@ -3417,6 +3417,47 @@ performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionH
     }
 }
 
+GEMS_ADDED_METHOD
+- (void)pushViewController:(UIViewController *)controller animated:(BOOL)animated {
+//    if (IS_IPAD)
+//    {
+//        GemsNavigationController *navigationController = [GemsNavigationController navigationControllerWithControllers:@[controller]];
+//        TGAppDelegateInstance.tabletMainViewController.detailViewController = navigationController;
+//    }
+//    else
+//    {
+//        [_mainNavigationController pushViewController:controller animated:YES];
+//    }
+}
+
+GEMS_ADDED_METHOD
+- (void)presentViewController:(UIViewController*)v animated:(BOOL)animated {
+//    if (IS_IPAD)
+//        [self pushViewController:v animated:animated];
+//    else
+//        [_mainNavigationController presentViewController:v animated:animated completion:NilCompletionBlock];
+}
+
+GEMS_ADDED_METHOD
+- (void)dismissViewControllerAnimated:(BOOL)aniamted {
+//    if(TGIsPad()) {
+//        TGAppDelegateInstance.tabletMainViewController.detailViewController = nil;
+//        return;
+//    }
+//    
+//    [_mainNavigationController dismissViewControllerAnimated:aniamted completion:NilCompletionBlock];
+}
+
+GEMS_ADDED_METHOD
+- (void)popViewController:(BOOL)aniamted {
+//    if(TGIsPad()) {
+//        TGAppDelegateInstance.tabletMainViewController.detailViewController = nil;
+//        return;
+//    }
+//    
+//    [_mainNavigationController popViewControllerAnimated:aniamted];
+}
+
 @end
 
 @interface UICollectionViewDisableForwardToUICollectionViewSentinel : NSObject @end @implementation UICollectionViewDisableForwardToUICollectionViewSentinel @end

@@ -15,6 +15,7 @@
 #import "TGModernConversationInputPanel.h"
 #import "TGModernConversationEmptyListPlaceholderView.h"
 #import "TGModernConversationCompanion.h"
+#import "TGModernConversationInputTextPanel.h"
 
 @class TGModernConversationCompanion;
 @class TGModernViewStorage;
@@ -51,6 +52,14 @@ typedef enum {
 @property (nonatomic, strong) TGModernConversationCompanion *companion;
 @property (nonatomic) bool shouldIgnoreAppearAnimationOnce;
 @property (nonatomic) bool shouldOpenKeyboardOnce;
+
+GEMS_PROPERTY_EXTERN @property (nonatomic, strong) TGModernConversationInputTextPanel *inputTextPanel;
+GEMS_PROPERTY_EXTERN @property (nonatomic, strong) TGModernConversationInputPanel *currentInputPanel;
+GEMS_PROPERTY_EXTERN @property (nonatomic, strong) TGModernConversationInputPanel *customInputPanel;
+GEMS_ADDED_PROPERTY @property(nonatomic) BOOL isSendCurrencyScreensOpen;
+
+GEMS_METHOD_EXTERN
+- (void)inputPanelRequestedSendMessage:(TGModernConversationInputTextPanel *)__unused inputTextPanel text:(NSString *)text;
 
 - (void)setInitialSnapshot:(CGImageRef)image backgroundView:(TGModernTemporaryView *)backgroundView viewStorage:(TGModernViewStorage *)viewStorage topEdge:(CGFloat)topEdge;
 - (TGMessage *)latestVisibleMessage;

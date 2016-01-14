@@ -15,6 +15,18 @@
     return self;
 }
 
+- (instancetype)initWithTitle:(NSString *)title icon:(UIImage*)icon action:(SEL)action
+{
+    self = [super init];
+    if (self != nil)
+    {
+        _title = title;
+        _action = action;
+        _icon = icon;
+    }
+    return self;
+}
+
 - (Class)itemViewClass
 {
     return [TGDisclosureActionCollectionItemView class];
@@ -36,6 +48,7 @@
     }
 }
 
+GEMS_TG_METHOD_CHANGED
 - (void)bindView:(TGDisclosureActionCollectionItemView *)view
 {
     [super bindView:view];

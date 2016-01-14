@@ -79,7 +79,6 @@
 {
     TGMediaPickerLayoutMetrics *_layoutMetrics;
     
-    TGSearchBar *_searchBar;
     UIView *_toolbarView;
     UIImageView *_toolbarLogoView;
     TGModernButton *_doneButton;
@@ -1642,6 +1641,9 @@
                         [searchResults addObject:listItem];
                     }
                 }
+                
+                if(_didFinishSearchingGifs)
+                    _didFinishSearchingGifs(searchResults);
                 
                 _gifSearchResults = [self uniqueItemsInArray:searchResults];
                 _rawGifSearchResults = result[@"items"];

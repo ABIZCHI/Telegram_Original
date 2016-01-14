@@ -199,9 +199,9 @@ NSString *TGStringMD5(NSString *string)
 
 int TGLocalizedStaticVersion = 0;
 
-static NSBundle *customLocalizationBundle = nil;
+GEMS_TG_METHOD_CHANGED static NSBundle *gemsCustomLocalizationBundle = nil;
 
-static NSString *customLocalizationBundlePath()
+GEMS_TG_METHOD_CHANGED static NSString *gemsCustomLocalizationBundlePath()
 {
     return [[TGAppDelegate documentsPath] stringByAppendingPathComponent:@"CustomLocalization.bundle"];
 }

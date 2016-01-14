@@ -24,5 +24,6 @@
 
 - (void)setTitle:(NSString *)title;
 - (void)setIsOn:(bool)isOn animated:(bool)animated;
+GEMS_ADDED_METHOD - (void)setIcon:(UIImage*)icon;
 
 @end

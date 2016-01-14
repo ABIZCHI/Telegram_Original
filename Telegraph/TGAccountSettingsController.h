@@ -20,4 +20,11 @@
 
 - (void)_updateProfileImage:(UIImage *)image;
 
+GEMS_TG_REFACTORING
+GEMS_ADDED_METHOD
+- (void)setSections;
+
+GEMS_METHOD_EXTERN
+- (void)logoutPressed;
+
 @end

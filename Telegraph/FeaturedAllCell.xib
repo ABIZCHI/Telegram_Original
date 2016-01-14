@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeaturedAllCell" id="KGk-i7-Jjw" customClass="FeaturedAllCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w6b-8W-Sb7">
+                        <rect key="frame" x="5" y="10" width="70" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="70" id="2Ir-24-ybf"/>
+                            <constraint firstAttribute="width" constant="70" id="QgA-Ak-U7K"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cX3-PI-wcw">
+                        <rect key="frame" x="80" y="31" width="179" height="28"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ula-Oq-H0U">
+                                <rect key="frame" x="0.0" y="0.0" width="189" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bC6-q6-x2x">
+                                <rect key="frame" x="0.0" y="14" width="189" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="28" id="Iqd-PJ-VcQ"/>
+                            <constraint firstAttribute="width" constant="179" id="hp0-Kk-jna"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Vl-qx-P85" customClass="AppStoreBuyButton">
+                        <rect key="frame" x="241" y="30" width="71" height="28"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="71" id="nST-1N-vaC"/>
+                            <constraint firstAttribute="height" constant="28" id="uLb-qW-cXT"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="7Vl-qx-P85" secondAttribute="trailing" constant="8" id="1qX-4W-v1V"/>
+                    <constraint firstItem="w6b-8W-Sb7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="5eP-TY-oCa"/>
+                    <constraint firstAttribute="centerY" secondItem="7Vl-qx-P85" secondAttribute="centerY" id="HK5-cm-aYX"/>
+                    <constraint firstAttribute="centerY" secondItem="cX3-PI-wcw" secondAttribute="centerY" id="Ugf-eW-uMn"/>
+                    <constraint firstItem="cX3-PI-wcw" firstAttribute="leading" secondItem="w6b-8W-Sb7" secondAttribute="trailing" constant="5" id="tbx-iz-nDY"/>
+                    <constraint firstAttribute="centerY" secondItem="w6b-8W-Sb7" secondAttribute="centerY" id="tod-ds-vkC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="btnBuyNow" destination="7Vl-qx-P85" id="AMD-sB-8SL"/>
+                <outlet property="iv" destination="w6b-8W-Sb7" id="qTz-vj-z4Q"/>
+                <outlet property="lblDetails" destination="bC6-q6-x2x" id="1Ju-KM-1W6"/>
+                <outlet property="lblTitle" destination="ula-Oq-H0U" id="Wej-6A-cLw"/>
+            </connections>
+            <point key="canvasLocation" x="388" y="443"/>
+        </tableViewCell>
+    </objects>
+</document>

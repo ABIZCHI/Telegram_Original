@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TransactionCellIdentifier" id="KGk-i7-Jjw" customClass="TransactionCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CjI-wX-JPw" customClass="TGLetteredAvatarView">
+                        <rect key="frame" x="15" y="15" width="40" height="40"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="EYR-Ui-bTg"/>
+                            <constraint firstAttribute="height" constant="40" id="X5x-tS-gNU"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W2f-6F-Elz">
+                        <rect key="frame" x="73" y="15" width="141" height="40"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alon Muroch" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CbN-G0-J6L">
+                                <rect key="frame" x="0.0" y="0.0" width="184" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" red="0.46666666670000001" green="0.72156862749999995" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12/4/15" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuU-tO-SPN">
+                                <rect key="frame" x="0.0" y="16" width="184" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="2ez-mI-7DS"/>
+                            <constraint firstAttribute="width" constant="141" id="EaT-9R-Me7"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="+25" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VzB-cH-alh">
+                        <rect key="frame" x="224" y="15" width="81" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="A9p-wl-CNa"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                        <color key="textColor" red="0.46666666670000001" green="0.72156862749999995" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6PR-Q8-whv">
+                        <rect key="frame" x="10" y="69" width="300" height="1"/>
+                        <color key="backgroundColor" red="0.88235294117647056" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="Xd0-4z-NQf"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstAttribute="centerY" secondItem="CjI-wX-JPw" secondAttribute="centerY" id="3gQ-Gs-Y5X"/>
+                    <constraint firstAttribute="centerY" secondItem="W2f-6F-Elz" secondAttribute="centerY" id="5C7-ku-kh3"/>
+                    <constraint firstAttribute="bottom" secondItem="6PR-Q8-whv" secondAttribute="bottom" constant="-0.5" id="Git-WX-dkg"/>
+                    <constraint firstAttribute="trailing" secondItem="VzB-cH-alh" secondAttribute="trailing" constant="15" id="HKZ-rd-6Up"/>
+                    <constraint firstAttribute="trailing" secondItem="6PR-Q8-whv" secondAttribute="trailing" constant="10" id="Oyl-XV-GDn"/>
+                    <constraint firstItem="VzB-cH-alh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="Pru-wx-uhR"/>
+                    <constraint firstAttribute="centerY" secondItem="CjI-wX-JPw" secondAttribute="centerY" id="TYe-Cd-5yZ"/>
+                    <constraint firstItem="VzB-cH-alh" firstAttribute="leading" secondItem="W2f-6F-Elz" secondAttribute="trailing" id="Z0V-w6-P1U"/>
+                    <constraint firstItem="6PR-Q8-whv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="d27-du-SJ1"/>
+                    <constraint firstItem="W2f-6F-Elz" firstAttribute="leading" secondItem="CjI-wX-JPw" secondAttribute="trailing" constant="17" id="e8i-Tb-9Qs"/>
+                    <constraint firstItem="CjI-wX-JPw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="pvC-OD-6jb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="iv" destination="CjI-wX-JPw" id="9SF-kt-kM8"/>
+                <outlet property="lblAmount" destination="VzB-cH-alh" id="5T4-N1-2KS"/>
+                <outlet property="lblDate" destination="xuU-tO-SPN" id="8H4-JH-uU2"/>
+                <outlet property="lblitle" destination="CbN-G0-J6L" id="YW3-cf-BX7"/>
+            </connections>
+            <point key="canvasLocation" x="250" y="424"/>
+        </tableViewCell>
+    </objects>
+</document>

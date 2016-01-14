@@ -16,12 +16,26 @@
 
 @implementation TGVariantCollectionItem
 
+GEMS_TG_METHOD_CHANGED
 - (instancetype)initWithTitle:(NSString *)title action:(SEL)action
 {
-    return [self initWithTitle:title variant:nil action:action];
+    return [self initWithTitle:title icon:nil variant:nil action:action];
 }
 
+GEMS_TG_METHOD_CHANGED
 - (instancetype)initWithTitle:(NSString *)title variant:(NSString *)variant action:(SEL)action
+{
+    return [self initWithTitle:title icon:nil variant:variant action:action];
+}
+
+GEMS_ADDED_METHOD
+- (instancetype)initWithTitle:(NSString *)title icon:(UIImage*)icon action:(SEL)action
+{
+    return [self initWithTitle:title icon:icon variant:nil action:action];
+}
+
+GEMS_ADDED_METHOD
+- (instancetype)initWithTitle:(NSString *)title icon:(UIImage*)icon variant:(NSString *)variant action:(SEL)action
 {
     self = [super init];
     if (self != nil)
@@ -29,7 +43,8 @@
         _title = title;
         _variant = variant;
         _action = action;
-        _enabled = true;
+        _icon = icon;
+		_enabled = true;
     }
     return self;
 }

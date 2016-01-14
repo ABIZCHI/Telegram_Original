@@ -12,7 +12,6 @@
 #import "TGHacks.h"
 #import "TGImageUtils.h"
 
-#import "TGBackdropView.h"
 
 #import <QuartzCore/QuartzCore.h>
 #import <objc/runtime.h>
@@ -68,9 +67,6 @@
 
 @property (nonatomic, strong) UIView *backgroundContainerView;
 @property (nonatomic, strong) UIView *statusBarBackgroundView;
-
-@property (nonatomic, strong) TGBackdropView *barBackgroundView;
-@property (nonatomic, strong) UIView *stripeView;
 
 @property (nonatomic) bool hiddenState;
 

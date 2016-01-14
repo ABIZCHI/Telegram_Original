@@ -23,6 +23,12 @@
 
 - (instancetype)initWithTitle:(NSString *)title isOn:(bool)isOn
 {
+    return [self initWithTitle:title icon:nil isOn:isOn];
+}
+
+GEMS_ADDED_METHOD
+- (instancetype)initWithTitle:(NSString *)title icon:(UIImage*)icon isOn:(bool)isOn
+{
     self = [super init];
     if (self != nil)
     {
@@ -31,6 +37,7 @@
         
         _title = title;
         _isOn = isOn;
+        _icon = icon;
     }
     return self;
 }
@@ -51,6 +58,7 @@
     
     [((TGSwitchCollectionItemView *)view) setTitle:_title];
     [((TGSwitchCollectionItemView *)view) setIsOn:_isOn animated:false];
+    [((TGSwitchCollectionItemView *)view) setIcon:_icon];
     ((TGSwitchCollectionItemView *)view).delegate = self;
 }
 
