@@ -600,12 +600,125 @@ GEMS_TG_REFACTORING
     [[TGBridgeServer instance] setPasscodeEnabled:[TGDatabaseInstance() isPasswordSet:NULL] passcodeEncrypted:[TGDatabaseInstance() isEncryptionEnabled]];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^
+<<<<<<< 71f17d58c0d1f1e122bcc926889eb805f99bf2a6
+    {
+        [self loadSettings];
+        
+        [TGDatabaseInstance() dispatchOnDatabaseThread:^
+         {
+             [TGDatabaseInstance() loadConversationListFromDate:INT32_MAX limit:32 excludeConversationIds:nil completion:^(NSArray *dialogList, bool loadedAllRegular)
+             {
+                 bool dialogListLoaded = [TGDatabaseInstance() customProperty:@"dialogListLoaded"].length != 0;
+                 
+                 NSMutableArray *filteredResult = [[NSMutableArray alloc] initWithArray:dialogList];
+                 [filteredResult sortUsingComparator:^NSComparisonResult(TGConversation *lhs, TGConversation *rhs) {
+                     if (lhs.date > rhs.date) {
+                         return NSOrderedAscending;
+                     } else if (lhs.date < rhs.date) {
+                         return NSOrderedDescending;
+                     } else {
+                         if (lhs.conversationId < rhs.conversationId) {
+                             return NSOrderedDescending;
+                         } else {
+                             return NSOrderedAscending;
+                         }
+                     }
+                 }];
+                 
+                 /*for (TGConversation *conversation in filteredResult) {
+                     if (!conversation.isChannel && !conversation.isBroadcast && (!conversation.isChat || conversation.isEncrypted)) {
+                         int32_t userId = 0;
+                         if (conversation.isEncrypted)
+                         {
+                             if (conversation.chatParticipants.chatParticipantUids.count != 0)
+                                 userId = [conversation.chatParticipants.chatParticipantUids[0] intValue];
+                         }
+                         else
+                             userId = (int)conversation.conversationId;
+                         
+                         TGUser *user = [TGDatabaseInstance() loadUser:userId];
+                         TGLog(@"%d: %@", conversation.date, user.displayName);
+                     } else {
+                         if (conversation.isChannel) {
+                             TGLog(@"*%d: %@", conversation.date, conversation.chatTitle);
+                         } else if (conversation.isBroadcast) {
+                             TGLog(@"#%d: %@", conversation.date, conversation.chatTitle);
+                         } else {
+                             TGLog(@"%d: %@", conversation.date, conversation.chatTitle);
+                         }
+                     }
+                 }*/
+                 
+                 if (!dialogListLoaded || !loadedAllRegular) {
+                     while (filteredResult.count != 0 && (((TGConversation *)[filteredResult lastObject]).isChannel || ((TGConversation *)[filteredResult lastObject]).isBroadcast)) {
+                         [filteredResult removeLastObject];
+                     }
+                     
+                     /*TGLog(@"filtered=============");
+                     
+                     for (TGConversation *conversation in filteredResult) {
+                         if (!conversation.isChannel && !conversation.isBroadcast && (!conversation.isChat || conversation.isEncrypted)) {
+                             int32_t userId = 0;
+                             if (conversation.isEncrypted)
+                             {
+                                 if (conversation.chatParticipants.chatParticipantUids.count != 0)
+                                     userId = [conversation.chatParticipants.chatParticipantUids[0] intValue];
+                             }
+                             else
+                                 userId = (int)conversation.conversationId;
+                             
+                             TGUser *user = [TGDatabaseInstance() loadUser:userId];
+                             TGLog(@"%d: %@", conversation.date, user.displayName);
+                         } else {
+                             if (conversation.isChannel) {
+                                 TGLog(@"*%d: %@", conversation.date, conversation.chatTitle);
+                             } else if (conversation.isBroadcast) {
+                                 TGLog(@"#%d: %@", conversation.date, conversation.chatTitle);
+                             } else {
+                                 TGLog(@"%d: %@", conversation.date, conversation.chatTitle);
+                             }
+                         }
+                     }*/
+                 }
+                 
+                 TGLog(@"###### Dialog list loaded ######");
+                 
+                 SGraphListNode *node = [[SGraphListNode alloc] init];
+                 node.items = filteredResult;
+                 
+                 [(id<ASWatcher>)_rootController.dialogListController.dialogListCompanion actorCompleted:ASStatusSuccess path:@"/tg/dialoglist/(0)" result:node];
+                 TGLog(@"===== Dispatched dialog list");
+                 
+                 [ActionStageInstance() dispatchOnStageQueue:^
+                 {
+                     [[TGTelegramNetworking instance] loadCredentials];
+                     
+                     if (TGTelegraphInstance.clientUserId != 0)
+                     {
+                         [TGTelegraphInstance processAuthorizedWithUserId:TGTelegraphInstance.clientUserId clientIsActivated:TGTelegraphInstance.clientIsActivated];
+                         if (!TGTelegraphInstance.clientIsActivated)
+                         {
+                             TGLog(@"===== User is not activated, presenting welcome screen");
+                             [self presentLoginController:false showWelcomeScreen:true phoneNumber:nil phoneCode:nil phoneCodeHash:nil codeSentToTelegram:false profileFirstName:nil profileLastName:nil];
+                         }
+                         else if (launchOptions[UIApplicationLaunchOptionsURLKey] != nil)
+                         {
+                             dispatch_async(dispatch_get_main_queue(), ^
+                             {
+                                 [self handleOpenDocument:launchOptions[UIApplicationLaunchOptionsURLKey] animated:false];
+                             });
+                         }
+                         else if (launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey] != nil)
+                         {
+                             dispatch_async(dispatch_get_main_queue(), ^
+=======
                    {
                        [self loadSettings];
                        
                        [TGDatabaseInstance() dispatchOnDatabaseThread:^
                         {
                             [TGDatabaseInstance() loadConversationListFromDate:INT32_MAX limit:32 excludeConversationIds:nil completion:^(NSArray *dialogList)
+>>>>>>> gems startup
                              {
                                  bool dialogListLoaded = [TGDatabaseInstance() customProperty:@"dialogListLoaded"].length != 0;
                                  
@@ -630,6 +743,76 @@ GEMS_TG_REFACTORING
                                      }
                                  }
                                  
+<<<<<<< 71f17d58c0d1f1e122bcc926889eb805f99bf2a6
+                                 if ([UIApplication sharedApplication].applicationState == UIApplicationStateInactive)
+                                     [self _replyActionForPeerId:peerId mid:0 openKeyboard:false responseInfo:nil completion:nil];
+                             });
+                         }
+                         else if (launchOptions[UIApplicationLaunchOptionsLocalNotificationKey] != nil)
+                         {
+                             if ([UIApplication sharedApplication].applicationState == UIApplicationStateInactive)
+                             {
+                                 dispatch_async(dispatch_get_main_queue(), ^
+                                 {
+                                     if ([launchOptions respondsToSelector:@selector(objectForKeyedSubscript:)] && [launchOptions[UIApplicationLaunchOptionsLocalNotificationKey] respondsToSelector:@selector(objectForKey:)] && [launchOptions[UIApplicationLaunchOptionsLocalNotificationKey][@"cid"] respondsToSelector:@selector(longLongValue)])
+                                     {
+                                         int64_t peerId = [[launchOptions[UIApplicationLaunchOptionsLocalNotificationKey] objectForKey:@"cid"] longLongValue];
+                                         [self _replyActionForPeerId:peerId mid:0 openKeyboard:false responseInfo:nil completion:nil];
+                                     }
+                                 });
+                             }
+                         }
+                         
+                         TGDispatchOnMainThread(^
+                         {
+                             if (!TGIsPad())
+                             {
+                                 [TGViewController enableAutorotation];
+                                 [TGViewController attemptAutorotation];
+                             }
+                         });
+                     }
+                     else
+                     {
+                         [TGTelegraphInstance processUnauthorized];
+                         
+                         NSDictionary *blockStateDict = [self loadLoginState];
+                         
+                         dispatch_async(dispatch_get_main_queue(), ^
+                         {
+                             NSDictionary *stateDict = blockStateDict;
+                             
+                             int currentDate = ((int)CFAbsoluteTimeGetCurrent());
+                             int stateDate = [stateDict[@"date"] intValue];
+                             if (currentDate - stateDate > 60 * 60 * 23)
+                             {
+                                 stateDict = nil;
+                                 [self resetLoginState];
+                             }
+                             
+                             [self presentLoginController:false showWelcomeScreen:false phoneNumber:stateDict[@"phoneNumber"] phoneCode:stateDict[@"phoneCode"] phoneCodeHash:stateDict[@"phoneCodeHash"] codeSentToTelegram:[stateDict[@"codeSentToTelegram"] boolValue] profileFirstName:stateDict[@"firstName"] profileLastName:stateDict[@"lastName"]];
+                             
+                             if (!TGIsPad())
+                             {
+                                 [TGViewController enableAutorotation];
+                                 [TGViewController attemptAutorotation];
+                             }
+                         });
+                         
+                         [[TGDatabase instance] dropDatabase];
+                     }
+                     
+                     [[TGTelegramNetworking instance] start];
+                     
+                     if (launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey] != nil)
+                         [self processPossibleConfigUpdateNotification:launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey]];
+                     
+                     [[TGBridgeServer instance] startRunning];
+                 }];
+              }];
+         } synchronous:false];
+    });
+=======
                                  TGLog(@"###### Dialog list loaded ######");
                                  
                                  SGraphListNode *node = [[SGraphListNode alloc] init];
@@ -733,6 +916,7 @@ GEMS_TG_REFACTORING
                              }];
                         } synchronous:false];
                    });
+>>>>>>> gems startup
     
 #ifndef EXTERNAL_INTERNAL_RELEASE
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC));
