@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <GemsRequestPaymentController.h>
+
+// GemsUI
+#import <GemsUI/GemsRequestPaymentController.h>
 
 @interface TGGemsRequestPaymentController : GemsRequestPaymentController
 

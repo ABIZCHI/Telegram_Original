@@ -12,15 +12,15 @@
 #import "TGUser.h"
 #import "TGDatabase.h"
 
-// GemUI
-#import <GemsTxConfirmationMessage.h>
-#import <GemsAppearance.h>
+// GemsUI
+#import <GemsUI/GemsTxConfirmationMessage.h>
+#import <GemsUI/GemsAppearance.h>
 
 // GemsCore
-#import <GemsLocalization.h>
+#import <GemsCore/GemsLocalization.h>
 
 // Currenceis
-#import <GemsCurrencyManager.h>
+#import <GemsCurrencyManager/GemsCurrencyManager.h>
 
 @implementation TGPaymentVerification
 

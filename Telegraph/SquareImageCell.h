@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "AppStoreCellBase.h"
-#import "DoneCircleView.h"
+
+// GemsUI
+#import <GemsUI/DoneCircleView.h>
 
 @interface SquareImageCell : AppStoreCellBase
 

@@ -7,16 +7,18 @@
 //
 
 #import "FeaturedAllCell.h"
-#import "PaymentRequest.h"
-#import "UserNotifications.h"
 #import "PurchaseItemHelper.h"
-#import "iToast+Gems.h"
-#import <UIImage+Loader.h>
 #import <QuartzCore/QuartzCore.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 
 // GemsCore
-#import <GemsLocalization.h>
+#import <GemsCore/GemsLocalization.h>
+#import <GemsCore/PaymentRequest.h>
+
+// GemsUI
+#import <GemsUI/UserNotifications.h>
+#import <GemsUI/iToast+Gems.h>
+#import <GemsUI/UIImage+Loader.h>
 
 @interface FeaturedAllCell()
 {

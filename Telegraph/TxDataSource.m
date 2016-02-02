@@ -9,11 +9,13 @@
 #import "TxDataSource.h"
 #import "TGGemsWallet.h"
 #import "TransactionCell.h"
-#import "UserNotifications.h"
 #import "Transaction.h"
 #import "MonthSorter.h"
 #import "TxFillerCell.h"
 #import "LoadMoreTableViewCell.h"
+
+// GemsUI
+#import <GemsUI/UserNotifications.h>
 
 #define CACHED_TRANSACTION_DATA @"CACHED_TRANSACTION_DATA"
 #define LAST_FETCHED_DATA_UNIX @"LAST_FETCHED_DATA_UNIX"

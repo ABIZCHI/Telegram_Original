@@ -14,7 +14,9 @@
 #import "TGTelegraph.h"
 #import "SGraphObjectNode.h"
 #import "TGSignUpRequestBuilder.h"
-#import "UserNotifications.h"
+
+// GemsUI
+#import <GemsUI/UserNotifications.h>
 
 @interface GemsUsernameVerifierTextField () <ASWatcher, UITextFieldDelegate>
 {

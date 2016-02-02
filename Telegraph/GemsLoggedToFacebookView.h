@@ -7,7 +7,9 @@
 //
 
 #import "GemsAlertViewBase.h"
-#import "ButtonWithIcon.h"
+
+// GemsUI
+#import <GemsUI/ButtonWithIcon.h>
 
 @interface GemsLoggedToFacebookView : GemsAlertViewBase
 

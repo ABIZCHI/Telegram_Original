@@ -12,7 +12,8 @@
 #import "TGAppDelegate.h"
 #import "TGImageUtils.h"
 
-#import <GemsLocalization.h>
+// GemsCore
+#import <GemsCore/GemsLocalization.h>
 
 @interface FeaturedAllController ()
 {

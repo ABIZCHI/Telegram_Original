@@ -12,9 +12,9 @@
     #import "TGCommon.h"
 
 #import "GemsIntegration.h"
-#import "GemsLocalization.h"
+#import <GemsCore/GemsLocalization.h>
 #import "TGGems.h"
-#import <GemsCommons.h>
-#import <GemsRunControlPanel.h>
+#import <GemsCore/GemsCommons.h>
+#import <GemsCore/GemsRunControlPanel.h>
 
 #endif

@@ -9,49 +9,43 @@
 #import "GemsAccountSettingsController.h"
 #import "TGCollectionMenuSection.h"
 #import "TGDisclosureActionCollectionItem.h"
-#import <GemsCD.h>
 #import "TGCommentCollectionItem.h"
-#import "UserNotifications.h"
 #import "TGGemsWallet.h"
-#import "DiamondActivityIndicator.h"
 #import "CoachMarks.h"
 #import "TGImageUtils.h"
 #import "GemsNavigationController.h"
 #import "TGAppDelegate.h"
 #import "TGVariantCollectionItem.h"
 #import "ReferralLinkItem.h"
-#import "NSURL+GemsReferrals.h"
-#import "iToast+Gems.h"
 #import "GemsCurrencySelectionController.h"
 #import "BitcoinUnitSelectionController.h"
-#import "GemsStringUtils.h"
 #import "TGSwitchCollectionItem.h"
 #import "GemsWalletViewController.h"
-#import <GemsViewController.h>
-#import <UIImage+Loader.h>
 #import "PincodeManagerController.h"
 #import "TGGemsFaqController.h"
 #import "TGTelegraph.h"
-
-#import <SHKMail.h>
-#import <SHKItem.h>
-
+#import "TGGems.h"
 #import "GemsEventObservers.h"
-
 #import "GemsAccountSettingsSPVHelper.h"
+#import <MessageUI/MessageUI.h>
 
 // GemsUI
-#import <GemsUI.h>
-#import <GemsPinCodeView.h>
-#import <BtcOnboardingMenu.h>
-#import <BtcRecoverWalletController.h>
+#import <GemsUI/GemsUI.h>
+#import <GemsUI/GemsPinCodeView.h>
+#import <GemsUI/BtcOnboardingMenu.h>
+#import <GemsUI/BtcRecoverWalletController.h>
+#import <GemsUI/UIImage+Loader.h>
+#import <GemsUI/iToast+Gems.h>
+#import <GemsUI/DiamondActivityIndicator.h>
+#import <GemsUI/UserNotifications.h>
 
-//GemsCore
-#import <GemsCD.h>
-#import <GemsLocalization.h>
-#import <GemsCommons.h>
+// GemsCore
+#import <GemsCore/GemsCD.h>
+#import <GemsCore/GemsLocalization.h>
+#import <GemsCore/GemsCommons.h>
+#import <GemsCore/GemsStringUtils.h>
+#import <GemsCore/NSURL+GemsReferrals.h>
 
-#import "TGGems.h"
 
 @interface GemsAccountSettingsController ()
 {
@@ -297,9 +291,6 @@
         [_B setPassphraseCreationTime:[NSDate timeIntervalSinceReferenceDate]];
     [_B load];
     
-    // will store the passphrase as well
-    [GEMS storeUserDataInKeychain:[CDGemsUser MR_findFirst]];
-    
     [[GemsEventObservers sharedInstance] setupWithController:TGAppDelegateInstance.rootController.gemsWalletController];
     
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
@@ -376,11 +367,19 @@
                                appVerison,
                                buildVersion];
     
-    SHKItem *i = [SHKItem text:[NSString stringWithFormat:@"Hi GetGems team! \n\n\n\n\n\n\n\n\nMy Details (%@)", clientDetails]];
-    i.mailToRecipients = @[GEMS_SUPPORT_URL];
-    i.title = @"GetGems please help me with ...";
-    i.isMailHTML = NO;
-    [SHKMail shareItem:i];
+    
+    // Email Subject
+    NSString *emailTitle = @"My 2 cents about GetGems";
+    // Email Content
+    NSString *messageBody = [NSString stringWithFormat:@"Hi GetGems team! \n\n\n\n\n\n\n\n\nMy Details (%@)", clientDetails];
+    // To address
+    NSArray *toRecipents = @[GEMS_SUPPORT_URL];
+    
+    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+    [mc setSubject:emailTitle];
+    [mc setMessageBody:messageBody isHTML:NO];
+    [mc setToRecipients:toRecipents];
+    [self presentViewController:mc animated:YES completion:NilCompletionBlock];
 }
 
 - (void)faqPressed
@@ -570,9 +569,7 @@
 {
     [_B wipeWallet];
     [Currencies setCurrency:CurrencyTypeBitcoin active:NO reload:NO];
-    
-    [GEMS storeUserDataInKeychain:[CDGemsUser MR_findFirst]];
-    
+        
     [GemsWalletViewController removeBitcoinCachedTx]; // remove cached transactions
 
 }

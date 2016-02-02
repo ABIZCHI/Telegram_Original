@@ -6,7 +6,7 @@
 //
 //
 
-#import "GemsWallet.h"
+#import <GemsUI/GemsWallet.h>
 
 #ifdef WALLET
 #undef WALLET

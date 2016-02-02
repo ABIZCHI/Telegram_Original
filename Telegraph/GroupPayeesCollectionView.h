@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PaymentRequestsContainer.h"
+
+// GemsCore
+#import <GemsCore/PaymentRequestsContainer.h>
 
 typedef void (^PinCodeBlock)(BOOL result, NSDictionary *data, NSString* errorString);
 

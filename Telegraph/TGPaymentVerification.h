@@ -6,7 +6,8 @@
 //
 //
 
-#import "DefaultPaymentVerification.h"
+// GemsUI
+#import <GemsUI/DefaultPaymentVerification.h>
 
 @interface TGPaymentVerification : DefaultPaymentVerification
 

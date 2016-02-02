@@ -8,9 +8,10 @@
 
 #import "TGModernConversationInputTextPanel.h"
 #import "HPGrowingTextView.h"
-#import "PaymentRequest.h"
-#import "PaymentRequestsContainer.h"
 #import "TGViewController.h"
+
+// GemsCore
+#import <GemsCore/PaymentRequestsContainer.h>
 
 @interface GemsModernConversationInputTextPanel : TGModernConversationInputTextPanel <HPGrowingTextViewDelegate>
 

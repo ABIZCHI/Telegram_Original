@@ -131,15 +131,19 @@
 #import "GemsStartupController.h"
 #import "TGGemsWallet.h"
 #import "TGGems.h"
-#import "GemsAnalytics.h"
-#import "PaymentRequestsContainer.h"
 #import "GemsNavigationController.h"
-#import "GemsLocalization.h"
+
+
+// GCM
+#if USE_GCM == 1
+#import <GCM.h>
+#endif
 
 // GemsCore
-#import <GCM.h>
-
-#import <GemsCD.h>
+#import <GemsCore/GemsAnalytics.h>
+#import <GemsCore/GemsLocalization.h>
+#import <GemsCore/PaymentRequestsContainer.h>
+#import <GemsCore/GemsCD.h>
 
 //####################### Gems - End #######################
 
@@ -502,8 +506,9 @@ static unsigned int overrideIndexAbove(__unused id self, __unused SEL _cmd)
             
             [GEMS resetBackupDialog];
             
+#if USE_GCM == 1
             [WALLET postGCMToken:[GCM sharedInstance].registrationToken completion:NilCompletionBlock];
-            
+#endif
             [strongSelf continueTelegramLoadingWithLaunchOptions:launchOptions];
         }];
     }

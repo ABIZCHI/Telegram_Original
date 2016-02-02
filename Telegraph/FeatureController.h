@@ -8,7 +8,9 @@
 
 #import "TGViewController.h"
 #import "FeaturedCell.h"
-#import "AppStoreBuyButton.h"
+
+// GemsUI
+#import <GemsUI/AppStoreBuyButton.h>
 
 @interface FeatureController : TGViewController
 

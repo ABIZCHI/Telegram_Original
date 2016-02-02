@@ -13,11 +13,11 @@
 #import "TGAppDelegate.h"
 
 // GemsCore
-#import <GemsCD.h>
+#import <GemsCore/GemsCD.h>
 
 // GemsUI
-#import <GemsPinCodeView.h>
-#import <UserNotifications.h>
+#import <GemsUI/GemsPinCodeView.h>
+#import <GemsUI/UserNotifications.h>
 
 @interface PincodeManagerController ()
 {

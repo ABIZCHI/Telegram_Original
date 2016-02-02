@@ -7,16 +7,18 @@
 //
 
 #import "SinglePinCodeView.h"
-#import "GemsStringUtils.h"
-#import "GemsTxConfirmationMessage.h"
 #import "TGLetteredAvatarView.h"
 #import "TGUser.h"
 #import "TGDatabase.h"
 #import "TGGemsWallet.h"
 
-//GemsCore
+// GemsUI
+#import <GemsUI/GemsTxConfirmationMessage.h>
+
+// GemsCore
 #import <GemsCore/GemsLocalization.h>
 #import <GemsCore/Macros.h>
+#import <GemsCore/GemsStringUtils.h>
 
 @interface SinglePinCodeView()
 {

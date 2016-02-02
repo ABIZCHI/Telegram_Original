@@ -9,9 +9,6 @@
 #import "GemsModernConversationInputTextPanel.h"
 #import "HPGrowingTextView.h"
 #import "GemsMessageRegexHelper.h"
-#import "CurrencyExchangeProvider.h"
-#import "GemsAnalytics.h"
-#import "GemsStringUtils.h"
 #import "PaymentRequestsContainer+TG.h"
 #import "GemsModernConversationControllerHelper.h"
 #import "HPGrowingTextView.h"
@@ -24,10 +21,16 @@
 #import "TGModernButton.h"
 #import "TGImageUtils.h"
 
-#import <UIImage+Loader.h>
+// GemsUI
+#import <GemsUI/UIImage+Loader.h>
 
 //GemsCore
 #import <GemsCore/GemsLocalization.h>
+#import <GemsCore/GemsAnalytics.h>
+#import <GemsCore/GemsStringUtils.h>
+
+// Currencies
+#import <GemsCurrencyManager/GemsCurrencyManager.h>
 
 @interface GemsModernConversationInputTextPanel() <UITableViewDelegate>
 {    

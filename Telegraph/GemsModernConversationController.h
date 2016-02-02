@@ -7,7 +7,9 @@
 //
 
 #import "TGModernConversationController.h"
-#import "GemsNumberPadViewController.h"
+
+// GemsUI
+#import <GemsUI/GemsNumberPadViewController.h>
 
 @interface ConversationNumberPad : GemsNumberPadViewController
 

@@ -9,13 +9,16 @@
 #import "TxDetailsView.h"
 #import "TGTelegraph.h"
 #import "TGUserDataRequestBuilder.h"
-#import "UILabel+ShortenFormating.h"
-#import "GemsStringUtils.h"
 #import "UILabel+Utils.h"
-#import "NSNumber+CD.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-
 #import <QuartzCore/QuartzCore.h>
+
+// GemsCore
+#import <GemsCore/GemsCD.h>
+#import <GemsCore/GemsStringUtils.h>
+
+// GemsUI
+#import <GemsUI/UILabel+ShortenFormating.h>
 
 @interface TxDetailsView()
 {

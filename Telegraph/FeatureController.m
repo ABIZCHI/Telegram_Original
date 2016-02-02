@@ -9,13 +9,15 @@
 #import "FeatureController.h"
 #import "TGAppDelegate.h"
 #import "TGImageUtils.h"
-#import "UserNotifications.h"
 #import "PurchaseItemHelper.h"
-#import "iToast+Gems.h"
 #import <QuartzCore/QuartzCore.h>
 
+// GemsUI
+#import <GemsUI/iToast+Gems.h>
+#import <GemsUI/UserNotifications.h>
+
 // GemsCore
-#import <GemsLocalization.h>
+#import <GemsCore/GemsLocalization.h>
 
 @interface FeatureController ()
 {

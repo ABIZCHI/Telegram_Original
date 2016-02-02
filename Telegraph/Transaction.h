@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <BRTransaction.h>
 
 #import "FeaturedCell.h"
 
+// BreadWallet
+#import <BreadWalletCore/BRTransaction.h>
+
 // Currencies
-#import <GemsCurrencyManager.h>
+#import <GemsCurrencyManager/GemsCurrencyManager.h>
 
 typedef enum {
     TxSend              = 0,      // "SEND"

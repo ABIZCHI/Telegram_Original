@@ -6,7 +6,7 @@
 //
 //
 
-#import "PaymentRequestsContainer.h"
+#import <GemsCore/PaymentRequestsContainer.h>
 
 @interface PaymentRequestsContainer (TG)
 

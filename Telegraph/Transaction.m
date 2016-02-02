@@ -7,11 +7,15 @@
 //
 
 #import "Transaction.h"
-#import <NSString+Bitcoin.h>
-#import <BRSPVWalletManager.h>
-#import <BRTransaction.h>
 #import "GemsTransactionsCommons.h"
-#import <NSData+Bitcoin.h>
+
+// GemsUI
+#import <GemsCurrencyManager/BRSPVWalletManager.h>
+
+// BreadWallet
+#import <BreadWalletCore/NSData+Bitcoin.h>
+#import <BreadWalletCore/NSString+Bitcoin.h>
+#import <BreadWalletCore/BRTransaction.h>
 
 #define TX_REFERENCE_TIME(t) (t - NSTimeIntervalSince1970)
 

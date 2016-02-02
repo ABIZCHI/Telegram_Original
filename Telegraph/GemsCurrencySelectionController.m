@@ -7,14 +7,18 @@
 //
 
 #import "GemsCurrencySelectionController.h"
-#import "CurrencyExchangeProvider.h"
 #import "CurrencyItem.h"
 #import "TGCollectionMenuSection.h"
 
 // GemsCore
-#import <UIImage+Loader.h>
-#import <GemsCD.h>
-#import <GemsLocalization.h>
+#import <GemsCore/GemsCD.h>
+#import <GemsCore/GemsLocalization.h>
+
+// GemsUI
+#import <GemsUI/UIImage+Loader.h>
+
+// Currencies
+#import <GemsCurrencyManager/GemsCurrencyManager.h>
 
 @interface GemsCurrencySelectionController ()
 {

@@ -16,7 +16,7 @@
 #import "TGAppDelegate.h"
 
 // networking
-#import <GemsNetworking.h>
+#import <GemsNetworking/GemsNetworking.h>
 
 @interface BotAuthenticator()
 {

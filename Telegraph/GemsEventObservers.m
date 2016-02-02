@@ -7,12 +7,16 @@
 //
 
 #import "GemsEventObservers.h"
-#import "Reachability.h"
 #import <sys/stat.h>
 #import <mach-o/dyld.h>
-#import <BRPeerManager.h>
-#import <UIImage+Blur.h>
-#import <BRSPVWalletManager.h>
+
+// Currencies
+#import <GemsCurrencyManager/BRSPVWalletManager.h>
+
+// BreadWallet
+#import <BreadWalletCore/Reachability.h>
+#import <BreadWalletCore/BRPeerManager.h>
+#import <BreadWalletCore/UIImage+Blur.h>
 
 @interface GemsEventObservers()
 

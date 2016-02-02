@@ -8,7 +8,9 @@
 
 #import "TxInfoHeaderView.h"
 #import "TGGemsWallet.h"
-#import "UILabel+ShortenFormating.h"
+
+// GemsUI
+#import <GemsUI/UILabel+ShortenFormating.h>
 
 @interface TxInfoHeaderView()
 {

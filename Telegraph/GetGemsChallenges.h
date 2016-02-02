@@ -9,12 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <FBSDKShareKit/FBSDKGameRequestContent.h>
 #import <FBSDKShareKit/FBSDKGameRequestDialog.h>
-
-#import "GemsAppRating.h"
 #import "GemsStoreCommons.h"
 
+// GemsUI
+#import <GemsUI/GemsAppRating.h>
+
 // Currencies
-#import <CurrencyConst.h>
+#import <GemsCurrencyManager/GemsCurrencyManager.h>
 
 @interface FBSDKGameRequestDialogCallback : NSObject <FBSDKGameRequestDialogDelegate>
 

@@ -14,7 +14,9 @@
 #import "TGPaymentVerification.h"
 
 // GemsCore
+#if USE_GCM == 1
 #import <GCM.h>
+#endif
 
 @interface TGGemsWallet()
 {
@@ -31,6 +33,7 @@
     _paymentVerifier = [TGPaymentVerification new];
     self.paymentVerificationDelegate = _paymentVerifier;
     
+#if USE_GCM == 1
     [self fetchPendingNotificationsWithCompletion:^(NSArray *notifications, NSString *errorString) {
         if(!errorString) {
             /**
@@ -53,6 +56,7 @@
             }
         }
     }];
+#endif
 }
 
 @end

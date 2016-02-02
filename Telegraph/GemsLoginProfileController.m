@@ -11,11 +11,11 @@
 #import "UIDevice+PlatformInfo.h"
 
 // GemsCore
-#import <GemsAnalytics.h>
-#import <GemsLocalization.h>
+#import <GemsCore/GemsAnalytics.h>
+#import <GemsCore/GemsLocalization.h>
 
 // GemsUI
-#import <GemsAppearance.h>
+#import <GemsUI/GemsAppearance.h>
 
 @interface GemsLoginProfileController ()
 

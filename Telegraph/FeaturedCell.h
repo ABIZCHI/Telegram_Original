@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "AppStoreCellBase.h"
-#import <PTEHorizontalTableView.h>
+
+
+#import <PTEHorizontalTableView/PTEHorizontalTableView.h>
 
 // Currencies
-#import <GemsCurrencyManager.h>
+#import <GemsCurrencyManager/GemsCurrencyManager.h>
 
 typedef enum {
     StoreItemCoupon = 0,

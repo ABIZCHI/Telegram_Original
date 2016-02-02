@@ -202,6 +202,7 @@ GEMS_ADDED_METHOD
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self setSections];
     
     [ActionStageInstance() dispatchOnStageQueue:^
     {

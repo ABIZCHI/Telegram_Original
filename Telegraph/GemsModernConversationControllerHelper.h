@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "GemsModernConversationController.h"
-#import "PaymentRequestsContainer.h"
-
 #import "GroupPinCodeView.h"
 #import "GroupPayeesCollectionView.h"
-
 #import "SinglePinCodeView.h"
+
+// GemsCore
+#import <GemsCore/PaymentRequestsContainer.h>
 
 static BOOL PrivateConversation(int64_t cid) {  return cid > 0; }
 static BOOL SecretConversation(int64_t cid) { return cid <= INT_MIN; }

@@ -6,8 +6,11 @@
 //
 //
 
-#import "GemsPinCodeView.h"
-#import "PaymentRequestsContainer.h"
+// GemsUI
+#import <GemsUI/GemsPinCodeView.h>
+
+// GemsCore
+#import <GemsCore/PaymentRequestsContainer.h>
 
 typedef enum
 {

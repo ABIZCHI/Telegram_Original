@@ -14,12 +14,12 @@
 #import "GetGemsChallenges.h"
 
 // GemsCore
-#import <GemsCD.h>
+#import <GemsCore/GemsCD.h>
 #import <GemsCore/Macros.h>
 #import <GemsCore/GemsCommons.h>
 
 // networking
-#import <GemsNetworking.h>
+#import <GemsNetworking/GemsNetworking.h>
 
 #define STORE_AVAILBLE_CHALLENGES_KEY @"STORE_AVAILBLE_CHALLENGES_KEY"
 #define STORE_PRODUCTS_KEY @"STORE_PRODUCTS_KEY"

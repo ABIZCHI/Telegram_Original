@@ -7,25 +7,26 @@
 //
 
 #import "GemsModernConversationControllerHelper.h"
-#import <Branch.h>
-#import "NSURL+GemsReferrals.h"
+#import <Branch/Branch.h>
 #import "TGConversation.h"
 #import "TGDatabase.h"
-#import "UserNotifications.h"
 #import "GemsModernConversationInputTextPanel.h"
 #import "TGGemsWallet.h"
-#import "GemsTxConfirmationMessage.h"
 #import "ConversationMessageHandler.h"
-#import "NSNumber+CD.h"
 
 // GemsCore
-#import <GemsCD.h>
-#import <PaymentRequest.h>
-#import <GemsStringUtils.h>
-#import <GemsAnalytics.h>
+#import <GemsCore/GemsCD.h>
+#import <GemsCore/PaymentRequest.h>
+#import <GemsCore/GemsStringUtils.h>
+#import <GemsCore/GemsAnalytics.h>
+#import <GemsCore/NSURL+GemsReferrals.h>
+
+// GemsUI
+#import <GemsUI/UserNotifications.h>
+#import <GemsUI/GemsTxConfirmationMessage.h>
 
 // Networking
-#import <GemsNetworking.h>
+#import <GemsNetworking/GemsNetworking.h>
 
 @interface GemsModernConversationControllerHelper()
 {

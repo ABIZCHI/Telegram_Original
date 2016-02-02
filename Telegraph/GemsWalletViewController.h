@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "TGViewController.h"
-#import "PaymentRequestsContainer.h"
 #import "BalancesView.h"
 #import "TxTableView.h"
 #import "WalletHeaderView.h"
+
+// GemsCore
+#import <GemsCore/PaymentRequestsContainer.h>
 
 @interface GemsWalletViewController : TGViewController <BalancesViewDelegate>
 

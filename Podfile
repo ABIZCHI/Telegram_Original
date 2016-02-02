@@ -1,7 +1,7 @@
 # Uncomment this line to define a global platform for your project
-platform :ios, '7.1'
+platform :ios, '8.1'
 # Uncomment this line if you're using Swift
-# use_frameworks!
+use_frameworks!
 
 target 'Telegraph' do
 	pod 'FXForms', '1.1'
@@ -13,6 +13,7 @@ target 'Telegraph' do
     pod 'iOS-blur'
     pod 'CustomIOSAlertView', '0.9.3'
     pod 'VBFPopFlatButton'
+    pod 'SSKeychain'
 
 #    pod 'BreadWalletCore', :git => 'https://github.com/GetGems/BRCore.git'
     pod 'SwaggerClient', :path => '../gems-app-ios/GemsCore/GemsNetworking/ThirdParty/swagger/'
@@ -37,16 +38,8 @@ end
 
 post_install do |installer|
 	def remove_xcode_6_module_import_for_objcPlusPlus
+		workDir = Dir.pwd
 		# GG
-        workDir = Dir.pwd
-        file_names = ["#{workDir}/Pods/Google/Headers/GGLCore/Public/GGLConfiguration.h", "#{workDir}/Pods/Google/Headers/GGLCore/Public/GGLContext.h", "#{workDir}/Pods/GGLInstanceID/Headers/Public/GGLInstanceID.h"]
-        
-        file_names.each do |file_name|
-            File.open("config.tmp", "w") do |io|
-                io << File.read(file_name).gsub("@import Foundation;", "#import <Foundation/Foundation.h>")
-            end
-            FileUtils.mv("config.tmp", file_name)
-        end
 
         #SSKeyChain
         file_names = ["#{workDir}/Pods/SSKeychain/SSKeychain/SSKeychainQuery.h","#{workDir}/Pods/SSKeychain/SSKeychain/SSKeychain.h"]

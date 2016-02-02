@@ -6,7 +6,8 @@
 //
 //
 
-#import "GemsScanViewController.h"
+// GemsUI
+#import <GemsUI/GemsScanViewController.h>
 
 @interface TGScanViewController : GemsScanViewController
 

@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <SSignalKit/SSignalKit.h>
 
-#import <GemsViewController.h>
+// GemsUI
+#import <GemsUI/GemsViewController.h>
 
 typedef enum {
     TGViewControllerStyleDefault = 0,

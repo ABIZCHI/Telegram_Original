@@ -9,12 +9,13 @@
 #import "GemsLoggedToFacebookView.h"
 #import "GetGemsChallenges.h"
 
-#import <UIImage+Loader.h>
+// GemsUI
+#import <GemsUI/UIImage+Loader.h>
 
 // GemsCore
-#import <GemsStringUtils.h>
-#import <GemsLocalization.h>
-#import <GemsCommons.h>
+#import <GemsCore/GemsStringUtils.h>
+#import <GemsCore/GemsLocalization.h>
+#import <GemsCore/GemsCommons.h>
 
 @implementation GemsLoggedToFacebookView
 

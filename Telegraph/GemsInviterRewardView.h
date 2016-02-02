@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "GemsAlertViewBase.h"
 #import "TGLetteredAvatarView.h"
-#import "ButtonWithIcon.h"
+
+// GemsUI
+#import <GemsUI/ButtonWithIcon.h>
 
 @interface GemsInviterRewardView : GemsAlertViewBase
 

@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PaymentRequest.h"
 #import "TGLetteredAvatarView.h"
+
+// GemsCore
+#import <GemsCore/PaymentRequest.h>
 
 static NSString *GroupPayeeCollectionCellIdentifier = @"GroupPayeeCollectionCell";
 

@@ -12,9 +12,11 @@
 #import "GemsLoginCodeController.h"
 #import "TGAlertView.h"
 #import "TGSendCodeRequestBuilder.h"
-#import "CryptoUtils.h"
-#import "GemsAnalytics.h"
 #import "UIDevice+PlatformInfo.h"
+
+// GemsCore
+#import <GemsCore/CryptoUtils.h>
+#import <GemsCore/GemsAnalytics.h>
 
 @interface GemsLoginPhoneController()
 {

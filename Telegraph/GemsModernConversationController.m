@@ -10,13 +10,10 @@
 #import "GemsModernConversationInputTextPanel.h"
 #import "TGGenericModernConversationCompanion.h"
 #import "TGPrivateModernConversationCompanion.h"
-#import "UserNotifications.h"
 #import "TGGemsWallet.h"
 #import "TGDatabase.h"
 #import "TGAttachmentSheetButtonItemView.h"
-#import "CurrencyExchangeProvider.h"
 #import "ConversationMessageHandler.h"
-#import "GemsAnalytics.h"
 #import <pop/POP.h>
 #import "GemsModernConversationControllerHelper.h"
 #import "GemsModernConversationInviteFriendTitlePanel.h"
@@ -25,32 +22,34 @@
 #import "TGUser+Telegraph.h"
 #import "TGUserDataRequestBuilder.h"
 #import "TGImageUtils.h"
-#import "GemsStringUtils.h"
-#import "GemsNumberPadViewController.h"
-#import "GemsTxConfirmationMessage.h"
 #import "TGBroadcastModernConversationCompanion.h"
 #import "TGSecretModernConversationCompanion.h"
 #import "TGAppDelegate.h"
-#import <GemsUI.h>
 #import "PaymentRequestsContainer+TG.h"
 #import "RandomGifHelper.h"
 #import "TGGiphySearchResultItem.h"
 #import "TGWebSearchGifItem.h"
 #import "HPTextViewInternal.h"
-
 #import "GroupPinCodeView.h"
-#import "NSNumber+CD.h"
-
 #import <objc/runtime.h>
-
 #import "TGWebSearchController.h"
 
 // GemsCore
-#import <GemsLocalization.h>
-#import <GemsCommons.h>
+#import <GemsCore/GemsLocalization.h>
+#import <GemsCore/GemsCommons.h>
+#import <GemsCore/GemsCD.h>
+#import <GemsCore/GemsStringUtils.h>
+#import <GemsCore/GemsAnalytics.h>
 
 // GemsUI
-#import <GemsAppearance.h>
+#import <GemsUI/GemsUI.h>
+#import <GemsUI/GemsAppearance.h>
+#import <GemsUI/GemsTxConfirmationMessage.h>
+#import <GemsUI/GemsNumberPadViewController.h>
+#import <GemsUI/UserNotifications.h>
+
+// Currencies
+#import <GemsCurrencyManager/GemsCurrencyManager.h>
 
 @interface ConversationNumberPad()
 {

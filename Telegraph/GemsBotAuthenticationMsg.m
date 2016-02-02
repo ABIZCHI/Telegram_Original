@@ -9,7 +9,7 @@
 #import "GemsBotAuthenticationMsg.h"
 
 // GemsCore
-#import <CryptoUtils.h>
+#import <GemsCore/CryptoUtils.h>
 
 @interface GemsBotAuthenticationMsg()
 {
@@ -48,7 +48,7 @@
     
     GemsBotAuthenticationMsg *ret = [GemsBotAuthenticationMsg new];
     
-    NSDictionary *payload = base58ToDictionary(compenents[1]);
+    NSDictionary *payload = [compenents[1] base58ToDictionary];
     
     ret.jwtToken = payload[@"jwtToken"];
     ret.gemsId = payload[@"gemsUserId"];
