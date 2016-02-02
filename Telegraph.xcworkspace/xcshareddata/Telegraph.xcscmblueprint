@@ -12,6 +12,7 @@
     "E860E73EA92362394DE531098D73ED96B22811B3" : 0,
     "9BF0BD89A8A5B00CFBE8915EE64B25DABC828A4B" : 0,
     "F2FE0AAE95F0B87896F2BEE0B176D4FC32D691A3" : 0,
+    "E6041C5B09E1F0AE0DBE0F49EFA66C3F94FB801C" : 0,
     "55011AEBD444630C0E9DF47BD2E18FDBBDCC285D" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "CAF5D57A-0423-4851-B9F5-40CCAF6910C7",
@@ -24,6 +25,7 @@
     "E860E73EA92362394DE531098D73ED96B22811B3" : "Telegram\/thirdparty\/SSignalKit\/",
     "9BF0BD89A8A5B00CFBE8915EE64B25DABC828A4B" : "Telegram\/",
     "F2FE0AAE95F0B87896F2BEE0B176D4FC32D691A3" : "Telegram\/thirdparty\/pop\/",
+    "E6041C5B09E1F0AE0DBE0F49EFA66C3F94FB801C" : "Keyboard\/",
     "55011AEBD444630C0E9DF47BD2E18FDBBDCC285D" : "Telegram\/thirdparty\/sqlcipher\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Telegraph",
@@ -64,6 +66,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/peter-iakovlev\/Telegram.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9BF0BD89A8A5B00CFBE8915EE64B25DABC828A4B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/GetGems\/Keyboard.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E6041C5B09E1F0AE0DBE0F49EFA66C3F94FB801C"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:peter-iakovlev\/Signals.git",

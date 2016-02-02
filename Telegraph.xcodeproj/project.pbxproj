@@ -3214,6 +3214,7 @@
 		D0FFBDE01BAB0E7300F532C9 /* TGChannelMembersController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FFBDDE1BAB0E7300F532C9 /* TGChannelMembersController.m */; };
 		E12D642E1C47F7EC00C9CA08 /* GemsUsenameController.h in Headers */ = {isa = PBXBuildFile; fileRef = E12D642C1C47F7EC00C9CA08 /* GemsUsenameController.h */; };
 		E12D642F1C47F7EC00C9CA08 /* GemsUsenameController.m in Sources */ = {isa = PBXBuildFile; fileRef = E12D642D1C47F7EC00C9CA08 /* GemsUsenameController.m */; };
+		E13CD5311C60E67A00646E6E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E13CD5301C60E67A00646E6E /* Social.framework */; };
 		E15E87C81C428F090074FA83 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E15E87C71C428F090074FA83 /* GoogleService-Info.plist */; };
 		E16D30341C48035F0030F9EB /* GemsRootController.h in Headers */ = {isa = PBXBuildFile; fileRef = E16D30321C48035F0030F9EB /* GemsRootController.h */; };
 		E16D30351C48035F0030F9EB /* GemsRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = E16D30331C48035F0030F9EB /* GemsRootController.m */; };
@@ -8305,6 +8306,7 @@
 		D0FFBDDE1BAB0E7300F532C9 /* TGChannelMembersController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGChannelMembersController.m; sourceTree = "<group>"; };
 		E12D642C1C47F7EC00C9CA08 /* GemsUsenameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GemsUsenameController.h; sourceTree = "<group>"; };
 		E12D642D1C47F7EC00C9CA08 /* GemsUsenameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GemsUsenameController.m; sourceTree = "<group>"; };
+		E13CD5301C60E67A00646E6E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		E15E87C71C428F090074FA83 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E16D30321C48035F0030F9EB /* GemsRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GemsRootController.h; sourceTree = "<group>"; };
 		E16D30331C48035F0030F9EB /* GemsRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GemsRootController.m; sourceTree = "<group>"; };
@@ -8562,6 +8564,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E13CD5311C60E67A00646E6E /* Social.framework in Frameworks */,
 				D00C79211BBCA4CA00F979C8 /* HockeySDK.framework in Frameworks */,
 				D0CD8FF71BB33B9900E05F40 /* SafariServices.framework in Frameworks */,
 				6836F8F51BB262CC00D3A77B /* WatchConnectivity.framework in Frameworks */,
@@ -13679,6 +13682,7 @@
 		D08805AF156E8F3600311537 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E13CD5301C60E67A00646E6E /* Social.framework */,
 				685CEA611BB5B12200393946 /* ContactsUI.framework */,
 				D0CD8FF61BB33B9900E05F40 /* SafariServices.framework */,
 				685CEA5F1BB5AED200393946 /* Contacts.framework */,
@@ -18900,10 +18904,10 @@
 			buildPhases = (
 				EAA87BFC515BD6F875BA3F91 /* Check Pods Manifest.lock */,
 				D08805A8156E8F3600311537 /* Sources */,
-				D08805A9156E8F3600311537 /* Frameworks */,
 				D08805AA156E8F3600311537 /* Resources */,
 				932E96A716946F6A00D6EC55 /* ShellScript */,
 				687751281A16D79400AC673F /* Headers */,
+				D08805A9156E8F3600311537 /* Frameworks */,
 				D061F3021A9290F80031BCBE /* Embed App Extensions */,
 				6879BEE41B43683E007C9800 /* Embed Watch Content */,
 				FADD753480159E2C31348A83 /* Embed Pods Frameworks */,
@@ -18961,7 +18965,7 @@
 						};
 					};
 					D08805AB156E8F3600311537 = {
-						DevelopmentTeam = X834Q8SBVP;
+						DevelopmentTeam = HVUD5U693H;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -22610,7 +22614,7 @@
 					thirdparty/SSignalKit,
 				);
 				INFOPLIST_FILE = "Telegraph/Telegraph-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Telegraph/thirdparty/opus/lib",
@@ -22658,7 +22662,7 @@
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_ENTITLEMENTS = Telegraph/Telegram.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_BITCODE = NO;
@@ -22693,7 +22697,7 @@
 					thirdparty/SSignalKit,
 				);
 				INFOPLIST_FILE = "Telegraph/Telegraph-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Telegraph/thirdparty/opus/lib",
