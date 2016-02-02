@@ -9,7 +9,7 @@
 #import "TGCheckCollectionItemView.h"
 
 // Currencies
-#import <GemsCurrencyManager.h>
+#import <GemsCurrencyManager/GemsCurrencyManager.h>
 
 @interface BitcoinUnitView : TGCheckCollectionItemView
 

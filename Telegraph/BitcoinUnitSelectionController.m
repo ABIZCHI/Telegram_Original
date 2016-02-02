@@ -9,10 +9,11 @@
 #import "BitcoinUnitSelectionController.h"
 #import "UnitItem.h"
 #import "BitcoinUnitView.h"
-#import "GemsStringUtils.h"
+
 
 // GemsCore
 #import <GemsCore/GemsLocalization.h>
+#import <GemsCore/GemsStringUtils.h>
 
 @interface BitcoinUnitSelectionController ()
 {

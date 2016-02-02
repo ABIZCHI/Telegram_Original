@@ -8,8 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "ASWatcher.h"
-#import "Gems.h"
-#import "GemsAppearance.h"
+
+// GemsUI
+#import <GemsUI/GemsAppearance.h>
+
+// GemsCore
+#import <GemsCore/Gems.h>
 
 #ifdef GEMS
 #undef GEMS

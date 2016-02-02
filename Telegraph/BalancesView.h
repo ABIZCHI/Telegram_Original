@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UICountingLabel.h"
+
+// GemsUI
+#import <GemsUI/UICountingLabel.h>
 
 // Currencies
-#import <GemsCurrencyManager.h>
+#import <GemsCurrencyManager/GemsCurrencyManager.h>
 
 @interface BalanceObject : NSObject
 

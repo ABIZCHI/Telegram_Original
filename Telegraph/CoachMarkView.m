@@ -24,11 +24,13 @@
 //  THE SOFTWARE.
 
 #import "CoachMarkView.h"
-#import "UILabel+EmphasizedText.h"
 #import "TGNavigationBar.h"
 #import "TGAppDelegate.h"
 #import "TGImageUtils.h"
 #import "GemsNavigationController.h"
+
+// GemsUI
+#import <GemsUI/UILabel+EmphasizedText.h>
 
 #define RADIUS    10.0
 #define MARGIN    10.0

@@ -24,7 +24,7 @@
 #import "GemsRootController.h"
 
 // GemsCore
-#import <GemsAppDelegate.h>
+#import <GemsCore/GemsAppDelegate.h>
 
 extern CFAbsoluteTime applicationStartupTimestamp;
 extern CFAbsoluteTime mainLaunchTimestamp;

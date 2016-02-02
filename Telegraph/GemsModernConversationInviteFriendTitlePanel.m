@@ -15,14 +15,13 @@
 #import "TGNavigationBar.h"
 #import "TGDatabase.h"
 
-#import <UIImage+Loader.h>
-#import <GemsStringUtils.h>
-
 // GemsUI
 #import <GemsUI/GemsAppearance.h>
+#import <GemsUI/UIImage+Loader.h>
 
 // GemsCore
 #import <GemsCore/GemsLocalization.h>
+#import <GemsCore/GemsStringUtils.h>
 
 #define INVITE_FRIEND_PANEL_LAST_SHOWN_KEY @"INVITE_FRIEND_PANEL_LAST_SHOWN_KEY"
 

@@ -8,23 +8,21 @@
 
 #import "WalletHeaderView.h"
 #import "TGGemsWallet.h"
-#import "GemsStringUtils.h"
 #import "TGNavigationBar.h"
 #import "TGAppDelegate.h"
-#import "UILabel+ShortenFormating.h"
-#import "GemsAnalytics.h"
-#import "GemsColors.h"
 #import "SocialSharerHelper.h"
 
-#import <UIImage+Loader.h>
-
-#import "NSNumber+CD.h"
-
 // GemsCore
-#import <GemsLocalization.h>
+#import <GemsCore/GemsLocalization.h>
+#import <GemsCore/GemsCD.h>
+#import <GemsCore/GemsColors.h>
+#import <GemsCore/GemsAnalytics.h>
+#import <GemsCore/GemsStringUtils.h>
 
 // GemsUI
-#import <GemsAppearance.h>
+#import <GemsUI/GemsAppearance.h>
+#import <GemsUI/UIImage+Loader.h>
+#import <GemsUI/UILabel+ShortenFormating.h>
 
 @interface WalletHeaderView()
 {
@@ -92,8 +90,8 @@
     [_balancesView refreshCurrency:_B withNewValue:newBtc];
 }
 
-- (IBAction)inviteFriendsPressed:(id)sender {
-    [[_sharerHelper inviteAttachmentSheetWindow] showAnimated:YES completion:NilCompletionBlock];
+- (IBAction)inviteFriendsPressed:(__unused id)sender {
+//    [[_sharerHelper inviteAttachmentSheetWindow] showAnimated:YES completion:NilCompletionBlock];
 }
 
 #pragma mark - scrollAnimationEffect

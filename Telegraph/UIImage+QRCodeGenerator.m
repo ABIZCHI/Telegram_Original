@@ -6,9 +6,11 @@
 //
 
 #import "UIImage+QRCodeGenerator.h"
-#import "ZXMultiFormatWriter.h"
-#import "ZXBitMatrix.h"
-#import "ZXImage.h"
+
+// ZXingObjC
+#import <ZXingObjC/ZXMultiFormatWriter.h>
+#import <ZXingObjC/ZXBitMatrix.h>
+#import <ZXingObjC/ZXImage.h>
 
 @implementation UIImage (QRCodeGenerator)
 

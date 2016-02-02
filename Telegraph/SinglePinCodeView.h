@@ -6,9 +6,11 @@
 //
 //
 
-#import "GemsPinCodeView.h"
-#import "PaymentRequestsContainer.h"
-#import "PaymentRequest.h"
+// GemsUI
+#import <GemsUI/GemsPinCodeView.h>
+
+// GemsCore
+#import <GemsCore/PaymentRequestsContainer.h>
 
 @interface SinglePinCodeView : GemsPinCodeView
 

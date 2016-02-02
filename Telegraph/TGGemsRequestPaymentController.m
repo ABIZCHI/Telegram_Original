@@ -9,8 +9,9 @@
 #import "TGGemsRequestPaymentController.h"
 #import "TGAppDelegate.h"
 #import "GemsNavigationController.h"
-#import <Macros.h>
 
+// GemsCore
+#import <GemsCore/Macros.h>
 
 @implementation TGGemsRequestPaymentController
 

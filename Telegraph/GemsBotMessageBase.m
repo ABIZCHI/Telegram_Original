@@ -12,7 +12,7 @@
 #import "GemsBotErrorMessage.h"
 
 //GemsCore
-#import <CryptoUtils.h>
+#import <GemsCore/CryptoUtils.h>
 #import <GemsCore/GemsLocalization.h>
 
 @implementation GemsBotMessageBase
@@ -29,7 +29,7 @@
     if(compenents.count == 2)
     {
         NSString *base58Encoded = compenents[1];
-        NSDictionary *payload = base58ToDictionary(base58Encoded);
+        NSDictionary *payload = [base58Encoded base58ToDictionary];
         
         if([payload[@"success"] boolValue]) return nil;
         

@@ -6,7 +6,8 @@
 //
 //
 
-#import "GemsAuthenticationService.h"
+// GemsNetworking
+#import <GemsNetworking/GemsAuthenticationService.h>
 
 @interface BotAuthenticator : GemsAuthenticationService
 

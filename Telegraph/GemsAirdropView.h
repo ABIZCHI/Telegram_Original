@@ -7,8 +7,10 @@
 //
 
 #import "GemsAlertViewBase.h"
-#import <UIImage+Loader.h>
-#import "ButtonWithIcon.h"
+
+// GemsUI
+#import <GemsUI/UIImage+Loader.h>
+#import <GemsUI/ButtonWithIcon.h>
 
 @interface GemsAirdropView : GemsAlertViewBase
 

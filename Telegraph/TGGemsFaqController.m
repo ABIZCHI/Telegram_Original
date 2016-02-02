@@ -11,7 +11,7 @@
 #import "TGAppDelegate.h"
 
 // GemsCore
-#import <Macros.h>
+#import <GemsCore/Macros.h>
 
 @interface TGGemsFaqController ()
 

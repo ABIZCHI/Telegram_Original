@@ -7,19 +7,20 @@
 //
 
 #import "GemsInviterRewardView.h"
-
 #import "TGUser.h"
 #import "TGDatabase.h"
 #import "TGAppDelegate.h"
 #import "TGConversation.h"
 #import "TGDialogListCompanion.h"
 #import "GemsDialogListController.h"
-
 #import "GemsInviteRewardAlert.h"
-
-#import <UIImage+Loader.h>
 #import <QuartzCore/QuartzCore.h>
-#import <GemsStringUtils.h>
+
+// GemsCore
+#import <GemsCore/GemsStringUtils.h>
+
+// GemsUI
+#import <GemsUI/UIImage+Loader.h>
 
 @implementation GemsInviterRewardView
 

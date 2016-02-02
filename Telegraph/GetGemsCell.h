@@ -11,7 +11,7 @@
 #import "GemsStoreCommons.h"
 
 //Currencies
-#import <GemsCurrencyManager.h>
+#import <GemsCurrencyManager/GemsCurrencyManager.h>
 
 @interface GetGemsCellData : AppStoreCellData <NSCoding>
 

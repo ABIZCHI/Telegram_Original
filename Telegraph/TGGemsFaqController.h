@@ -6,7 +6,8 @@
 //
 //
 
-#import "FAQViewController.h"
+// GemsUI
+#import <GemsUI/FAQViewController.h>
 
 @interface TGGemsFaqController : FAQViewController
 

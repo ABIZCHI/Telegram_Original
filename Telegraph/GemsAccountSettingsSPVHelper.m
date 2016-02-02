@@ -9,10 +9,10 @@
 #import "GemsAccountSettingsSPVHelper.h"
 
 // BreadWallet
-#import <NSMutableData+Bitcoin.h>
-#import <BRBIP39Mnemonic.h>
-#import <BRBIP32Sequence.h>
-#import <BRKey.h>
+#import <BreadWalletCore/NSMutableData+Bitcoin.h>
+#import <BreadWalletCore/BRBIP39Mnemonic.h>
+#import <BreadWalletCore/BRBIP32Sequence.h>
+#import <BreadWalletCore/BRKey.h>
 
 @implementation GemsAccountSettingsSPVHelper
 

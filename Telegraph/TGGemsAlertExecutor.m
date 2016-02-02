@@ -7,13 +7,15 @@
 //
 
 #import "TGGemsAlertExecutor.h"
-#import "FXBlurView.h"
 
 #import "GemsAlert.h"
 #import "GemsAlertViewBase.h"
 #import "GemsAlertCenter.h"
 
 #import <QuartzCore/QuartzCore.h>
+
+// GemsUI
+#import <GemsUI/FXBlurView.h>
 
 @interface TGGemsAlertExecutor() <UIScrollViewDelegate>
 {

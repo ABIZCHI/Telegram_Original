@@ -1,6 +1,7 @@
 #import "TGPhoneUtils.h"
 
-#import "RMPhoneFormat.h"
+// GemsUI
+#import <GemsUI/RMPhoneFormat.h>
 
 @implementation TGPhoneUtils
 

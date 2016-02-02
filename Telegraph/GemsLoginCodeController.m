@@ -15,8 +15,10 @@
 #import "UIDevice+PlatformInfo.h"
 #import "TGPhoneUtils.h"
 #import "TGTelegraph.h"
-#import "GemsColors.h"
 #import "GemsLoginProfileController.h"
+
+// GemsCore
+#import <GemsCore/GemsColors.h>
 
 @interface GemsLoginCodeController ()
 {

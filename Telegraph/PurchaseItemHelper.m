@@ -7,13 +7,12 @@
 //
 
 #import "PurchaseItemHelper.h"
-
 #import "TGGemsWallet.h"
-#import "GemsAnalytics.h"
 #import "PaymentRequestsContainer+TG.h"
 
-//GemsCore
-#import <PaymentRequest.h>
+// GemsCore
+#import <GemsCore/PaymentRequest.h>
+#import <GemsCore/GemsAnalytics.h>
 
 @implementation PurchaseItemHelper
 

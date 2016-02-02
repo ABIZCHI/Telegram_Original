@@ -11,14 +11,14 @@
 
 @interface SocialSharerHelper : NSObject
 
-- (TGAttachmentSheetWindow*)inviteAttachmentSheetWindow;
+- (TGAttachmentSheetWindow*)inviteAttachmentSheetWindow:(UIViewController*)presentor;
 
 - (void)copyLink;
 - (void)inviteWithSms;
-- (void)inviteViaFB;
+- (void)inviteViaFB:(UIViewController*)presentor;
 - (void)inviteViaWhatsApp;
-- (void)inviteViaTwitter;
--(void)inviteViaEmail;
+- (void)inviteViaTwitter:(UIViewController*)presentor;
+- (void)inviteViaEmail:(UIViewController*)presentor;
 - (void)inviteViaSms;
 - (void)inviteViaTelegram;
 

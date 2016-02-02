@@ -11,9 +11,9 @@
 #import "GetGemsCell.h"
 #import <QuartzCore/QuartzCore.h>
 
-//GemsUI
-#import <UIImage+Loader.h>
-#import <GemsAppearance.h>
+// GemsUI
+#import <GemsUI/UIImage+Loader.h>
+#import <GemsUI/GemsAppearance.h>
 
 @interface SquareImageCell()
 {    

@@ -19,10 +19,7 @@
 #import "GetGemsChallenges.h"
 #import "SocialSharerHelper.h"
 #import "GemsStoreCommons.h"
-#import <GemsCD.h>
-#import "UserNotifications.h"
 #import "TGAppDelegate.h"
-#import "GemsAnalytics.h"
 
 #import "GemsAlertCenter.h"
 #import "GemsAlert.h"
@@ -31,7 +28,14 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 
 // Networking
-#import <GemsNetworking.h>
+#import <GemsNetworking/GemsNetworking.h>
+
+// GemsCore
+#import <GemsCore/GemsCD.h>
+#import <GemsCore/GemsAnalytics.h>
+
+// GemsUI
+#import <GemsUI/UserNotifications.h>
 
 @interface GemsStoreController () <UITableViewDelegate, AppStoreCellDelegate, UINavigationControllerDelegate>
 {
@@ -273,7 +277,7 @@ heightForFooterInSection:(NSInteger)section {
             }
                 break;
             case GetGemsChallengeFacebookShareApp:
-                [_sharerHelper inviteViaFB];
+                [_sharerHelper inviteViaFB:self];
                 [self trackInviteViaSocial:@"facebook"];
                 break;
             case GetGemsChallengeInviteAFriendViaFB:
@@ -294,7 +298,7 @@ heightForFooterInSection:(NSInteger)section {
                 
                 break;
             case GetGemsChallengeInviteAFriendViaTwitter:
-                [_sharerHelper inviteViaTwitter];
+                [_sharerHelper inviteViaTwitter:self];
                 [self trackInviteViaSocial:@"twitter"];
                 break;
             case GetGemsChallengeInviteAFriendViaWhatsapp:
@@ -310,7 +314,7 @@ heightForFooterInSection:(NSInteger)section {
                 [self trackInviteViaSocial:@"telegram"];
                 break;
             case GetGemsChallengeInviteAFriendViaMail:
-                [_sharerHelper inviteViaEmail];
+                [_sharerHelper inviteViaEmail:self];
                 [self trackInviteViaSocial:@"email"];
                 break;
             case GetGemsChallengeAppRating:

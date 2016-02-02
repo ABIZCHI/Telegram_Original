@@ -7,11 +7,13 @@
 //
 
 #import "BalancesView.h"
-#import "CDGemsSystem.h"
-#import <GemsCD.h>
 #import "TGCommon.h"
-#import "UIColor+CrossFade.h"
-#import "NSNumber+CD.h"
+
+// GemsUI
+#import <GemsUI/UIColor+CrossFade.h>
+
+// GemsCore
+#import <GemsCore/GemsCD.h>
 
 @implementation BalanceObject
 

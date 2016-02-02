@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <GemsIntroController.h>
+
+// GemsUI
+#import <GemsUI/GemsIntroController.h>
 
 @interface TGGemsIntroController : GemsIntroController
 

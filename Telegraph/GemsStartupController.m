@@ -8,44 +8,42 @@
 
 #import "TGGemsIntroController.h"
 #import "GemsStartupController.h"
-
 #import "GemsLoginPhoneController.h"
 #import "GemsLoginCodeController.h"
 #import "GemsUsenameController.h"
 #import "GemsNavigationController.h"
-#import "UserNotifications.h"
-#import "DiamondActivityIndicator.h"
-#import "CryptoUtils.h"
-#import "NSURL+GemsReferrals.h"
 #import "CoachMarks.h"
 #import "UIDevice+PlatformInfo.h"
-
 #import "TelegramSignupHelper.h"
-
-
-
 #import "TGAppDelegate.h"
 #import "TGTelegraph.h"
 #import "TGGemsWallet.h"
-
-#import <GemsUI.h>
-#import <Branch.h>
-#import <NSString+Bitcoin.h>
+#import <Branch/Branch.h>
 
 // bots
 #import "BotAuthenticator.h"
 
 // Networking
-#import <GemsNetworker.h>
+#import <GemsNetworking/GemsNetworker.h>
 
 // GemsCore
-#import <GemsCD.h>
-#import <GemsAnalytics.h>
-#import <GemsStringUtils.h>
-#import <KeyChain.h>
+#import <GemsCore/GemsCD.h>
+#import <GemsCore/GemsAnalytics.h>
+#import <GemsCore/GemsStringUtils.h>
+#import <GemsCore/KeyChain.h>
+#import <GemsCore/NSURL+GemsReferrals.h>
+#import <GemsCore/CryptoUtils.h>
+
+// GemsUI
+#import <GemsUI/GemsUI.h>
+#import <GemsUI/UserNotifications.h>
+#import <GemsUI/DiamondActivityIndicator.h>
 
 // Currencies
-#import <GemsCurrencyManager.h>
+#import <GemsCurrencyManager/GemsCurrencyManager.h>
+
+// BreadWallet
+#import <BreadWalletCore/NSString+Bitcoin.h>
 
 @interface GemsStartupController ()<ASWatcher, UITextFieldDelegate>
 {
@@ -255,9 +253,6 @@
             [UserNotifications showUserMessage:error.localizedDescription];
             return ;
         }
-        
-        // save critical data to keychain
-        [[Gems sharedInstance] storeUserDataInKeychain:[CDGemsUser MR_findFirst]];
         
         // set branch identity
         CDGemsUser *user = [CDGemsUser MR_findFirst];

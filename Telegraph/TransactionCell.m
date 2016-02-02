@@ -9,19 +9,18 @@
 #import "TransactionCell.h"
 #import "TGTelegraph.h"
 #import "TGUserDataRequestBuilder.h"
-#import "UILabel+ShortenFormating.h"
-#import "GemsStringUtils.h"
 #import "TGImageUtils.h"
-#import "NSNumber+CD.h"
-
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <QuartzCore/QuartzCore.h>
 
 // GemsCore
-#import <Macros.h>
+#import <GemsCore/Macros.h>
+#import <GemsCore/GemsCD.h>
+#import <GemsCore/GemsStringUtils.h>
 
-//GemsUI
-#import <GemsAppearance.h>
+// GemsUI
+#import <GemsUI/GemsAppearance.h>
+#import <GemsUI/UILabel+ShortenFormating.h>
 
 static UIImage *placeholder;
 

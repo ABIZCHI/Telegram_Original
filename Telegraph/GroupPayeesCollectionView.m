@@ -8,9 +8,12 @@
 
 #import "GroupPayeesCollectionView.h"
 #import "GroupPayeeCollectionCell.h"
-#import "Macros.h"
 
-#import <UIImage+Loader.h>
+// GemsUI
+#import <GemsUI/UIImage+Loader.h>
+
+// GemsCore
+#import <GemsCore/Macros.h>
 
 @interface GroupPayeesCollectionView()
 {

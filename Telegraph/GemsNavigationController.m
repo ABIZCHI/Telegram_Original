@@ -10,7 +10,7 @@
 #import "TGAppDelegate.h"
 
 // GemsUI
-#import <GemsAppearance.h>
+#import <GemsUI/GemsAppearance.h>
 
 @interface GemsNavigationController ()
 

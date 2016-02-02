@@ -8,10 +8,12 @@
 
 #import "GemsPassphraseRemainderView.h"
 #import "TGGems.h"
-#import <UIImage+Loader.h>
+
+// GemsUI
+#import <GemsUI/UIImage+Loader.h>
 
 // GemsCore
-#import <GemsLocalization.h>
+#import <GemsCore/GemsLocalization.h>
 
 @implementation GemsPassphraseRemainderView
 

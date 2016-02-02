@@ -7,43 +7,38 @@
 //
 
 #import "GemsWalletViewController.h"
-#import <GemsCD.h>
-#import "UserNotifications.h"
 
 #import "GemsAccountSettingsController.h"
 #import "TGScanViewController.h"
-#import "UserNotifications.h"
 #import "TGGemsRequestPaymentController.h"
-#import "GemsNumberPadViewController.h"
-
 #import "GemsEventObservers.h"
-#import "iToast+Gems.h"
-#import "GemsAnalytics.h"
-
-#import "NSURL+GemsReferrals.h"
 #import "TGAttachmentSheetButtonItemView.h"
-
-#import "UILabel+ShortenFormating.h"
-#import "GemsStringUtils.h"
 #import "TxDetailsView.h"
-#import "FXBlurView.h"
 #import "TxDataSource.h"
 #import <Social/Social.h>
 #import <Accounts/Accounts.h>
-
-#import "FlippingTitleView.h"
-
 #import <QuartzCore/QuartzCore.h>
-#import <UIImage+Loader.h>
-#import <GemsUI.h>
-#import <GemsUI/UserNotifications.h>
-
 #import "TGAppDelegate.h"
 #import "TGGemsWallet.h"
 #import "TGImageUtils.h"
 #import "TGNavigationBar.h"
 
-#import "NSNumber+CD.h"
+// GemsUI
+#import <GemsUI/UIImage+Loader.h>
+#import <GemsUI/GemsUI.h>
+#import <GemsUI/UserNotifications.h>
+#import <GemsUI/UILabel+ShortenFormating.h>
+#import <GemsUI/iToast+Gems.h>
+#import <GemsUI/UserNotifications.h>
+#import <GemsUI/FlippingTitleView.h>
+#import <GemsUI/FXBlurView.h>
+#import <GemsUI/GemsNumberPadViewController.h>
+
+// GemsCore
+#import <GemsCore/GemsCD.h>
+#import <GemsCore/GemsStringUtils.h>
+#import <GemsCore/NSURL+GemsReferrals.h>
+#import <GemsCore/GemsAnalytics.h>
 
 @interface GemsWalletViewController () <AVCaptureMetadataOutputObjectsDelegate, UIScrollViewDelegate, TxTableViewDelegate>
 {

@@ -7,9 +7,11 @@
 //
 
 #import "GemsAlertCenter.h"
-#import "GCM.h"
 #import "GemsAlert.h"
 
+#if USE_GCM == 1
+#import "GCM.h"
+#endif
 
 #define PENDING_ALERTS_KEY @"PENDING_ALERTS_KEY"
 
@@ -37,11 +39,12 @@
     self = [super init];
     if(self)
     {
+#if USE_GCM == 1
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(didReceiveGcmNotification:)
                                                      name:GcmDidReceiveNotification
                                                    object:nil];
-        
+#endif
         [[NSNotificationCenter defaultCenter]addObserver:self
                                                 selector:@selector(applicaitonDidBecomeActive)
                                                     name:UIApplicationDidBecomeActiveNotification
@@ -70,6 +73,7 @@
 
 - (void) didReceiveGcmNotification:(NSNotification *) notification
 {
+#if USE_GCM == 1
     if ([[notification name] isEqualToString:GcmDidReceiveNotification])
     {
         NSDictionary *notif = notification.userInfo;
@@ -95,6 +99,7 @@
             [_executor executeAlerts:[self getAllPendingAlerts]];
         }
     }
+#endif
 }
 
 #pragma mark - NSDefaults

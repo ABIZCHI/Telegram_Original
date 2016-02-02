@@ -8,11 +8,12 @@
 
 #import "GroupPinCodeView.h"
 #import "GroupPayeesCollectionView.h"
-#import "GemsStringUtils.h"
 #import "TGGemsWallet.h"
-#import "NSNumber+CD.h"
-
 #import <objc/runtime.h>
+
+// GemsCore
+#import <GemsCore/GemsStringUtils.h>
+#import <GemsCore/GemsCD.h>
 
 @implementation PaymentRequestsContainer (GroupPinCodeView)
 

@@ -9,42 +9,37 @@
 #import "TGGems.h"
 #import "TGGemsWallet.h"
 #import "ActionStage.h"
-#import "UserNotifications.h"
-#import "DiamondActivityIndicator.h"
 #import "TGAppDelegate.h"
 #import "TGImageUtils.h"
 #import "SGraphObjectNode.h"
 #import "TGTelegraph.h"
 #import "CoachMarks.h"
-
 #import "TGGemsAlertExecutor.h"
 #import "GemsAlertCenter.h"
 #import "GemsPassphraseReminderAlert.h"
-
 #import "GetGemsChallenges.h"
-
-#import "GemsAnalytics.h"
-
-#import "GemsAppRating.h"
-#import "GemAppRatingStandardPolicy.h"
-#import "GemsAppRatingStandardView.h"
-
 #import "BotAuthenticator.h"
-#import <Branch.h>
-#import "NSURL+GemsReferrals.h"
+#import <Branch/Branch.h>
+#import "GemsWalletViewController.h"
+#import "GemsStoreController.h"
 
 // netwokring
-#import <GemsNetworking.h>
+#import <GemsNetworking/GemsNetworking.h>
 
 // GemsUI
-#import <GemsUI.h>
-#import <BtcShowPassphraseController.h>
-#import <GemsPinCodeView.h>
-#import <GemsWalletViewController.h>
-#import <GemsStoreController.h>
+#import <GemsUI/GemsUI.h>
+#import <GemsUI/BtcShowPassphraseController.h>
+#import <GemsUI/GemsPinCodeView.h>
+#import <GemsUI/UserNotifications.h>
+#import <GemsUI/DiamondActivityIndicator.h>
+#import <GemsUI/GemsAppRating.h>
+#import <GemsUI/GemAppRatingStandardPolicy.h>
+#import <GemsUI/GemsAppRatingStandardView.h>
 
 // GemsCore
 #import <GemsCore/GemsLocalization.h>
+#import <GemsCore/GemsAnalytics.h>
+#import <GemsCore/NSURL+GemsReferrals.h>
 
 #define WALLET_NEEDS_POP_UP_BACKUP_KEY @"WALLET_NEEDS_POP_UP_BACKUP_KEY"
 

@@ -7,10 +7,12 @@
 //
 
 #import "GemsContactsController.h"
-#import <GemsCD.h>
-#import "NSURL+GemsReferrals.h"
-#import "GemsStringUtils.h"
-#import "GemsAnalytics.h"
+
+// GemsCore
+#import <GemsCore/GemsCD.h>
+#import <GemsCore/NSURL+GemsReferrals.h>
+#import <GemsCore/GemsStringUtils.h>
+#import <GemsCore/GemsAnalytics.h>
 
 @implementation GemsContactsController
 

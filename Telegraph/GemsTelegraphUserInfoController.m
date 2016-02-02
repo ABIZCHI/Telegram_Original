@@ -8,8 +8,10 @@
 
 #import "GemsTelegraphUserInfoController.h"
 #import "TGUserInfoUsernameCollectionItem.h"
-#import <GemsCD.h>
 #import "TGAppDelegate.h"
+
+// GemsCore
+#import <GemsCore/GemsCD.h>
 
 @interface GemsTelegraphUserInfoController ()
 

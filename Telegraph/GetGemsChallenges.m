@@ -9,12 +9,13 @@
 #import "GetGemsChallenges.h"
 #import "FacebookSDKWrapper.h"
 #import "GemsTransactionsCommons.h"
-#import "GemsAppRatingStandardView.h"
 
-#import "GemsAnalytics.h"
+// GemsUI
+#import <GemsUI/GemsAppRatingStandardView.h>
 
-// GmesCore
-#import <GemsCommons.h>
+// GemsCore
+#import <GemsCore/GemsCommons.h>
+#import <GemsCore/GemsAnalytics.h>
 
 static NSString const * AvailableChallengesKey = @"AvailableChallengesKey";
 static NSString const * AvailableChallengesWereSetKey = @"AvailableChallengesWereSetKey";
