@@ -131,14 +131,14 @@ static UIImage *placeholder;
                       placeholder = UIGraphicsGetImageFromCurrentImageContext();
                       UIGraphicsEndImageContext();
                   });
-    
-    if(user.photoUrlSmall)
-        [_iv loadImage:user.photoUrlSmall filter:@"circle:40x40" placeholder:placeholder forceFade:true];
-    else {
-        [_iv loadUserPlaceholderWithSize:CGSizeMake(diameter, diameter) uid:user.uid firstName:user.firstName lastName:user.lastName placeholder:placeholder];
-        
-//        [_iv loadRandomFunkyPlaceholderWithUniqueIdentifier:[NSString stringWithFormat:@"%d", user.uid] andFilter:@"circle:40x40"];
-    }
+    TGDispatchOnMainThread(^
+       {
+           if(user.photoUrlSmall)
+               [_iv loadImage:user.photoUrlSmall filter:@"circle:37x37" placeholder:placeholder];
+           else {
+               [_iv loadUserPlaceholderWithSize:CGSizeMake(diameter, diameter) uid:user.uid firstName:user.firstName lastName:user.lastName placeholder:placeholder];
+           }
+       });
 }
 
 #pragma mark - binding by type

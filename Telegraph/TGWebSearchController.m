@@ -94,7 +94,7 @@
     NSArray *_recentSearchResults;
     NSArray *_selectedRecentItems;
     
-    NSArray *_selectedItems;
+//    NSArray *_selectedItems;
     
     UIView *_nothingFoundView;
     

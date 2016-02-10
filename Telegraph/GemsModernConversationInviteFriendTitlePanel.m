@@ -54,7 +54,7 @@
 
 - (id)initWithFrame:(CGRect)frame conversationId:(int64_t)uid
 {
-    self = [super initWithFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, 80.0f)];
+    self = [super initWithFrame:CGRectMake(frame.origin.x, 60.0f, frame.size.width, 50.0f)];
     if (self)
     {
         if (!TGBackdropEnabled())
@@ -69,7 +69,7 @@
             [self addSubview:_backgroundView];
         }
         
-        TGNavigationController *navController = (TGNavigationController*)TGAppDelegateInstance.rootController.presentedViewController;
+        TGNavigationController *navController = (TGNavigationController*)TGAppDelegateInstance.rootController.detailNavigationController;
         TGNavigationBar *navBar = (TGNavigationBar*)navController.navigationBar;
         UIColor *bgColor = navBar.barBackgroundView.backgroundColor;
         
@@ -90,6 +90,7 @@
         TGUser *user = [TGDatabaseInstance() loadUser:uid];
         NSString *title = [NSString stringWithFormat:@"%@\n%@", _R(GemsLocalized(@"GemsInviteBannerTitle"), @"%1$s", user.firstName), GemsLocalized(@"GemsInviteBannerSubtitle")];
         [_actionButton setTitle:title forState:UIControlStateNormal];
+        _actionButton.titleLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:_actionButton];
         
         UIImage *closeImage = [UIImage imageNamed:@"ModernConversationTitlePanelClose.png"];
@@ -112,7 +113,7 @@
     
     _backgroundView.frame = self.bounds;
     _stripeLayer.frame = CGRectMake(0.0f, self.frame.size.height - TGRetinaPixel, self.frame.size.width, TGRetinaPixel);
-    _actionButton.frame = CGRectInset(self.bounds, 40.0f, 0.0f);
+    _actionButton.frame = self.frame;
     
     CGRect closeButtonFrame = _closeButton.frame;
     closeButtonFrame.origin = CGPointMake(self.frame.size.width - 4.0f - TGRetinaPixel - closeButtonFrame.size.width, TGRetinaPixel);

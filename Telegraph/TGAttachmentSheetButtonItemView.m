@@ -6,7 +6,6 @@
 
 @interface TGAttachmentSheetButtonItemView ()
 {
-    TGModernButton *_button;
     UIImageView *_imageView;
 }
 

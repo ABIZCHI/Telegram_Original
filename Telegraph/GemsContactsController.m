@@ -7,6 +7,8 @@
 //
 
 #import "GemsContactsController.h"
+#import "ExtensionConst.h"
+#import "TGUser+TGUser_Coding.h"
 
 // GemsCore
 #import <GemsCore/GemsCD.h>
@@ -83,6 +85,32 @@
 {
     if(user.userName)
         [GemsAnalytics track:AnalyticsUnsolicitedMsg args:@{@"username": user.userName}];
+}
+
+- (void)actorCompleted:(int)resultCode path:(NSString *)path result:(id)result
+{
+    [super actorCompleted:resultCode path:path result:result];
+    
+    if ([path isEqualToString:@"/tg/contactlist/(contacts)"])
+    {
+        if (resultCode == 0)
+        {
+            NSDictionary *resultDict = ((SGraphObjectNode *)result).object;
+            NSArray *contacts = [resultDict objectForKey:@"contacts"];
+            
+            /**
+              * We store the contacts for later use in the kb extension
+              * so to not load the whole telegram core
+             */
+            NSMutableArray *toStore = [NSMutableArray new];
+            for (TGUser *u in contacts) {
+                [toStore addObject:[u tgContact]];
+            }
+            NSData *dic = [NSKeyedArchiver archivedDataWithRootObject:toStore];
+            NSUserDefaults *def = [[NSUserDefaults alloc] initWithSuiteName:appGroupsSuite];
+            [def setObject:dic forKey:cachedTGUsersKey];
+        }
+    }
 }
 
 @end

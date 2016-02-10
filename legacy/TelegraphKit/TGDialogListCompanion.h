@@ -27,7 +27,11 @@
 @property (nonatomic) bool showSecretInForwardMode;
 @property (nonatomic) bool showGroupsOnly;
 @property (nonatomic) int unreadCount;
+
 GEMS_ADDED_PROPERTY @property(nonatomic, strong) NSMutableIndexSet *removedConversationIndxsForGemsUsage;
+GEMS_ADDED_METHOD - (void)checkForNotWantedConversations:(NSArray *)items;
+GEMS_ADDED_METHOD + (void)hideConversationWithId:(int64_t)cid;
+GEMS_ADDED_METHOD + (NSArray*)hiddenConversations;
 
 - (id<TGDialogListCellAssetsSource>)dialogListCellAssetsSource;
 
@@ -61,9 +65,5 @@ GEMS_ADDED_PROPERTY @property(nonatomic, strong) NSMutableIndexSet *removedConve
 
 - (bool)isConversationOpened:(int64_t)conversationId;
 - (int64_t)openedConversationId;
-
-GEMS_ADDED_METHOD - (void)checkForNotWantedConversations:(NSArray *)items;
-GEMS_ADDED_METHOD + (void)hideConversationWithId:(int64_t)cid;
-GEMS_ADDED_METHOD + (NSArray*)hiddenConversations;
 
 @end

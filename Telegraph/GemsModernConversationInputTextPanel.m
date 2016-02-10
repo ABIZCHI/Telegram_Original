@@ -66,6 +66,17 @@
     
     int cntLeftIcons = 2;
     CGFloat iconSize = 35;
+    CGFloat spacer = 5.0f;
+    CGFloat leftSpaceNeeded = cntLeftIcons * (iconSize + spacer);
+    self.fieldBackground.frame = CGRectMake(leftSpaceNeeded + spacer,
+                                            self.fieldBackground.frame.origin.y,
+                                            self.fieldBackground.frame.size.width - (cntLeftIcons - 1) * (iconSize + spacer), // one icon already included
+                                            self.fieldBackground.frame.size.height);
+    self.inputField.frame = CGRectMake((cntLeftIcons - 1) * (iconSize + spacer) + 5,
+                                       -3,
+                                       self.fieldBackground.frame.size.width - (cntLeftIcons - 1) * (iconSize + spacer) - 5, // one icon already included
+                                       self.inputField.frame.size.height);
+
     CGFloat originY = self.fieldBackground.frame.origin.y + self.fieldBackground.frame.size.height - iconSize + 4;
     CGFloat leftSpace = self.fieldBackground.frame.origin.x;
     CGFloat padding = (leftSpace - iconSize * cntLeftIcons)/ (cntLeftIcons + 1);
@@ -75,7 +86,8 @@
                                          iconSize,
                                          iconSize);
     
-    _btnRandomGif.frame = CGRectMake(self.attachButton.frame.origin.x + self.attachButton.frame.size.width + padding,
+    [self bringSubviewToFront:_btnRandomGif];
+    _btnRandomGif.frame = CGRectMake(padding + iconSize + padding,
                                     originY,
                                     iconSize,
                                     iconSize);

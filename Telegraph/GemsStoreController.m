@@ -174,7 +174,7 @@ heightForFooterInSection:(NSInteger)section {
     FeaturedAllController *v = [[FeaturedAllController alloc] initWithNibName:@"FeaturedAllController" bundle:nil];
     [v setupWithData:arr];
     [v setTitleText:title];
-    [TGAppDelegateInstance pushViewController:v animated:YES];
+    pushController(v, YES);
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -201,7 +201,7 @@ heightForFooterInSection:(NSInteger)section {
     {
         FeatureController *v = [[FeatureController alloc] initWithNibName:@"FeatureController" bundle:nil];
         [v setupWithData:data];
-        [TGAppDelegateInstance pushViewController:v animated:YES];
+        pushController(v, YES);
     }
     
     if([cell isMemberOfClass:[SquareImageCell class]] && containingCell.indexPath.section == StoreGetGemsSection)

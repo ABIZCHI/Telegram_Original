@@ -35,6 +35,19 @@
     return self;
 }
 
+GEMS_ADDED_METHOD
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self != nil)
+    {
+        _label = [[TGGradientLabel alloc] init];
+        _label.backgroundColor = [UIColor clearColor];
+        [self addSubview:_label];
+    }
+    return self;
+}
+
 - (void)setSingleFontSize:(CGFloat)singleFontSize doubleFontSize:(CGFloat)doubleFontSize useBoldFont:(bool)useBoldFont
 {
     if (ABS(singleFontSize - _singleSize) < FLT_EPSILON && ABS(doubleFontSize - _doubleSize))

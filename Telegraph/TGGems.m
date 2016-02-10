@@ -22,6 +22,7 @@
 #import <Branch/Branch.h>
 #import "GemsWalletViewController.h"
 #import "GemsStoreController.h"
+#import "ExtensionConst.h"
 
 // netwokring
 #import <GemsNetworking/GemsNetworking.h>
@@ -44,6 +45,22 @@
 #define WALLET_NEEDS_POP_UP_BACKUP_KEY @"WALLET_NEEDS_POP_UP_BACKUP_KEY"
 
 @implementation TGGems
+
+- (id)init {
+    self = [super init];
+    if(self) {
+        
+        /**
+          * There is a db corruption occuring when moving from the old tg code to the new tg code version 3.2.1
+          * So simply drop the old db and let it upload everything from scratch
+         */
+        if (![[NSUserDefaults standardUserDefaults] boolForKey:@"didMoveToNewTelegramCode"]) {
+            [[TGDatabase instance] dropDatabase];
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"didMoveToNewTelegramCode"];
+        }
+    }
+    return self;
+}
 
 - (void)didBecomeActiveUIPrompts
 {
@@ -80,23 +97,15 @@
      */
     [self tryAndSetInviter];
     
-    
     /**
-     *
-     *  FOR TESTING 13.10.15
-     *
-     *  We try and solve a bug where users send API calls without a jwt token and they cann't 
-     *  resolve that state by requesting a new token.
-     *  We send this API call to notify such users to contact the support
+      * Used for app extension. So to no upload GemsCore we cache the referral link
+      * to a shared NSUserDefaults suite
      */
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-        [API getGemsBalance:^(GemsNetworkRespond *respond) {
-            if(respond.hasError && [respond.error.errorCode isEqualToString:@"JWT_NOT_FOUNDX"]) {
-                [UserNotifications showUserMessage:respond.error.localizedError];
-            }
-        }];
-
-    });
+    [NSURL urlWithMyUniqueReferralLinkCompletion:^(NSURL *url, NSError *error) {
+        if (!error) {
+            [self cacheReferralUrlToDefaults:url];
+        }
+    }];
 }
 
 - (void)setupNetworkingAuthenticator
@@ -109,6 +118,8 @@
         BotAuthenticator *auth = [[BotAuthenticator alloc] initWithDeviceAuth:user.deviceAuth phoneNumber:user.phoneNumber ver:API.networking.enviroment.buildNumber];
         [API.networking.enviroment setAuthenticator:auth];
     }
+    
+    API.networking.userDefaultsGroup = appGroupsSuite;
 }
 
 - (void)doLogoutWithCompletion:(void(^)())completion
@@ -168,7 +179,7 @@
                                       v.displayPassphrase = [_B passphrase];
                                       if(IS_IPAD)
                                           [v setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:TGLocalized(@"Common.Close") style:UIBarButtonItemStylePlain target:self action:@selector(closeShowPhraseController)]];
-                                      [TGAppDelegateInstance pushViewController:v animated:YES];
+                                      pushController(v, YES);
                                   }
                               }];
         }
@@ -180,7 +191,12 @@
 
 - (void)closeShowPhraseController
 {
-    [TGAppDelegateInstance dismissViewControllerAnimated:YES];
+    dismissController(YES);
+}
+
+- (void)cacheReferralUrlToDefaults:(NSURL*)url {
+    NSUserDefaults *def = [[NSUserDefaults alloc] initWithSuiteName:appGroupsSuite];
+    [def setObject:[url absoluteString] forKey:cachedReferralLink];
 }
 
 #pragma mark ASwatch

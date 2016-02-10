@@ -26,7 +26,7 @@
 }
 
 - (IBAction)close:(id)sender {
-    [TGAppDelegateInstance dismissViewControllerAnimated:YES];
+    dismissController(YES);
 }
 
 @end

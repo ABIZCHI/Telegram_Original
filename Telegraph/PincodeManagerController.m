@@ -82,7 +82,7 @@
 }
 
 - (void)close {
-    [TGAppDelegateInstance dismissViewControllerAnimated:YES];
+    dismissController(YES);
 }
 
 - (void)changePincode

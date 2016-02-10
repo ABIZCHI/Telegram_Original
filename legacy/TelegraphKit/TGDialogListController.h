@@ -11,12 +11,16 @@
 #import "ActionStage.h"
 
 #import "TGViewController.h"
+#import "TGDialogListCell.h"
+#import "TGConversation.h"
+#import "TGSearchDisplayMixin.h"
+#import "TGSearchBar.h"
 
 extern NSString *authorNameYou;
 
 @class TGDialogListCompanion;
 
-@interface TGDialogListController : TGViewController <ASWatcher>
+@interface TGDialogListController : TGViewController <ASWatcher, GEMS_PROTOCOL_EXTERN UITableViewDelegate, GEMS_PROTOCOL_EXTERN UITableViewDataSource>
 
 @property (nonatomic, strong, readonly) ASHandle *actionHandle;
 
@@ -30,6 +34,16 @@ extern NSString *authorNameYou;
 
 GEMS_PROPERTY_EXTERN @property (nonatomic, strong) UITableView *tableView;
 GEMS_PROPERTY_EXTERN @property (nonatomic, strong) UILabel *titleLabel;
+GEMS_PROPERTY_EXTERN @property (nonatomic, strong) NSMutableArray *listModel;
+GEMS_PROPERTY_EXTERN @property (nonatomic, strong) NSArray *searchResultsSections;
+GEMS_PROPERTY_EXTERN @property (nonatomic, strong) TGSearchDisplayMixin *searchMixin;
+GEMS_PROPERTY_EXTERN @property (nonatomic, strong) SMetaDisposable *searchDisposable;
+GEMS_PROPERTY_EXTERN @property (nonatomic, assign) bool didSelectMessage;
+GEMS_PROPERTY_EXTERN @property (nonatomic, strong) TGSearchBar *searchBar;;
+GEMS_METHOD_EXTERN - (void)prepareCell:(TGDialogListCell *)cell forConversation:(TGConversation *)conversation animated:(bool)animated isSearch:(bool)isSearch;
+GEMS_METHOD_EXTERN - (void)updateEmptyListContainer;
+GEMS_METHOD_EXTERN - (void)setupEditingMode:(bool)editing setupTable:(bool)setupTable;
+GEMS_METHOD_EXTERN - (void)selectConversationWithId:(int64_t)conversationId;
 
 + (void)setLastAppearedConversationId:(int64_t)conversationId;
 

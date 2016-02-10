@@ -7,6 +7,7 @@
 //
 
 #import "TGModernConversationController.h"
+#import "GemsModernConversationInputTextPanel.h"
 
 // GemsUI
 #import <GemsUI/GemsNumberPadViewController.h>
@@ -21,5 +22,12 @@
 @interface GemsModernConversationController : TGModernConversationController <TGModernConversationInputPanelDelegate>
 
 - (instancetype)initWithMessage:(NSString*)message;
+
+- (void)sendBitcoinsPressed:(GemsModernConversationInputTextPanel *)inputTextPanel
+             paymentContext:(int)context
+                 forUserIds:(NSArray*)tgids;
+- (void)sendGemsPressed:(GemsModernConversationInputTextPanel *)inputTextPanel
+         paymentContext:(int)context
+             forUserIds:(NSArray*)tgids;
 
 @end

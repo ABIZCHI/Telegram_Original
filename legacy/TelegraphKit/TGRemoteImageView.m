@@ -104,6 +104,18 @@ static TGCache *sharedCache = nil;
     return self;
 }
 
+GEMS_ADDED_METHOD
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if(self) {
+        _actionHandle = [[ASHandle alloc] initWithDelegate:self releaseOnMainThread:true];
+        _fadeTransitionDuration = 0.14;
+        _useCache = true;
+    }
+    return self;
+}
+
 - (void)dealloc
 {
     [_actionHandle reset];

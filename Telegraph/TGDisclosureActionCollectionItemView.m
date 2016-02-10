@@ -27,6 +27,10 @@
         
         _disclosureIndicator = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ModernListsDisclosureIndicator.png"]];
         [self addSubview:_disclosureIndicator];
+        
+        _icon = [[UIImageView alloc] init];
+        _icon.contentMode = UIViewContentModeScaleAspectFit;
+        [self addSubview:_icon];
     }
     return self;
 }
@@ -44,7 +48,7 @@
         [self setNeedsLayout];
     }
     else {
-        _icon = nil;
+        _icon.image = nil;
     }
 }
 
@@ -55,7 +59,7 @@ GEMS_TG_METHOD_CHANGED
     
     CGRect bounds = self.bounds;
     
-    CGFloat lblPadding = _icon? 40.0f:15.0f;
+    CGFloat lblPadding = _icon.image? 40.0f:15.0f;
     
     _titleLabel.frame = CGRectMake(lblPadding, floorf((bounds.size.height - 26) / 2), bounds.size.width - 40 - 40, 26);
     _disclosureIndicator.frame = CGRectMake(bounds.size.width- _disclosureIndicator.frame.size.width - 15, floorf((bounds.size.height - _disclosureIndicator.frame.size.height) / 2), _disclosureIndicator.frame.size.width, _disclosureIndicator.frame.size.height);

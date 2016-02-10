@@ -1680,6 +1680,7 @@ static void dispatchOnMessageQueue(dispatch_block_t block, bool synchronous)
     }];
 }
 
+
 - (void)_deleteMessages:(NSArray *)messageIds animated:(bool)animated
 {
     [TGModernConversationCompanion dispatchOnMessageQueue:^

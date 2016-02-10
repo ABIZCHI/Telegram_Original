@@ -22,7 +22,11 @@
 	<string>$(TeamIdentifierPrefix)$(CFBundleIdentifier)</string>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.org.telegram.TelegramEnterprise</string>
+		<string>group.getgemsKeyboard</string>
+	</array>
+	<key>keychain-access-groups</key>
+	<array>
+		<string>$(AppIdentifierPrefix)org.getgems.messenger</string>
 	</array>
 </dict>
 </plist>

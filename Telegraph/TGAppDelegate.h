@@ -142,13 +142,4 @@ extern NSString *TGDeviceProximityStateChangedNotification;
 
 - (void)setupShortcutItems;
 
-GEMS_ADDED_METHOD
-- (void)pushViewController:(UIViewController *)controller animated:(BOOL)animated;
-GEMS_ADDED_METHOD
-- (void)presentViewController:(UIViewController*)v animated:(BOOL)animated;
-GEMS_ADDED_METHOD
-- (void)dismissViewControllerAnimated:(BOOL)aniamted;
-GEMS_ADDED_METHOD
-- (void)popViewController:(BOOL)aniamted;
-
 @end

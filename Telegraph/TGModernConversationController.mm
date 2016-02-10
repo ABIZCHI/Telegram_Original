@@ -260,7 +260,6 @@ typedef enum {
     
     NSUserActivity *_currentActivity;
     
-    TGAttachmentSheetWindow *_attachmentSheetWindow;
     UIDocumentInteractionController *_interactionController;
     
     TGICloudItemRequest *_currentICloudItemRequest;
@@ -640,6 +639,7 @@ typedef enum {
     }
 }
 
+GEMS_TG_METHOD_CHANGED
 - (void)loadView
 {
     [super loadView];
@@ -670,7 +670,7 @@ typedef enum {
     _backgroundView.contentMode = UIViewContentModeScaleAspectFill;
     [_view addSubview:_backgroundView];
     
-    _inputTextPanel = [[TGModernConversationInputTextPanel alloc] initWithFrame:CGRectMake(0, _view.frame.size.height - 45, _view.frame.size.width, 45) accessoryView:[_companion _controllerInputTextPanelAccessoryView]];
+    _inputTextPanel = [[GemsModernConversationInputTextPanel alloc] initWithFrame:CGRectMake(0, _view.frame.size.height - 45, _view.frame.size.width, 45) accessoryView:[_companion _controllerInputTextPanelAccessoryView]];
 
     if (_initialInputText.length != 0)
     {

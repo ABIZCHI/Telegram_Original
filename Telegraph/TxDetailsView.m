@@ -379,15 +379,15 @@
                       UIGraphicsEndImageContext();
                   });
     
-    [iv loadUserPlaceholderWithSize:iv.frame.size uid:user.uid firstName:user.firstName lastName:user.lastName placeholder:placeholder];
+    TGDispatchOnMainThread(^
+       {
+           if(user.photoUrlSmall)
+               [iv loadImage:user.photoUrlSmall filter:@"circle:40x40" placeholder:placeholder forceFade:true];
+           else {
+               [iv loadUserPlaceholderWithSize:iv.frame.size uid:user.uid firstName:user.firstName lastName:user.lastName placeholder:placeholder];
+           }
+       });
     
-    if(user.photoUrlSmall)
-        [iv loadImage:user.photoUrlSmall filter:@"circle:40x40" placeholder:placeholder forceFade:true];
-    else {
-        [iv loadUserPlaceholderWithSize:iv.frame.size uid:user.uid firstName:user.firstName lastName:user.lastName placeholder:placeholder];
-        
-//        [iv loadRandomFunkyPlaceholderWithUniqueIdentifier:[NSString stringWithFormat:@"%d", user.uid] andFilter:@"circle:40x40"];
-    }
 }
 
 #pragma mark - blockchain info 
