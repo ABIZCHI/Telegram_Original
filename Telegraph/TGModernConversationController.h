@@ -16,6 +16,10 @@
 #import "TGModernConversationEmptyListPlaceholderView.h"
 #import "TGModernConversationCompanion.h"
 #import "TGModernConversationInputTextPanel.h"
+#import "TGAttachmentSheetWindow.h"
+#import "TGModernMediaPickerController.h"
+#import "TGAttachmentSheetRecentCameraView.h"
+#import "GemsModernConversationInputTextPanel.h"
 
 @class TGModernConversationCompanion;
 @class TGModernViewStorage;
@@ -56,10 +60,31 @@ typedef enum {
 GEMS_PROPERTY_EXTERN @property (nonatomic, strong) TGModernConversationInputTextPanel *inputTextPanel;
 GEMS_PROPERTY_EXTERN @property (nonatomic, strong) TGModernConversationInputPanel *currentInputPanel;
 GEMS_PROPERTY_EXTERN @property (nonatomic, strong) TGModernConversationInputPanel *customInputPanel;
+
+GEMS_PROPERTY_EXTERN @property (nonatomic, strong) TGAttachmentSheetWindow *attachmentSheetWindow;
+
 GEMS_ADDED_PROPERTY @property(nonatomic) BOOL isSendCurrencyScreensOpen;
 
 GEMS_METHOD_EXTERN
 - (void)inputPanelRequestedSendMessage:(TGModernConversationInputTextPanel *)__unused inputTextPanel text:(NSString *)text;
+GEMS_METHOD_EXTERN
+- (void)inputPanelRequestedAttachmentsMenu:(TGModernConversationInputTextPanel *)__unused inputTextPanel;
+GEMS_METHOD_EXTERN
+- (void)_asyncProcessMediaAssetSignals:(NSArray *)signals forIntent:(TGModernMediaPickerControllerIntent)intent;
+GEMS_METHOD_EXTERN
+- (void)_displayPhotoPicker;
+GEMS_METHOD_EXTERN
+- (void)_displayCameraWithView:(TGAttachmentSheetRecentCameraView *)cameraView;
+GEMS_METHOD_EXTERN
+- (void)_displayVideoPicker;
+GEMS_METHOD_EXTERN
+- (void)_displayWebImagePicker;
+GEMS_METHOD_EXTERN
+- (void)_displaySendFileMenu;
+GEMS_METHOD_EXTERN
+- (void)_displayLocationPicker;
+GEMS_METHOD_EXTERN
+- (void)_displayContactPicker;
 
 - (void)setInitialSnapshot:(CGImageRef)image backgroundView:(TGModernTemporaryView *)backgroundView viewStorage:(TGModernViewStorage *)viewStorage topEdge:(CGFloat)topEdge;
 - (TGMessage *)latestVisibleMessage;

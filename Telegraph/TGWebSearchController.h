@@ -17,6 +17,7 @@ GEMS_PROPERTY_EXTERN @property (nonatomic, copy) void (^didFinishSearchingGifs)(
 @property (nonatomic, assign) bool captionsEnabled;
 @property (nonatomic, strong) TGSuggestionContext *suggestionContext;
 GEMS_PROPERTY_EXTERN @property (nonatomic, strong) NSArray *selectedGifItems;
+GEMS_PROPERTY_EXTERN @property (nonatomic, strong) NSArray *selectedItems;;
 GEMS_PROPERTY_EXTERN @property (nonatomic, strong) TGSearchBar *searchBar;
 
 - (instancetype)initForAvatarSelection:(bool)avatarSelection embedded:(bool)embedded;

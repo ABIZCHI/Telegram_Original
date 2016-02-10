@@ -109,7 +109,7 @@ typedef enum {
 
 @property (nonatomic, strong) TGNavigationController *customNavigationController;
 
-@property (nonatomic) bool isFirstInStack;
+//@property (nonatomic) bool isFirstInStack;
 
 @property (nonatomic, readonly) UIUserInterfaceSizeClass currentSizeClass;
 

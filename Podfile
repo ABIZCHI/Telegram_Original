@@ -3,7 +3,14 @@ platform :ios, '8.1'
 # Uncomment this line if you're using Swift
 use_frameworks!
 
-target 'Telegraph' do
+def keyboardPods
+    pod 'Box', :head
+    pod 'Result', :head
+    pod 'ReactiveCocoa', '4.0.4-alpha-4'
+    pod 'KeyboardFramework', :path => '../../Keyboard'
+end
+
+target 'GetGems' do
 	pod 'FXForms', '1.1'
     pod 'libPhoneNumber-iOS', '~> 0.7'
     pod 'Lambda-Alert'
@@ -16,12 +23,19 @@ target 'Telegraph' do
     pod 'SSKeychain'
 
 #    pod 'BreadWalletCore', :git => 'https://github.com/GetGems/BRCore.git'
-    pod 'SwaggerClient', :path => '../gems-app-ios/GemsCore/GemsNetworking/ThirdParty/swagger/'
-    pod 'GemsNetworking', :path => '../gems-app-ios/GemsCore/GemsNetworking'
-    pod 'GemsCurrencyManager', :path => '../gems-app-ios/GemsCore/GemsCurrencyManager/'
-    pod 'BreadWalletCore', :path => '../BRCore'
-    pod 'GemsCore', :path => '../gems-app-ios/GemsCore'
-    pod 'GemsUI', :path => '../gems-app-ios/GemsUI'
+    pod 'SwaggerClient', :path => '../GemsCore/GemsNetworking/ThirdParty/swagger/'
+    pod 'GemsNetworking', :path => '../GemsCore/GemsNetworking'
+    pod 'GemsCurrencyManager', :path => '../GemsCore/GemsCurrencyManager/'
+    pod 'BreadWalletCore', :path => '../../BRCore'
+    pod 'GemsCore/Full', :path => '../GemsCore'
+    pod 'GemsUI', :path => '../GemsUI'
+
+    keyboardPods
+end
+
+target 'keyboard' do
+    keyboardPods
+    pod 'GemsNetworking', :path => '../GemsCore/GemsNetworking'
 end
 
 target 'Share' do
@@ -39,8 +53,6 @@ end
 post_install do |installer|
 	def remove_xcode_6_module_import_for_objcPlusPlus
 		workDir = Dir.pwd
-		# GG
-
         #SSKeyChain
         file_names = ["#{workDir}/Pods/SSKeychain/SSKeychain/SSKeychainQuery.h","#{workDir}/Pods/SSKeychain/SSKeychain/SSKeychain.h"]
         file_names.each do |file_name|
@@ -69,6 +81,28 @@ post_install do |installer|
         end
     end
 
+    def adjust_compiler_optimization_for_debug(installer)
+        installer.pods_project.build_configurations.each do |config|
+            if config.name.include?("Debug")
+                config.build_settings['GCC_OPTIMIZATION_LEVEL'] = '0'
+            end
+        end
+    end
+
+    def disable_bitcode(installer)
+        installer.pods_project.targets.each do |target|
+            target.build_configurations.each do |config|
+              config.build_settings['ENABLE_BITCODE'] = 'NO'
+            end
+        end
+    end
+
+    puts "Adjusting compiler optimization for debug ..."
+    adjust_compiler_optimization_for_debug(installer)
+    
     puts "Adapting GCM library for Objective-c++ ..."
     remove_xcode_6_module_import_for_objcPlusPlus
+
+    puts "disabling bitcode ..."
+    disable_bitcode(installer)
 end

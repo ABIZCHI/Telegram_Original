@@ -21,14 +21,14 @@
         [self addSubview:walletIcon];
         [self.buttonViews insertObject:walletIcon atIndex:([self.buttonViews count] - 1)];
         
-//        UIImageView *appStoreIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TabIconStore.png"] highlightedImage:[UIImage imageNamed:@"TabIconStore_Highlighted.png"]];
-//        [self addSubview:appStoreIcon];
-//        [self.buttonViews insertObject:appStoreIcon atIndex:([self.buttonViews count] - 1)];
+        UIImageView *appStoreIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TabIconStore"] highlightedImage:[UIImage imageNamed:@"TabIconStore_Highlighted"]];
+        [self addSubview:appStoreIcon];
+        [self.buttonViews insertObject:appStoreIcon atIndex:([self.buttonViews count] - 1)];
         
         NSArray *titles = @[GemsLocalized(@"Contacts.TabTitle"),
                             GemsLocalized(@"DialogList.TabTitle"),
                             GemsLocalized(@"GemMainTitleWallet"),
-//                            GemsLocalized(@"GemsStore"),
+                            GemsLocalized(@"GemsStore"),
                             GemsLocalized(@"Settings.TabTitle")];
         
         // remove lables added in super

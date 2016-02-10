@@ -45,6 +45,11 @@
 #define GEMS_TG_METHOD_CHANGED
 
 /**
+ * Will symobolize a changed method in the original telegram code
+ */
+#define GEMS_TG_METHOD_CHANGED_COMMENT(comment)
+
+/**
  * Will symobolize a TG method commented out
  */
 #define GEMS_TG_METHOD_COMMENTEDOUT

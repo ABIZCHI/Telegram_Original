@@ -729,6 +729,7 @@ typedef enum {
     }
 }
 
+GEMS_TG_METHOD_CHANGED
 - (void)loadView
 {
     [super loadView];
@@ -759,7 +760,7 @@ typedef enum {
     _backgroundView.contentMode = UIViewContentModeScaleAspectFill;
     [_view addSubview:_backgroundView];
     
-    _inputTextPanel = [[TGModernConversationInputTextPanel alloc] initWithFrame:CGRectMake(0, _view.frame.size.height - 45, _view.frame.size.width, 45) accessoryView:[_companion _controllerInputTextPanelAccessoryView]];
+    _inputTextPanel = [[GemsModernConversationInputTextPanel alloc] initWithFrame:CGRectMake(0, _view.frame.size.height - 45, _view.frame.size.width, 45) accessoryView:[_companion _controllerInputTextPanelAccessoryView]];
     
     _inputTextPanel.delegate = self;
 

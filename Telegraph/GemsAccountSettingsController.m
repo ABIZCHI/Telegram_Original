@@ -47,7 +47,7 @@
 #import <GemsCore/NSURL+GemsReferrals.h>
 
 
-@interface GemsAccountSettingsController ()
+@interface GemsAccountSettingsController () <MFMailComposeViewControllerDelegate>
 {
     NSString *_referralLinkStr;
     ReferralLinkItem *_referralLinkCell;
@@ -91,16 +91,24 @@
 
 - (void)clearAllSections
 {
-    // remove only gems settings menu
     if(self.menuSections.sections) {
-        [self.menuSections deleteSection:(self.menuSections.sections.count - 1)];
-        [self.menuSections deleteSection:(self.menuSections.sections.count - 1)];
-        [self.menuSections deleteSection:(self.menuSections.sections.count - 1)];
+        while ([self.menuSections.sections count] > 0) {
+            [self.menuSections deleteSection:(self.menuSections.sections.count - 1)];
+        }
     }
 }
 
 - (void)setSections
 {
+    [self clearAllSections];
+    [super setSections];
+    
+    
+    // edit telegram sections
+    TGCollectionMenuSection  *tgInfoSec = self.menuSections.sections[3];
+    [tgInfoSec deleteItemAtIndex:0]; // ask a question
+    [tgInfoSec deleteItemAtIndex:0]; // telegram faq
+    
     // set only gems settings menu
     [NSURL urlWithMyUniqueReferralLinkCompletion:^(NSURL *url, NSError *error) {
         if(!error) {
@@ -209,13 +217,13 @@
                           if(isVerified)
                           {
                               PincodeManagerController *v = [PincodeManagerController new];
-                              [TGAppDelegateInstance pushViewController:v animated:YES];
+                              pushController(v, YES);
                           }
                       }];
     }
     else {
         PincodeManagerController *v = [PincodeManagerController new];
-        [TGAppDelegateInstance pushViewController:v animated:YES];
+        pushController(v, YES);
     }
 }
 
@@ -270,7 +278,7 @@
                 }
             }];
         };
-        [TGAppDelegateInstance pushViewController:v animated:YES];
+        pushController(v, YES);
         
         if(IS_IPAD)
             [v setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:TGLocalized(@"Common.Close") style:UIBarButtonItemStylePlain target:self action:@selector(closeBitcoinOnboardingController)]];
@@ -279,7 +287,7 @@
 
 - (void)closeBitcoinOnboardingController
 {
-    [TGAppDelegateInstance dismissViewControllerAnimated:YES];
+    dismissController(YES);
 }
 
 - (void)activateBitcoinWalletAndPopWithPassphrase:(NSString*)passphrase isNewPassphrase:(BOOL)isNew
@@ -311,11 +319,11 @@
     });
     
     if(IS_IPAD) {
-        [TGAppDelegateInstance dismissViewControllerAnimated:YES];
+        dismissController(YES);
     }
     else {
         // dismiss btc wallet controllers
-//        PopUntil(self, [GemsMainTabsController class], Animated);
+        PopUntil(self, [TGMainTabsController class], Animated);
     }
 }
 
@@ -379,13 +387,14 @@
     [mc setSubject:emailTitle];
     [mc setMessageBody:messageBody isHTML:NO];
     [mc setToRecipients:toRecipents];
+    mc.mailComposeDelegate = self;
     [self presentViewController:mc animated:YES completion:NilCompletionBlock];
 }
 
 - (void)faqPressed
 {
     TGGemsFaqController *v = [[TGGemsFaqController alloc] initWithNibName:@"FAQViewController" bundle:GemsUIBundle];
-    [TGAppDelegateInstance pushViewController:v animated:YES];
+    pushController(v, YES);
 }
 
 -(void)myUserNamePressed
@@ -490,7 +499,7 @@
             [UserNotifications showUserMessage:GemsLocalized(@"GemsClientVerificationUserWrongPassphrase")];
         }
     };
-    [TGAppDelegateInstance pushViewController:v animated:YES];
+    pushController(v, YES);
 }
 
 - (void)showCoachMarksPressed
@@ -587,6 +596,13 @@
     UIWindow* mainWindow = [[UIApplication sharedApplication] keyWindow];
     [DiamondActivityIndicator hideDiamondIndicatorFromView:mainWindow];
     
+}
+
+#pragma mark - MFMailComposeViewControllerDelegate
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
+    if (controller) {
+        [controller dismissViewControllerAnimated:YES completion:NilCompletionBlock];
+    }
 }
 
 @end

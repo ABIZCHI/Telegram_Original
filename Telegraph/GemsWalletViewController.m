@@ -161,7 +161,7 @@
         v.initialCurrency = _prContainerForNextViewAppearance.currency;
         v.prContainer = _prContainerForNextViewAppearance;
         
-        [TGAppDelegateInstance pushViewController:v animated:YES];
+        pushController(v, YES);
     }
 }
 
@@ -267,11 +267,11 @@
 }
 
 - (IBAction)sendPressed:(id)sender {
-    [TGAppDelegateInstance presentViewController:_scanController animated:YES];
+    presentController(_scanController, YES);
 }
 
 - (IBAction)settingsPressed:(id)sender {
-    [TGAppDelegateInstance pushViewController:_settingsController animated:YES];
+    pushController(_settingsController, YES);
 }
 
 - (void)launchReqPaymentController:(BOOL)animated
@@ -289,7 +289,7 @@
                 {
                     [_G setDepositAddress:respond.rawResponse[@"address"]];
                     _requestPaymentController.address = [_G depositAddress];
-                    [TGAppDelegateInstance presentViewController:_requestPaymentController animated:YES];
+                    presentController(_requestPaymentController, YES);
                 }
                 else {
                     [UserNotifications showUserMessage:[respond error].localizedError];
@@ -298,13 +298,13 @@
         }
         else {
             _requestPaymentController.address = [_G depositAddress];
-            [TGAppDelegateInstance presentViewController:_requestPaymentController animated:YES];
+            presentController(_requestPaymentController, YES);
         }
     }
     else
     {
         _requestPaymentController.address = [_B depositAddress];
-        [TGAppDelegateInstance presentViewController:_requestPaymentController animated:YES];
+        presentController(_requestPaymentController, YES);
     }
 }
 
@@ -381,7 +381,7 @@ bool readyForQR = true;
     };
     [v setPrContainer:container];
     v.initialCurrency = container.currency;
-    [TGAppDelegateInstance pushViewController:v animated:YES];
+    pushController(v, YES);
 }
 
 

@@ -1278,6 +1278,20 @@ static std::set<int> autorotationLockIds;
     [[self _currentNavigationItem] setRightBarButtonItem:rightBarButtonItem animated:animated];
 }
 
+GEMS_ADDED_METHOD
+-(void)setRightBarButtonItems:(NSArray *)items animated:(BOOL)animated
+{
+    self.rightItems = items;
+    [[self _currentNavigationItem] setRightBarButtonItems:items animated:animated];
+}
+
+GEMS_ADDED_METHOD
+-(void)setLeftBarButtonItems:(NSArray *)items animated:(BOOL)animated
+{
+    self.leftItems = items;
+    [[self _currentNavigationItem] setLeftBarButtonItems:items animated:animated];
+}
+
 - (void)setTitleText:(NSString *)titleText
 {
     _titleText = titleText;

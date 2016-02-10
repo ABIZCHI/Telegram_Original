@@ -35,6 +35,9 @@
 #import "TGConversation.h"
 #import "TGModernViewContext.h"
 
+//
+#import "ConversationMessageHandler.h"
+
 typedef enum {
     TGCachedMessageTypeUnknown = 0,
     TGCachedMessageTypeText = 1,
@@ -425,8 +428,23 @@ static UIColor *coloredNameForUid(int uid, __unused int currentUserId)
     }
 }
 
-- (TGMessageViewModel *)createMessageViewModel:(TGMessage *)message containerSize:(CGSize)containerSize
+GEMS_TG_METHOD_CHANGED
+- (TGMessageViewModel *)createMessageViewModel:(TGMessage *)messageOrign containerSize:(CGSize)containerSize
 {
+    // Gems
+    TGMessage *message = [messageOrign copy];
+    if ([ConversationMessageHandler isServiceMsg:message.text])
+    {
+        message.text = [ConversationMessageHandler getTextMsg:message.text];
+        NSMutableArray *rest = [NSMutableArray new];
+        for(id att in message.mediaAttachments) {
+            if(![att isKindOfClass:[TGWebPageMediaAttachment class]]) {
+                [rest addObject:att];
+            }
+        }
+        message.mediaAttachments = rest;
+    }
+    
     bool useAuthor = [self currentAuthorPeer] != nil && !message.outgoing;
     if (message.outgoing) {
         if ([[self currentAuthorPeer] isKindOfClass:[TGConversation class]]) {

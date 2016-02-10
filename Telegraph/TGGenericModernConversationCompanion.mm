@@ -4693,6 +4693,7 @@ typedef enum {
     }
 }
 
+GEMS_TG_METHOD_CHANGED
 - (void)actorCompleted:(int)status path:(NSString *)path result:(id)result
 {
     if ([path hasPrefix:[[NSString alloc] initWithFormat:@"/tg/conversations/(%@)/history/", [self _conversationIdPathComponent]]])
@@ -4748,6 +4749,20 @@ typedef enum {
             {
                 int32_t previousMid = (int32_t)[result[@"previousMid"] intValue];
                 _messageUploadProgress.erase(previousMid);
+                
+                // Gems
+                TGMessage *message = [result[@"message"] copy];
+                if ([ConversationMessageHandler isServiceMsg:message.text])
+                {
+                    message.text = [ConversationMessageHandler getTextMsg:message.text];
+                    NSMutableArray *rest = [NSMutableArray new];
+                    for(id att in message.mediaAttachments) {
+                        if(![att isKindOfClass:[TGWebPageMediaAttachment class]]) {
+                            [rest addObject:att];
+                        }
+                    }
+                    message.mediaAttachments = rest;
+                }
                 
                 [self _updateMessageDelivered:previousMid mid:[result[@"mid"] intValue] date:[result[@"date"] intValue] message:result[@"message"] unread:result[@"unread"] pts:[result[@"pts"] intValue]];
                 

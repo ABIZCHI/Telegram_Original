@@ -33,6 +33,8 @@
 
 #import "TGAlertView.h"
 
+#import "GemsModernConversationController.h"
+
 @interface TGInterfaceManager ()
 {
     TGNotificationController *_notificationController;
@@ -99,19 +101,20 @@
     [self navigateToConversationWithId:conversationId conversation:conversation performActions:performActions atMessage:nil clearStack:true openKeyboard:false animated:animated];
 }
 
+GEMS_TG_METHOD_CHANGED_COMMENT(@"Better to change here once than every call to [TGInterfaceManager sharedInstance]")
 - (void)navigateToConversationWithId:(int64_t)conversationId conversation:(TGConversation *)__unused conversation performActions:(NSDictionary *)performActions atMessage:(NSDictionary *)atMessage clearStack:(bool)__unused clearStack openKeyboard:(bool)openKeyboard animated:(bool)animated
 {
     [TGAppDelegateInstance.rootController.dialogListController selectConversationWithId:conversationId];
     
     [self dismissBannerForConversationId:conversationId];
     
-    TGModernConversationController *conversationController = nil;
+    GemsModernConversationController *conversationController = nil;
     
     for (UIViewController *viewController in TGAppDelegateInstance.rootController.viewControllers)
     {
-        if ([viewController isKindOfClass:[TGModernConversationController class]])
+        if ([viewController isKindOfClass:[GemsModernConversationController class]])
         {
-            TGModernConversationController *existingConversationController = (TGModernConversationController *)viewController;
+            GemsModernConversationController *existingConversationController = (GemsModernConversationController *)viewController;
             id companion = existingConversationController.companion;
             if ([companion isKindOfClass:[TGGenericModernConversationCompanion class]])
             {
@@ -129,7 +132,7 @@
         int conversationUnreadCount = [TGDatabaseInstance() unreadCountForConversation:conversationId];
         int globalUnreadCount = [TGDatabaseInstance() cachedUnreadCount];
         
-        conversationController = [[TGModernConversationController alloc] init];
+        conversationController = [[GemsModernConversationController alloc] init];
         conversationController.shouldOpenKeyboardOnce = openKeyboard;
         
         if (TGPeerIdIsChannel(conversationId))

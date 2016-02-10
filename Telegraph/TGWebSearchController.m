@@ -107,7 +107,7 @@
     NSArray *_recentSearchResults;
     TGMediaSelectionContext *_recentSelectionContext;
     
-    NSArray *_selectedItems;
+//    NSArray *_selectedItems;
     
     UIView *_nothingFoundView;
     

@@ -132,7 +132,7 @@
 #import "TGGemsWallet.h"
 #import "TGGems.h"
 #import "GemsNavigationController.h"
-
+#import "GemsAccountSettingsController.h"
 
 // GCM
 #if USE_GCM == 1
@@ -144,6 +144,51 @@
 #import <GemsCore/GemsLocalization.h>
 #import <GemsCore/PaymentRequestsContainer.h>
 #import <GemsCore/GemsCD.h>
+
+GEMS_ADDED_METHOD
+void pushController(UIViewController *vc, BOOL animated)
+{
+    if (IS_IPAD) {
+        
+    }
+    else {
+        [TGAppDelegateInstance.rootController.detailNavigationController pushViewController:vc animated:animated];
+    }
+}
+
+GEMS_ADDED_METHOD
+void presentController(UIViewController *vc, BOOL animated)
+{
+    if (IS_IPAD) {
+        
+    }
+    else {
+        [TGAppDelegateInstance.rootController.detailNavigationController presentViewController:vc animated:animated completion:NilCompletionBlock];
+    }
+}
+
+GEMS_ADDED_METHOD
+void dismissController(BOOL animated)
+{
+    if (IS_IPAD) {
+        
+    }
+    else {
+        [TGAppDelegateInstance.rootController.detailNavigationController dismissViewControllerAnimated:animated completion:NilCompletionBlock];
+    }
+}
+
+GEMS_ADDED_METHOD
+void popController(BOOL animated)
+{
+    if (IS_IPAD) {
+        
+    }
+    else {
+        [TGAppDelegateInstance.rootController.detailNavigationController popViewControllerAnimated:animated];
+    }
+}
+
 
 //####################### Gems - End #######################
 
@@ -1125,6 +1170,9 @@ GEMS_TG_REFACTORING
 {
     //[ActionStageInstance() requestActor:@"/tg/locationServicesState/(dispatch)" options:[[NSDictionary alloc] initWithObjectsAndKeys:[[NSNumber alloc] initWithBool:true], @"dispatch", nil] watcher:TGTelegraphInstance];
     [super applicationDidBecomeActive:application];
+    
+    [GEMS setupNetworkingAuthenticator];
+    [GEMS didBecomeActiveUIPrompts];
     
     if (_didBecomeInactive)
     {
@@ -2197,7 +2245,7 @@ GEMS_TG_REFACTORING
 
 - (void)reloadSettingsController:(int)uid
 {
-    TGAccountSettingsController *accountSettingsController = [[TGAccountSettingsController alloc] initWithUid:uid];
+    GemsAccountSettingsController *accountSettingsController = [[GemsAccountSettingsController alloc] initWithUid:uid];
     
     int index = -1;
     for (id controller in _rootController.mainTabsController.viewControllers)
@@ -3412,47 +3460,6 @@ performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionH
             } completed:nil];
         }
     }
-}
-
-GEMS_ADDED_METHOD
-- (void)pushViewController:(UIViewController *)controller animated:(BOOL)animated {
-//    if (IS_IPAD)
-//    {
-//        GemsNavigationController *navigationController = [GemsNavigationController navigationControllerWithControllers:@[controller]];
-//        TGAppDelegateInstance.tabletMainViewController.detailViewController = navigationController;
-//    }
-//    else
-//    {
-//        [_mainNavigationController pushViewController:controller animated:YES];
-//    }
-}
-
-GEMS_ADDED_METHOD
-- (void)presentViewController:(UIViewController*)v animated:(BOOL)animated {
-//    if (IS_IPAD)
-//        [self pushViewController:v animated:animated];
-//    else
-//        [_mainNavigationController presentViewController:v animated:animated completion:NilCompletionBlock];
-}
-
-GEMS_ADDED_METHOD
-- (void)dismissViewControllerAnimated:(BOOL)aniamted {
-//    if(TGIsPad()) {
-//        TGAppDelegateInstance.tabletMainViewController.detailViewController = nil;
-//        return;
-//    }
-//    
-//    [_mainNavigationController dismissViewControllerAnimated:aniamted completion:NilCompletionBlock];
-}
-
-GEMS_ADDED_METHOD
-- (void)popViewController:(BOOL)aniamted {
-//    if(TGIsPad()) {
-//        TGAppDelegateInstance.tabletMainViewController.detailViewController = nil;
-//        return;
-//    }
-//    
-//    [_mainNavigationController popViewControllerAnimated:aniamted];
 }
 
 @end

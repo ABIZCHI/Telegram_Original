@@ -209,7 +209,7 @@ GEMS_ADDED_METHOD
 - (void)loadView
 {
     [super loadView];
-    
+    [self setSections];
     _editing = false;
     
     TGUser *user = [TGDatabaseInstance() loadUser:_uid];
@@ -227,7 +227,6 @@ GEMS_ADDED_METHOD
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self setSections];
     
     [ActionStageInstance() dispatchOnStageQueue:^
     {

@@ -38,7 +38,7 @@
 
 - (IBAction)close:(id)sender {
     [super close:sender];
-    [TGAppDelegateInstance dismissViewControllerAnimated:YES];
+    dismissController(YES);
 }
 
 - (IBAction)btnPasteAddressPressed:(id)sender {
@@ -53,7 +53,7 @@
         pr.paymentAddress = copiedAddress;
         container.currency = GEMS.globalSelectedCurrency;
         [container.paymentRequests addObject:pr];
-        [TGAppDelegateInstance dismissViewControllerAnimated:YES];
+        dismissController(YES);
         [[TGAppDelegateInstance.rootController gemsWalletController] launchKeypadControllerWithPaymentRequest:container closeScanView:NO];
     }
     else

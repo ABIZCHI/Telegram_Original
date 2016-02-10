@@ -78,18 +78,18 @@ static int64_t lastAppearedConversationId = 0;
 
 @interface TGDialogListController () <TGViewControllerNavigationBarAppearance, UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, TGSearchDisplayMixinDelegate, TGKeyCommandResponder>
 {
-    std::map<int64_t, NSString *> _usersTypingInConversation;
+    @public std::map<int64_t, NSString *> _usersTypingInConversation;
     
     UIView *_headerBackgroundView;
     
     NSArray *_reusableSectionHeaders;
     
-    SMetaDisposable *_searchDisposable;
+//    SMetaDisposable *_searchDisposable;
     NSString *_searchResultsQuery;
     
     SMetaDisposable *_recentSearchResultsDisposable;
     
-    bool _didSelectMessage;
+//    bool _didSelectMessage;
     
     TGMenuContainerView *_menuContainerView;
     
@@ -98,16 +98,16 @@ static int64_t lastAppearedConversationId = 0;
     bool _checked3dTouch;
 }
 
-@property (nonatomic, strong) TGSearchBar *searchBar;
-@property (nonatomic, strong) TGSearchDisplayMixin *searchMixin;
+//@property (nonatomic, strong) TGSearchBar *searchBar;
+//@property (nonatomic, strong) TGSearchDisplayMixin *searchMixin;
 @property (nonatomic) bool searchControllerWasLoaded;
 
 @property (nonatomic) bool editingMode;
 @property (nonatomic) CGFloat draggingStartOffset;
 
-@property (nonatomic, strong) NSMutableArray *listModel;
+//@property (nonatomic, strong) NSMutableArray *listModel;
 
-@property (nonatomic, strong) NSArray *searchResultsSections;
+//@property (nonatomic, strong) NSArray *searchResultsSections;
 @property (nonatomic, strong) NSArray *recentSearchResultsSections;
 
 @property (nonatomic) bool isLoading;
@@ -2441,3 +2441,4 @@ NSString *authorNameYou = @"  __TGLocalized__YOU";
 }
 
 @end
+
