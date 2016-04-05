@@ -28,10 +28,14 @@
 // Networking
 #import <GemsNetworking/GemsNetworking.h>
 
+#define STORED_DATA_KEY(_convId) [NSString stringWithFormat:@"CONVERSATION_DATA_9733_%lld", _convId]
+#define ACTUAL_CONVERSATION_STORED_DATA_KEY STORED_DATA_KEY(_conversation.conversationId)
+
 @interface GemsModernConversationControllerHelper()
 {
     __weak GemsModernConversationController *_controller;
     
+    int64_t _conversationId;
     TGConversation *_conversation;
     NSArray *_participants;
     
@@ -58,6 +62,7 @@
         if(!queue)
             queue = dispatch_queue_create("conversation_data_fetching_queue",NULL);
         
+        _conversationId = conversationID;
         _conversation = [TGDatabaseInstance() loadConversationWithId:conversationID];
         if(_conversation.chatParticipantCount == 0) { // private
             if(PrivateConversation(conversationID))
@@ -87,7 +92,7 @@
                         
                         if(_readyToFetchData) {
                             NSLog(@"Received conversation %lld data, fetching Gems conversation data", conversationID);
-                            [self fetchConversationDataFromServerCompletion:_conversationDataFetchCompletion];
+                            [self fetchConversationDataCompletion:_conversationDataFetchCompletion];
                         }
                     }
                 });
@@ -99,17 +104,122 @@
     return self;
 }
 
-- (void)fetchConversationDataFromServerCompletion:(void(^)(NSArray *gemsUserIdsByTgId, NSString *error))completion
-{
+- (void)tryToUpdateData:(void(^)(BOOL didUpdate, NSArray *gemsUserIdsByTgId, NSString *error))completion {
+    if (!_didRequestDataFetching) {
+        if (completion) {
+            completion(NO, nil, @"Data have not been initialized for first time");
+        }
+        return;
+    }
+    
+    _conversation = [TGDatabaseInstance() loadConversationWithId:_conversationId];
+    NSArray * oldParticipants = _participants;
+
+    if(_conversation.chatParticipantCount == 0) { // private
+        if(PrivateConversation(_conversationId))
+            _participants = @[@(_conversationId)];
+        if(SecretConversation(_conversationId)) {
+            _participants = _conversation.chatParticipants.chatParticipantUids;
+        }
+    }
+    else {
+        _participants = _conversation.chatParticipants.chatParticipantUids;
+    }
+    
+    //find diferences
+    NSArray * new = _participants;
+    NSArray * old = oldParticipants;
+
+    NSMutableArray * usersToFetch = [[NSMutableArray alloc] init];
+    
+    for (NSNumber * n in new) {
+        BOOL found = NO;
+        for (NSNumber * o in old) {
+            if ([o isEqualToNumber:n]) {
+                found = YES;
+                break;
+            }
+        }
+        
+        if (!found) {
+            [usersToFetch addObject:n];
+        }
+    }
+    
+    if (usersToFetch.count > 0) {
+        [self _fetchConversationDataFromServerForUsers:usersToFetch completion:^(NSArray *gemsUserIdsByTgId, NSString *error) {
+            if (completion) {
+                completion(YES, gemsUserIdsByTgId, error);
+            }
+        }];
+    } else {
+        
+        if (completion) {
+            completion(NO, nil, nil);
+        }
+    }
+    
+}
+
+- (void)fetchConversationDataCompletion:(void(^)(NSArray *gemsUserIdsByTgId, NSString *error))completion {
+
     _didRequestDataFetching = YES;
     if(!_readyToFetchData) {
         _conversationDataFetchCompletion = completion;
         return;
     }
     
-    NSLog(@"Fetching gems user data for conversation %@", _participants);
-    NSMutableArray *arr = [[NSMutableArray alloc] init];
+    NSMutableArray *storedData = [[self _fetchStoredConversationData] mutableCopy];
+    if (!storedData || storedData.count == 0) {
+        [self _fetchConversationDataFromServerForUsers:_participants completion:completion];
+        return;
+    }
+    
+    
+    for (NSUInteger i = 0; i < storedData.count; ++i) {
+        NSDictionary * datum = storedData[i];
+        if ([datum[@"serverHasntData"] boolValue] == YES) {
+            NSTimeInterval timestamp = [datum[@"timestamp"] doubleValue];
+            NSTimeInterval now = [NSDate timeIntervalSinceReferenceDate];
+            if (now - timestamp > 60*60*2) { //two hours
+                [storedData removeObjectAtIndex:i];
+                --i;
+            }
+        }
+    }
+
+    
+    NSMutableArray * needData = [NSMutableArray new];
     for(NSNumber *tgid in _participants)
+    {
+        BOOL found = NO;
+        for (NSDictionary * storedUser in storedData) {
+            if ([tgid longLongValue] == [storedUser[@"telegramUserId"] longLongValue]) {
+                found = YES;
+                break;
+            }
+        }
+        
+        if (!found) {
+            [needData addObject:tgid];
+        }
+    }
+    
+    
+    if (needData.count == 0) {
+        [self _updateStoredData:nil];
+        completion([self _cleanStoredDataArray:storedData], nil);
+    } else {
+        [self _fetchConversationDataFromServerForUsers:needData completion:completion];
+    }
+    
+}
+
+- (void)_fetchConversationDataFromServerForUsers:(NSArray *)users completion:(void(^)(NSArray *gemsUserIdsByTgId, NSString *error))completion
+{
+    NSLog(@"Fetching gems user data for conversation %@", users);
+    NSMutableArray *arr = [[NSMutableArray alloc] init];
+    for(NSNumber *tgid in users)
     {
         [arr addObject:@{@"telegramUserId" : tgid}];
     }
@@ -125,12 +235,11 @@
                 results = nil;
             }
             else {
-                [[NSUserDefaults standardUserDefaults] setObject:results forKey:[@(_conversation.conversationId) stringValue]];
-                [[NSUserDefaults standardUserDefaults] synchronize];
+                [self _updateStoredData:results];
             }
             
             if(completion)
-                completion(results, nil);
+                completion([self _cleanStoredDataArray:[self _fetchStoredConversationData]], nil);
         }
     }];
 }
@@ -150,9 +259,68 @@
     }];
 }
 
-- (NSArray *)fetchStoredConversationData
+- (NSArray *)_fetchStoredConversationData
 {
-    return [[NSUserDefaults standardUserDefaults] arrayForKey:[@(_conversation.conversationId) stringValue]];
+    return [[NSUserDefaults standardUserDefaults] arrayForKey:ACTUAL_CONVERSATION_STORED_DATA_KEY];
+}
+- (void)_updateStoredData:(NSArray *)newData
+{
+    //take old stored data, add new users data, remove data about users that left, and save
+
+    NSMutableArray * allData;
+    if (newData) {
+        allData = [newData mutableCopy];
+    } else {
+        allData = [NSMutableArray new];
+    }
+    
+    NSArray * oldData = [self _fetchStoredConversationData];
+    if (oldData) {
+        [allData addObjectsFromArray:oldData];
+    }
+    
+    NSMutableArray * partisipantsMutable = [_participants mutableCopy];
+    
+    for (NSUInteger i = 0; i < allData.count; ++i) {
+        int64_t tgidToStore = [allData[i][@"telegramUserId"] longLongValue];
+        
+        NSNumber * found = nil;
+        for (NSNumber * tgid in partisipantsMutable) {
+            if ([tgid longLongValue] == tgidToStore) {
+                found = tgid;
+                break;
+            }
+        }
+        
+        if (!found) {
+            [allData removeObjectAtIndex:i];
+            --i;
+        } else {
+            [partisipantsMutable removeObject:found];
+        }
+    }
+
+    
+    for (NSNumber * tgid in partisipantsMutable) {
+        [allData addObject:@{@"telegramUserId" : tgid, @"serverHasntData" : @YES, @"timestamp" : @([NSDate timeIntervalSinceReferenceDate])}];
+    }
+    
+    
+    [[NSUserDefaults standardUserDefaults] setObject:allData forKey:ACTUAL_CONVERSATION_STORED_DATA_KEY];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+/**
+ For some IDs server does not have any respond
+ (they are usually bots)
+ So i save dummies in user defaults to indicate this fact
+ and to not ask server about those users
+ This method returns stored data array without them
+ */
+- (NSArray *)_cleanStoredDataArray:(NSArray *)storedArray {
+    return [storedArray objectsAtIndexes:[storedArray indexesOfObjectsPassingTest:^BOOL(NSDictionary * obj, __unused NSUInteger idx, __unused BOOL * _Nonnull stop) {
+        return obj[@"serverHasntData"] == nil || [obj[@"serverHasntData"] boolValue] == NO;
+    }]];
 }
 
 #pragma mark - sending

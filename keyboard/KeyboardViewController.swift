@@ -10,11 +10,6 @@ import UIKit
 import KeyboardFramework
 import GemsNetworking
 
-public func Defaults() -> NSUserDefaults! {
-    let ret: NSUserDefaults! = NSUserDefaults(suiteName: appGroupsSuite)
-    return ret
-}
-
 class KeyboardViewController: KeyboardController {
     
     override func viewDidLoad() {
@@ -27,10 +22,15 @@ class KeyboardViewController: KeyboardController {
         networking.userDefaultsGroup = appGroupsSuite
         GemsNetworker.sharedInstance().networking = networking
         GemsNetworker.sharedInstance().start()
+
     }
     
     override func protocolImpl() -> KeyboardProtocol {
         return KeyboardProtocolImp()
     }
     
+    override func analyticsImpl() -> PKAnalytics {
+        return KBAnalytics.instance
+    }
+
 }

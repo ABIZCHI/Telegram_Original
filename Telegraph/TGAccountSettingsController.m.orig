@@ -111,7 +111,15 @@
         [ActionStageInstance() requestActor:@"/tg/service/synchronizationstate" options:nil flags:0 watcher:self];
         
         _uid = uid;
-<<<<<<< c0301bf3303bde90e5bda0bb6f63e7b3295c3553
+    }
+    return self;
+}
+
+GEMS_TG_REFACTORING
+GEMS_ADDED_METHOD
+- (void)setSections
+{
+<<<<<<< HEAD
         
         _profileDataItem = [[TGAccountInfoCollectionItem alloc] init];
         _profileDataItem.interfaceHandle = _actionHandle;
@@ -191,15 +199,6 @@
         ]];
         [self.menuSections addSection:infoSection];
 =======
->>>>>>> compiling
-    }
-    return self;
-}
-
-GEMS_TG_REFACTORING
-GEMS_ADDED_METHOD
-- (void)setSections
-{
     _profileDataItem = [[TGAccountInfoCollectionItem alloc] init];
     _profileDataItem.interfaceHandle = _actionHandle;
     _setProfilePhotoItem = [[TGButtonCollectionItem alloc] initWithTitle:TGLocalized(@"Settings.SetProfilePhoto") action:@selector(setProfilePhotoPressed)];
@@ -243,20 +242,9 @@ GEMS_ADDED_METHOD
                                                                                                 [[TGCommentCollectionItem alloc] initWithText:TGLocalized(@"Settings.SaveIncomingPhotosHelp")]
                                                                                                 ]];
     [self.menuSections addSection:downloadSection];
-}
-
-- (void)dealloc
-{
-    [_watchAppInstalledDisposable dispose];
-    [_actionHandle reset];
-    [ActionStageInstance() removeWatcher:self];
-}
-
-- (void)loadView
-{
-    [super loadView];
     
-    _editing = false;
+    
+    // Start moved from -loadView
     
     TGUser *user = [TGDatabaseInstance() loadUser:_uid];
     
@@ -268,6 +256,27 @@ GEMS_ADDED_METHOD
     
     _accountEditingBarButtonItem = nil;;
     [self setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:TGLocalized(@"Common.Edit") style:UIBarButtonItemStylePlain target:self action:@selector(editButtonPressed)]];
+    
+    // End moved from -loadView
+>>>>>>> e59a3f1... v1.3.2
+}
+
+- (void)dealloc
+{
+    [_watchAppInstalledDisposable dispose];
+    [_actionHandle reset];
+    [ActionStageInstance() removeWatcher:self];
+}
+
+GEMS_TG_REFACTORING
+- (void)loadView
+{
+    [super loadView];
+    [self setSections];
+    _editing = false;
+    
+    //end of method moved to -setSections
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated

@@ -16,6 +16,7 @@ typedef enum
     GemsAlertFacebookLogin,
     UnkownGemsAlert,
     GemsAlertAirdrop,
+    GemsKeyboardPromotionAlert,
 }GemsAlertType;
 
 

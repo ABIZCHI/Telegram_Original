@@ -61,7 +61,7 @@ GEMS_ADDED_METHOD
         [self setNeedsLayout];
     }
     else {
-        _icon = nil;
+        _icon.image = nil;
     }
 }
 
@@ -79,12 +79,15 @@ GEMS_ADDED_METHOD
     CGRect bounds = self.bounds;
     
     CGSize switchSize = _switchView.bounds.size;
-    _switchView.frame = CGRectMake(bounds.size.width - switchSize.width - (_icon? 40.0f:15.0f), 6.0f, switchSize.width, switchSize.height);
+    CGFloat lblPadding = _icon.image? 40.0f:15.0f;
     
-    _titleLabel.frame = CGRectMake(_icon? 40.0f:15.0f, CGFloor((bounds.size.height - 26.0f) / 2.0f), bounds.size.width - 15.0f - 4.0f - switchSize.width - 6.0f, 26.0f);
+    _switchView.frame = CGRectMake(bounds.size.width - switchSize.width - lblPadding, 6.0f, switchSize.width, switchSize.height);
     
-    if(_icon)
-        _icon.frame = CGRectMake(10, floorf((bounds.size.height - 15) / 2), 15, 15);
+    _titleLabel.frame = CGRectMake(lblPadding, CGFloor((bounds.size.height - 26.0f) / 2.0f), bounds.size.width - 15.0f - 4.0f - switchSize.width - 6.0f, 26.0f);
+    
+    if(_icon.image)
+        _icon.frame = CGRectMake(10, CGFloor((bounds.size.height - 15) / 2.f), 15, 15);
+
 }
 
 @end

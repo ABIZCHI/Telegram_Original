@@ -7,11 +7,13 @@
 //
 
 #import "GemsAlertCenter.h"
-#import "GemsAlert.h"
 
 #if USE_GCM == 1
 #import "GCM.h"
 #endif
+
+// gemsCore
+#import <GemsCore/Macros.h>
 
 #define PENDING_ALERTS_KEY @"PENDING_ALERTS_KEY"
 
@@ -65,10 +67,7 @@
 #pragma mark - NSNotificationCenter
 - (void)applicaitonDidBecomeActive
 {
-    if(_executor)
-    {
-        [_executor executeAlerts:[self getAllPendingAlerts]];
-    }
+    [self executeAllPendingAlerts];
 }
 
 - (void) didReceiveGcmNotification:(NSNotification *) notification

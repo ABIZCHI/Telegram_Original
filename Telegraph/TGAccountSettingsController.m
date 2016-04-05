@@ -197,6 +197,18 @@ GEMS_ADDED_METHOD
             //_versionItem
         ]];
         [self.menuSections addSection:infoSection];
+
+		TGUser *user = [TGDatabaseInstance() loadUser:_uid];
+    
+	    [_profileDataItem setUser:user animated:false];
+    	[_usernameItem setVariant:user.userName.length == 0 ? TGLocalized(@"Settings.UsernameEmpty") : [[NSString alloc] initWithFormat:@"@%@", user.userName]];
+	    [_phoneNumberItem setVariant:user.phoneNumber.length == 0 ? @"" : [TGPhoneUtils formatPhone:user.phoneNumber forceInternational:true]];
+    
+	    [self setTitleText:TGLocalized(@"Settings.Title")];
+    
+    	_accountEditingBarButtonItem = nil;;
+	    [self setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:TGLocalized(@"Common.Edit") style:UIBarButtonItemStylePlain target:self action:@selector(editButtonPressed)]];
+
 }
 
 - (void)dealloc
@@ -206,22 +218,15 @@ GEMS_ADDED_METHOD
     [ActionStageInstance() removeWatcher:self];
 }
 
+GEMS_TG_REFACTORING
 - (void)loadView
 {
     [super loadView];
     [self setSections];
     _editing = false;
     
-    TGUser *user = [TGDatabaseInstance() loadUser:_uid];
+    //end of method moved to -setSections
     
-    [_profileDataItem setUser:user animated:false];
-    [_usernameItem setVariant:user.userName.length == 0 ? TGLocalized(@"Settings.UsernameEmpty") : [[NSString alloc] initWithFormat:@"@%@", user.userName]];
-    [_phoneNumberItem setVariant:user.phoneNumber.length == 0 ? @"" : [TGPhoneUtils formatPhone:user.phoneNumber forceInternational:true]];
-    
-    [self setTitleText:TGLocalized(@"Settings.Title")];
-    
-    _accountEditingBarButtonItem = nil;;
-    [self setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:TGLocalized(@"Common.Edit") style:UIBarButtonItemStylePlain target:self action:@selector(editButtonPressed)]];
 }
 
 - (void)viewWillAppear:(BOOL)animated

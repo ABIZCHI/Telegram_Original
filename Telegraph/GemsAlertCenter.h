@@ -9,12 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "GemsAlertCommons.h"
 #import "GemsAlertExecutor.h"
+#import "GemsAlert.h"
 
 @interface GemsAlertCenter : NSObject
 
 + (instancetype)sharedInstance;
 
 - (void)executeAllPendingAlerts;
+- (void)addAlertToDefaults:(GemsAlert*)alert;
 - (void)addAlertsToDefaults:(NSArray*)alerts;
 - (NSArray *)getAllAlerts;
 - (NSArray *)getAllPendingAlerts;

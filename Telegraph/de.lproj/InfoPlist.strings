@@ -1,6 +1,6 @@
 /* Localized versions of Info.plist keys */
 
-"CFBundleDisplayName" = "Telegram";
+"CFBundleDisplayName" = "GetGems";
 
-"NSContactsUsageDescription" = "Telegram speichert deine Kontakte verschlüsselt in der sicheren Telegram Cloud, damit du dich mit deinen Freunden auf all deinen Geräten verbinden kannst.";
-"NSLocationWhenInUseUsageDescription" = "Wenn du Freunden deinen Standort mitteilen willst, musst du Telegram den Zugriff darauf erlauben.";
+"NSContactsUsageDescription" = "GetGems speichert deine Kontakte verschlüsselt in der sicheren GetGems Cloud, damit du dich mit deinen Freunden auf all deinen Geräten verbinden kannst.";
+"NSLocationWhenInUseUsageDescription" = "Wenn du Freunden deinen Standort mitteilen willst, musst du GetGems den Zugriff darauf erlauben.";

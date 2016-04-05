@@ -129,14 +129,10 @@
 - (void)fetchDataFromServerWithCompletion:(void(^)(NSArray *data))completion
 {
     NSTimeInterval t = round([self loadLastUpdateTimeFromDefaults]);
-    int offset = -1, limit = -1;
-    if(t == 0) // no data
-    {
-        offset = 0;
-        limit = FETCH_TRANSACTIONS_LIMIT;
-    }
-    else
+    int offset = 0, limit = FETCH_TRANSACTIONS_LIMIT;
+    if(t != 0) {
         t -= 60*60*24; // a day before
+    }
     
     [_G txHistoryWithOffset:offset limit:limit startUnixTime:t completion:^(NSArray *transactions, NSString *error) {
         if(error) {

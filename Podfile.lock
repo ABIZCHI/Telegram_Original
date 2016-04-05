@@ -20,14 +20,12 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - AnalyticsSwift (0.2.0)
   - Bolts (1.6.0):
     - Bolts/AppLinks (= 1.6.0)
     - Bolts/Tasks (= 1.6.0)
   - Bolts/AppLinks (1.6.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.6.0)
-  - Box (HEAD based on 2.0)
   - Branch (0.10.9)
   - BreadWalletCore (0.0.1):
     - MagicalRecord (= 2.3.0)
@@ -48,20 +46,9 @@ PODS:
     - FBSDKCoreKit
   - FXForms (1.1)
   - GemsCore (0.0.1):
-    - AFNetworking/UIKit (~> 2.3)
-    - GemsCore/Analytics (= 0.0.1)
-    - GemsCore/GetGems (= 0.0.1)
-    - GemsCore/Social (= 0.0.1)
-    - JSONModel
-    - Lambda-Alert
-    - MagicalRecord (= 2.3.0)
+    - GemsCore/Full (= 0.0.1)
   - GemsCore/Analytics (0.0.1):
-    - AFNetworking/UIKit (~> 2.3)
-    - Heap (= 2.1.5)
-    - JSONModel
-    - Lambda-Alert
-    - MagicalRecord (= 2.3.0)
-    - Mixpanel (= 2.9.0)
+    - Mixpanel/AppExtension (= 2.9.0)
   - GemsCore/Full (0.0.1):
     - AFNetworking/UIKit (~> 2.3)
     - Branch (= 0.10.9)
@@ -72,22 +59,14 @@ PODS:
     - Lambda-Alert
     - MagicalRecord (= 2.3.0)
   - GemsCore/GetGems (0.0.1):
-    - AFNetworking/UIKit (~> 2.3)
     - BreadWalletCore
     - GemsCurrencyManager
     - GemsNetworking
-    - JSONModel
-    - Lambda-Alert
-    - MagicalRecord (= 2.3.0)
   - GemsCore/Social (0.0.1):
-    - AFNetworking/UIKit (~> 2.3)
     - FBSDKCoreKit (= 4.5.1)
     - FBSDKLoginKit (= 4.5.1)
     - FBSDKMessengerShareKit (= 1.3.0)
     - FBSDKShareKit (= 4.5.1)
-    - JSONModel
-    - Lambda-Alert
-    - MagicalRecord (= 2.3.0)
   - GemsCurrencyManager (0.0.1):
     - BreadWalletCore
     - GemsNetworking
@@ -108,24 +87,16 @@ PODS:
     - SDWebImage (= 3.7.3)
     - VBFPopFlatButton
     - ZXingObjC (= 3.1.0)
-  - Heap (2.1.5)
   - iOS-blur (0.0.5)
   - ISO8601 (0.5.0)
   - JazzHands (0.2.1)
   - JSONModel (1.2.0)
-  - KeyboardFramework (0.1):
-    - AnalyticsSwift (~> 0.2.0)
-    - Box
-    - ReactiveCocoa
-    - Result
-    - UIColor_Hex_Swift
-    - UIImageView-Letters
+  - KeyboardFramework (0.1)
   - Lambda-Alert (1.0.1)
   - libPhoneNumber-iOS (0.8.10)
   - MagicalRecord (2.3.0)
-  - Mixpanel (2.9.0):
-    - Mixpanel/Mixpanel (= 2.9.0)
-  - Mixpanel/Mixpanel (2.9.0)
+  - Mixpanel/AppExtension (2.9.0)
+  - PBJVideoPlayer (0.3.0)
   - pop (1.0.8)
   - PTEHorizontalTableView (1.0.0)
   - ReactiveCocoa (4.0.4-alpha-4):
@@ -139,7 +110,7 @@ PODS:
   - ReactiveCocoa/UI (4.0.4-alpha-4):
     - ReactiveCocoa/Core
     - Result (~> 1.0)
-  - Result (HEAD based on 1.0.1)
+  - Result (1.0.1)
   - SAMTextView (0.2.2)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
@@ -149,8 +120,6 @@ PODS:
     - AFNetworking (~> 2.3)
     - ISO8601 (~> 0.3)
     - JSONModel (~> 1.1)
-  - UIColor_Hex_Swift (1.8)
-  - UIImageView-Letters (1.1.4)
   - VBFPopFlatButton (0.0.6):
     - pop
   - ZXingObjC (3.1.0):
@@ -158,48 +127,46 @@ PODS:
   - ZXingObjC/All (3.1.0)
 
 DEPENDENCIES:
-  - Box (HEAD)
-  - BreadWalletCore (from `../../BRCore`)
+  - BreadWalletCore (from `../BRCore`)
   - CustomIOSAlertView (= 0.9.3)
   - FXForms (= 1.1)
-  - GemsCore/Full (from `../GemsCore`)
-  - GemsCurrencyManager (from `../GemsCore/GemsCurrencyManager/`)
-  - GemsNetworking (from `../GemsCore/GemsNetworking`)
-  - GemsUI (from `../GemsUI`)
+  - GemsCore/Full (from `../gems-app-ios/GemsCore`)
+  - GemsCurrencyManager (from `../gems-app-ios/GemsCore/GemsCurrencyManager/`)
+  - GemsNetworking (from `../gems-app-ios/GemsCore/GemsNetworking`)
+  - GemsUI (from `../gems-app-ios/GemsUI`)
   - iOS-blur
-  - KeyboardFramework (from `../../Keyboard`)
+  - KeyboardFramework (from `../Keyboard`)
   - Lambda-Alert
   - libPhoneNumber-iOS (~> 0.7)
+  - Mixpanel/AppExtension (= 2.9.0)
+  - PBJVideoPlayer
   - PTEHorizontalTableView
   - ReactiveCocoa (= 4.0.4-alpha-4)
-  - Result (HEAD)
   - SDWebImage (= 3.7.3)
   - SSKeychain
-  - SwaggerClient (from `../GemsCore/GemsNetworking/ThirdParty/swagger/`)
+  - SwaggerClient (from `../gems-app-ios/GemsCore/GemsNetworking/ThirdParty/swagger/`)
   - VBFPopFlatButton
   - ZXingObjC (= 3.1.0)
 
 EXTERNAL SOURCES:
   BreadWalletCore:
-    :path: ../../BRCore
+    :path: ../BRCore
   GemsCore:
-    :path: ../GemsCore
+    :path: ../gems-app-ios/GemsCore
   GemsCurrencyManager:
-    :path: ../GemsCore/GemsCurrencyManager/
+    :path: ../gems-app-ios/GemsCore/GemsCurrencyManager/
   GemsNetworking:
-    :path: ../GemsCore/GemsNetworking
+    :path: ../gems-app-ios/GemsCore/GemsNetworking
   GemsUI:
-    :path: ../GemsUI
+    :path: ../gems-app-ios/GemsUI
   KeyboardFramework:
-    :path: ../../Keyboard
+    :path: ../Keyboard
   SwaggerClient:
-    :path: ../GemsCore/GemsNetworking/ThirdParty/swagger/
+    :path: ../gems-app-ios/GemsCore/GemsNetworking/ThirdParty/swagger/
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
-  AnalyticsSwift: 76329ac0b66be9747e9f718076c53d264ed24089
   Bolts: f52a250053bb517ca874523c3913776359ab3def
-  Box: 70713ca3679e4e11ad4c470e9b58265f506fc659
   Branch: 024a0c5848303eb82b8aa139822e07e0724f7fdc
   BreadWalletCore: 93b6648f2b3a7584d5aeb216f642d56f6fac7df1
   CustomIOSAlertView: 94d2401e34fcfb0ac0134679d6947f5e251b0446
@@ -208,20 +175,20 @@ SPEC CHECKSUMS:
   FBSDKMessengerShareKit: 4a38dbd3564f5da459ea35b636e6766f7067a830
   FBSDKShareKit: 642034ac9f30793dfd897851b724bb4281750266
   FXForms: 981c39bd307476508f591ebafbc8c5d84df728ec
-  GemsCore: 6a72e48e7df23fbbcd81cd72985dd9984415c57c
+  GemsCore: e47c193211174167467d3285d2963cb869fbdd46
   GemsCurrencyManager: 0311280bed1ef82819859eca683b30b7e0087bf2
   GemsNetworking: cdd9898aa3d793e8bfb49a1b258ca28a2bacd8ff
   GemsUI: a5b8e51b8a74258b1f24459a8c9e526f833ad2d5
-  Heap: 9d41b3d07bc86c9127364b638c710d854390a113
   iOS-blur: 8e4a4a2202b881e940869eca0c957808cbdf0a19
   ISO8601: 25d7a973fa8daf31a50bbd0401d2e7b98e8a7df3
   JazzHands: d2343c3f2f9d70598d0cad8f521ce3893842a44a
   JSONModel: 12523685c4b623553ccf844bbbf7007624317b2c
-  KeyboardFramework: 7fa62cfd0b6a2d105fcad7ff66515aebc6dea7b7
+  KeyboardFramework: fcda154526cd3d5f3c2762faf0e2d72240466120
   Lambda-Alert: dadd1e0c1d6a63f8c8300f7aad9f263101c1ccba
   libPhoneNumber-iOS: 7bfd00f843fdcd82b5182b463e8eb3b27579f41d
   MagicalRecord: 89eb7d7ead39fb37f01c3d010665ee94d17f8dba
   Mixpanel: 42ae6168effc48481d957f7883dd8514a398738d
+  PBJVideoPlayer: 1024ec3e90802459e28fac3d822f03719e100d34
   pop: bb773ae2c791ca2629de13b347e7a8b450fa6a57
   PTEHorizontalTableView: 2c65c4360282223628dabc664508dde922f98efd
   ReactiveCocoa: e459ea92099447802df20c4735e31e8139b06094
@@ -230,8 +197,6 @@ SPEC CHECKSUMS:
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SSKeychain: 04c4ec40f4c3deda524e269bc76e5f30e638a174
   SwaggerClient: 469ecccdcf29f021317ad03b3b87bbc976994cfa
-  UIColor_Hex_Swift: a66b9d5f6e8fddbd9fe32996504f0b7e9d20d680
-  UIImageView-Letters: f62db28076797adf3560ab7410647dc6899b9eef
   VBFPopFlatButton: 782344da63f104c279a857d806e065117a7e1196
   ZXingObjC: bf15b3814f7a105b6d99f47da2333c93a063650a
 

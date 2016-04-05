@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/alonmuroch/Documents/Xcode/gems-app-ios/Telegram/GetGems.xcodeproj">
+      location = "group:GetGems.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

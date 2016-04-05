@@ -22,12 +22,17 @@
 #import "TGSwitchCollectionItem.h"
 #import "GemsWalletViewController.h"
 #import "PincodeManagerController.h"
+#import "GemsAdvertisingChannelsController.h"
 #import "TGGemsFaqController.h"
 #import "TGTelegraph.h"
 #import "TGGems.h"
 #import "GemsEventObservers.h"
 #import "GemsAccountSettingsSPVHelper.h"
 #import <MessageUI/MessageUI.h>
+#import "OnboardingNavigationController.h"
+#import "KbHelper.h"
+#import "TGButtonCollectionItem.h"
+#import "LDAdvertisingManager.h"
 
 // GemsUI
 #import <GemsUI/GemsUI.h>
@@ -47,7 +52,7 @@
 #import <GemsCore/NSURL+GemsReferrals.h>
 
 
-@interface GemsAccountSettingsController () <MFMailComposeViewControllerDelegate>
+@interface GemsAccountSettingsController () <MFMailComposeViewControllerDelegate, OnboardingNavigationControllerProtocol>
 {
     NSString *_referralLinkStr;
     ReferralLinkItem *_referralLinkCell;
@@ -83,8 +88,8 @@
     self = [super initWithUid:uid];
     if(self !=nil)
     {
-        [super setSections];
-        [self setSections];
+//        [super setSections];
+//        [self setSections];
     }
     return self;
 }
@@ -97,12 +102,13 @@
         }
     }
 }
-
+/**
+ This method is called in -loadView, no need to call it in init
+ */
 - (void)setSections
 {
     [self clearAllSections];
     [super setSections];
-    
     
     // edit telegram sections
     TGCollectionMenuSection  *tgInfoSec = self.menuSections.sections[3];
@@ -114,6 +120,23 @@
         if(!error) {
             _referralLinkStr = url.absoluteString;
             
+            if (![KbHelper didInstallKeyboard] || ![KbHelper didActivateKeyboard]) {
+                TGVariantCollectionItem *setupKeybaord = [[TGVariantCollectionItem alloc] initWithTitle:GemsLocalized(@"GemsSetupKeyboard") icon:[UIImage Loader_gemsImageWithName:@"keyboard_setup_icon"] action:@selector(setupKeyboardSelected)];
+                [setupKeybaord setDeselectAutomatically:YES];
+                
+                TGCollectionMenuSection  *kbSection = [[TGCollectionMenuSection alloc] initWithItems:@[setupKeybaord]];
+                [self.menuSections addSection:kbSection];
+            }
+            else {
+                TGButtonCollectionItem *setupKeybaord = [[TGButtonCollectionItem alloc] initWithTitle:GemsLocalized(@"GemsDidSetupKeyboard") action:nil];
+                [setupKeybaord setSelectable:false];
+                [setupKeybaord setEnabled:false];
+                
+                TGCollectionMenuSection  *kbSection = [[TGCollectionMenuSection alloc] initWithItems:@[setupKeybaord]];
+                [self.menuSections addSection:kbSection];
+            }
+            
+            
             // added gems user name
             CDGemsUser *user = [CDGemsUser MR_findFirst];
             CDGemsSystem *sys = [CDGemsSystem MR_findFirst];
@@ -124,6 +147,11 @@
             TGVariantCollectionItem *referralCnt = [[TGVariantCollectionItem alloc] initWithTitle:GemsLocalized(@"GemsReferrals") icon:[UIImage Loader_gemsImageWithName:@"settings_referrals_cnt"] action:nil];
             [referralCnt setVariant:[NSString stringWithFormat:@"%d", (int)[TGGemsWallet sharedInstance].cntReferrals]];
             [referralCnt setSelectable:NO];
+            
+            TGDisclosureActionCollectionItem *advertisingChannels = [[TGDisclosureActionCollectionItem alloc] initWithTitle:GemsLocalized(@"Advertising")
+                                                                                                     icon:[UIImage Loader_gemsImageWithName:@"settings_ads_icon"]
+                                                                                                   action:@selector(advertisingChannelsPressed)];
+            [advertisingChannels setDeselectAutomatically:YES];
             
             TGVariantCollectionItem *gemsEarned = [[TGVariantCollectionItem alloc] initWithTitle:GemsLocalized(@"GemsEarned") icon:[UIImage Loader_gemsImageWithName:@"settings_gems_earned"] action:nil];
             [gemsEarned setVariant:[NSString stringWithFormat:@"%d", (int)[TGGemsWallet sharedInstance].gemsEarned]];
@@ -140,7 +168,7 @@
             TGDisclosureActionCollectionItem *pincode = [[TGDisclosureActionCollectionItem alloc] initWithTitle:GemsLocalized(@"Pincode") icon:[UIImage Loader_gemsImageWithName:@"settings_security"] action:@selector(setOrChangePincode)];
             [pincode setDeselectAutomatically:YES];
             
-            TGCollectionMenuSection  *newSection = [[TGCollectionMenuSection alloc] initWithItems:@[_referralLinkCell, referralCnt, gemsEarned, _currencySelection, pincode /*resetPinCode, showCoachMark*/]];
+            TGCollectionMenuSection  *newSection = [[TGCollectionMenuSection alloc] initWithItems:@[_referralLinkCell, referralCnt, gemsEarned, _currencySelection, advertisingChannels, pincode /*resetPinCode, showCoachMark*/]];
             [self.menuSections addSection:newSection];
             
             /////////////// Bitcoin ////////////////////////
@@ -204,6 +232,24 @@
 //     *
 //     */
 //}
+
+- (void)setupKeyboardSelected
+{
+    if ([KbHelper didInstallKeyboard]) {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"OnboardingStoryboard" bundle:nil];
+        UINavigationController *nav = [sb instantiateInitialViewController];
+        UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"StartUsingPaykeyController"];
+        nav.viewControllers = @[vc];
+        ((OnboardingNavigationController*)nav).onboardingDelegate = self;
+        presentController(nav, YES);
+    }
+    else {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"OnboardingStoryboard" bundle:nil];
+        UINavigationController *vc = [sb instantiateInitialViewController];
+        ((OnboardingNavigationController*)vc).onboardingDelegate = self;
+        presentController(vc, YES);
+    }
+}
 
 - (void)setOrChangePincode
 {
@@ -434,6 +480,12 @@
     }];
 }
 
+- (void)advertisingChannelsPressed
+{
+    GemsAdvertisingChannelsController * v = [[GemsAdvertisingChannelsController alloc] init];
+    pushController(v, YES);
+    
+}
 - (void)currencySelectionPressed
 {
     GemsCurrencySelectionController *v = [[GemsCurrencySelectionController alloc] init];
@@ -574,6 +626,22 @@
 //    }
 //}
 
+- (void)actorCompleted:(int)status path:(NSString *)path result:(id)result {
+    if ([path hasPrefix:@"/tg/auth/logout/"]) {
+        if (status == ASStatusSuccess) {
+            [[LDAdvertisingManager sharedManager] goingToLogout];
+            [GEMS doLogoutWithCompletion:^{
+                [super actorCompleted:status path:path result:result];
+            }];
+        } else {
+            [super actorCompleted:status path:path result:result];
+        }
+        
+    } else {
+        [super actorCompleted:status path:path result:result];
+    }
+}
+
 - (void)disableBitcoinWallet
 {
     [_B wipeWallet];
@@ -604,5 +672,14 @@
         [controller dismissViewControllerAnimated:YES completion:NilCompletionBlock];
     }
 }
+
+#pragma mark - OnboardingNavigationControllerProtocol
+- (void)finished:(__weak OnboardingNavigationController *) __unused navController {
+
+    [self setSections];
+    
+    dismissController(YES);
+}
+
 
 @end

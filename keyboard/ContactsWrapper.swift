@@ -28,7 +28,7 @@ public class ContactsWrapper: NSObject {
     
     public func reloadAsync() {
         async { () -> () in
-            if let data: NSData = Defaults().dataForKey(cachedTGUsersKey) {
+            if let data: NSData = KBDefaults().dataForKey(cachedTGUsersKey) {
                 if let uwrappedContacts = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? [protocol<PKUserProtocol>] {
                     var results: [protocol<PKUserProtocol>] = []
                     var uniqueIds: [String] = []
