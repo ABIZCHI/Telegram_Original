@@ -24,4 +24,5 @@ static const NSString *GemsTransactionFaucetBonusStr    = @"FAUCETBONUS";
 static const NSString *GemsTransactionRateBonusStr      = @"RATEBONUS";
 static const NSString *GemsTransactionPurchaseStr       = @"PURCHASE";
 
+
 #endif

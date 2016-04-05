@@ -36,7 +36,7 @@
 "MESSAGE_STICKER" = "%1$@ sent you a sticker";
 "CHAT_MESSAGE_STICKER" = "%1$@ sent a sticker to the group %2$@";
 
-"CONTACT_JOINED" = "%1$@ joined Telegram!";
+"CONTACT_JOINED" = "%1$@ joined GetGems!";
 "CONTACT_ACTIVATED" = "%1$@ helped you activate your account!";
 
 "AUTH_UNKNOWN" = "Login from a new device %1$@";
@@ -154,42 +154,42 @@
 "Date.DialogDateFormat" = "{month} {day}";
 
 // Tour
-"Tour.Title1" = "Telegram";
+"Tour.Title1" = "GetGems";
 "Tour.Text1" = "The world's **fastest** messaging app.\nIt is **free** and **secure**.";
 
 "Tour.Title2" = "Fast";
-"Tour.Text2" = "**Telegram** delivers messages\nfaster than any other application.";
+"Tour.Text2" = "**GetGems** delivers messages\nfaster than any other application.";
 
 "Tour.Title3" = "Powerful";
-"Tour.Text3" = "**Telegram** has no limits on\nthe size of your chats and media.";
+"Tour.Text3" = "**GetGems** has no limits on\nthe size of your chats and media.";
 
 "Tour.Title4" = "Secure";
-"Tour.Text4" = "**Telegram** keeps your messages\nsafe from hacker attacks.";
+"Tour.Text4" = "**GetGems** keeps your messages\nsafe from hacker attacks.";
 
 "Tour.Title5" = "Cloud-Based";
-"Tour.Text5" = "**Telegram** lets you access your\nmessages from multiple devices.";
+"Tour.Text5" = "**GetGems** lets you access your\nmessages from multiple devices.";
 
 "Tour.Title6" = "Free";
-"Tour.Text6" = "**Telegram** is free forever. No ads.\nNo subscription fees.";
+"Tour.Text6" = "**GetGems** is free forever. No ads.\nNo subscription fees.";
 
 "Tour.Title7" = "Private";
-"Tour.Text7" = "**Telegram** messages are heavily encrypted and can self-destruct.";
+"Tour.Text7" = "**GetGems** messages are heavily encrypted and can self-destruct.";
 
 "Tour.StartButton" = "Start Messaging";
 
 // Login
 "Login.PhoneAndCountryHelp" = "Please confirm your country code and enter your phone number.";
 "Login.CodeHelp" = "We have sent you an SMS with a code to the number\n%@";
-"Login.CodeSentInternal" = "Please enter the code you've just received in your previous **Telegram** app";
+"Login.CodeSentInternal" = "Please enter the code you've just received in your previous **GetGems** app";
 "Login.HaveNotReceivedCodeInternal" = "Haven't received the code?";
 "Login.CodeSentSms" = "We have sent you an SMS with the code";
 "Login.Code" = "Code";
-"Login.CallRequestState1" = "Telegram will call you in %d:%.2d";
-"Login.CallRequestState2" = "Requesting a call from Telegram...";
-"Login.CallRequestState3" = "Telegram dialed your number\n[Didn't get the code?]";
+"Login.CallRequestState1" = "GetGems will call you in %d:%.2d";
+"Login.CallRequestState2" = "Requesting a call from GetGems...";
+"Login.CallRequestState3" = "GetGems dialed your number\n[Didn't get the code?]";
 "Login.EmailNotConfiguredError" = "Please set up an email account.";
 "Login.EmailCodeSubject" = "%@, no code";
-"Login.EmailCodeBody" = "My phone number is:\n%@\nI can't get an activation code for Telegram.";
+"Login.EmailCodeBody" = "My phone number is:\n%@\nI can't get an activation code for GetGems.";
 "Login.UnknownError" = "An error occurred. Please try again later";
 "Login.InvalidCodeError" = "You have entered an invalid code. Please try again.";
 "Login.NetworkError" = "Please check your internet connection and try again.";
@@ -198,7 +198,7 @@
 "Login.InvalidPhoneError" = "Invalid phone number. Please try again.";
 "Login.InvalidFirstNameError" = "Invalid first name. Please try again.";
 "Login.InvalidLastNameError" = "Invalid last name. Please try again.";
-"Login.InactiveHelp" = "None of your contacts\nuse Telegram yet.\nWe will notify you when they join.\nYou can also invite a friend right away.";
+"Login.InactiveHelp" = "None of your contacts\nuse GetGems yet.\nWe will notify you when they join.\nYou can also invite a friend right away.";
 "Login.InviteButton" = "Invite a Friend to Chat";
 
 "Login.PhoneTitle" = "Your Phone";
@@ -225,7 +225,7 @@
 "WelcomeScreen.Logout" = "Log Out";
 "WelcomeScreen.Greeting" = "Welcome, %@!";
 "WelcomeScreen.ContactsAccessDisabled" = "Sorry, unable to sync contacts.";
-"WelcomeScreen.ContactsAccessHelp" = "Telegram messaging is based on your existing contact list. Please go to your %@'s Settings — Privacy — Contacts and set Telegram to ON.";
+"WelcomeScreen.ContactsAccessHelp" = "GetGems messaging is based on your existing contact list. Please go to your %@'s Settings — Privacy — Contacts and set GetGems to ON.";
 "WelcomeScreen.ContactsAccessSettings" = "Settings";
 "WelcomeScreen.UpdatingTitle" = "Updating";
 
@@ -272,13 +272,13 @@
 "Contacts.contact" = "contact";
 "Contacts.contacts" = "contacts";
 "Contacts.contactsvar" = "contacts";
-"Contacts.InvitationText" = "Hey, let's switch to Telegram http://telegram.org/dl";
+"Contacts.InvitationText" = "Hey, let's switch to GetGems http://GetGems.org/dl";
 "Contacts.FailedToSendInvitesMessage" = "An error occurred.";
-"Contacts.AccessDeniedError" = "Telegram does not have access to your contacts";
-"Contacts.AccessDeniedHelpLandscape" = "Please go to your %@ Settings — Privacy — Contacts.\nThen select ON for Telegram.";
-"Contacts.AccessDeniedHelpPortrait" = "Please go to your %@ Settings — Privacy — Contacts. Then select ON for Telegram.";
+"Contacts.AccessDeniedError" = "GetGems does not have access to your contacts";
+"Contacts.AccessDeniedHelpLandscape" = "Please go to your %@ Settings — Privacy — Contacts.\nThen select ON for GetGems.";
+"Contacts.AccessDeniedHelpPortrait" = "Please go to your %@ Settings — Privacy — Contacts. Then select ON for GetGems.";
 "Contacts.AccessDeniedHelpON" = "ON";
-"Contacts.InviteToTelegram" = "Invite to Telegram";
+"Contacts.InviteToGetGems" = "Invite to GetGems";
 "Contacts.InviteFriends" = "Invite Friends";
 "Contacts.SelectAll" = "Select All";
 
@@ -322,10 +322,10 @@
 "Conversation.DeleteChat" = "Delete this Chat";
 "Conversation.ClearAllConfirmation" = "Delete all messages?";
 "Conversation.SearchImages" = "Search Images";
-"Conversation.UnsupportedMedia" = "This message is not supported on your version of Telegram. Update the app to view:\nhttp://telegram.org/update";
+"Conversation.UnsupportedMedia" = "This message is not supported on your version of GetGems. Update the app to view:\nhttp://GetGems.org/update";
 "Conversation.EncryptionWaiting" = "Waiting for %@ to get online...";
 "Conversation.EncryptionProcessing" = "Exchanging encryption keys...";
-"Conversation.SupportPlaceholder" = "Got a question about Telegram?";
+"Conversation.SupportPlaceholder" = "Got a question about GetGems?";
 "Conversation.EmptyPlaceholder" = "No messages here yet...";
 "Conversation.EncryptedPlaceholderTitleIncoming" = "%@ invited you to join a secret chat.";
 "Conversation.EncryptedPlaceholderTitleOutgoing" = "You have invited %@ to join a secret chat.";
@@ -375,9 +375,9 @@
 "Notification.CreatedChannel" = "Channel created";
 "Notification.CreatedBroadcastList" = "You created a broadcast list";
 "Notification.CreatedChatWithTitle" = "%@ created the group \"%@\"";
-"Notification.Joined" = "%@ joined Telegram";
+"Notification.Joined" = "%@ joined GetGems";
 "Notification.ChangedGroupName" = "%@ changed group name to \"%@\"";
-"Notification.NewAuthDetected" = "%1$@,\nWe detected a login into your account from a new device on %2$@, %3$@ at %4$@\n\nDevice: %5$@\nLocation: %6$@\n\nIf this wasn't you, you can go to Settings — Privacy and Security — Sessions and terminate that session.\n\nIf you think that somebody logged in to your account against your will, you can enable two-step verification in Privacy and Security settings.\n\nSincerely,\nThe Telegram Team";
+"Notification.NewAuthDetected" = "%1$@,\nWe detected a login into your account from a new device on %2$@, %3$@ at %4$@\n\nDevice: %5$@\nLocation: %6$@\n\nIf this wasn't you, you can go to Settings — Privacy and Security — Sessions and terminate that session.\n\nIf you think that somebody logged in to your account against your will, you can enable two-step verification in Privacy and Security settings.\n\nSincerely,\nThe GetGems Team";
 "Notification.EncryptedChatRequested" = "Secret chat requested";
 "Notification.EncryptedChatAccepted" = "Secret chat started";
 "Notification.MessageLifetimeChanged" = "%1$@ set the self-destruct timer to %2$@";
@@ -437,7 +437,7 @@
 "Conversation.SlideToCancel" = "Slide to cancel";
 "Conversation.ApplyLocalization" = "Apply Localization";
 "Conversation.OpenFile" = "Open File";
-"Conversation.MicrophoneAccessDisabled" = "Telegram needs access to your microphone for voice messages. Please go to Settings — Privacy — Microphone and set Telegram to ON.";
+"Conversation.MicrophoneAccessDisabled" = "GetGems needs access to your microphone for voice messages. Please go to Settings — Privacy — Microphone and set GetGems to ON.";
 
 // Media Picker
 "MediaPicker.Send" = "Send";
@@ -446,8 +446,8 @@
 "SearchImages.Title" = "Albums";
 "MediaPicker.CameraRoll" = "Camera Roll";
 "SearchImages.NoImagesFound" = "No images found";
-"MediaPicker.AccessDeniedError" = "Telegram does not have access to your photos";
-"MediaPicker.AccessDeniedHelp" = "Please go to your %@ Settings — Privacy — Photos.\nThen select ON for Telegram.";
+"MediaPicker.AccessDeniedError" = "GetGems does not have access to your photos";
+"MediaPicker.AccessDeniedHelp" = "Please go to your %@ Settings — Privacy — Photos.\nThen select ON for GetGems.";
 "SearchImages.Downloading#Kb" = "Downloading %d Kb";
 "SearchImages.Downloading#Mb" = "Downloading %d Mb";
 "SearchImages.ImageNofM" = "Image %1$@ of %2$@";
@@ -458,9 +458,9 @@
 
 // User Profile
 "Profile.ImageUploadError" = "An error occurred. Please try again later.";
-"Profile.PhonebookAccessDisabled" = "To make this feature work, please go to your iPhone's Settings — Privacy — Contacts and select ON for Telegram.";
+"Profile.PhonebookAccessDisabled" = "To make this feature work, please go to your iPhone's Settings — Privacy — Contacts and select ON for GetGems.";
 "Profile.CreateEncryptedChatError" = "An error occurred.";
-"Profile.CreateEncryptedChatOutdatedError" = "Cannot create a secret chat with %@.\n%@ is using an older version of Telegram and needs to update first.";
+"Profile.CreateEncryptedChatOutdatedError" = "Cannot create a secret chat with %@.\n%@ is using an older version of GetGems and needs to update first.";
 "Profile.CreateNewContact" = "Create New Contact";
 "Profile.AddToExisting" = "Add to Existing Contact";
 "Profile.EncryptionKey" = "Encryption Key";
@@ -493,7 +493,7 @@
 "UserInfo.NotificationsDisabled" = "Disabled";
 "UserInfo.NotificationsEnable" = "Enable";
 "UserInfo.NotificationsDisable" = "Disable";
-"UserInfo.Invite" = "Invite to Telegram";
+"UserInfo.Invite" = "Invite to GetGems";
 
 // New Contact
 "NewContact.Title" = "New Contact";
@@ -529,7 +529,7 @@
 
 // Encryption Key
 "EncryptionKey.Title" = "Encryption Key";
-"EncryptionKey.Description" = "This image is a visualization of the encryption key for this secret chat with %1$@.\n\nIf this image looks the same on %2$@'s phone, your chat is 200%% secure.\n\nLearn more at telegram.org";
+"EncryptionKey.Description" = "This image is a visualization of the encryption key for this secret chat with %1$@.\n\nIf this image looks the same on %2$@'s phone, your chat is 200%% secure.\n\nLearn more at GetGems.org";
 
 // Conversation media
 "ConversationMedia.Title" = "Media";
@@ -544,7 +544,7 @@
 "Preview.LoadingImages" = "loading full images...";
 "Preview.DeletePhoto" = "Delete Photo";
 "Preview.DeleteVideo" = "Delete Video";
-"Preview.ForwardViaTelegram" = "Forward via Telegram";
+"Preview.ForwardViaGetGems" = "Forward via GetGems";
 "Preview.SaveToCameraRoll" = "Save to Camera Roll";
 
 // Map
@@ -554,8 +554,8 @@
 "Map.Map" = "Map";
 "Map.Satellite" = "Satellite";
 "Map.Hybrid" = "Hybrid";
-"Map.AccessDeniedError" = "To make this feature work, please turn on Location Services for Telegram in your iPhone's Privacy Settings.";
-"Map.ForwardViaTelegram" = "Forward via Telegram";
+"Map.AccessDeniedError" = "To make this feature work, please turn on Location Services for GetGems in your iPhone's Privacy Settings.";
+"Map.ForwardViaGetGems" = "Forward via GetGems";
 "Map.GetDirections" = "Get Directions";
 "Map.OpenInGoogleMaps" = "Open in Google Maps";
 
@@ -580,11 +580,11 @@
 "Settings.BlockedUsers" = "Blocked Users";
 "Settings.ChatBackground" = "Chat Background";
 "Settings.Support" = "Ask a Question";
-"Settings.FAQ" = "Telegram FAQ";
-"Settings.FAQ_URL" = "http://telegram.org/faq#general";
-"Settings.FAQ_Intro" = "Please note that Telegram Support is done by volunteers. We try to respond as quickly as possible, but it may take a while.\
+"Settings.FAQ" = "GetGems FAQ";
+"Settings.FAQ_URL" = "http://GetGems.org/faq#general";
+"Settings.FAQ_Intro" = "Please note that GetGems Support is done by volunteers. We try to respond as quickly as possible, but it may take a while.\
 \
-Please take a look at the Telegram FAQ: it has important troubleshooting tips and answers to most questions.";
+Please take a look at the GetGems FAQ: it has important troubleshooting tips and answers to most questions.";
 "Settings.FAQ_Button" = "FAQ";
 "Settings.SaveIncomingPhotos" = "Save Incoming Photos";
 "Settings.SaveIncomingPhotosHelp" = "Save incoming photos to the Camera Roll.";
@@ -636,11 +636,11 @@ Please take a look at the Telegram FAQ: it has important troubleshooting tips an
 "Cache.ClearCache" = "Clear Cache";
 "Cache.ClearCacheAlert" = "Photos, videos and other files from cloud chats will be removed from this device to save disk space.
 
-All media will stay in the Telegram cloud and can be re-downloaded if you need it again.";
+All media will stay in the GetGems cloud and can be re-downloaded if you need it again.";
 "Cache.KeepMedia" = "Keep Media";
 "Cache.Help" = "Photos, videos and other files from cloud chats that you have **not accessed** during this period will be removed from this device to save disk space.
 
-All media will stay in the Telegram cloud and can be re-downloaded if you need it again.";
+All media will stay in the GetGems cloud and can be re-downloaded if you need it again.";
 
 // Blocked Users
 "BlockedUsers.Title" = "Blocked";
@@ -689,11 +689,11 @@ All media will stay in the Telegram cloud and can be re-downloaded if you need i
 
 "Settings.LogoutConfirmationTitle" = "Log out?";
 "Settings.LogoutConfirmationText" = "
-Note that you can seamlessly use Telegram on all your devices at once.
+Note that you can seamlessly use GetGems on all your devices at once.
 
 Remember, logging out kills all your Secret Chats.";
 
-"Login.PadPhoneHelp" = "\nYou can use your main mobile number to log in to Telegram on all devices.\nDon't use your iPad's SIM number here — we'll need to send you an SMS.
+"Login.PadPhoneHelp" = "\nYou can use your main mobile number to log in to GetGems on all devices.\nDon't use your iPad's SIM number here — we'll need to send you an SMS.
 
 Is this number correct?
 {number}";
@@ -762,9 +762,9 @@ Is this number correct?
 
 "Service.NetworkConfigurationUpdatedMessage" = "Connection settings updated successfully.";
 
-"Compatibility.SecretMediaVersionTooLow" = "%@ is using an older version of Telegram, so secret photos will be shown in compatibility mode.
+"Compatibility.SecretMediaVersionTooLow" = "%@ is using an older version of GetGems, so secret photos will be shown in compatibility mode.
 
-Once %@ updates Telegram, photos with timers for 1 minute or less will start working in 'Tap and hold to view' mode, and you will be notified whenever the other party takes a screenshot.";
+Once %@ updates GetGems, photos with timers for 1 minute or less will start working in 'Tap and hold to view' mode, and you will be notified whenever the other party takes a screenshot.";
 
 "Contacts.GlobalSearch" = "Global Search";
 "Profile.Username" = "username";
@@ -773,7 +773,7 @@ Once %@ updates Telegram, photos with timers for 1 minute or less will start wor
 
 "Username.Title" = "Username";
 "Username.Placeholder" = "Your Username";
-"Username.Help" = "You can choose a username on **Telegram**. If you do, other people will be able to find you by this username and contact you without knowing your phone number.
+"Username.Help" = "You can choose a username on **GetGems**. If you do, other people will be able to find you by this username and contact you without knowing your phone number.
 
 You can use **a-z**, **0-9** and underscores. Minimum length is **5** characters.";
 "Username.InvalidTooShort" = "A username must have at least 5 characters.";
@@ -887,8 +887,8 @@ You can use **a-z**, **0-9** and underscores. Minimum length is **5** characters
 
 "Settings.PhoneNumber" = "Phone Number";
 
-"PhoneNumberHelp.Help" = "You can change your Telegram number here. Your account and all your cloud data — messages, media, contacts, etc. will be moved to the new number.\n\n**Important:** all your Telegram contacts will get your **new number** added to their address book, provided they had your old number and you haven't blocked them in Telegram.";
-"PhoneNumberHelp.Alert" = "All your Telegram contacts will get your new number added to their address book, provided they had your old number and you haven't blocked them in Telegram.";
+"PhoneNumberHelp.Help" = "You can change your GetGems number here. Your account and all your cloud data — messages, media, contacts, etc. will be moved to the new number.\n\n**Important:** all your GetGems contacts will get your **new number** added to their address book, provided they had your old number and you haven't blocked them in GetGems.";
+"PhoneNumberHelp.Alert" = "All your GetGems contacts will get your new number added to their address book, provided they had your old number and you haven't blocked them in GetGems.";
 "PhoneNumberHelp.ChangeNumber" = "Change Number";
 
 "ChangePhoneNumberNumber.Title" = "Change Number";
@@ -899,9 +899,9 @@ You can use **a-z**, **0-9** and underscores. Minimum length is **5** characters
 "ChangePhoneNumberCode.Code" = "YOUR CODE";
 "ChangePhoneNumberCode.CodePlaceholder" = "Code";
 "ChangePhoneNumberCode.Help" = "We have sent you an SMS with the code";
-"ChangePhoneNumberCode.CallTimer" = "Telegram will call you in %@";
-"ChangePhoneNumberCode.RequestingACall" = "Requesting a call from Telegram...";
-"ChangePhoneNumberCode.Called" = "Telegram dialed your number";
+"ChangePhoneNumberCode.CallTimer" = "GetGems will call you in %@";
+"ChangePhoneNumberCode.RequestingACall" = "Requesting a call from GetGems...";
+"ChangePhoneNumberCode.Called" = "GetGems dialed your number";
 
 "LoginPassword.Title" = "Your Password";
 "LoginPassword.PasswordPlaceholder" = "Password";
@@ -1033,14 +1033,14 @@ You can use **a-z**, **0-9** and underscores. Minimum length is **5** characters
 "ShareFileTip.Title" = "Sharing Files";
 "ShareFileTip.Text" = "You can share **uncompressed** media files from your Camera Roll here.
 
-To share files of any other type, open them on your %@ (e.g. in your browser), tap **Open in...** or the action button and choose Telegram.";
+To share files of any other type, open them on your %@ (e.g. in your browser), tap **Open in...** or the action button and choose GetGems.";
 "ShareFileTip.CloseTip" = "Close Tip";
 
 "DialogList.SearchSectionDialogs" = "Chats and Contacts";
 "DialogList.SearchSectionGlobal" = "Global Search";
 "DialogList.SearchSectionMessages" = "Messages";
 
-"Username.LinkHint" = "This link opens a chat with you in Telegram:[\nhttp://telegram.me/%@]";
+"Username.LinkHint" = "This link opens a chat with you in GetGems:[\nhttp://GetGems.me/%@]";
 "Username.LinkCopied" = "Copied link to clipboard";
 
 "SharedMedia.ItemsSelected_1" = "1 Selected";
@@ -1065,19 +1065,19 @@ Note: if you forget the passcode, you'll need to delete and reinstall the app. A
 "PasscodeSettings.SimplePasscode" = "Simple Passcode";
 "PasscodeSettings.SimplePasscodeHelp" = "A simple passcode is a 4 digit number.";
 "PasscodeSettings.EncryptData" = "Encrypt Local Database";
-"PasscodeSettings.EncryptDataHelp" = "Experimental feature, use with caution. Encrypt your local Telegram data, using a derivative of your passcode as the key.";
+"PasscodeSettings.EncryptDataHelp" = "Experimental feature, use with caution. Encrypt your local GetGems data, using a derivative of your passcode as the key.";
 
-"EnterPasscode.EnterTitle" = "Enter your Telegram Passcode";
+"EnterPasscode.EnterTitle" = "Enter your GetGems Passcode";
 "EnterPasscode.SetupTitle" = "New Passcode";
 "EnterPasscode.ChangeTitle" = "Change Passcode";
-"EnterPasscode.EnterPasscode" = "Enter your Telegram Passcode";
+"EnterPasscode.EnterPasscode" = "Enter your GetGems Passcode";
 "EnterPasscode.EnterNewPasscodeNew" = "Enter a passcode";
 "EnterPasscode.EnterNewPasscodeChange" = "Enter your new passcode";
 "EnterPasscode.RepeatNewPasscode" = "Re-enter your new passcode";
 "EnterPasscode.EnterCurrentPasscode" = "Enter your current passcode";
 "EnterPasscode.TouchId" = "Enter your passcode";
 
-"DialogList.PasscodeLockHelp" = "Tap to lock Telegram";
+"DialogList.PasscodeLockHelp" = "Tap to lock GetGems";
 
 "PasscodeSettings.AutoLock" = "Auto-Lock";
 "PasscodeSettings.AutoLock.Disabled" = "Disabled";
@@ -1094,32 +1094,32 @@ Note: if you forget the passcode, you'll need to delete and reinstall the app. A
 
 "AccessDenied.Title" = "Please Allow Access";
 
-"AccessDenied.Contacts" = "Telegram messaging is based on your existing contact list.\n\nPlease go to Settings > Privacy > Contacts and set Telegram to ON.";
+"AccessDenied.Contacts" = "GetGems messaging is based on your existing contact list.\n\nPlease go to Settings > Privacy > Contacts and set GetGems to ON.";
 
-"AccessDenied.VoiceMicrophone" = "Telegram needs access to your microphone to send voice messages.\n\nPlease go to Settings > Privacy > Microphone and set Telegram to ON.";
+"AccessDenied.VoiceMicrophone" = "GetGems needs access to your microphone to send voice messages.\n\nPlease go to Settings > Privacy > Microphone and set GetGems to ON.";
 
-"AccessDenied.VideoMicrophone" = "Telegram needs access to your microphone to record sound in videos recording.\n\nPlease go to Settings > Privacy > Microphone and set Telegram to ON.";
+"AccessDenied.VideoMicrophone" = "GetGems needs access to your microphone to record sound in videos recording.\n\nPlease go to Settings > Privacy > Microphone and set GetGems to ON.";
 
-"AccessDenied.MicrophoneRestricted" = "Microphone access is restricted for Telegram.\n\nPlease go to Settings > General > Restrictions > Microphone and set Telegram to ON.";
+"AccessDenied.MicrophoneRestricted" = "Microphone access is restricted for GetGems.\n\nPlease go to Settings > General > Restrictions > Microphone and set GetGems to ON.";
 
 
-"AccessDenied.Camera" = "Telegram needs access to your camera to take photos and videos.\n\nPlease go to Settings > Privacy > Camera and set Telegram to ON.";
+"AccessDenied.Camera" = "GetGems needs access to your camera to take photos and videos.\n\nPlease go to Settings > Privacy > Camera and set GetGems to ON.";
 
-"AccessDenied.CameraRestricted" = "Camera access is restricted for Telegram.\n\nPlease go to Settings > General > Restrictions > Camera and set Telegram to ON.";
+"AccessDenied.CameraRestricted" = "Camera access is restricted for GetGems.\n\nPlease go to Settings > General > Restrictions > Camera and set GetGems to ON.";
 
 "AccessDenied.CameraDisabled" = "Camera access is globally restricted on your phone.\n\nPlease go to Settings > General > Restrictions and set Camera to ON";
 
-"AccessDenied.PhotosAndVideos" = "Telegram needs access to your photo library to send photos and videos.\n\nPlease go to Settings > Privacy > Photos and set Telegram to ON.";
+"AccessDenied.PhotosAndVideos" = "GetGems needs access to your photo library to send photos and videos.\n\nPlease go to Settings > Privacy > Photos and set GetGems to ON.";
 
-"AccessDenied.SaveMedia" = "Telegram needs access to your photo library to save photos and videos.\n\nPlease go to Settings > Privacy > Photos and set Telegram to ON.";
+"AccessDenied.SaveMedia" = "GetGems needs access to your photo library to save photos and videos.\n\nPlease go to Settings > Privacy > Photos and set GetGems to ON.";
 
-"AccessDenied.PhotosRestricted" = "Photo access is restricted for Telegram.\n\nPlease go to Settings > General > Restrictions > Photos and set Telegram to ON.";
+"AccessDenied.PhotosRestricted" = "Photo access is restricted for GetGems.\n\nPlease go to Settings > General > Restrictions > Photos and set GetGems to ON.";
 
-"AccessDenied.LocationDenied" = "Telegram needs access to your location so that you can share it with your contacts.\n\nPlease go to Settings > Privacy > Location Services and set Telegram to ON.";
+"AccessDenied.LocationDenied" = "GetGems needs access to your location so that you can share it with your contacts.\n\nPlease go to Settings > Privacy > Location Services and set GetGems to ON.";
 
-"AccessDenied.LocationDisabled" = "Telegram needs access to your location so that you can share it with your contacts.\n\nPlease go to Settings > Privacy > Location Services and set it to ON.";
+"AccessDenied.LocationDisabled" = "GetGems needs access to your location so that you can share it with your contacts.\n\nPlease go to Settings > Privacy > Location Services and set it to ON.";
 
-"AccessDenied.LocationTracking" = "Telegram needs access to your location to show you on the map.\n\nPlease go to Settings > Privacy > Location Services and set it to ON.";
+"AccessDenied.LocationTracking" = "GetGems needs access to your location to show you on the map.\n\nPlease go to Settings > Privacy > Location Services and set it to ON.";
 
 "AccessDenied.Settings" = "Settings";
 
@@ -1190,7 +1190,7 @@ Note: if you forget the passcode, you'll need to delete and reinstall the app. A
 "TwoStepAuth.ChangeEmail" = "Change Recovery E-Mail";
 "TwoStepAuth.PendingEmailHelp" = "Your recovery e-mail %@ is not yet active and pending confirmation.";
 "TwoStepAuth.GenericHelp" = "You have enabled Two-Step verification.
-You'll need the password you set up here to log in to your Telegram account.";
+You'll need the password you set up here to log in to your GetGems account.";
 
 "TwoStepAuth.ConfirmationTitle" = "Two-Step Verification";
 "TwoStepAuth.ConfirmationText" = "Please check your e-mail and click on the validation link to complete Two-Step Verification setup. Be sure to check the spam folder as well.";
@@ -1213,7 +1213,7 @@ You'll need the password you set up here to log in to your Telegram account.";
 "TwoStepAuth.EmailSkip" = "Skip";
 "TwoStepAuth.EmailSkipAlert" = "No, seriously.
 
-If you forget your password, you will lose access to your Telegram account. There will be no way to restore it.";
+If you forget your password, you will lose access to your GetGems account. There will be no way to restore it.";
 "TwoStepAuth.Email" = "E-Mail";
 "TwoStepAuth.EmailPlaceholder" = "Your E-Mail";
 "TwoStepAuth.EmailHelp" = "Please add your valid e-mail. It is the only way to recover a forgotten password.";
@@ -1246,7 +1246,7 @@ If you forget your password, you will lose access to your Telegram account. Ther
 
 "Conversation.FileHowTo" = "How to share files?";
 "Conversation.FileOpenIn" = "Open in...";
-"Conversation.FileHowToText" = "To share files of any type, open them on your %@ (e.g. in your browser), tap **Open in...** or the action button and choose Telegram.";
+"Conversation.FileHowToText" = "To share files of any type, open them on your %@ (e.g. in your browser), tap **Open in...** or the action button and choose GetGems.";
 
 "Map.LocationTitle" = "Location";
 "Map.OpenInMaps" = "Open in Maps";
@@ -1284,9 +1284,9 @@ If you forget your password, you will lose access to your Telegram account. Ther
 "GoogleDrive.LoadErrorTitle" = "Unable to Connect";
 "GoogleDrive.LoadErrorMessage" = "Please check your internet connection and try again.";
 
-"ChangePhone.ErrorOccupied" = "The number %@ is already connected to a Telegram account. Please delete that account before migrating to the new number.";
+"ChangePhone.ErrorOccupied" = "The number %@ is already connected to a GetGems account. Please delete that account before migrating to the new number.";
 
-"AccessDenied.LocationTracking" = "Telegram needs access to your location to show you on the map.\n\nPlease go to Settings > Privacy > Location Services and set it to ON.";
+"AccessDenied.LocationTracking" = "GetGems needs access to your location to show you on the map.\n\nPlease go to Settings > Privacy > Location Services and set it to ON.";
 
 "PrivacySettings.AuthSessions" = "Active Sessions";
 "AuthSessions.Title" = "Active Sessions";
@@ -1296,7 +1296,7 @@ If you forget your password, you will lose access to your Telegram account. Ther
 "AuthSessions.TerminateSession" = "Terminate session";
 "AuthSessions.OtherSessions" = "ACTIVE SESSIONS";
 "AuthSessions.EmptyTitle" = "No other sessions";
-"AuthSessions.EmptyText" = "You can log in to Telegram from other mobile, tablet and desktop devices, using the same phone number. All your data will be instantly synchronized.";
+"AuthSessions.EmptyText" = "You can log in to GetGems from other mobile, tablet and desktop devices, using the same phone number. All your data will be instantly synchronized.";
 "AuthSessions.AppUnofficial" = "(ID: %@)";
 
 "WebPreview.GettingLinkInfo" = "Getting Link Info...";
@@ -1310,7 +1310,7 @@ If you forget your password, you will lose access to your Telegram account. Ther
 
 "GroupInfo.InviteLink.Title" = "Invite Link";
 "GroupInfo.InviteLink.LinkSection" = "LINK";
-"GroupInfo.InviteLink.Help" = "Anyone who has Telegram installed will be able to join your group by following this link.";
+"GroupInfo.InviteLink.Help" = "Anyone who has GetGems installed will be able to join your group by following this link.";
 "GroupInfo.InviteLink.CopyLink" = "Copy Link";
 "GroupInfo.InviteLink.RevokeLink" = "Revoke Link";
 "GroupInfo.InviteLink.ShareLink" = "Share Link";
@@ -1327,7 +1327,7 @@ If you forget your password, you will lose access to your Telegram account. Ther
 "GroupInfo.InvitationLinkDoesNotExist" = "Sorry, this group does not seem to exist.";
 "GroupInfo.InvitationLinkGroupFull" = "Sorry, this group is already full.";
 
-"Core.CurrentUpdateText" = "Telegram for iOS has been updated. New in version %@:
+"Core.CurrentUpdateText" = "GetGems for iOS has been updated. New in version %@:
 
 - Optimized for iPhone 6s and 6s+
 - Split View and Slide Over support for iPads
@@ -1411,7 +1411,7 @@ Users can add stickers by double-tapping them and choosing \"Add Stickers\".";
 "Login.PhoneNumberHelp" = "Help";
 "Login.EmailPhoneSubject" = "Invalid number %@";
 "Login.EmailPhoneBody" = "I'm trying to use my mobile phone number: %@
-But Telegram says it's invalid. Please help.";
+But GetGems says it's invalid. Please help.";
 
 "SharedMedia.TitleLink" = "Shared Links";
 "SharedMedia.EmptyLinksText" = "All links shared in this chat will appear here.";
@@ -1440,10 +1440,10 @@ But Telegram says it's invalid. Please help.";
 "Channel.Edit.LinkItem" = "Link";
 
 "Channel.Username.Title" = "Link";
-"Channel.Username.Help" = "You can choose a channel name on **Telegram**. If you do, other people will be able to find your channel by this name.
+"Channel.Username.Help" = "You can choose a channel name on **GetGems**. If you do, other people will be able to find your channel by this name.
 
 You can use **a-z**, **0-9** and underscores. Minimum length is **5** characters.";
-"Channel.Username.LinkHint" = "This link opens your channel in Telegram:[\nhttp://telegram.me/%@]";
+"Channel.Username.LinkHint" = "This link opens your channel in GetGems:[\nhttp://GetGems.me/%@]";
 "Channel.Username.InvalidTooShort" = "Channel names must have at least 5 characters.";
 "Channel.Username.InvalidStartsWithNumber" = "Channel names can't start with a number.";
 "Channel.Username.InvalidCharacters" = "Sorry, this name is invalid.";
@@ -1503,7 +1503,7 @@ You can use **a-z**, **0-9** and underscores. Minimum length is **5** characters
 
 "Channel.Setup.Title" = "Channel";
 
-"Channel.Username.CreatePublicLinkHelp" = "People can share this link with others and find your channel using Telegram search.";
+"Channel.Username.CreatePublicLinkHelp" = "People can share this link with others and find your channel using GetGems search.";
 "Channel.Username.CreatePrivateLinkHelp" = "People can join your channel by following this link. You can revoke the link at any time.";
 
 "Channel.Username.CreateCommentsEnabled" = "Comments";

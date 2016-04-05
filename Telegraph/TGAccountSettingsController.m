@@ -173,19 +173,9 @@ GEMS_ADDED_METHOD
                                                                                                 [[TGCommentCollectionItem alloc] initWithText:TGLocalized(@"Settings.SaveIncomingPhotosHelp")]
                                                                                                 ]];
     [self.menuSections addSection:downloadSection];
-}
-
-- (void)dealloc
-{
-    [_actionHandle reset];
-    [ActionStageInstance() removeWatcher:self];
-}
-
-- (void)loadView
-{
-    [super loadView];
-    [self setSections];
-    _editing = false;
+    
+    
+    // Start moved from -loadView
     
     TGUser *user = [TGDatabaseInstance() loadUser:_uid];
     
@@ -197,6 +187,25 @@ GEMS_ADDED_METHOD
     
     _accountEditingBarButtonItem = nil;;
     [self setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:TGLocalized(@"Common.Edit") style:UIBarButtonItemStylePlain target:self action:@selector(editButtonPressed)]];
+    
+    // End moved from -loadView
+}
+
+- (void)dealloc
+{
+    [_actionHandle reset];
+    [ActionStageInstance() removeWatcher:self];
+}
+
+GEMS_TG_REFACTORING
+- (void)loadView
+{
+    [super loadView];
+    [self setSections];
+    _editing = false;
+    
+    //end of method moved to -setSections
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated

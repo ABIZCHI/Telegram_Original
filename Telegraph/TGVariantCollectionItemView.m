@@ -64,7 +64,7 @@ GEMS_ADDED_METHOD
         [self setNeedsLayout];
     }
     else {
-        _icon = nil;
+        _icon.image = nil;
     }
 }
 
@@ -84,9 +84,12 @@ GEMS_TG_METHOD_CHANGED
     CGSize titleSize = [_titleLabel sizeThatFits:CGSizeMake(bounds.size.width, CGFLOAT_MAX)];
     CGSize variantSize = [_variantLabel sizeThatFits:CGSizeMake(bounds.size.width, CGFLOAT_MAX)];
     
-    _disclosureIndicator.frame = CGRectMake(bounds.size.width - _disclosureIndicator.frame.size.width - 15, floorf((bounds.size.height - _disclosureIndicator.frame.size.height) / 2), _disclosureIndicator.frame.size.width, _disclosureIndicator.frame.size.height);
+    _disclosureIndicator.frame = CGRectMake(bounds.size.width - _disclosureIndicator.frame.size.width - 15,
+                                            CGFloor((bounds.size.height - _disclosureIndicator.frame.size.height) / 2.f),
+                                            _disclosureIndicator.frame.size.width,
+                                            _disclosureIndicator.frame.size.height);
     
-    CGFloat startingX = _icon? 40.0f:15.0f;
+    CGFloat startingX = _icon.image ? 40.0f : 15.0f;
     CGFloat indicatorSpacing = 10.0f;
     CGFloat labelSpacing = 8.0f;
     CGFloat availableWidth = _disclosureIndicator.frame.origin.x - startingX - indicatorSpacing;
@@ -114,8 +117,8 @@ GEMS_TG_METHOD_CHANGED
         _titleLabel.frame = CGRectMake(startingX, titleY, titleWidth, titleSize.height);
     }
     
-    if(_icon)
-        _icon.frame = CGRectMake(10, floorf((bounds.size.height - 15) / 2), 15, 15);
+    if(_icon.image)
+        _icon.frame = CGRectMake(10, CGFloor((bounds.size.height - 15) / 2), 15, 15);
 }
 
 @end

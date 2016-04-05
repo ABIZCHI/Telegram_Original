@@ -18,6 +18,8 @@
 #import "TGGlobalMessageSearchSignals.h"
 #import "TGDialogListBroadcastsMenuCell.h"
 
+#import "LDAdvertisingManager.h" // Advertising
+
 @interface GemsDialogListController ()
 
 @end
@@ -72,6 +74,7 @@
         [super dialogListItemsChanged:insertedIndices insertedItems:insertedItems updatedIndices:updatedIndices updatedItems:updatedItems removedIndices:removedIndices];
         return;
     }
+
     
     NSMutableArray *insetedIndicesMutable = [NSMutableArray arrayWithArray:insertedIndices];
     NSMutableArray *insertedItemsMutable = [NSMutableArray arrayWithArray:insertedItems];
@@ -123,13 +126,20 @@
       * Now after we filtered the hidden conversations, update the table view
      */
     
+    NSMutableArray * adjustedArray = [self.listModel mutableCopy];
+    [adjustedArray removeObjectsAtIndexes:self.dialogListCompanion.removedConversationIndxsForGemsUsage];
+    
     int countBefore = (int)self.listModel.count;
     
     NSMutableArray *removedIndexPaths = [[NSMutableArray alloc] init];
     for (NSNumber *nRemovedIndex in removedIndices)
     {
+        NSUInteger rowNumber = [self findCellRealIndex:[nRemovedIndex integerValue]];
+        if (rowNumber == -1) {
+            continue;
+        }
         [self.listModel removeObjectAtIndex:[nRemovedIndex intValue]];
-        [removedIndexPaths addObject:[NSIndexPath indexPathForRow:[nRemovedIndex intValue] inSection:1]];
+        [removedIndexPaths addObject:[NSIndexPath indexPathForRow:rowNumber inSection:1]];
     }
     
     if (removedIndexPaths.count != 0)
@@ -187,6 +197,10 @@
     return -1;
 }
 
+- (void)dialogListFullyReloaded:(NSArray *)items {
+    [self.dialogListCompanion checkForNotWantedConversations:items];
+    [super dialogListFullyReloaded:items];
+}
 - (void)selectConversationWithId:(int64_t)conversationId
 {
     bool found = false;
@@ -257,6 +271,7 @@
             if (conversation != nil)
             {
                 [self.dialogListCompanion conversationSelected:conversation];
+                [[LDAdvertisingManager sharedManager] didSelectConversation:conversation];
             }
             
             if (self.dialogListCompanion.forwardMode || self.dialogListCompanion.privacyMode)
@@ -330,6 +345,30 @@
     }
     else
         return [(NSArray *)self.searchResultsSections[section][@"items"] count];
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (tableView == self.tableView && self.dialogListCompanion.removedConversationIndxsForGemsUsage != 0)
+    {
+        NSMutableArray * adjustedListModel = [[NSMutableArray alloc] initWithArray:self.listModel];
+        [adjustedListModel removeObjectsAtIndexes:self.dialogListCompanion.removedConversationIndxsForGemsUsage];
+        
+        if (indexPath.row >= (NSInteger)adjustedListModel.count) {
+            return;
+        }
+        
+        TGConversation * conv = [adjustedListModel objectAtIndex:indexPath.row];
+        NSInteger realRow = [self.listModel indexOfObject:conv];
+
+        NSIndexPath * realIndexPath = [NSIndexPath indexPathForRow:realRow inSection:indexPath.section];
+        [super tableView:tableView commitEditingStyle:editingStyle forRowAtIndexPath:realIndexPath];
+
+    }
+    else
+    {
+        [super tableView:tableView commitEditingStyle:editingStyle forRowAtIndexPath:indexPath];
+    }
 }
 
 @end

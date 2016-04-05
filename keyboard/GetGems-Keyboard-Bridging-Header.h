@@ -15,4 +15,8 @@
 #import <GemsNetworking/GemsNetworker.h>
 #import <GemsNetworking/GemsNetworking.h>
 
+#import "NSUserDefaults+Keyboard.h"
+
+#import <Mixpanel/Mixpanel.h>
+
 #endif

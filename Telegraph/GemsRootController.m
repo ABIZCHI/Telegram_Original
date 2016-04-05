@@ -7,7 +7,7 @@
 //
 
 #import "GemsRootController.h"
-#import "TGTelegraphDialogListCompanion.h"
+#import "GemsDialogListCompanion.h" //#import "TGTelegraphDialogListCompanion.h"
 #import "TGContactsController.h"
 #import "GemsAccountSettingsController.h"
 #import "TGMainTabsController.h"
@@ -35,7 +35,7 @@
         
         self.contactsController = [[GemsContactsController alloc] initWithContactsMode:TGContactsModeMainContacts | TGContactsModeRegistered | TGContactsModePhonebook | TGContactsModeSortByLastSeen];
         
-        TGTelegraphDialogListCompanion *dialogListCompanion = [[TGTelegraphDialogListCompanion alloc] init];
+        GemsDialogListCompanion *dialogListCompanion = [[GemsDialogListCompanion alloc] init];
         dialogListCompanion.showBroadcastsMenu = true;
         self.dialogListController = [[GemsDialogListController alloc] initWithCompanion:dialogListCompanion];
         

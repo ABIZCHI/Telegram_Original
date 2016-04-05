@@ -21,6 +21,9 @@
 #import "GemsAirdropView.h"
 #import "GemsAirdropAlert.h"
 
+#import "GemsKeyboardAlert.h"
+#import "GemsKeyboardAlertView.h"
+
 @implementation GemsAlert
 
 - (instancetype)initWithDic:(NSDictionary*)dic
@@ -72,6 +75,12 @@
             return ret;
         }
             break;
+        case GemsKeyboardPromotionAlert:
+        {
+            GemsKeyboardAlert *ret = [[GemsKeyboardAlert alloc] initWithDic:dic];
+            return ret;
+        }
+            break;
         default:
         {
             return nil;
@@ -112,6 +121,13 @@
             return v;
         }
             break;
+        case GemsKeyboardPromotionAlert:
+        {
+            GemsKeyboardAlertView *v = [GemsKeyboardAlertView new];
+            v.alertObject = [self copy];
+            return v;
+        }
+            break;
         default:
             return [[GemsAlertViewBase alloc] init];
             break;
@@ -142,6 +158,11 @@
         return GemsAlertAirdrop;
     }
     
+    if([str isEqualToString:@"KEYBOARD_PROMOTION"])
+    {
+        return GemsKeyboardPromotionAlert;
+    }
+    
     return UnkownGemsAlert;
 }
 
@@ -161,7 +182,7 @@
 }
 
 #pragma mark - NSCopying
--(id)copyWithZone:(NSZone *)zone
+-(id)copyWithZone:(NSZone *)__unused zone
 {
     return [GemsAlert gemsAlertFromDictionary:_rawData];
 }

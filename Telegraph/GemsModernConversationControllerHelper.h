@@ -23,12 +23,14 @@ static BOOL GroupConversation(int64_t cid) { return cid > INT_MIN && cid <= 0; }
 @interface GemsModernConversationControllerHelper : NSObject
 - (instancetype)initWithConversationID:(int64_t)conversationID conversationController:(GemsModernConversationController*)controller;
 
-- (void)fetchConversationDataFromServerCompletion:(void(^)(NSArray *gemsUserIdsByTgId, NSString *error))completion;
-- (NSArray *)fetchStoredConversationData;
+//- (NSArray *)fetchStoredConversationData;
+//- (void)fetchConversationDataFromServerCompletion:(void(^)(NSArray *gemsUserIdsByTgId, NSString *error))completion;
+- (void)fetchConversationDataCompletion:(void(^)(NSArray *gemsUserIdsByTgId, NSString *error))completion;
 - (void)fetchReferralURLCompletion:(void(^)(NSURL *referralURL, NSString *error))completion;
 
 - (void)sendTippingInGroupPaymentRequest:(PaymentRequestsContainer*)prContainer referralURL:(NSURL*)referralURL;
 - (void)sendPersonalPaymentRequest:(PaymentRequestsContainer*)prContainer referralURL:(NSURL*)referralURL;
 - (void)sendGroupPaymentRequests:(PaymentRequestsContainer*)prContainer referralURL:(NSURL*)referralURL;
+- (void)tryToUpdateData:(void(^)(BOOL didUpdate, NSArray *gemsUserIdsByTgId, NSString *error))completion;
 
 @end

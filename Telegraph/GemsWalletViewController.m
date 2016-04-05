@@ -216,6 +216,7 @@
 }
 
 - (void)refreshTable {
+    [Currencies fetchCurrencyConverters:YES];
     [self refreshUi];
 }
 
@@ -437,10 +438,11 @@ bool readyForQR = true;
 
 - (CGFloat)calculateTableViewRealContentOffset:(UIScrollView*)scrl
 {
-    static CGFloat initialScrlOffset;
-    if(!initialScrlOffset)
-        initialScrlOffset = scrl.contentOffset.y;
-    return -(scrl.contentOffset.y - initialScrlOffset);;
+//    static CGFloat initialScrlOffset;
+//    if(!initialScrlOffset)
+//        initialScrlOffset = scrl.contentOffset.y;
+//    return -(scrl.contentOffset.y - initialScrlOffset);;
+    return -scrl.contentOffset.y;
 }
 
 //- (CGFloat)calculateParallaxHeaderViewYOffsetForOffset:(CGFloat)offset

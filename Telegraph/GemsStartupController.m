@@ -274,7 +274,7 @@
     [CoachMarks resetAllCoachMarks];
     
     // refresh balances
-    [_G updateBalance:NilCompletionBlock];
+    [_G updateBalance:nil];
     
     [GemsAnalytics track:AnalyticsRegistrationSuccess args:@{}];
     

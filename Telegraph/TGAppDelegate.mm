@@ -547,13 +547,8 @@ static unsigned int overrideIndexAbove(__unused id self, __unused SEL _cmd)
         [self loadRegistrationControllers:self.window completion:^{
             __typeof__(self) strongSelf = weakSelf;
             
-            [GEMS setupNetworkingAuthenticator];
+            [GemsAnalytics track:AnalyticsAppOpenedAfterLogin args:@{}];
             
-            [GEMS resetBackupDialog];
-            
-#if USE_GCM == 1
-            [WALLET postGCMToken:[GCM sharedInstance].registrationToken completion:NilCompletionBlock];
-#endif
             [strongSelf continueTelegramLoadingWithLaunchOptions:launchOptions];
         }];
     }
@@ -569,7 +564,19 @@ static unsigned int overrideIndexAbove(__unused id self, __unused SEL _cmd)
 - (void)loadRegistrationControllers:(UIWindow*)window completion:(void(^)())completion
 {
     GemsStartupController *v = [[GemsStartupController alloc] initWithNibName:@"GemsStartupController" bundle:nil];
-    v.completionBlock = completion;
+    v.completionBlock = ^{
+        [GEMS setupNetworkingAuthenticator];
+        
+        [GEMS resetBackupDialog];
+        
+#if USE_GCM == 1
+        [WALLET postGCMToken:[GCM sharedInstance].registrationToken completion:NilCompletionBlock];
+#endif
+        
+        if (completion) {
+            completion();
+        }
+    };
     GemsNavigationController *navContr = [GemsNavigationController navigationControllerWithControllers:@[v]];
     window.rootViewController = navContr;
 }
@@ -1146,6 +1153,10 @@ GEMS_TG_REFACTORING
     [_callingWebView loadRequest:[NSURLRequest requestWithURL:realUrl]];
 }
 
+GEMS_TG_METHOD_CHANGED_COMMENT(@"Change is needed to resolve bug with login controller on manual logout. \
+                               This method is ignored during application startup anyway. \
+                               But it's get called during logout process in TGTelegraph.mm, \
+                               and i think it would be better to change it here than there.");
 - (void)presentLoginController:(bool)clearControllerStates showWelcomeScreen:(bool)showWelcomeScreen phoneNumber:(NSString *)phoneNumber phoneCode:(NSString *)phoneCode phoneCodeHash:(NSString *)phoneCodeHash codeSentToTelegram:(bool)codeSentToTelegram profileFirstName:(NSString *)profileFirstName profileLastName:(NSString *)profileLastName
 {
     if (![[NSThread currentThread] isMainThread])
@@ -1155,6 +1166,18 @@ GEMS_TG_REFACTORING
             [self presentLoginController:clearControllerStates showWelcomeScreen:showWelcomeScreen phoneNumber:phoneNumber phoneCode:phoneCode phoneCodeHash:phoneCodeHash codeSentToTelegram:codeSentToTelegram profileFirstName:profileFirstName profileLastName:profileLastName];
         });
         
+        return;
+    }
+    else if ([self respondsToSelector:@selector(loadRegistrationControllers:completion:)])
+    {
+        // we have our custom registration controller so we don't need default one
+        __weak __typeof__(self) weakSelf = self;
+        [self loadRegistrationControllers:self.window completion:^{
+            __strong __typeof__(self) strongSelf = weakSelf;
+            if (strongSelf) {
+                [strongSelf continueTelegramLoadingWithLaunchOptions:nil];
+            }
+        }];
         return;
     }
     else

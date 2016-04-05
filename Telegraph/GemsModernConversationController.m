@@ -385,13 +385,8 @@
         
         _helper = [[GemsModernConversationControllerHelper alloc] initWithConversationID:_conversationID conversationController:self];
         
-        //load conversation data from defaults
-        _gemsUserIdsByTgId = [_helper fetchStoredConversationData];
-        if(_gemsUserIdsByTgId.count > 0)
-            didFetchConversationPeerData = YES;
-        
         // refresh conversation data
-        [_helper fetchConversationDataFromServerCompletion:^(NSArray *gemsUserIdsByTgId, NSString *error) {
+        [_helper fetchConversationDataCompletion:^(NSArray *gemsUserIdsByTgId, NSString *error) {
             if(error) {
                 didFetchConversationPeerData = NO;
                 return ;
@@ -1126,6 +1121,19 @@ UIBarButtonItem *previousLeftNavItem;
     
     self.isSendCurrencyScreensOpen = NO;
 }
+
+
+- (void)setStatus:(NSString *)status accentColored:(bool)accentColored allowAnimation:(bool)allowAnimation toggleMode:(TGModernConversationControllerTitleToggle)toggleMode {
+    [_helper tryToUpdateData:^(BOOL didUpdate, NSArray *newData, NSString *error) {
+        if (didUpdate && newData.count > 0) {
+            _gemsUserIdsByTgId = newData;
+        }
+    }];
+    
+    [super setStatus:status accentColored:accentColored allowAnimation:allowAnimation toggleMode:toggleMode];
+    
+}
+
 
 #pragma mark - screen orientation
 

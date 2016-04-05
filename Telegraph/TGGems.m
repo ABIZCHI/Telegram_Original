@@ -23,9 +23,18 @@
 #import "GemsWalletViewController.h"
 #import "GemsStoreController.h"
 #import "ExtensionConst.h"
+#import "GemsKeyboardAlert.h"
+#import "KbHelper.h"
+#import "OnboardingNavigationController.h"
+#import "NSUserDefaults+Keyboard.h"
+#import "InstructionsController.h"
+#import "KbHelper.h"
 
 // netwokring
 #import <GemsNetworking/GemsNetworking.h>
+
+// Advertising
+#import "LDAdvertisingManager.h"
 
 // GemsUI
 #import <GemsUI/GemsUI.h>
@@ -43,6 +52,9 @@
 #import <GemsCore/NSURL+GemsReferrals.h>
 
 #define WALLET_NEEDS_POP_UP_BACKUP_KEY @"WALLET_NEEDS_POP_UP_BACKUP_KEY"
+
+@interface TGGems() <OnboardingNavigationControllerProtocol>
+@end
 
 @implementation TGGems
 
@@ -64,8 +76,6 @@
 
 - (void)didBecomeActiveUIPrompts
 {
-    [self showBackupDialogOnlyIfNeeded];
-    
     _actionHandle = [[ASHandle alloc] initWithDelegate:self releaseOnMainThread:true];
     [ActionStageInstance() watchForPaths:@[
                                            @"/tg/userdatachanges",
@@ -106,10 +116,39 @@
             [self cacheReferralUrlToDefaults:url];
         }
     }];
+    
+    [self showBackupDialogOnlyIfNeeded];
+    [self showKebyoardPromotionOnlyIfNeeded];
+    
+    
+    // see kbHelper:setIsExpectingCrashAfterAllowedFullAccess
+    if([KbHelper finishKeyboardInstallation]) {
+        [self continueKeyboardSetup];
+    }
+    
+    // for kb extension
+    CDGemsUser *user = [CDGemsUser MR_findFirst];
+    [KBDefaults() setAnalyticsIdentity:user.gemsUserId];
+    [KBDefaults() setVerifiedPhoneNumber:user.phoneNumber];
+    [KBDefaults() setUsername:user.userName];
+}
+
+- (void)continueKeyboardSetup {
+    if([TGAppDelegateInstance.rootController.detailNavigationController.presentedViewController class] != [OnboardingNavigationController class]) {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"OnboardingStoryboard" bundle:nil];
+        UINavigationController *nav = [sb instantiateInitialViewController];
+        UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"StartUsingPaykeyController"];
+        nav.viewControllers = @[vc];
+        ((OnboardingNavigationController*)nav).onboardingDelegate = self;
+        presentController(nav, false);
+    }
 }
 
 - (void)setupNetworkingAuthenticator
 {
+    
+    [[LDAdvertisingManager sharedManager] setupAdvertising];
+    
     // set authentication service for networking
     // only if registered already, if not do it on registration
     if([self isRegistered])
@@ -161,6 +200,50 @@
     GemsPassphraseReminderAlert *alert = [GemsPassphraseReminderAlert new];
     [[GemsAlertCenter sharedInstance] addAlertsToDefaults:@[alert]];
 }
+
+- (void)showKebyoardPromotionOnlyIfNeeded
+{
+    if(![GEMS isRegistered]) return;
+    
+    if (![KbHelper didInstallKeyboard]) {
+        BOOL didShowOnce = [[NSUserDefaults standardUserDefaults] boolForKey:@"didShowKbPromotionOnce"];
+        if (didShowOnce) {
+            NSTimeInterval ti = [[NSUserDefaults standardUserDefaults] doubleForKey:@"lastKbPromotion"];
+            NSInteger cntShows = [[NSUserDefaults standardUserDefaults] integerForKey:@"kbPromotionConsecutiveShows"];
+            NSTimeInterval tiWait = 0;
+            if (cntShows < 3) {
+                tiWait = 60 * 60 * 24 /* wait a day */;
+            }
+            else {
+                tiWait = 60 * 60 * 24 * 7 /* wait a week */;
+            }
+            
+            if ([[NSDate date] timeIntervalSince1970] - ti < tiWait) {
+                return;
+            }
+            
+            // add counters
+            NSInteger newCnt = cntShows + 1;
+            [[NSUserDefaults standardUserDefaults] setInteger:newCnt forKey:@"kbPromotionConsecutiveShows"];
+        }
+        else {
+            [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:@"kbPromotionConsecutiveShows"];
+            [[NSUserDefaults standardUserDefaults] setBool:true forKey:@"didShowKbPromotionOnce"];
+        }
+        
+        GemsKeyboardAlert *alert = [GemsKeyboardAlert new];
+        [[GemsAlertCenter sharedInstance] addAlertToDefaults:alert];
+        [[GemsAlertCenter sharedInstance] executeAllPendingAlerts];
+        
+        [[NSUserDefaults standardUserDefaults] setDouble:[[NSDate date] timeIntervalSince1970] forKey:@"lastKbPromotion"];
+    }
+    else {
+        [[NSUserDefaults standardUserDefaults] setBool:false forKey:@"didShowKbPromotionOnce"]; // reset until the next time
+    }
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 
 - (void)showPassphraseRecoveryView
 {
@@ -236,6 +319,11 @@
                 [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"INVITER_SET_FLAG"];
         }
     }];
+}
+
+#pragma mark - OnboardingNavigationControllerProtocol
+- (void)finished:(__weak OnboardingNavigationController *) __unused navController {
+    dismissController(YES);
 }
 
 @end

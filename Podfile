@@ -4,10 +4,8 @@ platform :ios, '8.1'
 use_frameworks!
 
 def keyboardPods
-    pod 'Box', :head
-    pod 'Result', :head
     pod 'ReactiveCocoa', '4.0.4-alpha-4'
-    pod 'KeyboardFramework', :path => '../../Keyboard'
+    pod 'KeyboardFramework', :path => '../Keyboard'
 end
 
 target 'GetGems' do
@@ -21,21 +19,23 @@ target 'GetGems' do
     pod 'CustomIOSAlertView', '0.9.3'
     pod 'VBFPopFlatButton'
     pod 'SSKeychain'
+    pod 'PBJVideoPlayer'
 
-#    pod 'BreadWalletCore', :git => 'https://github.com/GetGems/BRCore.git'
-    pod 'SwaggerClient', :path => '../GemsCore/GemsNetworking/ThirdParty/swagger/'
-    pod 'GemsNetworking', :path => '../GemsCore/GemsNetworking'
-    pod 'GemsCurrencyManager', :path => '../GemsCore/GemsCurrencyManager/'
-    pod 'BreadWalletCore', :path => '../../BRCore'
-    pod 'GemsCore/Full', :path => '../GemsCore'
-    pod 'GemsUI', :path => '../GemsUI'
+    pod 'SwaggerClient', :path => '../gems-app-ios/GemsCore/GemsNetworking/ThirdParty/swagger/'
+    pod 'GemsNetworking', :path => '../gems-app-ios/GemsCore/GemsNetworking'
+    pod 'GemsCurrencyManager', :path => '../gems-app-ios/GemsCore/GemsCurrencyManager/'
+    pod 'BreadWalletCore', :path => '../BRCore'
+    pod 'GemsCore/Full', :path => '../gems-app-ios/GemsCore'
+    pod 'GemsUI', :path => '../gems-app-ios/GemsUI'
 
     keyboardPods
 end
 
 target 'keyboard' do
     keyboardPods
-    pod 'GemsNetworking', :path => '../GemsCore/GemsNetworking'
+    #pod 'GemsCore/AppExtension', :path => '../gems-app-ios/GemsCore'
+    pod 'GemsNetworking', :path => '../gems-app-ios/GemsCore/GemsNetworking'
+    pod 'Mixpanel/AppExtension', '2.9.0'
 end
 
 target 'Share' do

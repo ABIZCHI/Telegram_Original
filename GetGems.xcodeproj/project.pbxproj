@@ -1098,6 +1098,14 @@
 		93F5D960162A36CC00E38E48 /* TGSendInvitesActor.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F5D95F162A36CC00E38E48 /* TGSendInvitesActor.m */; };
 		93F6940616932F8700691086 /* TGBlockListRequestActor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 93F6940516932F8700691086 /* TGBlockListRequestActor.mm */; };
 		93FF24E616FE2431008F6AA8 /* TGLoginWelcomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FF24E516FE2431008F6AA8 /* TGLoginWelcomeController.m */; };
+		9C0391191C96D32500F13E64 /* GemsDialogListCompanion.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C0391171C96D32500F13E64 /* GemsDialogListCompanion.h */; };
+		9C03911A1C96D32500F13E64 /* GemsDialogListCompanion.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0391181C96D32500F13E64 /* GemsDialogListCompanion.m */; };
+		9CD9954D1C91BBA300271E53 /* LDAdvertisingChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CD995491C91BBA300271E53 /* LDAdvertisingChannel.h */; };
+		9CD9954E1C91BBA300271E53 /* LDAdvertisingChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD9954A1C91BBA300271E53 /* LDAdvertisingChannel.m */; };
+		9CD9954F1C91BBA300271E53 /* LDAdvertisingManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CD9954B1C91BBA300271E53 /* LDAdvertisingManager.h */; };
+		9CD995501C91BBA300271E53 /* LDAdvertisingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD9954C1C91BBA300271E53 /* LDAdvertisingManager.m */; };
+		9CD995541C91BCBB00271E53 /* GemsAdvertisingChannelsController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CD995521C91BCBB00271E53 /* GemsAdvertisingChannelsController.h */; };
+		9CD995551C91BCBB00271E53 /* GemsAdvertisingChannelsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CD995531C91BCBB00271E53 /* GemsAdvertisingChannelsController.m */; };
 		D00040A515BCD2EA00AF9EBF /* TGMessage+Telegraph.m in Sources */ = {isa = PBXBuildFile; fileRef = D00040A415BCD2EA00AF9EBF /* TGMessage+Telegraph.m */; };
 		D00040AC15BCD53900AF9EBF /* TGImageInfo+Telegraph.mm in Sources */ = {isa = PBXBuildFile; fileRef = D00040AB15BCD53900AF9EBF /* TGImageInfo+Telegraph.mm */; };
 		D00040B815BCD73A00AF9EBF /* TGUser+Telegraph.m in Sources */ = {isa = PBXBuildFile; fileRef = D00040B715BCD73900AF9EBF /* TGUser+Telegraph.m */; };
@@ -3210,10 +3218,39 @@
 		D0FD89A3156FD4FC00CC3714 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0FD89A2156FD4FB00CC3714 /* Security.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D0FFBDDF1BAB0E7300F532C9 /* TGChannelMembersController.h in Headers */ = {isa = PBXBuildFile; fileRef = D0FFBDDD1BAB0E7300F532C9 /* TGChannelMembersController.h */; };
 		D0FFBDE01BAB0E7300F532C9 /* TGChannelMembersController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FFBDDE1BAB0E7300F532C9 /* TGChannelMembersController.m */; };
+		E103EC371C8726E60020444A /* keyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E17E3A3D1C62255A001FAEBF /* keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E1184BB51C889C0800022B4A /* DemoVideoController.h in Headers */ = {isa = PBXBuildFile; fileRef = E1184BA21C889C0800022B4A /* DemoVideoController.h */; };
+		E1184BB61C889C0800022B4A /* DemoVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1184BA31C889C0800022B4A /* DemoVideoController.m */; };
+		E1184BB71C889C0800022B4A /* HowToSwitchToPaykeyController.h in Headers */ = {isa = PBXBuildFile; fileRef = E1184BA41C889C0800022B4A /* HowToSwitchToPaykeyController.h */; };
+		E1184BB81C889C0800022B4A /* HowToSwitchToPaykeyController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1184BA51C889C0800022B4A /* HowToSwitchToPaykeyController.m */; };
+		E1184BB91C889C0800022B4A /* instrc_clip.mov in Resources */ = {isa = PBXBuildFile; fileRef = E1184BA61C889C0800022B4A /* instrc_clip.mov */; };
+		E1184BBC1C889C0800022B4A /* OnboardingCatalog.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1184BA91C889C0800022B4A /* OnboardingCatalog.xcassets */; };
+		E1184BBD1C889C0800022B4A /* OnBoardingControllerBase.h in Headers */ = {isa = PBXBuildFile; fileRef = E1184BAA1C889C0800022B4A /* OnBoardingControllerBase.h */; };
+		E1184BBE1C889C0800022B4A /* OnBoardingControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E1184BAB1C889C0800022B4A /* OnBoardingControllerBase.m */; };
+		E1184BBF1C889C0800022B4A /* OnboardingNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = E1184BAC1C889C0800022B4A /* OnboardingNavigationController.h */; };
+		E1184BC01C889C0800022B4A /* OnboardingNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1184BAD1C889C0800022B4A /* OnboardingNavigationController.m */; };
+		E1184BC11C889C0800022B4A /* OnboardingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1184BAE1C889C0800022B4A /* OnboardingStoryboard.storyboard */; };
+		E1184BC21C889C0800022B4A /* PayKeyDemo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E1184BAF1C889C0800022B4A /* PayKeyDemo.mp4 */; };
+		E1184BC31C889C0800022B4A /* StartUsingPaykeyController.h in Headers */ = {isa = PBXBuildFile; fileRef = E1184BB01C889C0800022B4A /* StartUsingPaykeyController.h */; };
+		E1184BC41C889C0800022B4A /* StartUsingPaykeyController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1184BB11C889C0800022B4A /* StartUsingPaykeyController.m */; };
+		E1184BC81C889D6E00022B4A /* NSUserDefaults+Keyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = E1184BC61C889D6E00022B4A /* NSUserDefaults+Keyboard.h */; };
+		E1184BC91C889D6E00022B4A /* NSUserDefaults+Keyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = E1184BC71C889D6E00022B4A /* NSUserDefaults+Keyboard.m */; };
+		E1184BCA1C88A06900022B4A /* NSUserDefaults+Keyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = E1184BC71C889D6E00022B4A /* NSUserDefaults+Keyboard.m */; };
+		E1184BCB1C88A07000022B4A /* NSUserDefaults+Keyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = E1184BC61C889D6E00022B4A /* NSUserDefaults+Keyboard.h */; };
+		E1242ADA1C8DAE73007AC2A4 /* ExtensionConst.h in Headers */ = {isa = PBXBuildFile; fileRef = E1242AD91C8DAE73007AC2A4 /* ExtensionConst.h */; };
+		E1242ADB1C8DAE94007AC2A4 /* ExtensionConst.h in Headers */ = {isa = PBXBuildFile; fileRef = E1242AD91C8DAE73007AC2A4 /* ExtensionConst.h */; };
+		E1242B351C8DF878007AC2A4 /* KBAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1242B341C8DF878007AC2A4 /* KBAnalytics.swift */; };
 		E12D642E1C47F7EC00C9CA08 /* GemsUsenameController.h in Headers */ = {isa = PBXBuildFile; fileRef = E12D642C1C47F7EC00C9CA08 /* GemsUsenameController.h */; };
 		E12D642F1C47F7EC00C9CA08 /* GemsUsenameController.m in Sources */ = {isa = PBXBuildFile; fileRef = E12D642D1C47F7EC00C9CA08 /* GemsUsenameController.m */; };
 		E13CD5311C60E67A00646E6E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E13CD5301C60E67A00646E6E /* Social.framework */; };
 		E15E87C81C428F090074FA83 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E15E87C71C428F090074FA83 /* GoogleService-Info.plist */; };
+		E1659BD11C8C857100E5206A /* IntroController.h in Headers */ = {isa = PBXBuildFile; fileRef = E1659BCF1C8C857100E5206A /* IntroController.h */; };
+		E1659BD21C8C857100E5206A /* IntroController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1659BD01C8C857100E5206A /* IntroController.m */; };
+		E16C12E61C883844006638D2 /* GemsKeyboardAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = E16C12E41C883844006638D2 /* GemsKeyboardAlert.h */; };
+		E16C12E71C883844006638D2 /* GemsKeyboardAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = E16C12E51C883844006638D2 /* GemsKeyboardAlert.m */; };
+		E16C12EA1C88385D006638D2 /* GemsKeyboardAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = E16C12E81C88385D006638D2 /* GemsKeyboardAlertView.h */; };
+		E16C12EB1C88385D006638D2 /* GemsKeyboardAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = E16C12E91C88385D006638D2 /* GemsKeyboardAlertView.m */; };
+		E16C12ED1C88386F006638D2 /* GemsKeyboardAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E16C12EC1C88386F006638D2 /* GemsKeyboardAlertView.xib */; };
 		E16D30341C48035F0030F9EB /* GemsRootController.h in Headers */ = {isa = PBXBuildFile; fileRef = E16D30321C48035F0030F9EB /* GemsRootController.h */; };
 		E16D30351C48035F0030F9EB /* GemsRootController.m in Sources */ = {isa = PBXBuildFile; fileRef = E16D30331C48035F0030F9EB /* GemsRootController.m */; };
 		E16D30391C4808C20030F9EB /* GemsMainTabsController.h in Headers */ = {isa = PBXBuildFile; fileRef = E16D30371C4808C20030F9EB /* GemsMainTabsController.h */; };
@@ -3224,13 +3261,14 @@
 		E17CBC611C64AC25006C4903 /* TGContact.h in Headers */ = {isa = PBXBuildFile; fileRef = E1D616C81C64052F00F39798 /* TGContact.h */; };
 		E17CBC651C64AEA3006C4903 /* ContactsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17CBC641C64AEA3006C4903 /* ContactsWrapper.swift */; };
 		E17E3A401C62255B001FAEBF /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E3A3F1C62255B001FAEBF /* KeyboardViewController.swift */; };
-		E17E3A441C62255B001FAEBF /* keyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E17E3A3D1C62255A001FAEBF /* keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E17E3A521C6226B7001FAEBF /* KeyboardProtocolImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E3A501C6226B7001FAEBF /* KeyboardProtocolImpl.swift */; };
-		E17E3A531C6226B7001FAEBF /* NSUserDefault+KB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E3A511C6226B7001FAEBF /* NSUserDefault+KB.swift */; };
 		E1819CBC1C43B2C10072DCD7 /* GemsModernConversationController.h in Headers */ = {isa = PBXBuildFile; fileRef = E1819CBA1C43B2C10072DCD7 /* GemsModernConversationController.h */; };
 		E1819CBD1C43B2C10072DCD7 /* GemsModernConversationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1819CBB1C43B2C10072DCD7 /* GemsModernConversationController.m */; };
+		E1C07FFA1C8C3F8A000CEAFF /* InstructionsController.h in Headers */ = {isa = PBXBuildFile; fileRef = E1C07FF81C8C3F8A000CEAFF /* InstructionsController.h */; };
+		E1C07FFB1C8C3F8A000CEAFF /* InstructionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C07FF91C8C3F8A000CEAFF /* InstructionsController.m */; };
+		E1C080181C8C47D7000CEAFF /* KbHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = E1C080161C8C47D7000CEAFF /* KbHelper.h */; };
+		E1C080191C8C47D7000CEAFF /* KbHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C080171C8C47D7000CEAFF /* KbHelper.m */; };
 		E1D417C11C626866006F49F6 /* GetGems-Keyboard-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = E1D417C01C626866006F49F6 /* GetGems-Keyboard-Bridging-Header.h */; };
-		E1D615E51C635F9A00F39798 /* ExtensionConst.h in Headers */ = {isa = PBXBuildFile; fileRef = E1D615D61C635EFC00F39798 /* ExtensionConst.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E1D6166E1C63AEBB00F39798 /* TGUser+TGUser_Coding.h in Headers */ = {isa = PBXBuildFile; fileRef = E1D6166C1C63AEBB00F39798 /* TGUser+TGUser_Coding.h */; };
 		E1D6166F1C63AEBB00F39798 /* TGUser+TGUser_Coding.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D6166D1C63AEBB00F39798 /* TGUser+TGUser_Coding.m */; };
 		E1D616CA1C64052F00F39798 /* TGContact.h in Headers */ = {isa = PBXBuildFile; fileRef = E1D616C81C64052F00F39798 /* TGContact.h */; };
@@ -3604,6 +3642,13 @@
 			remoteGlobalIDString = D0445DD71A7C2CA500267924;
 			remoteInfo = SSignalKit;
 		};
+		E103EC271C8726D50020444A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D08805A3156E8F3600311537 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E17E3A3C1C62255A001FAEBF;
+			remoteInfo = keyboard;
+		};
 		E11DB8261C28062300ECA28F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D0E26F571A83F27D009ECB56 /* MtProtoKit.xcodeproj */;
@@ -3638,13 +3683,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 0755AE8C1BEA19580094AB41;
 			remoteInfo = "pop-tests-tvos";
-		};
-		E17E3A421C62255B001FAEBF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D08805A3156E8F3600311537 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E17E3A3C1C62255A001FAEBF;
-			remoteInfo = keyboard;
 		};
 		E1FE70A01C65535900742233 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -3683,7 +3721,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				E17E3A441C62255B001FAEBF /* keyboard.appex in Embed App Extensions */,
+				E103EC371C8726E60020444A /* keyboard.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5291,6 +5329,14 @@
 		93F6940516932F8700691086 /* TGBlockListRequestActor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TGBlockListRequestActor.mm; sourceTree = "<group>"; };
 		93FF24E416FE2431008F6AA8 /* TGLoginWelcomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLoginWelcomeController.h; sourceTree = "<group>"; };
 		93FF24E516FE2431008F6AA8 /* TGLoginWelcomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGLoginWelcomeController.m; sourceTree = "<group>"; };
+		9C0391171C96D32500F13E64 /* GemsDialogListCompanion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GemsDialogListCompanion.h; sourceTree = "<group>"; };
+		9C0391181C96D32500F13E64 /* GemsDialogListCompanion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GemsDialogListCompanion.m; sourceTree = "<group>"; };
+		9CD995491C91BBA300271E53 /* LDAdvertisingChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDAdvertisingChannel.h; sourceTree = "<group>"; };
+		9CD9954A1C91BBA300271E53 /* LDAdvertisingChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDAdvertisingChannel.m; sourceTree = "<group>"; };
+		9CD9954B1C91BBA300271E53 /* LDAdvertisingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDAdvertisingManager.h; sourceTree = "<group>"; };
+		9CD9954C1C91BBA300271E53 /* LDAdvertisingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDAdvertisingManager.m; sourceTree = "<group>"; };
+		9CD995521C91BCBB00271E53 /* GemsAdvertisingChannelsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GemsAdvertisingChannelsController.h; sourceTree = "<group>"; };
+		9CD995531C91BCBB00271E53 /* GemsAdvertisingChannelsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GemsAdvertisingChannelsController.m; sourceTree = "<group>"; };
 		A7186A3496DE7AF3B8935E7D /* Pods-GetGems.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetGems.release.xcconfig"; path = "Pods/Target Support Files/Pods-GetGems/Pods-GetGems.release.xcconfig"; sourceTree = "<group>"; };
 		B18628B9CD25F8EC82DBDABA /* Pods-keyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keyboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-keyboard/Pods-keyboard.debug.xcconfig"; sourceTree = "<group>"; };
 		D00040A315BCD2EA00AF9EBF /* TGMessage+Telegraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGMessage+Telegraph.h"; sourceTree = "<group>"; };
@@ -8313,10 +8359,35 @@
 		D0FD89A2156FD4FB00CC3714 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D0FFBDDD1BAB0E7300F532C9 /* TGChannelMembersController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGChannelMembersController.h; sourceTree = "<group>"; };
 		D0FFBDDE1BAB0E7300F532C9 /* TGChannelMembersController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGChannelMembersController.m; sourceTree = "<group>"; };
+		E1184BA21C889C0800022B4A /* DemoVideoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoVideoController.h; sourceTree = "<group>"; };
+		E1184BA31C889C0800022B4A /* DemoVideoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoVideoController.m; sourceTree = "<group>"; };
+		E1184BA41C889C0800022B4A /* HowToSwitchToPaykeyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HowToSwitchToPaykeyController.h; sourceTree = "<group>"; };
+		E1184BA51C889C0800022B4A /* HowToSwitchToPaykeyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HowToSwitchToPaykeyController.m; sourceTree = "<group>"; };
+		E1184BA61C889C0800022B4A /* instrc_clip.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = instrc_clip.mov; sourceTree = "<group>"; };
+		E1184BA91C889C0800022B4A /* OnboardingCatalog.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = OnboardingCatalog.xcassets; sourceTree = "<group>"; };
+		E1184BAA1C889C0800022B4A /* OnBoardingControllerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnBoardingControllerBase.h; sourceTree = "<group>"; };
+		E1184BAB1C889C0800022B4A /* OnBoardingControllerBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnBoardingControllerBase.m; sourceTree = "<group>"; };
+		E1184BAC1C889C0800022B4A /* OnboardingNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnboardingNavigationController.h; sourceTree = "<group>"; };
+		E1184BAD1C889C0800022B4A /* OnboardingNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnboardingNavigationController.m; sourceTree = "<group>"; };
+		E1184BAE1C889C0800022B4A /* OnboardingStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OnboardingStoryboard.storyboard; sourceTree = "<group>"; };
+		E1184BAF1C889C0800022B4A /* PayKeyDemo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = PayKeyDemo.mp4; sourceTree = "<group>"; };
+		E1184BB01C889C0800022B4A /* StartUsingPaykeyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartUsingPaykeyController.h; sourceTree = "<group>"; };
+		E1184BB11C889C0800022B4A /* StartUsingPaykeyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartUsingPaykeyController.m; sourceTree = "<group>"; };
+		E1184BC61C889D6E00022B4A /* NSUserDefaults+Keyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+Keyboard.h"; sourceTree = "<group>"; };
+		E1184BC71C889D6E00022B4A /* NSUserDefaults+Keyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+Keyboard.m"; sourceTree = "<group>"; };
+		E1242AD91C8DAE73007AC2A4 /* ExtensionConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtensionConst.h; sourceTree = "<group>"; };
+		E1242B341C8DF878007AC2A4 /* KBAnalytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBAnalytics.swift; sourceTree = "<group>"; };
 		E12D642C1C47F7EC00C9CA08 /* GemsUsenameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GemsUsenameController.h; sourceTree = "<group>"; };
 		E12D642D1C47F7EC00C9CA08 /* GemsUsenameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GemsUsenameController.m; sourceTree = "<group>"; };
 		E13CD5301C60E67A00646E6E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		E15E87C71C428F090074FA83 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E1659BCF1C8C857100E5206A /* IntroController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroController.h; sourceTree = "<group>"; };
+		E1659BD01C8C857100E5206A /* IntroController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroController.m; sourceTree = "<group>"; };
+		E16C12E41C883844006638D2 /* GemsKeyboardAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GemsKeyboardAlert.h; sourceTree = "<group>"; };
+		E16C12E51C883844006638D2 /* GemsKeyboardAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GemsKeyboardAlert.m; sourceTree = "<group>"; };
+		E16C12E81C88385D006638D2 /* GemsKeyboardAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GemsKeyboardAlertView.h; sourceTree = "<group>"; };
+		E16C12E91C88385D006638D2 /* GemsKeyboardAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GemsKeyboardAlertView.m; sourceTree = "<group>"; };
+		E16C12EC1C88386F006638D2 /* GemsKeyboardAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GemsKeyboardAlertView.xib; sourceTree = "<group>"; };
 		E16D30321C48035F0030F9EB /* GemsRootController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GemsRootController.h; sourceTree = "<group>"; };
 		E16D30331C48035F0030F9EB /* GemsRootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GemsRootController.m; sourceTree = "<group>"; };
 		E16D30371C4808C20030F9EB /* GemsMainTabsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GemsMainTabsController.h; sourceTree = "<group>"; };
@@ -8328,12 +8399,14 @@
 		E17E3A3F1C62255B001FAEBF /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		E17E3A411C62255B001FAEBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E17E3A501C6226B7001FAEBF /* KeyboardProtocolImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardProtocolImpl.swift; sourceTree = "<group>"; };
-		E17E3A511C6226B7001FAEBF /* NSUserDefault+KB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSUserDefault+KB.swift"; sourceTree = "<group>"; };
 		E17E3A621C622735001FAEBF /* keyboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = keyboard.entitlements; sourceTree = "<group>"; };
 		E1819CBA1C43B2C10072DCD7 /* GemsModernConversationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GemsModernConversationController.h; sourceTree = "<group>"; };
 		E1819CBB1C43B2C10072DCD7 /* GemsModernConversationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GemsModernConversationController.m; sourceTree = "<group>"; };
+		E1C07FF81C8C3F8A000CEAFF /* InstructionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionsController.h; sourceTree = "<group>"; };
+		E1C07FF91C8C3F8A000CEAFF /* InstructionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionsController.m; sourceTree = "<group>"; };
+		E1C080161C8C47D7000CEAFF /* KbHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KbHelper.h; sourceTree = "<group>"; };
+		E1C080171C8C47D7000CEAFF /* KbHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KbHelper.m; sourceTree = "<group>"; };
 		E1D417C01C626866006F49F6 /* GetGems-Keyboard-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GetGems-Keyboard-Bridging-Header.h"; sourceTree = "<group>"; };
-		E1D615D61C635EFC00F39798 /* ExtensionConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExtensionConst.h; sourceTree = "<group>"; };
 		E1D6166C1C63AEBB00F39798 /* TGUser+TGUser_Coding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGUser+TGUser_Coding.h"; sourceTree = "<group>"; };
 		E1D6166D1C63AEBB00F39798 /* TGUser+TGUser_Coding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGUser+TGUser_Coding.m"; sourceTree = "<group>"; };
 		E1D616C81C64052F00F39798 /* TGContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGContact.h; sourceTree = "<group>"; };
@@ -11555,6 +11628,35 @@
 				93F3A0F418212E2B0005EB98 /* TGModernDateViewModel.m */,
 			);
 			name = Date;
+			sourceTree = "<group>";
+		};
+		9C0391081C96D2F000F13E64 /* Dialog List */ = {
+			isa = PBXGroup;
+			children = (
+				9C0391171C96D32500F13E64 /* GemsDialogListCompanion.h */,
+				9C0391181C96D32500F13E64 /* GemsDialogListCompanion.m */,
+			);
+			name = "Dialog List";
+			sourceTree = "<group>";
+		};
+		9CD9953A1C91BB8D00271E53 /* Advertising */ = {
+			isa = PBXGroup;
+			children = (
+				9CD9954B1C91BBA300271E53 /* LDAdvertisingManager.h */,
+				9CD9954C1C91BBA300271E53 /* LDAdvertisingManager.m */,
+				9CD995491C91BBA300271E53 /* LDAdvertisingChannel.h */,
+				9CD9954A1C91BBA300271E53 /* LDAdvertisingChannel.m */,
+			);
+			name = Advertising;
+			sourceTree = "<group>";
+		};
+		9CD995511C91BC8C00271E53 /* Advertising */ = {
+			isa = PBXGroup;
+			children = (
+				9CD995521C91BCBB00271E53 /* GemsAdvertisingChannelsController.h */,
+				9CD995531C91BCBB00271E53 /* GemsAdvertisingChannelsController.m */,
+			);
+			name = Advertising;
 			sourceTree = "<group>";
 		};
 		9F775047C598D687B046BC0B /* Pods */ = {
@@ -17331,12 +17433,51 @@
 			name = Tabs;
 			sourceTree = "<group>";
 		};
+		E1184B901C889BFC00022B4A /* keybaord onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				E1184BA21C889C0800022B4A /* DemoVideoController.h */,
+				E1184BA31C889C0800022B4A /* DemoVideoController.m */,
+				E1184BA41C889C0800022B4A /* HowToSwitchToPaykeyController.h */,
+				E1184BA51C889C0800022B4A /* HowToSwitchToPaykeyController.m */,
+				E1184BA61C889C0800022B4A /* instrc_clip.mov */,
+				E1184BA91C889C0800022B4A /* OnboardingCatalog.xcassets */,
+				E1C07FF81C8C3F8A000CEAFF /* InstructionsController.h */,
+				E1C07FF91C8C3F8A000CEAFF /* InstructionsController.m */,
+				E1184BAA1C889C0800022B4A /* OnBoardingControllerBase.h */,
+				E1184BAB1C889C0800022B4A /* OnBoardingControllerBase.m */,
+				E1184BAC1C889C0800022B4A /* OnboardingNavigationController.h */,
+				E1184BAD1C889C0800022B4A /* OnboardingNavigationController.m */,
+				E1184BAE1C889C0800022B4A /* OnboardingStoryboard.storyboard */,
+				E1184BAF1C889C0800022B4A /* PayKeyDemo.mp4 */,
+				E1184BB01C889C0800022B4A /* StartUsingPaykeyController.h */,
+				E1184BB11C889C0800022B4A /* StartUsingPaykeyController.m */,
+				E1C080161C8C47D7000CEAFF /* KbHelper.h */,
+				E1C080171C8C47D7000CEAFF /* KbHelper.m */,
+				E1659BCF1C8C857100E5206A /* IntroController.h */,
+				E1659BD01C8C857100E5206A /* IntroController.m */,
+			);
+			name = "keybaord onboarding";
+			sourceTree = "<group>";
+		};
 		E15E87C61C428EFD0074FA83 /* GemsCore */ = {
 			isa = PBXGroup;
 			children = (
 				E15E87C71C428F090074FA83 /* GoogleService-Info.plist */,
 			);
 			name = GemsCore;
+			sourceTree = "<group>";
+		};
+		E16C12D51C8837DD006638D2 /* keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				E16C12E41C883844006638D2 /* GemsKeyboardAlert.h */,
+				E16C12E51C883844006638D2 /* GemsKeyboardAlert.m */,
+				E16C12E81C88385D006638D2 /* GemsKeyboardAlertView.h */,
+				E16C12E91C88385D006638D2 /* GemsKeyboardAlertView.m */,
+				E16C12EC1C88386F006638D2 /* GemsKeyboardAlertView.xib */,
+			);
+			name = keyboard;
 			sourceTree = "<group>";
 		};
 		E16D30221C4803370030F9EB /* Main Screen */ = {
@@ -17370,11 +17511,12 @@
 		E17E3A3E1C62255B001FAEBF /* keyboard */ = {
 			isa = PBXGroup;
 			children = (
+				E1242AD91C8DAE73007AC2A4 /* ExtensionConst.h */,
 				E1D616A21C64030400F39798 /* Helpers */,
 				E1D417C01C626866006F49F6 /* GetGems-Keyboard-Bridging-Header.h */,
 				E17E3A621C622735001FAEBF /* keyboard.entitlements */,
 				E17E3A501C6226B7001FAEBF /* KeyboardProtocolImpl.swift */,
-				E17E3A511C6226B7001FAEBF /* NSUserDefault+KB.swift */,
+				E1242B341C8DF878007AC2A4 /* KBAnalytics.swift */,
 				E17E3A3F1C62255B001FAEBF /* KeyboardViewController.swift */,
 				E17E3A411C62255B001FAEBF /* Info.plist */,
 			);
@@ -17404,6 +17546,8 @@
 			isa = PBXGroup;
 			children = (
 				E1D616B11C64030A00F39798 /* Contacts */,
+				E1184BC61C889D6E00022B4A /* NSUserDefaults+Keyboard.h */,
+				E1184BC71C889D6E00022B4A /* NSUserDefaults+Keyboard.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -17419,7 +17563,6 @@
 		E1DD75EB1C43A7C800E90FDE /* GetGems */ = {
 			isa = PBXGroup;
 			children = (
-				E1D615D61C635EFC00F39798 /* ExtensionConst.h */,
 				E1DD77E21C43B01100E90FDE /* GemsIntegration.h */,
 				E1DD77051C43AB7000E90FDE /* TGGems.h */,
 				E1DD77061C43AB7000E90FDE /* TGGems.m */,
@@ -17494,6 +17637,7 @@
 		E1DD76491C43AA2000E90FDE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E1184B901C889BFC00022B4A /* keybaord onboarding */,
 				E1DD76BC1C43AB0900E90FDE /* WalletController */,
 				E1DD76B71C43AAF800E90FDE /* ScanQRController */,
 				E1DD76A51C43AAD500E90FDE /* GemsLoginContorller */,
@@ -17981,6 +18125,7 @@
 				E1DD77991C43AD3300E90FDE /* FAQ Controller */,
 				E1DD77981C43AD2B00E90FDE /* Bitcoin Units */,
 				E1DD77971C43AD2500E90FDE /* Pincode */,
+				9CD995511C91BC8C00271E53 /* Advertising */,
 				E1DD778F1C43AD1B00E90FDE /* GemsAccountSettingsController.h */,
 				E1DD77901C43AD1B00E90FDE /* GemsAccountSettingsController.m */,
 				E1DD77911C43AD1B00E90FDE /* GemsAccountSettingsSPVHelper.h */,
@@ -18063,6 +18208,7 @@
 		E1DD77C61C43ADA200E90FDE /* Legacy */ = {
 			isa = PBXGroup;
 			children = (
+				9C0391081C96D2F000F13E64 /* Dialog List */,
 				E16D30361C4808AD0030F9EB /* Tabs */,
 				E1DD77D51C43ADC900E90FDE /* Login */,
 				E1DD77C71C43ADB200E90FDE /* contacts */,
@@ -18101,6 +18247,7 @@
 				E1DD782B1C43B1AB00E90FDE /* UILabel+Utils.m */,
 				E1DD782E1C43B1B600E90FDE /* UIImage+QRCodeGenerator.h */,
 				E1DD782F1C43B1B600E90FDE /* UIImage+QRCodeGenerator.m */,
+				9CD9953A1C91BB8D00271E53 /* Advertising */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -18128,6 +18275,7 @@
 		E1DD77E51C43B15300E90FDE /* Alerts */ = {
 			isa = PBXGroup;
 			children = (
+				E16C12D51C8837DD006638D2 /* keyboard */,
 				E1DD78011C43B17E00E90FDE /* Invite Reward */,
 				E1DD78001C43B17800E90FDE /* FB Login */,
 				E1DD77FF1C43B16E00E90FDE /* Passphrase Remainder */,
@@ -18223,6 +18371,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1242ADB1C8DAE94007AC2A4 /* ExtensionConst.h in Headers */,
+				E1184BCB1C88A07000022B4A /* NSUserDefaults+Keyboard.h in Headers */,
 				D09FD6C21BA9971900FF0A4F /* TLChannelParticipantsFilter.h in Headers */,
 				D0249ABA1ABCA73F0076ECBF /* TGLocationMapModeControl.h in Headers */,
 				D0DCF58A1AEDCE2300D5B7A1 /* TGGroupInfoShareLinkLinkItemView.h in Headers */,
@@ -18269,6 +18419,7 @@
 				D08FEE381ACD8EDA0069FA9F /* TLWebPage_manual.h in Headers */,
 				D0DCF5861AEDCE1600D5B7A1 /* TGGroupInfoShareLinkLinkItem.h in Headers */,
 				684C76961A6F0502003789D9 /* PGEnhanceTool.h in Headers */,
+				E16C12E61C883844006638D2 /* GemsKeyboardAlert.h in Headers */,
 				6811AE261A35E317009309A3 /* TGPhotoCropAreaView.h in Headers */,
 				D0A5A20D1B7BA2700066B169 /* TGMessageEntitiesAttachment.h in Headers */,
 				D0FC35381B3CF0460041A938 /* TGMusicPlayerItemSignals.h in Headers */,
@@ -18318,6 +18469,7 @@
 				D01945321A9F58B500FDA2C4 /* TLmessages_AffectedMessages.h in Headers */,
 				D0249B331ABF5B210076ECBF /* TGICloudFileDownloadActor.h in Headers */,
 				D061F2E71A9290420031BCBE /* TGCameraInterfaceAssets.h in Headers */,
+				E1C080181C8C47D7000CEAFF /* KbHelper.h in Headers */,
 				D061F2ED1A9290420031BCBE /* TGCameraMainView.h in Headers */,
 				6878965F1A5E8788002310B2 /* TGPhotoEditorAnimation.h in Headers */,
 				D051AFFE1AF80EDC003AFD52 /* TLRPCmessages_installStickerSet.h in Headers */,
@@ -18395,6 +18547,7 @@
 				D044E16C1B2B17D0001EE087 /* TGEmbedPreviewController.h in Headers */,
 				D03E44CA1AB07EFD00E72CAA /* TGReplyHeaderLocationModel.h in Headers */,
 				D03E44D61AB0849B00E72CAA /* TGReplyHeaderVideoModel.h in Headers */,
+				E16C12EA1C88385D006638D2 /* GemsKeyboardAlertView.h in Headers */,
 				E1DD76D81C43AB2600E90FDE /* TxInfoHeaderView.h in Headers */,
 				D0DEE59E1AA9FC8D00B04AAA /* TGReplyHeaderTextModel.h in Headers */,
 				681EAD531A2CA92300E7C40C /* TGPhotoEditorPreviewView.h in Headers */,
@@ -18441,6 +18594,7 @@
 				D0DEE4F81AA0A90600B04AAA /* TLDisabledFeature.h in Headers */,
 				68B639641BB2506F00205AC3 /* SDisposable.h in Headers */,
 				685C18571A43B5C6001B9255 /* TGPhotoEditorUtils.h in Headers */,
+				9C0391191C96D32500F13E64 /* GemsDialogListCompanion.h in Headers */,
 				D0D43CE01B9F053300F6C78F /* TGQueuedReadChannelMessages.h in Headers */,
 				6808EA7C1BADBB2500D8E50E /* TGHistogramView.h in Headers */,
 				D02566B01AD2C2A2007C19C1 /* TLRPCmessages_sendMedia_manual.h in Headers */,
@@ -18513,6 +18667,7 @@
 				D0C80D2E1A9561AF00D5DF8A /* TGPasscodeEntryController.h in Headers */,
 				D0249BA81ABF5B470076ECBF /* GDCredentialManager_Private.h in Headers */,
 				D0249BB61ABF5B470076ECBF /* GDFileManagerDownloadOperation_Private.h in Headers */,
+				E1184BB71C889C0800022B4A /* HowToSwitchToPaykeyController.h in Headers */,
 				E1DD76851C43AA8100E90FDE /* PurchaseItemHelper.h in Headers */,
 				D0249AC21ABCA73F0076ECBF /* TGLocationTrackingButton.h in Headers */,
 				E1DD776E1C43AC9700E90FDE /* GemsMessageRegexHelper.h in Headers */,
@@ -18520,6 +18675,7 @@
 				D0DCF5641AED330B00D5B7A1 /* TGMapSnapshotterActor.h in Headers */,
 				D09FD7281BA9A4EE00FF0A4F /* TLRPCchannels_updateUsername.h in Headers */,
 				D0C80D341A9561AF00D5DF8A /* TGPasswordEntryView.h in Headers */,
+				9CD9954F1C91BBA300271E53 /* LDAdvertisingManager.h in Headers */,
 				D0DCF57E1AEDC43C00D5B7A1 /* TGGroupInfoContactListCreateLinkCell.h in Headers */,
 				D09FD7221BA9A4EE00FF0A4F /* TLRPCchannels_leaveChannel.h in Headers */,
 				D0C09C7D1A6E974D008369D7 /* TGSharedMediaItem.h in Headers */,
@@ -18541,6 +18697,7 @@
 				D0249BEA1ABF5B470076ECBF /* GDURLMetadataInternal.h in Headers */,
 				68AE01591A55FE0300001B53 /* TGWebSearchInternalImageResult+TGEditablePhotoItem.h in Headers */,
 				E1DD76691C43AA5700E90FDE /* AppStoreCellBase.h in Headers */,
+				E1C07FFA1C8C3F8A000CEAFF /* InstructionsController.h in Headers */,
 				D0BFFD0B1BAA33F500A00E38 /* TLRPCchannels_deleteChannel.h in Headers */,
 				D0249A731ABCA5A70076ECBF /* TGMediaPickerGalleryVideoScrubber.h in Headers */,
 				D07498381B99ECB3005F30CC /* TGChannelLinkSetupController.h in Headers */,
@@ -18548,6 +18705,7 @@
 				6808EA741BADBAE500D8E50E /* PGPhotoEditorRawDataOutput.h in Headers */,
 				D0249AA41ABCA6FF0076ECBF /* TGAttachmentSheetFileInstructionItemView.h in Headers */,
 				D0249B981ABF5B470076ECBF /* AFOAuth2Client.h in Headers */,
+				E1184BC31C889C0800022B4A /* StartUsingPaykeyController.h in Headers */,
 				E1DD772B1C43ABBF00E90FDE /* GemsUsernameVerifierTextField.h in Headers */,
 				D0DCF5821AEDC70500D5B7A1 /* TGGroupInfoShareLinkController.h in Headers */,
 				6811AE651A389CC9009309A3 /* GPUImageContext.h in Headers */,
@@ -18583,6 +18741,7 @@
 				D0249A771ABCA5A70076ECBF /* TGMediaPickerGalleryVideoTrimView.h in Headers */,
 				687751861A19157A00AC673F /* TGMediaPickerItem.h in Headers */,
 				6811AE211A34D2F1009309A3 /* UICollectionView+Utils.h in Headers */,
+				E1184BBF1C889C0800022B4A /* OnboardingNavigationController.h in Headers */,
 				D0C5C3D81ACAEF2A00F32FC6 /* TGTwoStepRecoverySignals.h in Headers */,
 				D0249BDF1ABF5B470076ECBF /* GDParentOperation.h in Headers */,
 				E1DD77BE1C43AD8500E90FDE /* BitcoinUnitView.h in Headers */,
@@ -18606,6 +18765,7 @@
 				E1DD76ED1C43AB3E00E90FDE /* Transaction.h in Headers */,
 				E1DD77931C43AD1B00E90FDE /* GemsAccountSettingsController.h in Headers */,
 				D0249BD41ABF5B470076ECBF /* GDHTTPOperation.h in Headers */,
+				E1184BBD1C889C0800022B4A /* OnBoardingControllerBase.h in Headers */,
 				681EACD41A28FFA800E7C40C /* PGPhotoEditorItem.h in Headers */,
 				D0249BD81ABF5B470076ECBF /* GDKeychainCredentialManager.h in Headers */,
 				681EAC2F1A23A1D500E7C40C /* TGPhotoCropView.h in Headers */,
@@ -18637,6 +18797,7 @@
 				D0249BE71ABF5B470076ECBF /* GDURLMetadata.h in Headers */,
 				E1DD76D31C43AB2600E90FDE /* TxTableView.h in Headers */,
 				D0FC352B1B3CCC830041A938 /* TGMusicPlayerPlaylist.h in Headers */,
+				9CD995541C91BCBB00271E53 /* GemsAdvertisingChannelsController.h in Headers */,
 				681EAC1F1A239C3C00E7C40C /* TGPhotoEditorInterfaceAssets.h in Headers */,
 				D0C09C861A6E974D008369D7 /* TGSharedMediaSectionHeaderView.h in Headers */,
 				6811AE7D1A389CC9009309A3 /* GPUImageTwoInputFilter.h in Headers */,
@@ -18704,6 +18865,7 @@
 				681EAC1B1A239ACD00E7C40C /* TGPhotoEditorSliderView.h in Headers */,
 				D051B10E1B04EC98003AFD52 /* TGPhonebookNumber.h in Headers */,
 				D0FC07451B1D7356008CC3BB /* TLKeyboardButtonRow.h in Headers */,
+				E1659BD11C8C857100E5206A /* IntroController.h in Headers */,
 				68A883051A77F0FA00CC4240 /* PGPhotoEnhanceInterpolationFilter.h in Headers */,
 				D0DCF5521AED32D800D5B7A1 /* TGLocationPinView.h in Headers */,
 				D0DCF55C1AED32D800D5B7A1 /* TGLocationVenue.h in Headers */,
@@ -18760,6 +18922,7 @@
 				D0FC06FF1B1C1BBA008CC3BB /* TLBotInfo.h in Headers */,
 				E1DD77481C43AC1B00E90FDE /* ActionStageStub.h in Headers */,
 				E1DD77E01C43ADD100E90FDE /* GemsLoginProfileController.h in Headers */,
+				9CD9954D1C91BBA300271E53 /* LDAdvertisingChannel.h in Headers */,
 				D07008571B341E5600AA43BF /* TGMusicAudioMessageModel.h in Headers */,
 				D051B0021AF80EDC003AFD52 /* TLInputStickerSet.h in Headers */,
 				D0DCF5681AED342200D5B7A1 /* TGVenueMessageViewModel.h in Headers */,
@@ -18871,6 +19034,7 @@
 				D0249B9D1ABF5B470076ECBF /* GDAccessTokenClientCredential.h in Headers */,
 				D0DCF5541AED32D800D5B7A1 /* TGLocationReverseGeocodeResult.h in Headers */,
 				D0249AC41ABCA73F0076ECBF /* TGLocationUtils.h in Headers */,
+				E1184BB51C889C0800022B4A /* DemoVideoController.h in Headers */,
 				681EAC011A2348BF00E7C40C /* TGPhotoCropController.h in Headers */,
 				D0249BDB1ABF5B470076ECBF /* GDMultiMap.h in Headers */,
 				D09FD70E1BA9A4EE00FF0A4F /* TLRPCchannels_getChannels.h in Headers */,
@@ -18944,7 +19108,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1D615E51C635F9A00F39798 /* ExtensionConst.h in Headers */,
+				E1242ADA1C8DAE73007AC2A4 /* ExtensionConst.h in Headers */,
+				E1184BC81C889D6E00022B4A /* NSUserDefaults+Keyboard.h in Headers */,
 				E17CBC611C64AC25006C4903 /* TGContact.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -19020,15 +19185,16 @@
 				6879BEE41B43683E007C9800 /* Embed Watch Content */,
 				319441DE0E90CC1A283BAAF9 /* Embed Pods Frameworks */,
 				C2B17A2AAB79A92278FD5C10 /* Copy Pods Resources */,
+				E1184BCC1C88A23000022B4A /* update localization */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E103EC281C8726D50020444A /* PBXTargetDependency */,
 				E1FE70A11C65535900742233 /* PBXTargetDependency */,
 				D0580A981B0E27ED00E8235B /* PBXTargetDependency */,
 				D0CB068C1ADC8DC6005E298F /* PBXTargetDependency */,
 				D087633F1A83C1DE00632240 /* PBXTargetDependency */,
-				E17E3A431C62255B001FAEBF /* PBXTargetDependency */,
 			);
 			name = GetGems;
 			productName = Telegraph;
@@ -19424,6 +19590,7 @@
 				934D0A971632543E0090BCD0 /* LinkFull@2x.png in Resources */,
 				681EAD3F1A2A3B5900E7C40C /* PhotoEditorShadowsTool.png in Resources */,
 				681EAD461A2A3B5A00E7C40C /* PhotoEditorTools@2x.png in Resources */,
+				E1184BC11C889C0800022B4A /* OnboardingStoryboard.storyboard in Resources */,
 				934D0A9C1632D3B50090BCD0 /* LinkCornerTB@2x.png in Resources */,
 				D03096271B43194B004D358E /* InlineSearchUp@2x.png in Resources */,
 				934D0A9D1632D3B50090BCD0 /* LinkCornerBT@2x.png in Resources */,
@@ -19636,13 +19803,16 @@
 				E1DD76821C43AA8100E90FDE /* SquareImageCell.xib in Resources */,
 				93C2307C183CEF270071CB58 /* ModernMessageCheckmarkMedia2@2x.png in Resources */,
 				D0FC074F1B1E6899008CC3BB /* ConversationInputFieldCommandIcon@3x.png in Resources */,
+				E16C12ED1C88386F006638D2 /* GemsKeyboardAlertView.xib in Resources */,
 				D0C6AF551A7815F90046833D /* SharedMediaEmptyFilesIcon@2x.png in Resources */,
 				936DE1861850890300D90029 /* ModernConversationListIconDelivered@2x.png in Resources */,
 				936219E3186460F600C52870 /* 101.m4a in Resources */,
 				D0DCF5371AED327600D5B7A1 /* LocationPinShadow@2x.png in Resources */,
 				93080911185B771200E62B42 /* ModernMenuAddIcon@2x.png in Resources */,
+				E1184BC21C889C0800022B4A /* PayKeyDemo.mp4 in Resources */,
 				9386E8AC185DE9CC00930205 /* ModernAuthCountryButton@2x.png in Resources */,
 				D0BAF3E8193E8AC400A0093F /* TabIconMessages.png in Resources */,
+				E1184BB91C889C0800022B4A /* instrc_clip.mov in Resources */,
 				93F3A0FE1821B6B60005EB98 /* ModernConversationAttach@2x.png in Resources */,
 				936219DF186460F600C52870 /* 105.m4a in Resources */,
 				93A109A017034DA600FE4F89 /* ImagePickerThumbnalSelect@2x.png in Resources */,
@@ -19933,6 +20103,7 @@
 				931C594C174CC85200D597D9 /* MenuButtonCenter_Highlighted@2x.png in Resources */,
 				D06989B61BA7077B000CBE06 /* ConversationTitleSwitchOn@2x.png in Resources */,
 				681EAD2F1A2A3B5900E7C40C /* PhotoEditorCrop@2x.png in Resources */,
+				E1184BBC1C889C0800022B4A /* OnboardingCatalog.xcassets in Resources */,
 				681EAD281A2A3B5900E7C40C /* PhotoEditorExposureTool@2x.png in Resources */,
 				932E00FB184BFACE0001D109 /* ModernMessageContactAdd_Outgoing@2x.png in Resources */,
 				D0BAF3FB193E8AC400A0093F /* ModernConversationActionForward_Disabled.png in Resources */,
@@ -20078,6 +20249,20 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GetGems/Pods-GetGems-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E1184BCC1C88A23000022B4A /* update localization */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "update localization";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "sh ${PROJECT_DIR}/tools/update_strings.sh\n";
+		};
 		E45DBBDC1534AAF2D87EFCAC /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -20090,7 +20275,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-keyboard/Pods-keyboard-frameworks.sh\"\n";
+			shellScript = "#\"${SRCROOT}/Pods/Target Support Files/Pods-keyboard/Pods-keyboard-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -20315,6 +20500,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1184BCA1C88A06900022B4A /* NSUserDefaults+Keyboard.m in Sources */,
 				D0876FE6196F4C33005740CE /* TGGenericPeerMediaGalleryModel.m in Sources */,
 				E1DD77491C43AC1B00E90FDE /* ActionStageStub.m in Sources */,
 				D03EEDE01B336737009E6974 /* TGDocumentAttributeAudio.m in Sources */,
@@ -20613,10 +20799,12 @@
 				68A8831D1A792D2B00CC4240 /* PGPhotoEnhanceLUTGenerator.m in Sources */,
 				681EAC2C1A23A04B00E7C40C /* TGPhotoFilterCell.m in Sources */,
 				D0DCF55F1AED32D800D5B7A1 /* TGLocationVenueCell.m in Sources */,
+				E1184BB61C889C0800022B4A /* DemoVideoController.m in Sources */,
 				D03B1D831B6BABD800524EE9 /* TGSharedMediaLinksEmptyView.m in Sources */,
 				D098410D19CB9BE200CE5BB0 /* TLRPCcontacts_deleteContact.mm in Sources */,
 				D075876E1B3B380400117DFF /* TGMusicPlayerCompleteView.m in Sources */,
 				68B63C301BB258E300205AC3 /* TGBridgeUser.m in Sources */,
+				9CD995501C91BBA300271E53 /* LDAdvertisingManager.m in Sources */,
 				932A566F15B05AAE006A138E /* TGConversationActivityRequestBuilder.m in Sources */,
 				68B0BF121A68CCE500D13A4A /* PGPhotoEditorView.m in Sources */,
 				936DE1B41850F1B900D90029 /* TGVariantCollectionItemView.m in Sources */,
@@ -20703,6 +20891,7 @@
 				68DAD9121A1D28330061FD7E /* TGMediaPickerAssetItemView.m in Sources */,
 				D00372D31953A89700776BCF /* TGBroadcastModernConversationCompanion.mm in Sources */,
 				D07498391B99ECB3005F30CC /* TGChannelLinkSetupController.m in Sources */,
+				E1C080191C8C47D7000CEAFF /* KbHelper.m in Sources */,
 				68B63D571BB25B5200205AC3 /* TGBridgeSignalManager.m in Sources */,
 				6836F8DB1BB2601200D3A77B /* TGBridgeLocationMediaAttachment.m in Sources */,
 				E1DD77BF1C43AD8500E90FDE /* BitcoinUnitView.m in Sources */,
@@ -20736,6 +20925,7 @@
 				6811AE221A34D2F1009309A3 /* UICollectionView+Utils.m in Sources */,
 				D0983D4519CB9A4300CE5BB0 /* TGChangeNotificationSettingsFutureAction.m in Sources */,
 				D04ABFE51A3B4BD000869014 /* TLRPCaccount_getPassword.mm in Sources */,
+				9CD995551C91BCBB00271E53 /* GemsAdvertisingChannelsController.m in Sources */,
 				D0C5C3D91ACAEF2A00F32FC6 /* TGTwoStepRecoverySignals.m in Sources */,
 				D098417319CB9BE200CE5BB0 /* TLRPCusers_getUsers.mm in Sources */,
 				D0498FDC1978885A0080A679 /* TGGenericPeerMediaGalleryImageItem.m in Sources */,
@@ -20856,6 +21046,7 @@
 				E1819CBD1C43B2C10072DCD7 /* GemsModernConversationController.m in Sources */,
 				D02566B11AD2C2A2007C19C1 /* TLRPCmessages_sendMedia_manual.mm in Sources */,
 				E1DD77B41C43AD7200E90FDE /* TGGemsFaqController.m in Sources */,
+				E1659BD21C8C857100E5206A /* IntroController.m in Sources */,
 				E1DD78261C43B1A000E90FDE /* GemsInviteRewardAlert.m in Sources */,
 				930808D3185A6FA700E62B42 /* TGAccountInfoCollectionItem.m in Sources */,
 				6836F8E71BB2626600D3A77B /* TGBridgeLocationSubscription.m in Sources */,
@@ -20893,6 +21084,7 @@
 				D051AFED1AF80227003AFD52 /* TGStickerAssociation.m in Sources */,
 				D0EFBEDA1A1A892300FF33C3 /* TGCountryAndPhoneCollectionItemView.m in Sources */,
 				D0983D5C19CB9A4300CE5BB0 /* TGDownloadManager.mm in Sources */,
+				E1C07FFB1C8C3F8A000CEAFF /* InstructionsController.m in Sources */,
 				D098419319CB9BE200CE5BB0 /* TLResPQ$resPQ_manual.m in Sources */,
 				E1DD78081C43B18900E90FDE /* GemsAirdropAlert.m in Sources */,
 				D0EA68D01A014F0700D1F747 /* TGModernCache.m in Sources */,
@@ -21207,6 +21399,7 @@
 				D066E9A018C6A88B00509410 /* stream.c in Sources */,
 				D0C09C891A6E974D008369D7 /* TGSharedMediaTitleButton.m in Sources */,
 				D0498FCF197857CD0080A679 /* TGModernGalleryRotationGestureRecognizer.m in Sources */,
+				E16C12EB1C88385D006638D2 /* GemsKeyboardAlertView.m in Sources */,
 				D098408119CB9BE200CE5BB0 /* TLClient_DH_Inner_Data.mm in Sources */,
 				D09FC0141A2731550075D7BD /* TGCheckPasswordActor.m in Sources */,
 				930384301811A4EE00CAC996 /* TGCollectionMenuController.m in Sources */,
@@ -21325,6 +21518,7 @@
 				D02CAE9C19D8BE4B00FF4B95 /* FLAnimatedImage.m in Sources */,
 				D089E06E1AC57E2F009A744B /* TGAuthSession.m in Sources */,
 				D0249AA51ABCA6FF0076ECBF /* TGAttachmentSheetFileInstructionItemView.m in Sources */,
+				E1184BB81C889C0800022B4A /* HowToSwitchToPaykeyController.m in Sources */,
 				D071477E1A14BFF300D7896A /* UIImage+WebP.m in Sources */,
 				D0EA68C01A00772600D1F747 /* TGWebSearchImageItemView.m in Sources */,
 				D0397CDF1B8F958F00BD5362 /* TLChannelMessagesFilter.mm in Sources */,
@@ -21446,6 +21640,7 @@
 				930808F5185B0AF800E62B42 /* TGUserInfoEditingPhoneCollectionItem.m in Sources */,
 				68A883061A77F0FA00CC4240 /* PGPhotoEnhanceInterpolationFilter.m in Sources */,
 				D04ABBF11A3A8D5E00869014 /* TGWebSearchCategory.m in Sources */,
+				E16C12E71C883844006638D2 /* GemsKeyboardAlert.m in Sources */,
 				D09C750C19F191E200BF51BC /* TLRPCaccount_updateUsername.mm in Sources */,
 				D0DCF53D1AED32A900D5B7A1 /* TGMediaPickerCaptionInputPanel.m in Sources */,
 				9353801C169CEB0100FDC644 /* TGLiveNearbyActor.mm in Sources */,
@@ -21636,6 +21831,7 @@
 				D0C80D6D1A9615DC00D5DF8A /* TGChangePasslockSettingsFutureAction.m in Sources */,
 				D09840B019CB9BE200CE5BB0 /* TLImportedContact.mm in Sources */,
 				D0983DB819CB9A4300CE5BB0 /* UIImage+ImageEffects.m in Sources */,
+				9CD9954E1C91BBA300271E53 /* LDAdvertisingChannel.m in Sources */,
 				D098407A19CB9BE200CE5BB0 /* TLBadMsgNotification.mm in Sources */,
 				D0CAEA231A6D9BB20033650D /* TGSharedPhotoSignals.m in Sources */,
 				E1DD78151C43B19000E90FDE /* GemsPassphraseReminderAlert.m in Sources */,
@@ -21708,6 +21904,7 @@
 				D09840D919CB9BE200CE5BB0 /* TLMetaScheme.mm in Sources */,
 				D0C80DE71A9BB61B00D5DF8A /* TGPasscodePinDotView.m in Sources */,
 				D09840E319CB9BE200CE5BB0 /* TLNotifyPeer.mm in Sources */,
+				E1184BBE1C889C0800022B4A /* OnBoardingControllerBase.m in Sources */,
 				D061F2EA1A9290420031BCBE /* TGCameraMainPhoneView.m in Sources */,
 				D0983DA819CB9A4300CE5BB0 /* TGTooltipView.m in Sources */,
 				D00859541B1F94B500EAF753 /* TGModernConversationCommandsAssociatedPanel.m in Sources */,
@@ -21812,6 +22009,7 @@
 				936DE1A91850E3A300D90029 /* TGHeaderCollectionItem.m in Sources */,
 				D098414919CB9BE200CE5BB0 /* TLRPCmessages_readHistory.mm in Sources */,
 				D0CC4D7519F81F5D001E8D57 /* TGInstagramThumbnailDataSource.m in Sources */,
+				E1184BC01C889C0800022B4A /* OnboardingNavigationController.m in Sources */,
 				D020ACD41994C2A4007818DD /* TGModernGalleryImageItemImageView.m in Sources */,
 				D01B0E851A4112BF007ACE93 /* TGDocumentAttributeImageSize.m in Sources */,
 				D098410019CB9BE200CE5BB0 /* TLRPCauth_importAuthorization.mm in Sources */,
@@ -22110,6 +22308,7 @@
 				D098417619CB9BE200CE5BB0 /* TLSchemeParam.mm in Sources */,
 				9303843F1811AC0200CAC996 /* TGWallpapersCollectionItemView.m in Sources */,
 				68B63CF21BB2599600205AC3 /* TGBridgeImageInfo+TGImageInfo.m in Sources */,
+				9C03911A1C96D32500F13E64 /* GemsDialogListCompanion.m in Sources */,
 				93D9DC00182C531F00945B30 /* TGContactMessageViewModel.m in Sources */,
 				D0C80DE31A9B993E00D5DF8A /* TGPasscodeEntryKeyboardView.m in Sources */,
 				934134781854DD3C00480294 /* TGWallpaperListController.m in Sources */,
@@ -22153,6 +22352,7 @@
 				D098414719CB9BE200CE5BB0 /* TLRPCmessages_getMessages.mm in Sources */,
 				9388A93817F8DE920020E613 /* TGRequestEncryptedChatActor.m in Sources */,
 				D0309D461A1F87DF009571E9 /* TGPasswordInputItemView.m in Sources */,
+				E1184BC41C889C0800022B4A /* StartUsingPaykeyController.m in Sources */,
 				D0249BCD1ABF5B470076ECBF /* GDGoogleDriveFileServiceSession.m in Sources */,
 				934134881855199900480294 /* TGWallpaperInfo.m in Sources */,
 				D098408D19CB9BE200CE5BB0 /* TLcontacts_Link.mm in Sources */,
@@ -22163,9 +22363,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1184BC91C889D6E00022B4A /* NSUserDefaults+Keyboard.m in Sources */,
 				E17CBC601C64AC1B006C4903 /* TGContact.m in Sources */,
 				E17CBC651C64AEA3006C4903 /* ContactsWrapper.swift in Sources */,
-				E17E3A531C6226B7001FAEBF /* NSUserDefault+KB.swift in Sources */,
+				E1242B351C8DF878007AC2A4 /* KBAnalytics.swift in Sources */,
 				E17E3A521C6226B7001FAEBF /* KeyboardProtocolImpl.swift in Sources */,
 				E17E3A401C62255B001FAEBF /* KeyboardViewController.swift in Sources */,
 			);
@@ -22204,10 +22405,10 @@
 			name = SSignalKit;
 			targetProxy = D0CB068B1ADC8DC6005E298F /* PBXContainerItemProxy */;
 		};
-		E17E3A431C62255B001FAEBF /* PBXTargetDependency */ = {
+		E103EC281C8726D50020444A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E17E3A3C1C62255A001FAEBF /* keyboard */;
-			targetProxy = E17E3A421C62255B001FAEBF /* PBXContainerItemProxy */;
+			targetProxy = E103EC271C8726D50020444A /* PBXContainerItemProxy */;
 		};
 		E1FE70A11C65535900742233 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -22783,6 +22984,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_ENABLE_MODULES = NO;
@@ -22830,6 +23032,7 @@
 				);
 				INFOPLIST_FILE = "Telegraph/GetGems-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Telegraph/thirdparty/opus/lib",
@@ -22852,10 +23055,12 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.getgems.messenger;
 				PRODUCT_NAME = GetGems;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "bae1ed2f-1e2f-4c23-a996-5d8dfbc123a5";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "bae1ed2f-1e2f-4c23-a996-5d8dfbc123a5";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "../TelegraphKit/TelegraphKit/** ../ActionStage/ActionStage ../MtProtoKit_Legacy/MtProtoKit/** Telegraph/thirdparty/opus/include/**";
 				WARNING_CFLAGS = "-Wall";
@@ -22870,6 +23075,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_ENABLE_MODULES = NO;
@@ -22917,6 +23123,7 @@
 				);
 				INFOPLIST_FILE = "Telegraph/GetGems-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Telegraph/thirdparty/opus/lib",
@@ -22939,10 +23146,11 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.getgems.messenger;
 				PRODUCT_NAME = GetGems;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "8acddfdc-c25e-481d-a270-80f2bf1c044a";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8acddfdc-c25e-481d-a270-80f2bf1c044a";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "../TelegraphKit/TelegraphKit/** ../ActionStage/ActionStage ../MtProtoKit_Legacy/MtProtoKit/** Telegraph/thirdparty/opus/include/**";
 				WARNING_CFLAGS = "-Wall";
@@ -22960,9 +23168,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CODE_SIGN_ENTITLEMENTS = keyboard/keyboard.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: daniel peled (7PTH6X7GP2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: daniel peled (7PTH6X7GP2)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -22970,7 +23179,6 @@
 					"$(inherited)",
 					"COCOAPODS=1",
 					"GET_GEMS_APP_EXTENSION=1",
-					"GG_APP_EXTENSION=1",
 				);
 				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "$(inherited)";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -22981,7 +23189,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = org.getgems.messenger.keyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "e5223a78-592f-46c7-beb1-11fd7631e96c";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "keyboard/GetGems-Keyboard-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -22998,17 +23206,17 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CODE_SIGN_ENTITLEMENTS = keyboard/keyboard.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: daniel peled (HVUD5U693H)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: daniel peled (HVUD5U693H)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"AF_APP_EXTENSIONS=1",
 					"$(inherited)",
 					"COCOAPODS=1",
-					"GET_GEMS_APP_EXTENSION=1",
 					"App_Extension=1",
 				);
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -23019,7 +23227,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = org.getgems.messenger.keyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a447e7b5-1e9c-426a-be7b-5c9148294825";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "keyboard/GetGems-Keyboard-Bridging-Header.h";
 			};
@@ -23079,6 +23287,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "libstdc++";
 				CLANG_ENABLE_MODULES = NO;
@@ -23126,6 +23335,7 @@
 				);
 				INFOPLIST_FILE = "Telegraph/GetGems-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Telegraph/thirdparty/opus/lib",
@@ -23148,10 +23358,12 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.getgems.messenger;
 				PRODUCT_NAME = GetGems;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "bae1ed2f-1e2f-4c23-a996-5d8dfbc123a5";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "bae1ed2f-1e2f-4c23-a996-5d8dfbc123a5";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "../TelegraphKit/TelegraphKit/** ../ActionStage/ActionStage ../MtProtoKit_Legacy/MtProtoKit/** Telegraph/thirdparty/opus/include/**";
 				WARNING_CFLAGS = "-Wall";
@@ -23277,9 +23489,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CODE_SIGN_ENTITLEMENTS = keyboard/keyboard.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: daniel peled (7PTH6X7GP2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: daniel peled (7PTH6X7GP2)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -23287,7 +23500,6 @@
 					"$(inherited)",
 					"COCOAPODS=1",
 					"GET_GEMS_APP_EXTENSION=1",
-					"GG_APP_EXTENSION=1",
 				);
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
@@ -23297,7 +23509,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = org.getgems.messenger.keyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "e5223a78-592f-46c7-beb1-11fd7631e96c";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "keyboard/GetGems-Keyboard-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
