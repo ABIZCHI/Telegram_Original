@@ -34,10 +34,10 @@
 #import <objc/runtime.h>
 #import "TGWebSearchController.h"
 #import "TGAttachmentSheetWindow.h"
-#import "TGAttachmentSheetRecentItemView.h"
+//#import "TGAttachmentSheetRecentItemView.h"
 #import "TGProgressWindow.h"
 #import "TGModernMediaPickerController.h"
-#import "TGAttachmentSheetRecentControlledButtonItemView.h"
+//#import "TGAttachmentSheetRecentControlledButtonItemView.h"
 #import "TGChannelConversationCompanion.h"
 
 // GemsCore
@@ -448,225 +448,225 @@
     
     return nil;
 }
-
-- (void)inputPanelRequestedAttachmentsMenu:(GemsModernConversationInputTextPanel *)__unused inputTextPanel
-{
-    __weak GemsModernConversationController *weakSelf = self;
-    self.attachmentSheetWindow = [[TGAttachmentSheetWindow alloc] init];
-    self.attachmentSheetWindow.dismissalBlock = ^
-    {
-        __strong TGModernConversationController *strongSelf = weakSelf;
-        if (strongSelf == nil)
-            return;
-        
-        strongSelf.attachmentSheetWindow.rootViewController = nil;
-        strongSelf.attachmentSheetWindow = nil;
-    };
-    
-    NSMutableArray *items = [[NSMutableArray alloc] init];
-    
-    TGAttachmentSheetRecentItemView *recentView = [[TGAttachmentSheetRecentItemView alloc] initWithParentController:self mode:TGAttachmentSheetItemViewSendPhotoMode];
-    __weak TGAttachmentSheetRecentItemView *weakRecentView = recentView;
-    recentView.disallowCaptions = ![self.companion allowCaptionedMedia];
-    recentView.done = ^
-    {
-        __strong GemsModernConversationController *strongSelf = weakSelf;
-        if (strongSelf != nil)
-        {
-            __strong TGAttachmentSheetRecentItemView *strongRecentView = weakRecentView;
-            [strongSelf.attachmentSheetWindow dismissAnimated:true completion:nil];
-            
-            if (strongRecentView != nil)
-            {
-                [strongSelf _asyncProcessMediaAssetSignals:[strongRecentView selectedItemSignals:^id (UIImage *image, NSString *caption, NSString *maybeHash)
-                                                            {
-                                                                if (image != nil)
-                                                                {
-                                                                    id description = [strongSelf.companion imageDescriptionFromImage:image caption:caption optionalAssetUrl:maybeHash == nil ? nil : [[NSString alloc] initWithFormat:@"image-%@", maybeHash]];
-                                                                    return description;
-                                                                }
-                                                                return nil;
-                                                            }] forIntent:TGModernMediaPickerControllerSendPhotoIntent];
-            }
-        }
-    };
-    
-    TGAttachmentSheetRecentControlledButtonItemView *multifunctionButtonView = [[TGAttachmentSheetRecentControlledButtonItemView alloc] initWithTitle:TGLocalized(@"Common.ChoosePhoto") pressed:^
-                                                                                {
-                                                                                    __strong TGModernConversationController *strongSelf = weakSelf;
-                                                                                    if (strongSelf != nil)
-                                                                                    {
-                                                                                        [strongSelf.view endEditing:true];
-                                                                                        [strongSelf.attachmentSheetWindow dismissAnimated:true completion:nil];
-                                                                                        [strongSelf _displayPhotoPicker];
-                                                                                    }
-                                                                                } alternatePressed:^
-                                                                                {
-                                                                                    TGProgressWindow *progressWindow = [[TGProgressWindow alloc] init];
-                                                                                    [progressWindow performSelector:@selector(showAnimated) withObject:nil afterDelay:0.5];
-                                                                                    
-                                                                                    __strong TGModernConversationController *strongSelf = weakSelf;
-                                                                                    if (strongSelf != nil)
-                                                                                    {
-                                                                                        __strong TGAttachmentSheetRecentItemView *strongRecentView = weakRecentView;
-                                                                                        [strongSelf.attachmentSheetWindow dismissAnimated:true completion:nil];
-                                                                                        
-                                                                                        if (strongRecentView != nil)
-                                                                                        {
-                                                                                            [strongSelf _asyncProcessMediaAssetSignals:[strongRecentView selectedItemSignals:^id (UIImage *image, NSString *caption, NSString *maybeHash)
-                                                                                                                                        {
-                                                                                                                                            if (image != nil)
-                                                                                                                                            {
-                                                                                                                                                id description = [strongSelf.companion imageDescriptionFromImage:image caption:caption optionalAssetUrl:maybeHash == nil ? nil : [[NSString alloc] initWithFormat:@"image-%@", maybeHash]];
-                                                                                                                                                return description;
-                                                                                                                                            }
-                                                                                                                                            return nil;
-                                                                                                                                        }] forIntent:TGModernMediaPickerControllerSendPhotoIntent];
-                                                                                        }
-                                                                                    }
-                                                                                }];
-    
-    [recentView setMultifunctionButtonView:multifunctionButtonView];
-    recentView.openCamera = ^(TGAttachmentSheetRecentCameraView *cameraView)
-    {
-        __strong TGModernConversationController *strongSelf = weakSelf;
-        if (strongSelf != nil)
-        {
-            [strongSelf.view endEditing:true];
-            [strongSelf _displayCameraWithView:cameraView];
-        }
-    };
-    
-    recentView.itemOpened = ^(void)
-    {
-        __strong TGModernConversationController *strongSelf = weakSelf;
-        if (strongSelf != nil)
-            [strongSelf.view endEditing:true];
-    };
-    
-    recentView.userListSignal = ^SSignal *(NSString *mention)
-    {
-        __strong TGModernConversationController *strongSelf = weakSelf;
-        if (strongSelf == nil)
-            return nil;
-        
-        return [strongSelf.companion userListForMention:mention];
-    };
-    
-    recentView.hashtagListSignal = ^SSignal *(NSString *hashtag)
-    {
-        __strong TGModernConversationController *strongSelf = weakSelf;
-        if (strongSelf == nil)
-            return nil;
-        
-        return [strongSelf.companion hashtagListForHashtag:hashtag];
-    };
-    
-    [items addObject:recentView];
-    [items addObject:multifunctionButtonView];
-    [items addObject:[[TGAttachmentSheetButtonItemView alloc] initWithTitle:TGLocalized(@"Common.ChooseVideo") pressed:^
-                      {
-                          __strong TGModernConversationController *strongSelf = weakSelf;
-                          if (strongSelf != nil)
-                          {
-                              [strongSelf.view endEditing:true];
-                              [strongSelf.attachmentSheetWindow dismissAnimated:true completion:nil];
-                              [strongSelf _displayVideoPicker];
-                          }
-                      }]];
-    [items addObject:[[TGAttachmentSheetButtonItemView alloc] initWithTitle:TGLocalized(@"Conversation.SearchWebImages") pressed:^
-                      {
-                          __strong TGModernConversationController *strongSelf = weakSelf;
-                          if (strongSelf != nil)
-                          {
-                              [strongSelf.view endEditing:true];
-                              [strongSelf.attachmentSheetWindow dismissAnimated:true completion:nil];
-                              [strongSelf _displayWebImagePicker];
-                          }
-                      }]];
-    [items addObject:[[TGAttachmentSheetButtonItemView alloc] initWithTitle:TGLocalized(@"Conversation.Document") pressed:^
-                      {
-                          __strong TGModernConversationController *strongSelf = weakSelf;
-                          if (strongSelf != nil)
-                          {
-                              [strongSelf.view endEditing:true];
-                              [strongSelf _displaySendFileMenu];
-                          }
-                      }]];
-    [items addObject:[[TGAttachmentSheetButtonItemView alloc] initWithTitle:TGLocalized(@"Conversation.Location") pressed:^
-                      {
-                          __strong TGModernConversationController *strongSelf = weakSelf;
-                          if (strongSelf != nil)
-                          {
-                              [strongSelf.view endEditing:true];
-                              [strongSelf.attachmentSheetWindow dismissAnimated:true completion:nil];
-                              [strongSelf _displayLocationPicker];
-                          }
-                      }]];
-    
-    if ([self.companion allowContactSharing])
-    {
-        [items addObject:[[TGAttachmentSheetButtonItemView alloc] initWithTitle:TGLocalized(@"Conversation.Contact") pressed:^
-                          {
-                              __strong TGModernConversationController *strongSelf = weakSelf;
-                              if (strongSelf != nil)
-                              {
-                                  [strongSelf.view endEditing:true];
-                                  [strongSelf.attachmentSheetWindow dismissAnimated:true completion:nil];
-                                  [strongSelf _displayContactPicker];
-                              }
-                          }]];
-    }
-    
-    {
-        TGGenericModernConversationCompanion *comp = (TGGenericModernConversationCompanion*)self.companion;
-        // sendBitcoins
-        TGAttachmentSheetButtonItemView *sendBtc = [[TGAttachmentSheetButtonItemView alloc] initWithTitle:GemsLocalized(@"GemsAttachBtc") pressed:^
-                                                    {
-                                                        __strong GemsModernConversationController *strongSelf = weakSelf;
-                                                        if (strongSelf != nil)
-                                                        {
-                                                            [strongSelf.view endEditing:true];
-                                                            [strongSelf.attachmentSheetWindow dismissAnimated:true completion:NilCompletionBlock];
-                                                            [strongSelf sendBitcoinsPressed:inputTextPanel
-                                                                             paymentContext:[PaymentRequestsContainer TG_paymentContext:comp.conversationId]
-                                                                                 forUserIds:[self payeesTgids]];
-                                                        }
-                                                    }];
-        [sendBtc.button setTitleColor:[GemsColors colorWithType:BitcoinOrange]];
-        if([_B isActive])
-            [items addObject:sendBtc];
-        
-        //send gems
-        
-        TGAttachmentSheetButtonItemView *sendGems = [[TGAttachmentSheetButtonItemView alloc] initWithTitle:GemsLocalized(@"GemsAttachGems") pressed:^
-                                                     {
-                                                         __strong GemsModernConversationController *strongSelf = weakSelf;
-                                                         if (strongSelf != nil)
-                                                         {
-                                                             [strongSelf.view endEditing:true];
-                                                             [strongSelf.attachmentSheetWindow dismissAnimated:true completion:NilCompletionBlock];
-                                                             [strongSelf sendGemsPressed:inputTextPanel
-                                                                          paymentContext:[PaymentRequestsContainer TG_paymentContext:comp.conversationId]
-                                                                              forUserIds:[self payeesTgids]];
-                                                         }
-                                                     }];
-        [sendGems.button setTitleColor:[GemsColors colorWithType:GemsRed]];
-        [items addObject:sendGems];
-    }
-    
-    TGAttachmentSheetButtonItemView *cancelItem =[[TGAttachmentSheetButtonItemView alloc] initWithTitle:TGLocalized(@"Common.Cancel") pressed:^
-                                                  {
-                                                      __strong TGModernConversationController *strongSelf = weakSelf;
-                                                      if (strongSelf != nil)
-                                                          [strongSelf.attachmentSheetWindow dismissAnimated:true completion:nil];
-                                                  }];
-    [cancelItem setBold:true];
-    [items addObject:cancelItem];
-    
-    self.attachmentSheetWindow.view.items = items;
-    [self.attachmentSheetWindow showAnimated:true completion:nil];
-}
+//
+//- (void)inputPanelRequestedAttachmentsMenu:(GemsModernConversationInputTextPanel *)__unused inputTextPanel
+//{
+//    __weak GemsModernConversationController *weakSelf = self;
+//    self.attachmentSheetWindow = [[TGAttachmentSheetWindow alloc] init];
+//    self.attachmentSheetWindow.dismissalBlock = ^
+//    {
+//        __strong TGModernConversationController *strongSelf = weakSelf;
+//        if (strongSelf == nil)
+//            return;
+//        
+//        strongSelf.attachmentSheetWindow.rootViewController = nil;
+//        strongSelf.attachmentSheetWindow = nil;
+//    };
+//    
+//    NSMutableArray *items = [[NSMutableArray alloc] init];
+//    
+//    TGAttachmentSheetRecentItemView *recentView = [[TGAttachmentSheetRecentItemView alloc] initWithParentController:self mode:TGAttachmentSheetItemViewSendPhotoMode];
+//    __weak TGAttachmentSheetRecentItemView *weakRecentView = recentView;
+//    recentView.disallowCaptions = ![self.companion allowCaptionedMedia];
+//    recentView.done = ^
+//    {
+//        __strong GemsModernConversationController *strongSelf = weakSelf;
+//        if (strongSelf != nil)
+//        {
+//            __strong TGAttachmentSheetRecentItemView *strongRecentView = weakRecentView;
+//            [strongSelf.attachmentSheetWindow dismissAnimated:true completion:nil];
+//            
+//            if (strongRecentView != nil)
+//            {
+//                [strongSelf _asyncProcessMediaAssetSignals:[strongRecentView selectedItemSignals:^id (UIImage *image, NSString *caption, NSString *maybeHash)
+//                                                            {
+//                                                                if (image != nil)
+//                                                                {
+//                                                                    id description = [strongSelf.companion imageDescriptionFromImage:image caption:caption optionalAssetUrl:maybeHash == nil ? nil : [[NSString alloc] initWithFormat:@"image-%@", maybeHash]];
+//                                                                    return description;
+//                                                                }
+//                                                                return nil;
+//                                                            }] forIntent:TGModernMediaPickerControllerSendPhotoIntent];
+//            }
+//        }
+//    };
+//    
+//    TGAttachmentSheetRecentControlledButtonItemView *multifunctionButtonView = [[TGAttachmentSheetRecentControlledButtonItemView alloc] initWithTitle:TGLocalized(@"Common.ChoosePhoto") pressed:^
+//                                                                                {
+//                                                                                    __strong TGModernConversationController *strongSelf = weakSelf;
+//                                                                                    if (strongSelf != nil)
+//                                                                                    {
+//                                                                                        [strongSelf.view endEditing:true];
+//                                                                                        [strongSelf.attachmentSheetWindow dismissAnimated:true completion:nil];
+//                                                                                        [strongSelf _displayPhotoPicker];
+//                                                                                    }
+//                                                                                } alternatePressed:^
+//                                                                                {
+//                                                                                    TGProgressWindow *progressWindow = [[TGProgressWindow alloc] init];
+//                                                                                    [progressWindow performSelector:@selector(showAnimated) withObject:nil afterDelay:0.5];
+//                                                                                    
+//                                                                                    __strong TGModernConversationController *strongSelf = weakSelf;
+//                                                                                    if (strongSelf != nil)
+//                                                                                    {
+//                                                                                        __strong TGAttachmentSheetRecentItemView *strongRecentView = weakRecentView;
+//                                                                                        [strongSelf.attachmentSheetWindow dismissAnimated:true completion:nil];
+//                                                                                        
+//                                                                                        if (strongRecentView != nil)
+//                                                                                        {
+//                                                                                            [strongSelf _asyncProcessMediaAssetSignals:[strongRecentView selectedItemSignals:^id (UIImage *image, NSString *caption, NSString *maybeHash)
+//                                                                                                                                        {
+//                                                                                                                                            if (image != nil)
+//                                                                                                                                            {
+//                                                                                                                                                id description = [strongSelf.companion imageDescriptionFromImage:image caption:caption optionalAssetUrl:maybeHash == nil ? nil : [[NSString alloc] initWithFormat:@"image-%@", maybeHash]];
+//                                                                                                                                                return description;
+//                                                                                                                                            }
+//                                                                                                                                            return nil;
+//                                                                                                                                        }] forIntent:TGModernMediaPickerControllerSendPhotoIntent];
+//                                                                                        }
+//                                                                                    }
+//                                                                                }];
+//    
+//    [recentView setMultifunctionButtonView:multifunctionButtonView];
+//    recentView.openCamera = ^(TGAttachmentSheetRecentCameraView *cameraView)
+//    {
+//        __strong TGModernConversationController *strongSelf = weakSelf;
+//        if (strongSelf != nil)
+//        {
+//            [strongSelf.view endEditing:true];
+//            [strongSelf _displayCameraWithView:cameraView];
+//        }
+//    };
+//    
+//    recentView.itemOpened = ^(void)
+//    {
+//        __strong TGModernConversationController *strongSelf = weakSelf;
+//        if (strongSelf != nil)
+//            [strongSelf.view endEditing:true];
+//    };
+//    
+//    recentView.userListSignal = ^SSignal *(NSString *mention)
+//    {
+//        __strong TGModernConversationController *strongSelf = weakSelf;
+//        if (strongSelf == nil)
+//            return nil;
+//        
+//        return [strongSelf.companion userListForMention:mention canBeContextBot:NO];
+//    };
+//    
+//    recentView.hashtagListSignal = ^SSignal *(NSString *hashtag)
+//    {
+//        __strong TGModernConversationController *strongSelf = weakSelf;
+//        if (strongSelf == nil)
+//            return nil;
+//        
+//        return [strongSelf.companion hashtagListForHashtag:hashtag];
+//    };
+//    
+//    [items addObject:recentView];
+//    [items addObject:multifunctionButtonView];
+//    [items addObject:[[TGAttachmentSheetButtonItemView alloc] initWithTitle:TGLocalized(@"Common.ChooseVideo") pressed:^
+//                      {
+//                          __strong TGModernConversationController *strongSelf = weakSelf;
+//                          if (strongSelf != nil)
+//                          {
+//                              [strongSelf.view endEditing:true];
+//                              [strongSelf.attachmentSheetWindow dismissAnimated:true completion:nil];
+//                              [strongSelf _displayVideoPicker];
+//                          }
+//                      }]];
+//    [items addObject:[[TGAttachmentSheetButtonItemView alloc] initWithTitle:TGLocalized(@"Conversation.SearchWebImages") pressed:^
+//                      {
+//                          __strong TGModernConversationController *strongSelf = weakSelf;
+//                          if (strongSelf != nil)
+//                          {
+//                              [strongSelf.view endEditing:true];
+//                              [strongSelf.attachmentSheetWindow dismissAnimated:true completion:nil];
+//                              [strongSelf _displayWebImagePicker];
+//                          }
+//                      }]];
+//    [items addObject:[[TGAttachmentSheetButtonItemView alloc] initWithTitle:TGLocalized(@"Conversation.Document") pressed:^
+//                      {
+//                          __strong TGModernConversationController *strongSelf = weakSelf;
+//                          if (strongSelf != nil)
+//                          {
+//                              [strongSelf.view endEditing:true];
+//                              [strongSelf _displaySendFileMenu];
+//                          }
+//                      }]];
+//    [items addObject:[[TGAttachmentSheetButtonItemView alloc] initWithTitle:TGLocalized(@"Conversation.Location") pressed:^
+//                      {
+//                          __strong TGModernConversationController *strongSelf = weakSelf;
+//                          if (strongSelf != nil)
+//                          {
+//                              [strongSelf.view endEditing:true];
+//                              [strongSelf.attachmentSheetWindow dismissAnimated:true completion:nil];
+//                              [strongSelf _displayLocationPicker];
+//                          }
+//                      }]];
+//    
+//    if ([self.companion allowContactSharing])
+//    {
+//        [items addObject:[[TGAttachmentSheetButtonItemView alloc] initWithTitle:TGLocalized(@"Conversation.Contact") pressed:^
+//                          {
+//                              __strong TGModernConversationController *strongSelf = weakSelf;
+//                              if (strongSelf != nil)
+//                              {
+//                                  [strongSelf.view endEditing:true];
+//                                  [strongSelf.attachmentSheetWindow dismissAnimated:true completion:nil];
+//                                  [strongSelf _displayContactPicker];
+//                              }
+//                          }]];
+//    }
+//    
+//    {
+//        TGGenericModernConversationCompanion *comp = (TGGenericModernConversationCompanion*)self.companion;
+//        // sendBitcoins
+//        TGAttachmentSheetButtonItemView *sendBtc = [[TGAttachmentSheetButtonItemView alloc] initWithTitle:GemsLocalized(@"GemsAttachBtc") pressed:^
+//                                                    {
+//                                                        __strong GemsModernConversationController *strongSelf = weakSelf;
+//                                                        if (strongSelf != nil)
+//                                                        {
+//                                                            [strongSelf.view endEditing:true];
+//                                                            [strongSelf.attachmentSheetWindow dismissAnimated:true completion:NilCompletionBlock];
+//                                                            [strongSelf sendBitcoinsPressed:inputTextPanel
+//                                                                             paymentContext:[PaymentRequestsContainer TG_paymentContext:comp.conversationId]
+//                                                                                 forUserIds:[self payeesTgids]];
+//                                                        }
+//                                                    }];
+//        [sendBtc.button setTitleColor:[GemsColors colorWithType:BitcoinOrange]];
+//        if([_B isActive])
+//            [items addObject:sendBtc];
+//        
+//        //send gems
+//        
+//        TGAttachmentSheetButtonItemView *sendGems = [[TGAttachmentSheetButtonItemView alloc] initWithTitle:GemsLocalized(@"GemsAttachGems") pressed:^
+//                                                     {
+//                                                         __strong GemsModernConversationController *strongSelf = weakSelf;
+//                                                         if (strongSelf != nil)
+//                                                         {
+//                                                             [strongSelf.view endEditing:true];
+//                                                             [strongSelf.attachmentSheetWindow dismissAnimated:true completion:NilCompletionBlock];
+//                                                             [strongSelf sendGemsPressed:inputTextPanel
+//                                                                          paymentContext:[PaymentRequestsContainer TG_paymentContext:comp.conversationId]
+//                                                                              forUserIds:[self payeesTgids]];
+//                                                         }
+//                                                     }];
+//        [sendGems.button setTitleColor:[GemsColors colorWithType:GemsRed]];
+//        [items addObject:sendGems];
+//    }
+//    
+//    TGAttachmentSheetButtonItemView *cancelItem =[[TGAttachmentSheetButtonItemView alloc] initWithTitle:TGLocalized(@"Common.Cancel") pressed:^
+//                                                  {
+//                                                      __strong TGModernConversationController *strongSelf = weakSelf;
+//                                                      if (strongSelf != nil)
+//                                                          [strongSelf.attachmentSheetWindow dismissAnimated:true completion:nil];
+//                                                  }];
+//    [cancelItem setBold:true];
+//    [items addObject:cancelItem];
+//    
+//    self.attachmentSheetWindow.view.items = items;
+//    [self.attachmentSheetWindow showAnimated:true completion:nil];
+//}
 
 - (NSArray *)payeesTgids
 {
@@ -817,11 +817,11 @@
     if(category) {
         
         TGWebSearchController *searchController = [[TGWebSearchController alloc] init];
-        __weak TGModernConversationController *weakSelf = self;
-        searchController.completion = ^(TGWebSearchController *sender)
+        __weak GemsModernConversationController *weakSelf = self;
+        searchController.completionBlock = ^(TGWebSearchController *sender)
         {
             NSArray *items = [sender selectedItems];
-            __strong TGModernConversationController *strongSelf = weakSelf;
+            __strong GemsModernConversationController *strongSelf = weakSelf;
             if (strongSelf != nil)
             {
                 NSMutableArray *imageDescriptions = [[NSMutableArray alloc] init];

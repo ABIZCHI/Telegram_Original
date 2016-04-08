@@ -3,8 +3,6 @@ platform :ios, '8.1'
 # Uncomment this line if you're using Swift
 use_frameworks!
 
-xcodeproj 'GetGems.xcodeproj'
-
 def keyboardPods
     pod 'ReactiveCocoa', '4.0.4-alpha-4'
     pod 'KeyboardFramework', :path => '../Keyboard'
@@ -23,20 +21,20 @@ target 'GetGems' do
     pod 'SSKeychain'
     pod 'PBJVideoPlayer'
 
-    pod 'SwaggerClient', :path => '../gems-app-ios-forked/GemsCore/GemsNetworking/ThirdParty/swagger/'
-    pod 'GemsNetworking', :path => '../gems-app-ios-forked/GemsCore/GemsNetworking'
-    pod 'GemsCurrencyManager', :path => '../gems-app-ios-forked/GemsCore/GemsCurrencyManager/'
+    pod 'SwaggerClient', :path => '../gems-app-ios/GemsCore/GemsNetworking/ThirdParty/swagger/'
+    pod 'GemsNetworking', :path => '../gems-app-ios/GemsCore/GemsNetworking'
+    pod 'GemsCurrencyManager', :path => '../gems-app-ios/GemsCore/GemsCurrencyManager/'
     pod 'BreadWalletCore', :path => '../BRCore'
-    pod 'GemsCore/Full', :path => '../gems-app-ios-forked/GemsCore'
-    pod 'GemsUI', :path => '../gems-app-ios-forked/GemsUI'
+    pod 'GemsCore/Full', :path => '../gems-app-ios/GemsCore'
+    pod 'GemsUI', :path => '../gems-app-ios/GemsUI'
 
     keyboardPods
 end
 
 target 'keyboard' do
     keyboardPods
-    #pod 'GemsCore/AppExtension', :path => '../gems-app-ios-forked/GemsCore'
-    pod 'GemsNetworking', :path => '../gems-app-ios-forked/GemsCore/GemsNetworking'
+    #pod 'GemsCore/AppExtension', :path => '../gems-app-ios/GemsCore'
+    pod 'GemsNetworking', :path => '../gems-app-ios/GemsCore/GemsNetworking'
     pod 'Mixpanel/AppExtension', '2.9.0'
 end
 

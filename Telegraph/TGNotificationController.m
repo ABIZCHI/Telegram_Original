@@ -46,7 +46,7 @@ const NSUInteger TGNotificationInterItemDelay = 2;
 const NSUInteger TGNotificationInterItemDelayAfterHide = 1;
 const NSUInteger TGNotificationExpandedTimeout = 60;
 
-@interface TGNotificationWindow : UIWindow
+@interface TGNotificationWindow_private : UIWindow
 
 @property (nonatomic, copy) bool (^pointInside)(CGPoint);
 
@@ -83,7 +83,7 @@ const NSUInteger TGNotificationExpandedTimeout = 60;
     TGModernConversationAudioPlayer *_currentAudioPlayer;
     int32_t _currentAudioPlayerMessageId;
     
-    TGNotificationWindow *_window;
+    TGNotificationWindow_private *_window;
     TGNotificationOverlayView *_overlayView;
 }
 
@@ -103,7 +103,7 @@ const NSUInteger TGNotificationExpandedTimeout = 60;
 
         self.autoManageStatusBarBackground = false;
         
-        _window = [[TGNotificationWindow alloc] initWithFrame:TGAppDelegateInstance.rootController.applicationBounds];
+        _window = [[TGNotificationWindow_private alloc] initWithFrame:TGAppDelegateInstance.rootController.applicationBounds];
         
         [_window.rootViewController addChildViewController:self];
         [_window.rootViewController.view addSubview:self.view];
@@ -1211,7 +1211,7 @@ static id mediaIdForAttachment(TGMediaAttachment *attachment)
 @end
 
 
-@implementation TGNotificationWindow
+@implementation TGNotificationWindow_private
 
 - (instancetype)initWithFrame:(CGRect)frame
 {

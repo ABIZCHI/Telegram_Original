@@ -278,13 +278,13 @@ static bool TGContactListSectionComparator(std::tr1::shared_ptr<TGContactListSec
 @property (nonatomic, strong) TGSearchBar *searchBar;
 @property (nonatomic, strong) TGSearchDisplayMixin *searchMixin;
 
-@property (nonatomic, strong) TGTokenFieldView *tokenFieldView;
+//@property (nonatomic, strong) TGTokenFieldView *tokenFieldView;
 
 @property (nonatomic, strong) NSString *searchString;
 @property (nonatomic, strong) NSString *uiSearchString;
 
-@property (nonatomic, strong) NSArray *localSearchResults;
-@property (nonatomic, strong) NSArray *globalSearchResults;
+//@property (nonatomic, strong) NSArray *localSearchResults;
+//@property (nonatomic, strong) NSArray *globalSearchResults;
 
 @property (nonatomic, strong) UIView *searchTableViewBackground;
 @property (nonatomic, strong) UITableView *searchTableView;
@@ -315,7 +315,7 @@ static bool TGContactListSectionComparator(std::tr1::shared_ptr<TGContactListSec
 
 @property (nonatomic, strong) UIView *phonebookAccessOverlay;
 
-@property (nonatomic, strong) UIView *inviteContainer;
+//@property (nonatomic, strong) UIView *inviteContainer;
 
 @property (nonatomic) CGFloat draggingStartOffset;
 

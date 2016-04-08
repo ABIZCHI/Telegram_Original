@@ -11,7 +11,7 @@
 #import "TGStickerKeyboardView.h"
 #import "TGStickersSignals.h"
 
-#import <MTProtoKit/MTTime.h>
+#import <MtProtoKit/MTTime.h>
 #import "TGHacks.h"
 #import "TGFont.h"
 #import "TGImageUtils.h"

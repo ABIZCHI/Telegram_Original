@@ -21,7 +21,7 @@
 
 #import "TGHacks.h"
 
-#import "TGVideoPreviewView.h"
+//#import "TGVideoPreviewView.h"
 #import "TGActionSheet.h"
 #import "TGMessageImageViewOverlayView.h"
 

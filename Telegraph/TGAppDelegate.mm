@@ -662,7 +662,7 @@ GEMS_TG_REFACTORING
                        
                        [TGDatabaseInstance() dispatchOnDatabaseThread:^
                         {
-                            [TGDatabaseInstance() loadConversationListFromDate:INT32_MAX limit:32 excludeConversationIds:nil completion:^(NSArray *dialogList)
+                            [TGDatabaseInstance() loadConversationListFromDate:INT32_MAX limit:32 excludeConversationIds:nil completion:^(NSArray *dialogList, bool loadedAllRegular)
                              {
                                  bool dialogListLoaded = [TGDatabaseInstance() customProperty:@"dialogListLoaded"].length != 0;
                                  

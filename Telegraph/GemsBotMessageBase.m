@@ -42,7 +42,8 @@
 
 - (TGPreparedTextMessage*)msg
 {
-    TGPreparedTextMessage *preparedMsg = [[TGPreparedTextMessage alloc] initWithText:[self generateText] replyMessage:nil disableLinkPreviews:true parsedWebpage:nil];
+    TGPreparedTextMessage *preparedMsg = [[TGPreparedTextMessage alloc] initWithText:[self generateText] replyMessage:nil disableLinkPreviews:true parsedWebpage:nil entities:nil botContextResult:nil];
+    
     preparedMsg.messageLifetime = 120;
     if (preparedMsg.randomId == 0)
     {

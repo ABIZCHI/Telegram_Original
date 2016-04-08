@@ -3,6 +3,7 @@
 #import "TGViewController.h"
 #import "ActionStage.h"
 #import "TGObserverProxy.h"
+#import "TGOverlayControllerWindow.h"
 
 #import "TGAppDelegate.h"
 
