@@ -208,11 +208,11 @@ NSInteger TGModernConversationControllerUnloadHistoryThreshold = 200;
 
 #define TGModernConversationControllerLogCellOperations false
 
-typedef enum {
-    TGModernConversationActivityChangeAuto = 0,
-    TGModernConversationActivityChangeActive = 1,
-    TGModernConversationActivityChangeInactive = 2
-} TGModernConversationActivityChange;
+//typedef enum {
+//    TGModernConversationActivityChangeAuto = 0,
+//    TGModernConversationActivityChangeActive = 1,
+//    TGModernConversationActivityChangeInactive = 2
+//} TGModernConversationActivityChange;
 
 typedef enum {
     TGModernConversationPanelAnimationNone = 0,
@@ -358,7 +358,7 @@ typedef enum {
     TGAttachmentSheetWindow *_attachmentSheetWindow;
     
     SMetaDisposable *_inputPlaceholderForTextDisposable;
-    __weak TGMenuSheetController *_menuController;
+//    __weak TGMenuSheetController *_menuController;
     
     TGRaiseToListenActivator *_raiseToListenActivator;
     TGTimer *_raiseToListenRecordAfterPlaybackTimer;

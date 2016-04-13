@@ -36,6 +36,20 @@
 
 @class TGWebPageMediaAttachment;
 
+GEMS_ADDED_PROPERTY // added forward declaration, i'm not sure what label should i use or don't use at all
+@class TGSuggestionContext;
+@class TGAttachmentCameraView;
+@class TGMenuSheetController;
+//GEMS_ADDED end
+
+GEMS_CLASS_EXTERN //actually enum extern, for attachment menu
+typedef enum {
+    TGModernConversationActivityChangeAuto = 0,
+    TGModernConversationActivityChangeActive = 1,
+    TGModernConversationActivityChangeInactive = 2
+} TGModernConversationActivityChange;
+
+
 extern NSInteger TGModernConversationControllerUnloadHistoryLimit;
 extern NSInteger TGModernConversationControllerUnloadHistoryThreshold;
 
@@ -63,28 +77,32 @@ GEMS_PROPERTY_EXTERN @property (nonatomic, strong) TGModernConversationInputPane
 
 GEMS_PROPERTY_EXTERN @property (nonatomic, strong) TGAttachmentSheetWindow *attachmentSheetWindow;
 
+GEMS_PROPERTY_EXTERN @property (nonatomic, weak) TGMenuSheetController * menuController;
+
 GEMS_ADDED_PROPERTY @property(nonatomic) BOOL isSendCurrencyScreensOpen;
 
 GEMS_METHOD_EXTERN
 - (void)inputPanelRequestedSendMessage:(TGModernConversationInputTextPanel *)__unused inputTextPanel text:(NSString *)text;
-GEMS_METHOD_EXTERN
-- (void)inputPanelRequestedAttachmentsMenu:(TGModernConversationInputTextPanel *)__unused inputTextPanel;
-GEMS_METHOD_EXTERN
-- (void)_asyncProcessMediaAssetSignals:(NSArray *)signals forIntent:(TGModernMediaPickerControllerIntent)intent;
-GEMS_METHOD_EXTERN
-- (void)_displayPhotoPicker;
-GEMS_METHOD_EXTERN
-- (void)_displayCameraWithView:(TGAttachmentSheetRecentCameraView *)cameraView;
-GEMS_METHOD_EXTERN
-- (void)_displayVideoPicker;
-GEMS_METHOD_EXTERN
-- (void)_displayWebImagePicker;
-GEMS_METHOD_EXTERN
-- (void)_displaySendFileMenu;
-GEMS_METHOD_EXTERN
-- (void)_displayLocationPicker;
-GEMS_METHOD_EXTERN
-- (void)_displayContactPicker;
+//      ***** display attachment menu start
+GEMS_METHOD_EXTERN - (void)inputPanelRequestedAttachmentsMenu:(TGModernConversationInputTextPanel *)__unused inputTextPanel;
+//GEMS_METHOD_EXTERN - (void)_displayLegacyAttachmentsMenu;
+//GEMS_METHOD_EXTERN - (void)_displayAttachmentsMenu;
+GEMS_METHOD_EXTERN - (TGSuggestionContext *)_suggestionContext;
+GEMS_METHOD_EXTERN - (void)_displayCameraWithView:(TGAttachmentCameraView *)cameraView menuController:(TGMenuSheetController *)menuController;
+GEMS_METHOD_EXTERN - (void)_asyncProcessMediaAssetSignals:(NSArray *)signals forIntent:(TGModernMediaPickerControllerIntent)intent;
+GEMS_METHOD_EXTERN - (void)_asyncProcessMediaAssetSignals:(NSArray *)signals;
+GEMS_METHOD_EXTERN - (NSDictionary *)_descriptionForItem:(id)item caption:(NSString *)caption hash:(NSString *)hash;
+GEMS_METHOD_EXTERN - (void)_displayMediaPicker:(bool)file fromFileMenu:(bool)fromFileMenu;
+GEMS_METHOD_EXTERN - (void)_updateCanReadHistory:(TGModernConversationActivityChange)change;
+GEMS_METHOD_EXTERN - (void)_displayFileMenuWithController:(TGMenuSheetController *)menuController;
+//GEMS_METHOD_EXTERN - (void)_displayPhotoPicker;
+//GEMS_METHOD_EXTERN - (void)_displayCameraWithView:(TGAttachmentSheetRecentCameraView *)cameraView;
+//GEMS_METHOD_EXTERN - (void)_displayVideoPicker;
+//GEMS_METHOD_EXTERN - (void)_displayWebImagePicker;
+//GEMS_METHOD_EXTERN - (void)_displaySendFileMenu;
+GEMS_METHOD_EXTERN - (void)_displayLocationPicker;
+GEMS_METHOD_EXTERN - (void)_displayContactPicker;
+//      ***** display attachment menu end
 
 - (void)setInitialSnapshot:(CGImageRef)image backgroundView:(TGModernTemporaryView *)backgroundView viewStorage:(TGModernViewStorage *)viewStorage topEdge:(CGFloat)topEdge;
 - (TGMessage *)latestVisibleMessage;

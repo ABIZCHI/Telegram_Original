@@ -456,10 +456,10 @@
     [[UIPasteboard generalPasteboard] setString:_referralLinkStr];
 
     UIView *v = [[UIView alloc] init];
-    v.frame = CGRectMake(30, 0, _referralLinkCell.view.frame.size.width, _referralLinkCell.view.frame.size.height);
+    v.frame = CGRectMake(59, 0, _referralLinkCell.view.frame.size.width, _referralLinkCell.view.frame.size.height);
     v.backgroundColor = [UIColor whiteColor];
     UILabel *lbl = [[UILabel alloc] init];
-    lbl.frame = v.frame;
+    lbl.frame = v.bounds;
     lbl.font = _referralLinkCell.view.lblLink.font;
     lbl.textColor = _referralLinkCell.view.lblLink.textColor;
     lbl.text = [NSString stringWithFormat:@"%@:\n%@", GemsLocalized(@"ReferralUrlCopied"), _referralLinkStr];

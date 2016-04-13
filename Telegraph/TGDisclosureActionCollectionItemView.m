@@ -43,7 +43,7 @@
     if (_iconView == nil && icon != nil)
     {
         _iconView = [[UIImageView alloc] initWithFrame:CGRectMake(15, (self.frame.size.height - 15) / 2, 29, 29)];
-        _iconView.contentMode = UIViewContentModeCenter;
+        _iconView.contentMode = UIViewContentModeScaleAspectFit;
         [self addSubview:_iconView];
     }
     

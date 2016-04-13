@@ -6,7 +6,7 @@ const CGFloat TGMenuSheetButtonItemViewHeight = 57.0f;
 
 @interface TGMenuSheetButtonItemView ()
 {
-    TGModernButton *_button;
+//    TGModernButton *_button
 }
 
 @property (nonatomic, copy) void(^action)(void);

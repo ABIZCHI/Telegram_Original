@@ -15,7 +15,4 @@
 - (void)setIcon:(UIImage *)icon;
 - (void)setEnabled:(bool)enabled;
 
-GEMS_ADDED_METHOD
-- (void)setIcon:(UIImage*)icon;
-
 @end
